@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Monitor4
+  m_EditorClassIdentifier: 
+  id: 26
+  Name: Full 4k
+  Type: 26
+  Level: 26
+  CoinsPerSecond: 7.70898e+15
+  BuyPrice: 640
+  Sprite: {fileID: 21300000, guid: 2bda52973e20cfc4b9d632205446abaf, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 9ac718292f3dcec41a26ff21e5b84e42, type: 3}

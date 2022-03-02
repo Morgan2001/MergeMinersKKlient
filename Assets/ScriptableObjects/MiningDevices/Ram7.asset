@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Ram7
+  m_EditorClassIdentifier: 
+  id: 44
+  Name: Samsuo4800
+  Type: 44
+  Level: 44
+  CoinsPerSecond: 131302780
+  BuyPrice: 1.40882e+25
+  Sprite: {fileID: 21300000, guid: b6a5ec836fc4fe549b8b8639baf17956, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 6a5ddcca2e781ec47a75e6e4444e0bfa, type: 3}

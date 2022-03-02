@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Gpu1
+  m_EditorClassIdentifier: 
+  id: 3
+  Name: 9200SE
+  Type: 3
+  Level: 3
+  CoinsPerSecond: 225
+  BuyPrice: 14000
+  Sprite: {fileID: 21300000, guid: 33f716b1ee850834a880608bf820383d, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 3336cc4bb0d3667408d2725293adfc46, type: 3}

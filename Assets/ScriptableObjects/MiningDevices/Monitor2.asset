@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Monitor2
+  m_EditorClassIdentifier: 
+  id: 12
+  Name: FullHD
+  Type: 12
+  Level: 12
+  CoinsPerSecond: 8650
+  BuyPrice: 482000000
+  Sprite: {fileID: 21300000, guid: f2fb122b272ecf74f8ce37d6c9f0a07d, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 70b6ae7f02237064d8fff10d8b55b9fe, type: 3}

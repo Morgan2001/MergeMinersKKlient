@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: SystemUnit5
+  m_EditorClassIdentifier: 
+  id: 34
+  Name: Power V
+  Type: 34
+  Level: 34
+  CoinsPerSecond: 21206132
+  BuyPrice: 1.00781e+20
+  Sprite: {fileID: 21300000, guid: 2853674384f783d41bea84761ce5d459, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: c270732553772844c9db850280ea02c7, type: 3}

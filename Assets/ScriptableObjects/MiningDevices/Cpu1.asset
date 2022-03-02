@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Cpu1
+  m_EditorClassIdentifier: 
+  id: 1
+  Name: Pentulum x2
+  Type: 1
+  Level: 1
+  CoinsPerSecond: 100
+  BuyPrice: 0
+  Sprite: {fileID: 21300000, guid: 2359da0823ab79b4ea5eda6766d1d9de, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 6a74d8359193d9c47904b6b1c5b0da64, type: 3}

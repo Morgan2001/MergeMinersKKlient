@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab0314865ce24f47844972370064c64, type: 3}
+  m_Name: 5Barn
+  m_EditorClassIdentifier: 
+  Name: Server room
+  Type: 5
+  Level: 5
+  Sprite: {fileID: 21300000, guid: ec6a5b184082bed44bc359269f03d39d, type: 3}
+  MaxLevelOfMiningDevice: 25
+  LevelOfMiningDeviceFromBox: 5
+  MinMiningDeviceLevelToRelocate: 20
+  RelocateCost: 11300000
+  NumOfColumns: 4
+  NumOfRows: 5
+  NumOfMiningCells: 6

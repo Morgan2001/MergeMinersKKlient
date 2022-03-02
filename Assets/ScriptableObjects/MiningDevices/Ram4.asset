@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Ram4
+  m_EditorClassIdentifier: 
+  id: 23
+  Name: Rdd4
+  Type: 23
+  Level: 23
+  CoinsPerSecond: 748183
+  BuyPrice: 2.2e+14
+  Sprite: {fileID: 21300000, guid: e28ad1a6bab0d24459aa57ac543ece7d, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: ca8fc3ca4962e1e4f97bc39abf964cf2, type: 3}

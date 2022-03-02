@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Ram5
+  m_EditorClassIdentifier: 
+  id: 30
+  Name: Flex x 64
+  Type: 30
+  Level: 30
+  CoinsPerSecond: 10226723
+  BuyPrice: 8.8143e+17
+  Sprite: {fileID: 21300000, guid: 672441d140c1e284082a0a96f700eb02, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: 2574bbbc65a51114e862fb55c00da373, type: 3}

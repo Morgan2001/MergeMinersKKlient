@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f573c6952984449a70fca13b583f4c, type: 3}
+  m_Name: Cpu6
+  m_EditorClassIdentifier: 
+  id: 36
+  Name: XEON4500
+  Type: 36
+  Level: 36
+  CoinsPerSecond: 30536832
+  BuyPrice: 1.07764e+21
+  Sprite: {fileID: 21300000, guid: d60b79c53c4159947b2278a3e8ce309b, type: 3}
+  SpriteWithOutline: {fileID: 21300000, guid: aa6cc4b934ac01f4491f97c7f23dcc72, type: 3}
