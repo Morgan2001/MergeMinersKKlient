@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class GameplayController : MonoBehaviour
 {
+    public bool resetProgress;
+
     private Player player;
     public GameRules GameRules;
     
@@ -81,7 +83,10 @@ public class GameplayController : MonoBehaviour
 
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        if (resetProgress)
+        {
+            PlayerPrefs.DeleteAll();
+        }
         Initialization();
     }
 
@@ -227,7 +232,7 @@ public class GameplayController : MonoBehaviour
 
     private void InitFlyingBonusHandler()
     {
-        flyingBonusHandler = new FlyingBonusHandler(player, WindowController);
+        flyingBonusHandler = new FlyingBonusHandler(player, WindowController, GameRules);
     }
 
     private void InitFlyingBonusController()

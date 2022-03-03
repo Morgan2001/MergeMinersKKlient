@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FlyingBonusHandler
 {
-    public const int CoinsForWallet = 1000;
-
-    private Player player;
+    public Player player;
     private WindowController windowController;
+    public GameRules gameRules;
 
-    public FlyingBonusHandler(Player player, WindowController windowController)
+    public FlyingBonusHandler(Player player, WindowController windowController, GameRules gameRules)
     {
         this.player = player;
         this.windowController = windowController;
+        this.gameRules = gameRules;
     }
 
     public void HandleFlyingBonus(FlyingBonuses type)
@@ -20,7 +20,7 @@ public class FlyingBonusHandler
         switch (type)
         {
             case FlyingBonuses.Wallet:
-                player.AddCoins(CoinsForWallet);
+                player.AddCoins(gameRules.WalletRewards.GetRewardByLevel(player.MaxAchivedMiningDeviceLevel));
                 break;
             case FlyingBonuses.Chip:
                 windowController.ShowChipBonusWindow();

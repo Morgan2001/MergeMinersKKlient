@@ -5576,6 +5576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d45e2f172415ea44fb922e0882677ed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resetProgress: 0
   GameRules: {fileID: 1224680737}
   miningController: {fileID: 318058394}
   GameplayHelper: {fileID: 1726360691}
@@ -6035,7 +6036,7 @@ PrefabInstance:
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 868.4007
+      value: 868.4004
       objectReference: {fileID: 0}
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}
@@ -12334,6 +12335,7 @@ MonoBehaviour:
   MiningDevices: {fileID: 11400000, guid: 63f106f47538c3b4b849fd0df7d2d303, type: 2}
   MergeRules: {fileID: 11400000, guid: 42d5ae95f1d200044b9bcd2033e93e62, type: 2}
   SetOfFlyingBonuses: {fileID: 11400000, guid: 02e5f9af044fd114c993bb9995fc832a, type: 2}
+  WalletRewards: {fileID: 11400000, guid: 88669281d21523e4594f10b234f65dd9, type: 2}
 --- !u!4 &1224680738
 Transform:
   m_ObjectHideFlags: 0
@@ -14561,8 +14563,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1196955904}
   m_HandleRect: {fileID: 1196955903}
   m_Direction: 2
-  m_Value: -0.00033467202
-  m_Size: 0.9994717
+  m_Value: -0.00016739203
+  m_Size: 0.99954456
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14710,7 +14712,7 @@ PrefabInstance:
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1454.0012
+      value: 1454.001
       objectReference: {fileID: 0}
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}
@@ -21617,7 +21619,7 @@ PrefabInstance:
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 282.80023
+      value: 282.7998
       objectReference: {fileID: 0}
     - target: {fileID: 5243065724914016195, guid: 8f92553b015bce547af0cceedc020e34,
         type: 3}

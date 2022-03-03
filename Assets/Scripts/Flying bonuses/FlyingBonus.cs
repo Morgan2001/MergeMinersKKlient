@@ -83,7 +83,8 @@ public class FlyingBonus : MonoBehaviour, IPointerDownHandler
         rewardInscription.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         rewardInscription.transform.SetParent(transform.parent);
         rewardInscription.transform.localScale = Vector2.one;
-        rewardInscription.transform.GetChild(0).GetComponent<Text>().text = FlyingBonusHandler.CoinsForWallet.ToString();
+        rewardInscription.transform.GetChild(0).GetComponent<Text>().text = 
+            flyingBonusHandler.gameRules.WalletRewards.GetRewardByLevel(flyingBonusHandler.player.MaxAchivedMiningDeviceLevel).ToString();
         Destroy(rewardInscription, 1);
     }
 }

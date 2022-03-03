@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b058419feb7624684863a59cc67f7b, type: 3}
+  m_Name: WalletRewards
+  m_EditorClassIdentifier: 
+  rewards:
+  - maxAchivedMiningDeviceLevel: 1
+    walletReward: 1
+  - maxAchivedMiningDeviceLevel: 2
+    walletReward: 2
+  - maxAchivedMiningDeviceLevel: 3
+    walletReward: 3
+  - maxAchivedMiningDeviceLevel: 4
+    walletReward: 4
+  - maxAchivedMiningDeviceLevel: 5
+    walletReward: 5
+  - maxAchivedMiningDeviceLevel: 6
+    walletReward: 6
+  - maxAchivedMiningDeviceLevel: 7
+    walletReward: 7
+  - maxAchivedMiningDeviceLevel: 8
+    walletReward: 8
+  - maxAchivedMiningDeviceLevel: 9
+    walletReward: 9
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0
+  - maxAchivedMiningDeviceLevel: 0
+    walletReward: 0

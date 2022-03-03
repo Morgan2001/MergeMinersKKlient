@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 16
   Name: Korsair 8000
   Type: 16
-  Level: 6
+  Level: 16
   CoinsPerSecond: 43789
   BuyPrice: 5.51e+10
   Sprite: {fileID: 21300000, guid: 4776e2cf17fab8d48bbe6e48d24027cd, type: 3}

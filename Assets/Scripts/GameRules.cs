@@ -8,4 +8,5 @@ public class GameRules : MonoBehaviour
     public SetOfMiningDeviceDatas MiningDevices;
     public SetOfMergeRules MergeRules;
     public SetOfFlyingBonuses SetOfFlyingBonuses;
+    public WalletRewards WalletRewards;
 }
