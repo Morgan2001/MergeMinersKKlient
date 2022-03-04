@@ -12,6 +12,9 @@ public class ButtonBinder : MonoBehaviour
     [Header("Shop")]
     public Button GoToShopButton;
 
+    [Header("Shop from Gold")]
+    public Button GoToShopButtonGold;
+
     [Header("Relocation")]
     public Button GoToRelocateScreenButton;
     public Button StartRelocateButton;
@@ -73,7 +76,7 @@ public class ButtonBinder : MonoBehaviour
         BindWheelForAdButton();
         BindWheelForDiamondsButton();
         BindQuitButton();
-
+        BindGoToShopButtonGold();
         BindGoToGameplayScreenButtons();
     }
 
@@ -110,6 +113,12 @@ public class ButtonBinder : MonoBehaviour
     {
         GoToShopButton.onClick.AddListener(windowController.ShowShopWindow);
         GoToShopButton.onClick.AddListener(ads.ShowInterstitial);
+    }
+
+    private void BindGoToShopButtonGold()
+    {
+        GoToShopButtonGold.onClick.AddListener(windowController.ShowShopWindow);
+        GoToShopButtonGold.onClick.AddListener(ads.ShowInterstitial);
     }
 
     private void BindApplyBoxWithMinersBonusButton()

@@ -91,7 +91,7 @@ public class Player : ISavable
 
     public static Player GetStartPlayerSettings()
     {
-        return new Player(0, 999, 0, Locations.Room, 1);
+        return new Player(0, 10, 0, Locations.Basement, 1);
     }
 
     public void SpendDiamonds(float diamonds)

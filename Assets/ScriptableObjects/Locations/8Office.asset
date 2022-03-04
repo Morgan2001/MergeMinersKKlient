@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab0314865ce24f47844972370064c64, type: 3}
   m_Name: 8Office
   m_EditorClassIdentifier: 
-  Name: Server room
+  Name: Office
   Type: 8
   Level: 8
   Sprite: {fileID: 21300000, guid: 2d107e175946f6b4f857a7a55516a5f6, type: 3}

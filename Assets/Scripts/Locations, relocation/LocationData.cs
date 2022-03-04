@@ -5,10 +5,17 @@ using UnityEngine;
 public enum Locations
 {
     Null = -1,
-    Room = 1,
-    Garage = 2,
-    Office = 3,
-    ServerRoom = 4
+    Basement = 1,
+    Pantry = 2,
+    Attic = 3,
+    Store = 4,
+    Barn = 5,
+    Room = 6,
+    Garage = 7,
+    Office = 8,
+    Serverroom = 9,
+    Serverfarm = 10
+
 }
 
 [CreateAssetMenu(fileName = "LocationData", menuName = "ScriptableObjects/LocationData", order = 1)]

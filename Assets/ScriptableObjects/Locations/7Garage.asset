@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab0314865ce24f47844972370064c64, type: 3}
   m_Name: 7Garage
   m_EditorClassIdentifier: 
-  Name: Server room
+  Name: Garage
   Type: 7
   Level: 7
   Sprite: {fileID: 21300000, guid: 615e72b08faeb6e44a5f9afabae3d00a, type: 3}

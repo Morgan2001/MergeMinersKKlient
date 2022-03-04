@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ab0314865ce24f47844972370064c64, type: 3}
   m_Name: 5Barn
   m_EditorClassIdentifier: 
-  Name: Server room
+  Name: Barn
   Type: 5
   Level: 5
   Sprite: {fileID: 21300000, guid: ec6a5b184082bed44bc359269f03d39d, type: 3}
-  MaxLevelOfMiningDevice: 25
+  MaxLevelOfMiningDevice: 23
   LevelOfMiningDeviceFromBox: 5
-  MinMiningDeviceLevelToRelocate: 20
+  MinMiningDeviceLevelToRelocate: 15
   RelocateCost: 11300000
   NumOfColumns: 4
   NumOfRows: 5
