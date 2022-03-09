@@ -11,6 +11,6 @@ public class ShopDiamondPosition : MonoBehaviour
     public void SetOffer(int numOfDiamonds, float price)
     {
         NumOfDiamonds.text = numOfDiamonds.ToString();
-        Price.text = price.ToString() + " ₽";
+        Price.text = price.ToString() + " $";
     }
 }

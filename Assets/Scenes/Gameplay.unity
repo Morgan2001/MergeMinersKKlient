@@ -8116,7 +8116,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "319 \u20BD per week"
+  m_Text: 2.99 $ per week
 --- !u!222 &753619158
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14801,8 +14801,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1196955904}
   m_HandleRect: {fileID: 1196955903}
   m_Direction: 2
-  m_Value: -0.00033467202
-  m_Size: 0.9994717
+  m_Value: 0
+  m_Size: 0.9995684
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

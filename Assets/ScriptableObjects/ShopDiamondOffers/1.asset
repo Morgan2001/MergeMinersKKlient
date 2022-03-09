@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   DiamondNum: 150
-  Price: 65
+  Price: 0.99
