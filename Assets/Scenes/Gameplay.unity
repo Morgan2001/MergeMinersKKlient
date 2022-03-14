@@ -2589,7 +2589,7 @@ GameObject:
   - component: {fileID: 190160167}
   - component: {fileID: 190160166}
   m_Layer: 5
-  m_Name: Button
+  m_Name: GetMultSum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3484,7 +3484,7 @@ GameObject:
   - component: {fileID: 252711689}
   - component: {fileID: 252711691}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GetSum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5811,7 +5811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 87.1, y: 0}
+  m_AnchoredPosition: {x: 87.099976, y: 0}
   m_SizeDelta: {x: -174.10425, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462720057
@@ -5944,13 +5944,14 @@ GameObject:
   - component: {fileID: 473441592}
   - component: {fileID: 473441594}
   - component: {fileID: 473441593}
+  - component: {fileID: 473441595}
   m_Layer: 5
   m_Name: ReturnWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &473441592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6010,6 +6011,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473441591}
   m_CullTransparentMesh: 0
+--- !u!114 &473441595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473441591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c530ee0379b0f4386f17fd0a999e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSum: {fileID: 2033677343}
+  multSum: {fileID: 1246736082}
+  getIdleSum: {fileID: 252711689}
+  getIdleSumText: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C "
 --- !u!1 &476206653
 GameObject:
   m_ObjectHideFlags: 0
@@ -12521,6 +12538,7 @@ MonoBehaviour:
   NewMiningDeviceWindow: {fileID: 2049035238}
   RelocationPanel: {fileID: 316186392}
   GiftWindow: {fileID: 863080249}
+  ReturnWindow: {fileID: 473441591}
   WheelPanel: {fileID: 1477069843}
   WheelRewardWindow: {fileID: 1663391532}
 --- !u!4 &1150606220
@@ -15361,7 +15379,7 @@ GameObject:
   - component: {fileID: 1392282422}
   - component: {fileID: 1392282421}
   m_Layer: 5
-  m_Name: Tripple
+  m_Name: Mult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20181,6 +20199,7 @@ MonoBehaviour:
   WheelForAdButton: {fileID: 1601447344}
   WheelForDiamondsButton: {fileID: 1537814696}
   QuitButton: {fileID: 363946709}
+  GetIdleMultReward: {fileID: 190160166}
   ToGameplayScreenButtons:
   - {fileID: 1167826698}
   - {fileID: 841066205}
@@ -20195,6 +20214,8 @@ MonoBehaviour:
   - {fileID: 634640769}
   - {fileID: 1646279282}
   - {fileID: 1456982056}
+  - {fileID: 190160166}
+  - {fileID: 252711691}
 --- !u!4 &1772503181
 Transform:
   m_ObjectHideFlags: 0
@@ -21739,7 +21760,7 @@ GameObject:
   - component: {fileID: 2034435601}
   - component: {fileID: 2034435600}
   m_Layer: 5
-  m_Name: Tripple sum panel
+  m_Name: Mult sum panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

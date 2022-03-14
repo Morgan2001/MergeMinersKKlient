@@ -35,6 +35,9 @@ public class ButtonBinder : MonoBehaviour
     [Header("Quit")]
     public Button QuitButton;
 
+    [Header("GetIdleReward")]
+    public Button GetIdleMultReward;
+
     public List<Button> ToGameplayScreenButtons;
 
 
@@ -46,9 +49,10 @@ public class ButtonBinder : MonoBehaviour
     private Ads ads;
     private Wheel wheel;
     private Player player;
+    private MiningController miningController;
 
     public void Construct(WindowController windowController, Relocator relocator, BoostController boostController, MergeFieldFiller mergeFieldFiller,
-        Gift gift, Ads ads, Wheel wheel, Player player)
+        Gift gift, Ads ads, Wheel wheel, Player player, MiningController miningController)
     {
         this.windowController = windowController;
         this.relocator = relocator;
@@ -58,6 +62,7 @@ public class ButtonBinder : MonoBehaviour
         this.ads = ads;
         this.wheel = wheel;
         this.player = player;
+        this.miningController = miningController;
 
         Bind();
     }
@@ -78,6 +83,16 @@ public class ButtonBinder : MonoBehaviour
         BindQuitButton();
         BindGoToShopButtonGold();
         BindGoToGameplayScreenButtons();
+        BindGetIdleMultRewardButton();
+    }
+
+    private void BindGetIdleMultRewardButton()
+    {
+        GetIdleMultReward.onClick.AddListener(() =>
+        {
+            var time = miningController.GetAbsenceTimeSeconds() * (MiningController.multForAbseceReward - 1);
+            ads.ShowRewarded(() => miningController.AddCoinsForPeriod(time));
+        });
     }
 
     private void BindQuitButton()

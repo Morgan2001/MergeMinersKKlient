@@ -216,7 +216,8 @@ public class GameplayController : MonoBehaviour
 
     private void InitButtonBinder()
     {
-        ButtonBinder.Construct(WindowController, Relocator, BoostController, mergeFieldFiller, Gift, Ads, Wheel, player);
+        ButtonBinder.Construct(WindowController, Relocator, BoostController, 
+            mergeFieldFiller, Gift, Ads, Wheel, player, miningController);
     }
 
     private void InitUpgradeShopController()
@@ -308,6 +309,12 @@ public class GameplayController : MonoBehaviour
     }
 
 
+    private IEnumerator ShowReturnWindowC()
+    {
+        yield return new WaitForSeconds(0.1f);
+        WindowController.ShowReturnWindow(miningController);
+    }
+
 
     private void SaveAll()
     {
@@ -325,6 +332,13 @@ public class GameplayController : MonoBehaviour
         if (pause)
         {
             SaveAll();
+        }
+        else
+        {
+            if (miningController.GetAbsenceTimeSeconds() > 60)
+            {
+                StartCoroutine(ShowReturnWindowC());
+            }
         }
     }
 }

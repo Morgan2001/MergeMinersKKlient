@@ -32,6 +32,7 @@ public class WindowController : MonoBehaviour
     public NewMiningDeviceWindow NewMiningDeviceWindow;
     public GameObject RelocationPanel;
     public GameObject GiftWindow;
+    public GameObject ReturnWindow;
 
     [Header("Wheel")]
     public GameObject WheelPanel;
@@ -117,6 +118,12 @@ public class WindowController : MonoBehaviour
         WheelRewardWindow.SetActive(true);
         WheelRewardWindow.GetComponent<WheelRewardPanel>().SetData(sprite, description);
     }
+    public void ShowReturnWindow(MiningController miningController)
+    {
+        HideAll();
+        ReturnWindow.SetActive(true);
+        ReturnWindow.GetComponent<ReturnWindow>().SetData(miningController);
+    }
 
     private void HideAll()
     {
@@ -139,6 +146,7 @@ public class WindowController : MonoBehaviour
         GiftWindow.SetActive(false);
         WheelPanel.SetActive(false);
         WheelRewardWindow.SetActive(false);
+        ReturnWindow.SetActive(false);
 
         GameplayScreenIsHidden?.Invoke();
     }

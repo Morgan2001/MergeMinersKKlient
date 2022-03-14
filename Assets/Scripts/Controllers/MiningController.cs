@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MiningController : MonoBehaviour, ISavable
 {
+    public const float multForAbseceReward = 3;
+
     private Player player;
     private MergeFieldBuilder mergeFieldBuilder;
 
@@ -33,10 +35,37 @@ public class MiningController : MonoBehaviour, ISavable
         }
     }
 
-    public void AddCoinsForAbsenceTime()
+    public double GetCoinsForPeriod(float periodTimeInSeconds)
     {
-        var timeHasPast = DateTime.Now - lastActiveDateTime;
-        AddCoinsForPeriod((float)timeHasPast.TotalSeconds);
+        double coins = 0;
+
+        foreach (var cell in mergeFieldBuilder.Cells)
+        {
+            if (cell.IsMiningCell && !cell.IsEmpty)
+            {
+                coins += cell.MiningDevice.Data.CoinsPerSecond * periodTimeInSeconds * Boost;
+            }
+        }
+
+        return coins;
+    }
+
+    public void AddCoinsForAbsenceTime(float mult = 1)
+    {
+        AddCoinsForPeriod(GetAbsenceTimeSeconds() * mult);
+        Debug.Log($"added coins for {GetAbsenceTimeSeconds()} sec * {mult}");
+    }
+    public double GetCoinsForAbsenceTime(float mult = 1)
+    {
+        return GetCoinsForPeriod(GetAbsenceTimeSeconds() * mult);
+    }
+
+    public float GetAbsenceTimeSeconds()
+    {
+        var timePast = DateTime.Now - lastActiveDateTime;
+        var secPast = timePast.TotalSeconds;
+        var floatSecPast = (float)secPast;
+        return floatSecPast;
     }
 
     private void OnApplicationPause(bool pause)
