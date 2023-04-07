@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2880296392742413174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2880296392742413172}
+  - component: {fileID: 2880296392742413175}
+  m_Layer: 0
+  m_Name: GameRules
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2880296392742413172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880296392742413174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2880296392742413175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880296392742413174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67767e5f12a8d074fabd77723a7861bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Locations: {fileID: 11400000, guid: ba59fb0e903fd7548812351108a5f242, type: 2}
+  MiningDevices: {fileID: 11400000, guid: 63f106f47538c3b4b849fd0df7d2d303, type: 2}
+  MergeRules: {fileID: 11400000, guid: 42d5ae95f1d200044b9bcd2033e93e62, type: 2}
+  SetOfFlyingBonuses: {fileID: 11400000, guid: 02e5f9af044fd114c993bb9995fc832a, type: 2}
+  WalletRewards: {fileID: 11400000, guid: 88669281d21523e4594f10b234f65dd9, type: 2}

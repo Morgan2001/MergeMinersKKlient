@@ -89,9 +89,9 @@ public class NewMiningDeviceAnimation : MonoBehaviour
 
     private void CalcPositions()
     {
-        StartPointPos = relPosCalc.CalcRelativePosition(StartPoint, gameObject);
-        LeftPointPos = relPosCalc.CalcRelativePosition(LeftPoint, gameObject);
-        RightPointPos = relPosCalc.CalcRelativePosition(RightPoint, gameObject);
-        EndPointPos = relPosCalc.CalcRelativePosition(EndPoint, gameObject);
+        StartPointPos = relPosCalc.CalcRelativePosition(StartPoint.GetComponent<RectTransform>(), gameObject.GetComponent<RectTransform>());
+        LeftPointPos = relPosCalc.CalcRelativePosition(LeftPoint.GetComponent<RectTransform>(), gameObject.GetComponent<RectTransform>());
+        RightPointPos = relPosCalc.CalcRelativePosition(RightPoint.GetComponent<RectTransform>(), gameObject.GetComponent<RectTransform>());
+        EndPointPos = relPosCalc.CalcRelativePosition(EndPoint.GetComponent<RectTransform>(), gameObject.GetComponent<RectTransform>());
     }
 }

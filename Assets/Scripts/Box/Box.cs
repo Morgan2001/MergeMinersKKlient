@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Enums;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -84,7 +85,7 @@ public class Box : MonoBehaviour, IPointerDownHandler
         var boxType = ChooseBoxType();
         var miningDeviceType = miningDeviceChooser.GetMiningDeviceFromBox().Type;
 
-        if (boxType == MiningDeviceBoxes.Common)
+        if (boxType == MinerSource.Common)
         {
             mergeFieldFiller.AddDeviceFromBox(miningDeviceType, boxType, transform);
         }
@@ -95,17 +96,17 @@ public class Box : MonoBehaviour, IPointerDownHandler
             mergeFieldFiller.AddDeviceFromBox(randomMiningDeviceType, boxType, transform);
         }
     }
-    private MiningDeviceBoxes ChooseBoxType()
+    private MinerSource ChooseBoxType()
     {
         var rn = UnityEngine.Random.Range(0f, 1f);
 
         if (rn < chanceOfRandomDevice)
         {
-            return MiningDeviceBoxes.Random;
+            return MinerSource.Random;
         }
         else
         {
-            return MiningDeviceBoxes.Common;
+            return MinerSource.Common;
         }
     }
     public void AddPercentToCurFill(float percent)

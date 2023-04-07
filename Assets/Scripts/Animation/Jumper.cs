@@ -1,28 +1,28 @@
 ﻿using DG.Tweening;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Jumper : MonoBehaviour
 {
-    RelativePositionsCalculator relPosCalculator;
+    [SerializeField] private RectTransform _rectTransform;
+    
+    private RelativePositionsCalculator _relativePositionsCalculator;
 
-    public void Construct(RelativePositionsCalculator relPosCalculator)
+    [Inject]
+    public void Construct(RelativePositionsCalculator relativePositionsCalculator)
     {
-        this.relPosCalculator = relPosCalculator;
+        _relativePositionsCalculator = relativePositionsCalculator;
     }
 
-    public void Jump(Transform whatWillJump, Transform to, float jumpPower, float duration, Action action, Transform from = null)
+    public void Jump(RectTransform whatWillJump, RectTransform to, float jumpPower, float duration, Action action, RectTransform from = null)
     {
         whatWillJump.GetComponent<MiningDevice>().IsClickable = false;
 
         whatWillJump.SetParent(transform);
 
-        var posFromJump = relPosCalculator.CalcRelativePosition(from == null ? whatWillJump.gameObject : from.gameObject, gameObject);
-        var posToJump = relPosCalculator.CalcRelativePosition(to.gameObject, gameObject);
-
-
+        var posFromJump = _relativePositionsCalculator.CalcRelativePosition(from == null ? whatWillJump : from, _rectTransform);
+        var posToJump = _relativePositionsCalculator.CalcRelativePosition(to, _rectTransform);
 
         whatWillJump.GetComponent<RectTransform>().anchoredPosition = posFromJump;
 

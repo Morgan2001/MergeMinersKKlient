@@ -111,7 +111,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     }
     private void JumpToNewCell()
     {
-        jumper.Jump(transform, cellToInsertDevice.transform, 40, 0.1f, () =>
+        jumper.Jump(transform.GetComponent<RectTransform>(), cellToInsertDevice.GetComponent<RectTransform>(), 40, 0.1f, () =>
         {
             prevCell.RemoveDevice();
             cellToInsertDevice.TryInsertDevice(GetComponent<MiningDevice>());
@@ -121,18 +121,18 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     {
         var DeviceInNewCell = cellToInsertDevice.MiningDevice;
 
-        jumper.Jump(transform, cellToInsertDevice.transform, 40, 0.1f, () =>
+        jumper.Jump(transform.GetComponent<RectTransform>(), cellToInsertDevice.GetComponent<RectTransform>(), 40, 0.1f, () =>
         {
 
         });
-        jumper.Jump(DeviceInNewCell.transform, prevCell.transform, 40, 0.1f, () =>
+        jumper.Jump(DeviceInNewCell.GetComponent<RectTransform>(), prevCell.GetComponent<RectTransform>(), 40, 0.1f, () =>
         {
             cellToInsertDevice.Swap(prevCell);
         });
     }
     private void JumpBack()
     {
-        jumper.Jump(transform, prevCell.transform, 40, 0.1f, () =>
+        jumper.Jump(transform.GetComponent<RectTransform>(), prevCell.GetComponent<RectTransform>(), 40, 0.1f, () =>
         {
             PlaceDeviceBackFromBuffer();
         });

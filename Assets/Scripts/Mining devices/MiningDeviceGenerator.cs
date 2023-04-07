@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Enums;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -39,7 +40,7 @@ public class MiningDeviceGenerator : MonoBehaviour
         this.trashCan = trashCan;
     }
 
-    public MiningDevice CreateMiningDevice(MiningDevices type, bool inBox = true, MiningDeviceBoxes boxType = MiningDeviceBoxes.Common)
+    public MiningDevice CreateMiningDevice(MiningDevices type, bool inBox = true, MinerSource boxType = MinerSource.Common)
     {
         var miningDeviceGO = Instantiate(MiningDevicePrefab);
         miningDeviceGO.transform.SetParent(jumper.transform);

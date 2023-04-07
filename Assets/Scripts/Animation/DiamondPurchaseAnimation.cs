@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 using System;
 using UnityEngine.UI;
@@ -27,7 +25,7 @@ public class DiamondPurchaseAnimation : MonoBehaviour
         var diamondNum = new String(product.definition.id.Where(Char.IsDigit).ToArray());
         DiamondNum.text = diamondNum;
 
-        var endPos = relPosCalc.CalcRelativePosition(DiamondsUI, transform.parent.gameObject);
+        var endPos = relPosCalc.CalcRelativePosition(DiamondsUI.GetComponent<RectTransform>(), transform.parent.GetComponent<RectTransform>());
 
         var rt = GetComponent<RectTransform>();
 

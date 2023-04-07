@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MergeMiner.Core.State.Enums;
 using UnityEngine;
 
 public class MergeFieldFiller : ISavable
@@ -24,7 +25,7 @@ public class MergeFieldFiller : ISavable
         Load();
     }
 
-    public void AddDeviceFromBox(MiningDevices deviceType, MiningDeviceBoxes boxType, Transform boxTransform)
+    public void AddDeviceFromBox(MiningDevices deviceType, MinerSource boxType, Transform boxTransform)
     {
         if (mergeFieldBuilder.HasEmptyCells())
         {
@@ -38,7 +39,7 @@ public class MergeFieldFiller : ISavable
         if (mergeFieldBuilder.HasEmptyCells())
         {
             miningDevicePlacer.SetParameters(PlaceTypes.ToRandomPossible, true, from);
-            miningDevicePlacer.Place(miningDeviceGenerator.CreateMiningDevice(deviceType, true, MiningDeviceBoxes.Shop));
+            miningDevicePlacer.Place(miningDeviceGenerator.CreateMiningDevice(deviceType, true, MinerSource.Shop));
         }
     }
 
@@ -50,7 +51,7 @@ public class MergeFieldFiller : ISavable
             {
                 var deviceType = miningDeviceChooser.ChooseRandomMiningDeviceFromBoxToMaxAchived();
                 miningDevicePlacer.SetParameters(PlaceTypes.ToRandomPossible);
-                miningDevicePlacer.Place(miningDeviceGenerator.CreateMiningDevice(deviceType, true, MiningDeviceBoxes.Random));
+                miningDevicePlacer.Place(miningDeviceGenerator.CreateMiningDevice(deviceType, true, MinerSource.Random));
             }
             else
             {

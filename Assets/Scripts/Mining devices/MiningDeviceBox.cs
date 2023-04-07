@@ -3,20 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using DG.Tweening;
-
-public enum MiningDeviceBoxes
-{
-    Common,
-    Random,
-    Shop
-}
+using MergeMiner.Core.State.Enums;
 
 [Serializable]
 public class MiningDeviceBoxSprite
 {
-    public MiningDeviceBoxes Type;
+    public MinerSource Type;
     public Sprite Sprite;
 }
 
@@ -29,7 +22,7 @@ public class MiningDeviceBox : MonoBehaviour, IPointerDownHandler
     public bool IsInBox { get; private set; } = false;
     public bool Clickable { get; set; } = false;
 
-    private MiningDeviceBoxes type;
+    private MinerSource type;
 
     private GameplayHelper gameplayHelper;
     private CellHighlighter cellHighlighter;
@@ -44,7 +37,7 @@ public class MiningDeviceBox : MonoBehaviour, IPointerDownHandler
         this.roulette = roulette;
     }
 
-    public void PutInBox(MiningDeviceBoxes boxType)
+    public void PutInBox(MinerSource boxType)
     {
         type = boxType;
         var miningDevice = GetComponent<MiningDevice>();
@@ -53,7 +46,7 @@ public class MiningDeviceBox : MonoBehaviour, IPointerDownHandler
         miningDevice.Label.SetActive(false);
         IsInBox = true;
 
-        if (boxType == MiningDeviceBoxes.Common)
+        if (boxType == MinerSource.Common)
         {
             StartCoroutine(OpenAfterSeconds());
         }
@@ -91,7 +84,7 @@ public class MiningDeviceBox : MonoBehaviour, IPointerDownHandler
             gameplayHelper.ResetHelp();
             cellHighlighter.RemoveHighlight();
 
-            if (type == MiningDeviceBoxes.Random)
+            if (type == MinerSource.Random)
             {
                 windowController.ShowRoulette();
                 roulette.Spin(GetComponent<MiningDevice>().Data.Type, () => 

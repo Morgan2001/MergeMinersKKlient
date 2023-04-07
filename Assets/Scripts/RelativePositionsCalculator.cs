@@ -1,27 +1,25 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RelativePositionsCalculator : MonoBehaviour
 {
-    public GameObject empty;
+    [SerializeField] private RectTransform _empty;
 
     public Vector2 CalcRelativePositions(RectTransform what, RectTransform relativeTo)
     {
-        empty.transform.SetParent(what);
-        empty.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        _empty.SetParent(what);
+        _empty.anchoredPosition = Vector2.zero;
 
-        empty.transform.SetParent(relativeTo);
-        var pos = empty.GetComponent<RectTransform>().anchoredPosition;
+        _empty.SetParent(relativeTo);
+        var pos = _empty.anchoredPosition;
 
-        empty.transform.SetParent(transform);
-        empty.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        _empty.SetParent(transform);
+        _empty.anchoredPosition = Vector2.zero;
 
         return pos;
     }
-    public Vector2 CalcRelativePosition(GameObject what, GameObject relativeTo)
+    
+    public Vector2 CalcRelativePosition(RectTransform what, RectTransform relativeTo)
     {
-        return CalcRelativePositions(what.GetComponent<RectTransform>(), relativeTo.GetComponent<RectTransform>());
+        return CalcRelativePositions(what, relativeTo);
     }
 }

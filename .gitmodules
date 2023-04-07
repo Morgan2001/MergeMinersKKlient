@@ -1,0 +1,3 @@
+[submodule "Assets/Core"]
+	path = Assets/Core
+	url = git@bitbucket.org:agnither/mergeminer.core.git

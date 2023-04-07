@@ -67,14 +67,14 @@ public class MiningDevicePlacer : MonoBehaviour
         miningDevice.transform.SetParent(jumper.transform);
 
         miningDevice.GetComponent<MiningDeviceBox>().StartJumpAnimation(() =>
-        jumper.Jump(miningDevice.transform, cell.transform, 200, 0.2f, () =>
+        jumper.Jump(miningDevice.GetComponent<RectTransform>(), cell.GetComponent<RectTransform>(), 200, 0.2f, () =>
         {
             PlaceTo(miningDevice, cell);
             miningDevice.GetComponent<MiningDeviceBox>().Clickable = true;
             cell.IsBusyByAnimation = false;
             miningDevice.GetComponent<MiningDeviceBox>().LaunchPlaceParticles();
             transform.localScale = new Vector3(1, 1, 1);
-        }, objectToJumpFrom)
+        }, objectToJumpFrom.GetComponent<RectTransform>())
         );
     }
 

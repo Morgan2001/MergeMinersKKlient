@@ -73,7 +73,7 @@ public class FlyingBonusController : MonoBehaviour
         {
             marker = RightMarker.SetToRandomPoint();
         }
-        return relativePositionsCalculator.CalcRelativePosition(marker.gameObject, gameObject);
+        return relativePositionsCalculator.CalcRelativePosition(marker.GetComponent<RectTransform>(), gameObject.GetComponent<RectTransform>());
     }
 
     private IEnumerator CreateAndLaunchNewBonusAfterTime()

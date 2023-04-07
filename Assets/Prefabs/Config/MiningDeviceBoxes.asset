@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82e662e87c245fcb8a97c90f90137fc, type: 3}
+  m_Name: MiningDeviceBoxes
+  m_EditorClassIdentifier: 
+  MiningDeviceBoxSprites:
+  - Type: 0
+    Sprite: {fileID: 21300000, guid: ec1305da97048a44a860cc51af4e0a51, type: 3}
+  - Type: 1
+    Sprite: {fileID: 21300000, guid: 0cd016ded22aad948bd01e7b7b94d2d2, type: 3}
+  - Type: 2
+    Sprite: {fileID: 21300000, guid: cfec0994a5acceb45bf63d68709dbdfe, type: 3}
