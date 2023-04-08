@@ -1,5 +1,4 @@
-﻿using _Proxy.Config;
-using UI.BottomPanel;
+﻿using UI.BottomPanel;
 using UI.GameplayPanel.MergePanel;
 using UI.GameplayPanel.ShopPanel;
 using UI.TopPanel;
@@ -13,7 +12,6 @@ namespace _Proxy
     {
         [SerializeField] private SetOfMiningDeviceDatas _miningDeviceDatas;
         [SerializeField] private SetOfMiningDeviceBoxes _miningDeviceBoxes;
-        [SerializeField] private MinerShopConfig _minerShopConfig;
         
         [SerializeField] private TopPanelSetup _topPanelSetup;
         [SerializeField] private MergePanelSetup _mergePanelSetup;
@@ -26,7 +24,6 @@ namespace _Proxy
         {
             Container.BindInstance(_miningDeviceDatas);
             Container.BindInstance(_miningDeviceBoxes);
-            Container.BindInstance(_minerShopConfig);
             Container.BindInterfacesTo<ResourceHelper>().AsSingle();
             
             Container.BindInstance(_topPanelSetup);

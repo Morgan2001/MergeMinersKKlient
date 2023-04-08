@@ -38,17 +38,16 @@ namespace UI.GameplayPanel.ShopPanel
         {
             var icon = _minerResourceHelper.GetNormalIconByName(data.Name);
             var viewModel = new MinerShopViewModel(data.Id, data.Level, icon);
-            viewModel.SetPrice(data.Price);
             _shopPanelViewModel.AddMiner(viewModel);
             _minerShopItems.Add(data.Id, viewModel);
             
-            viewModel.ClickEvent.Subscribe(() => _minerShopConnector.BuyMiner(viewModel.Id)).AddTo(viewModel);
+            viewModel.ClickEvent.Subscribe(() => _minerShopConnector.BuyMiner(viewModel.Id, viewModel.Currency.Value)).AddTo(viewModel);
         }
         
         private void UpdateMinerShop(UpdateMinerShopData data)
         {
             var viewModel = _minerShopItems[data.Id];
-            viewModel.SetPrice(data.Price);
+            viewModel.SetPrice(data.Currency, data.Price);
         }
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Pentulum x4
   Type: 8
   Level: 8
-  CoinsPerSecond: 1709
+  CoinsPerSecond: 1710
   BuyPrice: 4220000
   Sprite: {fileID: 21300000, guid: 978daab6110c48e4185c543bd0c6ab71, type: 3}
   SpriteWithOutline: {fileID: 21300000, guid: 9374338fadc632a44b3941ef68fdbbf3, type: 3}

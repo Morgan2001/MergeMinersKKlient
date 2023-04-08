@@ -19,7 +19,7 @@ MonoBehaviour:
   MaxLevelOfMiningDevice: 35
   LevelOfMiningDeviceFromBox: 7
   MinMiningDeviceLevelToRelocate: 30
-  RelocateCost: 155000000
+  RelocateCost: 15500000000
   NumOfColumns: 5
   NumOfRows: 5
   NumOfMiningCells: 10

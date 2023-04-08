@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Intinie 250
   Type: 22
   Level: 22
-  CoinsPerSecond: 498789
+  CoinsPerSecond: 499000
   BuyPrice: 6.74e+13
   Sprite: {fileID: 21300000, guid: ca7e421aca900f942863b3fb8beb2251, type: 3}
   SpriteWithOutline: {fileID: 21300000, guid: bbc85294d3f1d9d4b8184af78fa6fb53, type: 3}

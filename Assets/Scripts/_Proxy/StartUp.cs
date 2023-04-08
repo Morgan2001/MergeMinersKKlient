@@ -102,18 +102,16 @@ namespace _Proxy
         
         private MinerShopConfig GetMinerShopConfig()
         {
-            var miners = _gameRules.MiningDevices.MiningDeviceDatas;
-            var items = _gameRules.MinerShop.ForMoney
-                .Select(x =>
-                {
-                    var miner = miners.First(m => m.Level == x.MiningDeviceLevel);
-                    return new KeyValuePair<int, MinerShopConfigItem>(x.Id,
-                        new MinerShopConfigItem(
-                            miner.Name,
-                            miner.Name,
-                            x.MaxAchivedMinerLevelRequired)
-                    );
-                });
+            var items = _gameRules.MiningDevices.MiningDeviceDatas
+                .Where(x => x.BuyPrice > 0)
+                .Select(x => new KeyValuePair<int, MinerShopConfigItem>(x.id,
+                    new MinerShopConfigItem(
+                        x.Name,
+                        x.Name,
+                        x.Level + 5,
+                        x.Level + 4,
+                        x.Level + 3)
+                ));
             var config = new MinerShopConfig();
             foreach (var item in items)
             {

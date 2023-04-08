@@ -18,7 +18,7 @@ MonoBehaviour:
   Sprite: {fileID: 21300000, guid: 9f5338f31614e2f4d82b2f77cf57cf04, type: 3}
   MaxLevelOfMiningDevice: 12
   LevelOfMiningDeviceFromBox: 3
-  MinMiningDeviceLevelToRelocate: 8
+  MinMiningDeviceLevelToRelocate: 7
   RelocateCost: 825000
   NumOfColumns: 3
   NumOfRows: 4

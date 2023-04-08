@@ -16,7 +16,7 @@ MonoBehaviour:
   Name: Pentulum x86
   Type: 15
   Level: 15
-  CoinsPerSecond: 29193
+  CoinsPerSecond: 29200
   BuyPrice: 1.69e+10
   Sprite: {fileID: 21300000, guid: ec816d465d3b0e441bf474cde8b8b913, type: 3}
   SpriteWithOutline: {fileID: 21300000, guid: 7cd63ffb2c9097a4c83cd8bee4ec6729, type: 3}
