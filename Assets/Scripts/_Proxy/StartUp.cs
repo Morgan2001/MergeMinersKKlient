@@ -3,7 +3,6 @@ using System.Linq;
 using _Proxy.Connectors;
 using _Proxy.Services;
 using Common.DI;
-using MergeMiner.Core.Launcher;
 using MergeMiner.Core.State.Config;
 using UnityEngine;
 using Zenject;
@@ -32,6 +31,7 @@ namespace _Proxy
             Bind<MinerFieldConnector>();
             Bind<RelocateConnector>();
             Bind<FreeGemConnector>();
+            Bind<MinerShopConnector>();
         }
         
         private void Bind<T>()
@@ -48,7 +48,7 @@ namespace _Proxy
                 new GameConfig(),
                 GetLocationConfig(),
                 GetMinerConfig(),
-                Mock.GetMinerShopConfig());
+                GetMinerShopConfig());
 
             _serviceProvider = launcher.ServiceProvider;
             _gameLoop = launcher.GameLoop;
@@ -93,6 +93,28 @@ namespace _Proxy
                     )
                 );
             var config = new MinerConfig(new Dictionary<int, string>(items.Select(x => new KeyValuePair<int, string>(x.Key, x.Value.Id))), 10);
+            foreach (var item in items)
+            {
+                config.Add(item.Value);
+            }
+            return config;
+        }
+        
+        private MinerShopConfig GetMinerShopConfig()
+        {
+            var miners = _gameRules.MiningDevices.MiningDeviceDatas;
+            var items = _gameRules.MinerShop.ForMoney
+                .Select(x =>
+                {
+                    var miner = miners.First(m => m.Level == x.MiningDeviceLevel);
+                    return new KeyValuePair<int, MinerShopConfigItem>(x.Id,
+                        new MinerShopConfigItem(
+                            miner.Name,
+                            miner.Name,
+                            x.MaxAchivedMinerLevelRequired)
+                    );
+                });
+            var config = new MinerShopConfig();
             foreach (var item in items)
             {
                 config.Add(item.Value);

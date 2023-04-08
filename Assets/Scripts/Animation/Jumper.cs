@@ -1,7 +1,6 @@
 ﻿using DG.Tweening;
 using System;
 using UnityEngine;
-using Zenject;
 
 public class Jumper : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class Jumper : MonoBehaviour
     
     private RelativePositionsCalculator _relativePositionsCalculator;
 
-    [Inject]
     public void Construct(RelativePositionsCalculator relativePositionsCalculator)
     {
         _relativePositionsCalculator = relativePositionsCalculator;

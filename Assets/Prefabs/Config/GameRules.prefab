@@ -49,3 +49,4 @@ MonoBehaviour:
   MergeRules: {fileID: 11400000, guid: 42d5ae95f1d200044b9bcd2033e93e62, type: 2}
   SetOfFlyingBonuses: {fileID: 11400000, guid: 02e5f9af044fd114c993bb9995fc832a, type: 2}
   WalletRewards: {fileID: 11400000, guid: 88669281d21523e4594f10b234f65dd9, type: 2}
+  MinerShop: {fileID: 11400000, guid: 78195e8c01793b94aa700728080366f2, type: 2}

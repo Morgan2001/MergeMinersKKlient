@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using _Proxy.Connectors;
 using Cysharp.Threading.Tasks;
 using MergeMiner.Core.Events.Events;
 using MergeMiner.Core.State.Enums;
+using UI.GameplayPanel.ShopPanel;
 using UI.Utils;
 using UnityEngine;
 using Utils;
@@ -23,6 +23,7 @@ namespace UI.GameplayPanel.MergePanel
         private DragHelper _dragHelper;
         
         private MergePanelViewModel _mergePanelViewModel;
+        private ShopPanelViewModel _shopPanelViewModel;
 
         private List<CellViewModel> _cells = new();
         private List<MinerViewModel> _miners = new();
@@ -40,18 +41,18 @@ namespace UI.GameplayPanel.MergePanel
             DragHelper dragHelper)
         {
             _minerFieldConnector = minerFieldConnector;
+            _minerResourceHelper = minerResourceHelper;
+            _dragHelper = dragHelper;
+
+            _mergePanelViewModel = new MergePanelViewModel();
+            _mergePanelView.Bind(_mergePanelViewModel);
+            
             _minerFieldConnector.ResizeEvent.Subscribe(OnResize).AddTo(_mergePanelView);
             _minerFieldConnector.AddMinerEvent.Subscribe(OnAddMiner).AddTo(_mergePanelView);
             _minerFieldConnector.MergeMinersEvent.Subscribe(OnMergeMiners).AddTo(_mergePanelView);
             _minerFieldConnector.SwapMinersEvent.Subscribe(OnSwapMiners).AddTo(_mergePanelView);
             _minerFieldConnector.RemoveMinerEvent.Subscribe(OnRemoveMiner).AddTo(_mergePanelView);
 
-            _minerResourceHelper = minerResourceHelper;
-            
-            _mergePanelViewModel = new MergePanelViewModel();
-            _mergePanelView.Bind(_mergePanelViewModel);
-
-            _dragHelper = dragHelper;
             _dragHelper.StartDragEvent.Subscribe(OnStartDrag);
             _dragHelper.EndDragEvent.Subscribe(OnEndDrag);
 

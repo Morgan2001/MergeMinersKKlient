@@ -33,6 +33,7 @@ namespace _Proxy
             _container.RegisterSingleton<MinerFieldConnector>();
             _container.RegisterSingleton<RelocateConnector>();
             _container.RegisterSingleton<FreeGemConnector>();
+            _container.RegisterSingleton<MinerShopConnector>();
         }
     }
 }

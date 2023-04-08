@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using _Proxy.Config;
 using UnityEngine;
 
 public class GameRules : MonoBehaviour
@@ -9,4 +8,5 @@ public class GameRules : MonoBehaviour
     public SetOfMergeRules MergeRules;
     public SetOfFlyingBonuses SetOfFlyingBonuses;
     public WalletRewards WalletRewards;
+    public MinerShopConfig MinerShop;
 }

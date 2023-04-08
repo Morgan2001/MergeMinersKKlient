@@ -6,7 +6,6 @@ using MergeMiner.Core.PlayerActions.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Enums;
 using MergeMiner.Core.State.Repository;
-using UnityEngine;
 using Utils;
 
 namespace _Proxy.Connectors

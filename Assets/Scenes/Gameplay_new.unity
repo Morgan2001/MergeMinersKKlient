@@ -228,12 +228,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _miningDeviceDatas: {fileID: 11400000, guid: 63f106f47538c3b4b849fd0df7d2d303, type: 2}
   _miningDeviceBoxes: {fileID: 11400000, guid: 3cf5ab4699a72234197c2dd9ae2264a2, type: 2}
+  _minerShopConfig: {fileID: 11400000, guid: 78195e8c01793b94aa700728080366f2, type: 2}
   _topPanelSetup: {fileID: 376112269}
   _mergePanelSetup: {fileID: 917033730623269870}
+  _shopPanelSetup: {fileID: 917033730623269872}
   _bottomPanelSetup: {fileID: 1118973758}
   _dragHelper: {fileID: 917033730623269871}
-  _jumper: {fileID: 917033730623269873}
-  _relativePositionsCalculator: {fileID: 917033730623269872}
 --- !u!114 &1417329889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,25 +731,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &917033730623269872 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 705895066354079285, guid: f924afd2ca9b2dd45bb166693e0762c4,
+  m_CorrespondingSourceObject: {fileID: 7316638196698815141, guid: f924afd2ca9b2dd45bb166693e0762c4,
     type: 3}
   m_PrefabInstance: {fileID: 917033730623269869}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b43501a84da9cf449c61eb57cb4ac14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &917033730623269873 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7140013599925841954, guid: f924afd2ca9b2dd45bb166693e0762c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 917033730623269869}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3302865949aaed41825dc07c06254ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e245702d1c748f68bef16fec3907f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
