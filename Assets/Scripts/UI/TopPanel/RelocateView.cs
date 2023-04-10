@@ -27,10 +27,10 @@ namespace UI.TopPanel
 
     public class RelocateViewModel : ViewModel
     {
-        private ReactiveProperty<float> _progress = new();
+        private readonly ReactiveProperty<float> _progress = new();
         public IReactiveProperty<float> Progress => _progress;
 
-        private ReactiveEvent _buttonClickEvent = new();
+        private readonly ReactiveEvent _buttonClickEvent = new();
         public IReactiveSubscription ButtonClickEvent => _buttonClickEvent;
 
         public void ButtonClick()

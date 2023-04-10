@@ -46,13 +46,13 @@ namespace UI.GameplayPanel.MergePanel
     {
         public int Id { get; }
         
-        private ReactiveProperty<bool> _filled = new();
+        private readonly ReactiveProperty<bool> _filled = new();
         public IReactiveProperty<bool> Filled => _filled;
         
-        private ReactiveProperty<bool> _powered = new();
+        private readonly ReactiveProperty<bool> _powered = new();
         public IReactiveProperty<bool> Powered => _powered;
         
-        private ReactiveProperty<bool> _highlight = new();
+        private readonly ReactiveProperty<bool> _highlight = new();
         public IReactiveProperty<bool> Highlight => _highlight;
 
         public CellViewModel(int id)

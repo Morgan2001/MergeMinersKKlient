@@ -91,13 +91,13 @@ namespace UI.GameplayPanel.ShopPanel
         public int Level { get; }
         public Sprite Icon { get; }
         
-        private ReactiveProperty<double> _price = new();
+        private readonly ReactiveProperty<double> _price = new();
         public IReactiveProperty<double> Price => _price;
         
-        private ReactiveProperty<CurrencyType> _currency = new();
+        private readonly ReactiveProperty<CurrencyType> _currency = new();
         public IReactiveProperty<CurrencyType> Currency => _currency;
 
-        private ReactiveEvent _clickEvent = new();
+        private readonly ReactiveEvent _clickEvent = new();
         public IReactiveSubscription ClickEvent => _clickEvent;
 
         public MinerShopViewModel(string id, int level, Sprite icon)

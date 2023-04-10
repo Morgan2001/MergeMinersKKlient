@@ -18,7 +18,7 @@ namespace UI.BottomPanel
 
     public class SocialViewModel : ViewModel
     {
-        private ReactiveProperty<bool> _isShown = new();
+        private readonly ReactiveProperty<bool> _isShown = new();
         public IReactiveProperty<bool> IsShown => _isShown;
 
         public void SetShown(bool value)

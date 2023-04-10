@@ -17,7 +17,8 @@ namespace Utils
 
         public void Set(T value)
         {
-            if (_value.Equals(value)) return;
+            if (_value != null && _value.Equals(value)) return;
+            if (_value == null && value == null) return;
             _value = value;
             _onChange?.Invoke(_value);
         }

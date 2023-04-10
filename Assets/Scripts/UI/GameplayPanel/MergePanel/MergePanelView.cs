@@ -109,26 +109,26 @@ namespace UI.GameplayPanel.MergePanel
 
     public class MergePanelViewModel : ViewModel
     {
-        private ReactiveProperty<FieldSize> _size = new();
+        private readonly ReactiveProperty<FieldSize> _size = new();
         public IReactiveProperty<FieldSize> Size => _size;
 
-        private ReactiveList<CellViewModel> _cells = new();
+        private readonly ReactiveList<CellViewModel> _cells = new();
         public IReadOnlyList<CellViewModel> Cells => _cells;
         public IReactiveProperty<int> CellsCount => _cells;
         
-        private List<MinerViewModel> _miners = new();
+        private readonly List<MinerViewModel> _miners = new();
         public IReadOnlyList<MinerViewModel> Miners => _miners;
 
-        private ReactiveEvent<MinerViewModel, int> _minerAddedEvent = new();
+        private readonly ReactiveEvent<MinerViewModel, int> _minerAddedEvent = new();
         public IReactiveSubscription<MinerViewModel, int> MinerAddedEvent => _minerAddedEvent;
         
-        private ReactiveEvent<MinerViewModel, int> _minerMovedEvent = new();
+        private readonly ReactiveEvent<MinerViewModel, int> _minerMovedEvent = new();
         public IReactiveSubscription<MinerViewModel, int> MinerMovedEvent => _minerMovedEvent;
         
-        private ReactiveEvent<MinerViewModel, int> _minerResetEvent = new();
+        private readonly ReactiveEvent<MinerViewModel, int> _minerResetEvent = new();
         public IReactiveSubscription<MinerViewModel, int> MinerResetEvent => _minerResetEvent;
         
-        private ReactiveEvent<MinerViewModel> _minerRemovedEvent = new();
+        private readonly ReactiveEvent<MinerViewModel> _minerRemovedEvent = new();
         public IReactiveSubscription<MinerViewModel> MinerRemovedEvent => _minerRemovedEvent;
 
         public ReactiveEvent ClearEvent { get; } = new();

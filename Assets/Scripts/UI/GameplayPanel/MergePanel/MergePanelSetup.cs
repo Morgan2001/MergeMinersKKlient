@@ -26,6 +26,7 @@ namespace UI.GameplayPanel.MergePanel
         [SerializeField] private UIParticle _dustParticlesPrefab;
 
         private MinerFieldConnector _minerFieldConnector;
+        private PopupsConnector _popupsConnector;
         private IMinerResourceHelper _minerResourceHelper;
         private GameplayViewStorage _gameplayViewStorage;
         private DragHelper _dragHelper;
@@ -47,11 +48,13 @@ namespace UI.GameplayPanel.MergePanel
         [Inject]
         private void Setup(
             MinerFieldConnector minerFieldConnector, 
+            PopupsConnector popupsConnector,
             IMinerResourceHelper minerResourceHelper,
             GameplayViewStorage gameplayViewStorage,
             DragHelper dragHelper)
         {
             _minerFieldConnector = minerFieldConnector;
+            _popupsConnector = popupsConnector;
             _minerResourceHelper = minerResourceHelper;
             _gameplayViewStorage = gameplayViewStorage;
             _dragHelper = dragHelper;
@@ -276,6 +279,10 @@ namespace UI.GameplayPanel.MergePanel
             {
                 miner.ClickEvent.Subscribe(() =>
                 {
+                    if (source == MinerSource.Random)
+                    {
+                        _popupsConnector.RollRandom(name);
+                    }
                     miner.Unlock();
                 }).AddTo(miner);
 

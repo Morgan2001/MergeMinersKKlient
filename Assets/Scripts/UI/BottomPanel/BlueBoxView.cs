@@ -25,10 +25,10 @@ namespace UI.BottomPanel
 
     public class BlueBoxViewModel : ViewModel
     {
-        private ReactiveProperty<float> _progress = new();
+        private readonly ReactiveProperty<float> _progress = new();
         public IReactiveProperty<float> Progress => _progress;
 
-        private ReactiveEvent _clickEvent = new();
+        private readonly ReactiveEvent _clickEvent = new();
         public IReactiveSubscription ClickEvent => _clickEvent;
 
         public void ButtonClick()

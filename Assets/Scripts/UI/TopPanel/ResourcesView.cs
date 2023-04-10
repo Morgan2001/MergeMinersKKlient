@@ -29,10 +29,10 @@ namespace UI.TopPanel
 
     public class ResourcesViewModel : ViewModel
     {
-        private ReactiveProperty<double> _money = new();
+        private readonly ReactiveProperty<double> _money = new();
         public IReactiveProperty<double> Money => _money;
         
-        private ReactiveProperty<int> _gems = new();
+        private readonly ReactiveProperty<int> _gems = new();
         public IReactiveProperty<int> Gems => _gems;
 
         public void SetMoney(double value)

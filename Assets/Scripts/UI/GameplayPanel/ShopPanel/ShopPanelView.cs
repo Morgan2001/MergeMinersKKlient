@@ -44,10 +44,10 @@ namespace UI.GameplayPanel.ShopPanel
 
     public class ShopPanelViewModel : ViewModel
     {
-        private List<MinerShopViewModel> _miners = new();
+        private readonly List<MinerShopViewModel> _miners = new();
         public IReadOnlyList<MinerShopViewModel> Miners => _miners;
 
-        private ReactiveEvent<MinerShopViewModel> _minerAddedEvent = new();
+        private readonly ReactiveEvent<MinerShopViewModel> _minerAddedEvent = new();
         public IReactiveSubscription<MinerShopViewModel> MinerAddedEvent => _minerAddedEvent;
         
         public ReactiveEvent ClearEvent { get; } = new();
