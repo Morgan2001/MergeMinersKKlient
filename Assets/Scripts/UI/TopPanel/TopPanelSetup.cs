@@ -14,21 +14,26 @@ namespace UI.TopPanel
         private PlayerConnector _playerConnector;
         private FreeGemConnector _freeGemConnector;
         private RelocateConnector _relocateConnector;
+        private PopupsConnector _popupsConnector;
 
         private ResourcesViewModel _resourcesViewModel;
         private FreeGemViewModel _freeGemViewModel;
         private RelocateViewModel _relocateViewModel;
 
         [Inject]
-        private void Setup(PlayerConnector playerConnector, FreeGemConnector freeGemConnector, RelocateConnector relocateConnector)
+        private void Setup(
+            PlayerConnector playerConnector, 
+            FreeGemConnector freeGemConnector, 
+            RelocateConnector relocateConnector,
+            PopupsConnector popupsConnector)
         {
             _playerConnector = playerConnector;
-            SetupResources();
-
             _freeGemConnector = freeGemConnector;
-            SetupFreeGems();
-
             _relocateConnector = relocateConnector;
+            _popupsConnector = popupsConnector;
+
+            SetupResources();
+            SetupFreeGems();
             SetupRelocator();
         }
 
@@ -47,7 +52,7 @@ namespace UI.TopPanel
             _freeGemView.Bind(_freeGemViewModel);
             
             _freeGemConnector.Progress.Subscribe(_freeGemViewModel.SetProgress).AddTo(_freeGemView);
-            _freeGemViewModel.ButtonClickEvent.Subscribe(_freeGemConnector.GetFreeGem).AddTo(_freeGemView);
+            _freeGemViewModel.ButtonClickEvent.Subscribe(_popupsConnector.ShowGift).AddTo(_freeGemView);
         }
 
         private void SetupRelocator()
@@ -56,7 +61,7 @@ namespace UI.TopPanel
             _relocateView.Bind(_relocateViewModel);
             
             _relocateConnector.Progress.Bind(_relocateViewModel.SetProgress).AddTo(_relocateViewModel);
-            _relocateViewModel.ButtonClickEvent.Subscribe(_relocateConnector.Relocate).AddTo(_relocateViewModel);
+            _relocateViewModel.ButtonClickEvent.Subscribe(_popupsConnector.ShowRelocation).AddTo(_relocateViewModel);
         }
     }
 }

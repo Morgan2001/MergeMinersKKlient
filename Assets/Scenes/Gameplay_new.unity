@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _miningDeviceDatas: {fileID: 11400000, guid: 63f106f47538c3b4b849fd0df7d2d303, type: 2}
   _miningDeviceBoxes: {fileID: 11400000, guid: 3cf5ab4699a72234197c2dd9ae2264a2, type: 2}
+  _locations: {fileID: 11400000, guid: ba59fb0e903fd7548812351108a5f242, type: 2}
   _topPanelSetup: {fileID: 376112269}
   _mergePanelSetup: {fileID: 917033730623269870}
   _shopPanelSetup: {fileID: 917033730623269872}

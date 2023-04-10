@@ -13,6 +13,7 @@ namespace _Proxy
     {
         [SerializeField] private SetOfMiningDeviceDatas _miningDeviceDatas;
         [SerializeField] private SetOfMiningDeviceBoxes _miningDeviceBoxes;
+        [SerializeField] private SetOfLocations _locations;
         
         [SerializeField] private TopPanelSetup _topPanelSetup;
         [SerializeField] private MergePanelSetup _mergePanelSetup;
@@ -25,6 +26,7 @@ namespace _Proxy
         {
             Container.BindInstance(_miningDeviceDatas);
             Container.BindInstance(_miningDeviceBoxes);
+            Container.BindInstance(_locations);
             Container.BindInterfacesTo<ResourceHelper>().AsSingle();
             
             Container.BindInstance(_topPanelSetup);
