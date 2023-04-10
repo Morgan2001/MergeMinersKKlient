@@ -202,12 +202,31 @@ namespace UI.GameplayPanel.MergePanel
         
         private void OnMergeMiners(MergeMinersData data)
         {
-            foreach (var id in data.Merged)
+            RemoveMiner(data.Merged[0]);
+
+            var id = data.Merged[1];
+
+            var miner = _miners.First(x => x.Id == id);
+            miner.Unlock();
+            
+            Transform GetTarget()
+            {
+                var view = _gameplayViewStorage.GetMinerView(id);
+                return view.Icon.transform;
+            }
+
+            var cell = _cells[data.Slot];
+            _animatingCells.Add(cell);
+
+            AnimationHelper.AnimateMerge(GetTarget, () =>
             {
                 RemoveMiner(id);
-            }
+                id = data.Id;
+                AddMiner(data.Id, data.Name, data.Level, data.Slot);
+                _animatingCells.Remove(cell);
+            });
             
-            AddMiner(data.Id, data.Name, data.Level, data.Slot);
+            HapticsHelper.MergeHaptics(data.MaxLevelIncreased);
         }
         
         private void OnSwapMiners(SwapMinersData data)

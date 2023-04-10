@@ -39,7 +39,7 @@ namespace _Proxy.Connectors
             _playerActionService = playerActionService;
 
             _eventSubscriptionService = eventSubscriptionService;
-            _eventSubscriptionService.Subscribe<MaxLevelAchievedEvent>(OnMaxLevelAchieved);
+            _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
             _eventSubscriptionService.Subscribe<UpdateShopEvent>(OnUpdateShop);
         }
 
@@ -48,7 +48,7 @@ namespace _Proxy.Connectors
             _playerActionService.Process(new BuyMinerPlayerAction(_localPlayer.Id, minerId, currency == CurrencyType.Ads, currency == CurrencyType.Gems));
         }
 
-        private void OnMaxLevelAchieved(MaxLevelAchievedEvent gameEvent)
+        private void OnMaxLevelIncreased(MaxLevelIncreasedEvent gameEvent)
         {
             var level = gameEvent.Level;
             var filtered = _minerShopConfig.GetAll().Where(x => x.UnlockLevelGems <= level);

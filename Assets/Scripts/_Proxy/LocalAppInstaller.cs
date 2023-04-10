@@ -11,10 +11,7 @@ namespace _Proxy
     {
         public LocalAppInstaller(
             IServiceFactory factory, 
-            GameConfig gameConfig,
-            LocationConfig locationConfig, 
-            MinerConfig minerConfig, 
-            MinerShopConfig minerShopConfig) : base(factory, gameConfig, locationConfig, minerConfig, minerShopConfig)
+            GameConfig gameConfig) : base(factory, gameConfig)
         {
         }
         
@@ -34,6 +31,7 @@ namespace _Proxy
             _container.RegisterSingleton<RelocateConnector>();
             _container.RegisterSingleton<FreeGemConnector>();
             _container.RegisterSingleton<MinerShopConnector>();
+            _container.RegisterSingleton<PopupsConnector>();
         }
     }
 }

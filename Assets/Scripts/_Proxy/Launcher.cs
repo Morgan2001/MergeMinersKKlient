@@ -14,12 +14,9 @@ namespace _Proxy
         
         public Launcher(
             IServiceFactory serviceFactory, 
-            GameConfig gameConfig,
-            LocationConfig locationConfig, 
-            MinerConfig minerConfig, 
-            MinerShopConfig minerShopConfig)
+            GameConfig gameConfig)
         {
-            var installer = new LocalAppInstaller(serviceFactory, gameConfig, locationConfig, minerConfig, minerShopConfig);
+            var installer = new LocalAppInstaller(serviceFactory, gameConfig);
             _serviceProvider = installer.Install();
             _gameLoop = _serviceProvider.Resolve<GameLoop>();
         }

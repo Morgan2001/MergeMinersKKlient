@@ -16,6 +16,8 @@ namespace UI.GameplayPanel.MergePanel
         [SerializeField] private ShakeAnimation _shakeAnimation;
         
         [SerializeField] private Image _icon;
+        public Image Icon => _icon;
+        
         [SerializeField] private Text _level;
         [SerializeField] private Image _box;
         

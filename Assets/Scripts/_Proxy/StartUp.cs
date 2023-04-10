@@ -32,6 +32,7 @@ namespace _Proxy
             Bind<RelocateConnector>();
             Bind<FreeGemConnector>();
             Bind<MinerShopConnector>();
+            Bind<PopupsConnector>();
         }
         
         private void Bind<T>()
@@ -45,10 +46,11 @@ namespace _Proxy
         {
             var container = new ZenjectContainer();
             var launcher = new Launcher(container,
-                new GameConfig(),
-                GetLocationConfig(),
-                GetMinerConfig(),
-                GetMinerShopConfig());
+                new GameConfig(600, 1,
+                    GetLocationConfig(),
+                    GetMinerConfig(),
+                    GetMinerShopConfig(),
+                    GetBonusConfig()));
 
             _serviceProvider = launcher.ServiceProvider;
             _gameLoop = launcher.GameLoop;
@@ -117,6 +119,17 @@ namespace _Proxy
             {
                 config.Add(item.Value);
             }
+            return config;
+        }
+        
+        private BonusConfig GetBonusConfig()
+        {
+            var config = new BonusConfig();
+            config.Add(new BonusConfigItem(BonusType.Flash, 20, 9));
+            config.Add(new BonusConfigItem(BonusType.Power, 60, 0));
+            config.Add(new BonusConfigItem(BonusType.Money, 0, 0));
+            config.Add(new BonusConfigItem(BonusType.Miners, 0, 4));
+            config.Add(new BonusConfigItem(BonusType.Chip, 60, 2));
             return config;
         }
 
