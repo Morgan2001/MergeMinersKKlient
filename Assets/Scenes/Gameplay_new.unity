@@ -228,7 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _miningDeviceDatas: {fileID: 11400000, guid: 63f106f47538c3b4b849fd0df7d2d303, type: 2}
   _miningDeviceBoxes: {fileID: 11400000, guid: 3cf5ab4699a72234197c2dd9ae2264a2, type: 2}
-  _minerShopConfig: {fileID: 11400000, guid: 78195e8c01793b94aa700728080366f2, type: 2}
   _topPanelSetup: {fileID: 376112269}
   _mergePanelSetup: {fileID: 917033730623269870}
   _shopPanelSetup: {fileID: 917033730623269872}
@@ -445,6 +444,11 @@ PrefabInstance:
     - target: {fileID: 917033729731703065, guid: f924afd2ca9b2dd45bb166693e0762c4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 917033730661451359, guid: f924afd2ca9b2dd45bb166693e0762c4,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 917033730978196496, guid: f924afd2ca9b2dd45bb166693e0762c4,

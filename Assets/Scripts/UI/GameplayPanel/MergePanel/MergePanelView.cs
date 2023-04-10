@@ -138,9 +138,9 @@ namespace UI.GameplayPanel.MergePanel
             _size.Set(new FieldSize(width, height));
         }
 
-        public void AddSlot(CellViewModel slot)
+        public void AddCell(CellViewModel cell)
         {
-            _cells.Add(slot);
+            _cells.Add(cell);
             _miners.Add(null);
         }
         

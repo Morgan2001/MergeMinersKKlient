@@ -1,4 +1,5 @@
 ﻿using UI.BottomPanel;
+using UI.GameplayPanel;
 using UI.GameplayPanel.MergePanel;
 using UI.GameplayPanel.ShopPanel;
 using UI.TopPanel;
@@ -30,6 +31,7 @@ namespace _Proxy
             Container.BindInstance(_mergePanelSetup);
             Container.BindInstance(_shopPanelSetup);
             Container.BindInstance(_bottomPanelSetup);
+            Container.Bind<GameplayViewStorage>().AsSingle();
             
             Container.BindInstance(_dragHelper);
         }

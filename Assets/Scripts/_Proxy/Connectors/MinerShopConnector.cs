@@ -62,7 +62,7 @@ namespace _Proxy.Connectors
                     minerShop.UnlockLevelGems <= level ? CurrencyType.Gems :
                     CurrencyType.None;
                 
-                var price =
+                var price = 
                     currency == CurrencyType.Money ? minerConfig.Price :
                     currency == CurrencyType.Ads ? 0 :
                     currency == CurrencyType.Gems ? minerConfig.PriceInGems :

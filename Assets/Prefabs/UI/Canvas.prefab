@@ -533,6 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae65662d07a942289a70ebf3955324ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleFactor: 1.25
+  _lerpFactor: 10
 --- !u!225 &7244810929445243615
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -580,6 +582,7 @@ RectTransform:
   - {fileID: 917033730764896659}
   - {fileID: 917033729609529727}
   - {fileID: 917033730082892941}
+  - {fileID: 4495898584149509720}
   m_Father: {fileID: 917033730698455721}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -636,8 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 917033730082892941}
-  - component: {fileID: 7140013599925841954}
-  - component: {fileID: 705895066354079285}
+  - component: {fileID: 7111414987148044233}
   m_Layer: 5
   m_Name: Jumper
   m_TagString: Untagged
@@ -658,39 +660,25 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 917033730025358689}
-  m_RootOrder: 4
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7140013599925841954
-MonoBehaviour:
+--- !u!225 &7111414987148044233
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917033730082892978}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3302865949aaed41825dc07c06254ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rectTransform: {fileID: 917033730082892941}
---- !u!114 &705895066354079285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917033730082892978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b43501a84da9cf449c61eb57cb4ac14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _empty: {fileID: 917033730082892941}
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &917033730232209961
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +733,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mergePanelView: {fileID: 917033730232209957}
+  _animationContainer: {fileID: 917033730082892941}
+  _boxTransform: {fileID: 917033731148340038}
+  _effectsContainer: {fileID: 4495898584149509720}
+  _dustParticlesPrefab: {fileID: 2967904119244314468, guid: 18e0e030912f76941963b8a64c1890be,
+    type: 3}
 --- !u!114 &917033730232209957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2676,6 +2669,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &2057521272997443996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4495898584149509720}
+  - component: {fileID: 6076291028028805104}
+  m_Layer: 5
+  m_Name: Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4495898584149509720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057521272997443996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 917033730025358689}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &6076291028028805104
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057521272997443996}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &3034226799060295684
 GameObject:
   m_ObjectHideFlags: 0

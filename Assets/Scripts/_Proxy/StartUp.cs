@@ -85,8 +85,8 @@ namespace _Proxy
                         new MinerConfigItem(
                             x.Name,
                             x.Level,
-                            (long) x.CoinsPerSecond,
-                            (long) x.BuyPrice,
+                            x.CoinsPerSecond,
+                            x.BuyPrice,
                             1.0623f,
                             100,
                             0)

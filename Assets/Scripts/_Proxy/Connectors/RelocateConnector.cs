@@ -38,7 +38,7 @@ namespace _Proxy.Connectors
 
         private void UpdateProgress()
         {
-            var progress = _relocateHelper.GetRelocationProgress(_localPlayer.Id);
+            var progress = (float) _relocateHelper.GetRelocationProgress(_localPlayer.Id);
             _progress.Set(progress);
         }
     }

@@ -11,7 +11,7 @@ namespace UI.GameplayPanel.ShopPanel
         [SerializeField] private HorizontalLayoutGroup _layout;
         [SerializeField] private MinerShopView _minerShopPrefab;
 
-        private List<MinerShopView> _miners = new();
+        private Dictionary<string, MinerShopView> _miners = new();
 
         protected override void BindInner(ShopPanelViewModel vm)
         {
@@ -23,17 +23,22 @@ namespace UI.GameplayPanel.ShopPanel
         {
             var miner = Instantiate(_minerShopPrefab, _layout.transform);
             miner.Bind(minerShopViewModel);
-            _miners.Add(miner);
+            _miners.Add(minerShopViewModel.Id, miner);
         }
 
         private void Clear()
         {
-            foreach (var minerView in _miners)
+            foreach (var minerView in _miners.Values)
             {
                 minerView.Dispose();
                 Destroy(minerView.gameObject);
             }
             _miners.Clear();
+        }
+
+        public MinerShopView GetMinerShopView(MinerShopViewModel viewModel)
+        {
+            return _miners[viewModel.Id];
         }
     }
 

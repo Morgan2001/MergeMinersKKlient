@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _Proxy.Connectors;
+using Coffee.UIExtensions;
 using Cysharp.Threading.Tasks;
 using MergeMiner.Core.Events.Events;
 using MergeMiner.Core.State.Enums;
@@ -17,9 +18,16 @@ namespace UI.GameplayPanel.MergePanel
     public class MergePanelSetup : MonoBehaviour
     {
         [SerializeField] private MergePanelView _mergePanelView;
+        
+        [SerializeField] private Transform _animationContainer;
+        [SerializeField] private Transform _boxTransform;
+        
+        [SerializeField] private Transform _effectsContainer;
+        [SerializeField] private UIParticle _dustParticlesPrefab;
 
         private MinerFieldConnector _minerFieldConnector;
         private IMinerResourceHelper _minerResourceHelper;
+        private GameplayViewStorage _gameplayViewStorage;
         private DragHelper _dragHelper;
         
         private MergePanelViewModel _mergePanelViewModel;
@@ -34,14 +42,18 @@ namespace UI.GameplayPanel.MergePanel
 
         private List<CellViewModel> _highlightedCells = new();
 
+        private List<CellViewModel> _animatingCells = new();
+
         [Inject]
         private void Setup(
             MinerFieldConnector minerFieldConnector, 
             IMinerResourceHelper minerResourceHelper,
+            GameplayViewStorage gameplayViewStorage,
             DragHelper dragHelper)
         {
             _minerFieldConnector = minerFieldConnector;
             _minerResourceHelper = minerResourceHelper;
+            _gameplayViewStorage = gameplayViewStorage;
             _dragHelper = dragHelper;
 
             _mergePanelViewModel = new MergePanelViewModel();
@@ -77,7 +89,7 @@ namespace UI.GameplayPanel.MergePanel
                 var highlightedMiners = _slotsByMiners
                     .Where(x => x.Key.Level == minerView.ViewModel.Level && x.Key != minerView.ViewModel)
                     .Select(x => x.Value);
-                _highlightedCells.AddRange(highlightedMiners.Select(x => _cells[x]));
+                _highlightedCells.AddRange(highlightedMiners.Select(x => _cells[x]).Where(x => !_animatingCells.Contains(x)));
                 
                 foreach (var cell in _highlightedCells)
                 {
@@ -113,11 +125,11 @@ namespace UI.GameplayPanel.MergePanel
         {
             var cell = new CellViewModel(id);
             _cells.Add(cell);
-            _mergePanelViewModel.AddSlot(cell);
+            _mergePanelViewModel.AddCell(cell);
             
             var view = _mergePanelView.GetCell(cell);
             view.DropEvent.Subscribe(OnDrop).AddTo(view);
-            
+            _gameplayViewStorage.AddCellView(id, view);
         }
         
         private void OnDrag(MinerView minerView)
@@ -130,7 +142,7 @@ namespace UI.GameplayPanel.MergePanel
             _dragHelper.EndDrag();
             
             var minerView = _dragHelper.Current;
-            if (!_minerFieldConnector.Drop(minerView.ViewModel.Id, cellView.ViewModel.Id))
+            if (_animatingCells.Contains(cellView.ViewModel) || !_minerFieldConnector.Drop(minerView.ViewModel.Id, cellView.ViewModel.Id))
             {
                 var slot = _slotsByMiners[minerView.ViewModel];
                 _mergePanelViewModel.ResetMiner(minerView.ViewModel, slot);
@@ -155,6 +167,37 @@ namespace UI.GameplayPanel.MergePanel
         private void OnAddMiner(AddMinerData data)
         {
             AddMiner(data.Id, data.Name, data.Level, data.Slot, data.Source);
+            if (data.Source == MinerSource.Common || data.Source == MinerSource.Random)
+            {
+                AnimateNewBox(data, _boxTransform);
+            } else if (data.Source == MinerSource.Shop)
+            {
+                AnimateNewBox(data, _gameplayViewStorage.GetMinerShopView(data.Name).transform);
+            }
+        }
+
+        private void AnimateNewBox(AddMinerData data, Transform from)
+        {
+            var cellView = _gameplayViewStorage.GetCellView(data.Slot);
+            var minerView = _gameplayViewStorage.GetMinerView(data.Id);
+            _animatingCells.Add(cellView.ViewModel);
+            AnimationHelper.AnimateNewBox(minerView.RectTransform, from.position, cellView.transform.position, _animationContainer,
+            () =>
+            {
+                ShowDustParticles(minerView);
+            },
+            () =>
+            {
+                _animatingCells.Remove(cellView.ViewModel);
+            });
+        }
+
+        private void ShowDustParticles(MinerView minerView)
+        {
+            var dust = Instantiate(_dustParticlesPrefab, _effectsContainer);
+            dust.transform.position = minerView.transform.position;
+            dust.Play();
+            Destroy(dust.gameObject, 1f);
         }
         
         private void OnMergeMiners(MergeMinersData data)
@@ -200,6 +243,7 @@ namespace UI.GameplayPanel.MergePanel
             
             var view = _mergePanelView.GetMiner(miner);
             view.BeginDragEvent.Subscribe(OnDrag).AddTo(view);
+            _gameplayViewStorage.AddMinerView(id, view);
             
             miner.IsUnlocked.Bind(x =>
             {
@@ -240,6 +284,7 @@ namespace UI.GameplayPanel.MergePanel
             _miners.Remove(miner);
             _mergePanelViewModel.RemoveMiner(miner, slot);
             _slotsByMiners.Remove(miner);
+            _gameplayViewStorage.RemoveMinerView(id);
             miner.Dispose();
         }
     }

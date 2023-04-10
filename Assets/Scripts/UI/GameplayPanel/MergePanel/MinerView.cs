@@ -9,10 +9,10 @@ namespace UI.GameplayPanel.MergePanel
     public class MinerView : View<MinerViewModel>, IPointerDownHandler, IBeginDragHandler, IDragHandler
     {
         [SerializeField] private RectTransform _rectTransform;
+        public RectTransform RectTransform => _rectTransform;
         
         [SerializeField] private GameObject _commonState;
         [SerializeField] private GameObject _boxState;
-        [SerializeField] private ParticleSystem _particles;
         [SerializeField] private ShakeAnimation _shakeAnimation;
         
         [SerializeField] private Image _icon;
@@ -33,11 +33,6 @@ namespace UI.GameplayPanel.MergePanel
             _vm.IsUnlocked.Bind(UpdateUnlockedState).AddTo(this);
             _vm.IsPowered.Bind(UpdatePoweredState).AddTo(this);
             _vm.Size.Bind(UpdateSize).AddTo(this);
-
-            if (_vm.Placed)
-            {
-                _particles.Play();
-            }
         }
 
         private void UpdateSize(float value)
@@ -89,7 +84,6 @@ namespace UI.GameplayPanel.MergePanel
         public Sprite NormalIcon { get; }
         public Sprite PoweredIcon { get; }
         public Sprite BoxIcon { get; }
-        public bool Placed { get; }
         
         private ReactiveProperty<float> _size = new();
         public IReactiveProperty<float> Size => _size;
@@ -110,7 +104,6 @@ namespace UI.GameplayPanel.MergePanel
             NormalIcon = normalIcon;
             PoweredIcon = poweredIcon;
             BoxIcon = boxIcon;
-            Placed = boxIcon != null;
         }
 
         public void PointerDown()
