@@ -109,11 +109,11 @@ namespace UI.GameplayPanel.MergePanel
             }
         }
 
-        private void OnResize(RelocateEvent gameEvent)
+        private void OnResize(RelocateData data)
         {
-            _mergePanelViewModel.SetSize(gameEvent.Width, gameEvent.Height);
-            CreateCells(gameEvent.Total - _cells.Count);
-            UpdateCells(gameEvent.Powered);
+            _mergePanelViewModel.SetSize(data.Width, data.Height);
+            CreateCells(data.Total - _cells.Count);
+            UpdateCells(data.Powered);
         }
 
         private void CreateCells(int count)
@@ -158,6 +158,11 @@ namespace UI.GameplayPanel.MergePanel
             {
                 var cell = _cells[i];
                 cell.SetPowered(i < powered);
+            }
+
+            foreach (var entry in _slotsByMiners)
+            {
+                entry.Key.SetPowered(entry.Value < powered);
             }
         }
 

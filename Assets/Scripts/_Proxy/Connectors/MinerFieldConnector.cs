@@ -6,6 +6,7 @@ using MergeMiner.Core.PlayerActions.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Enums;
 using MergeMiner.Core.State.Repository;
+using MergeMiner.Core.State.Utils;
 using Utils;
 
 namespace _Proxy.Connectors
@@ -18,9 +19,11 @@ namespace _Proxy.Connectors
         private readonly PlayerActionService _playerActionService;
         private readonly MinerRepository _minerRepository;
         private readonly MinerConfig _minerConfig;
+        private readonly LocationHelper _locationHelper;
+        private readonly BonusHelper _bonusHelper;
 
-        private ReactiveEvent<RelocateEvent> _resizeEvent = new();
-        public IReactiveSubscription<RelocateEvent> ResizeEvent => _resizeEvent;
+        private ReactiveEvent<RelocateData> _resizeEvent = new();
+        public IReactiveSubscription<RelocateData> ResizeEvent => _resizeEvent;
         
         private ReactiveEvent<AddMinerData> _addMinerEvent = new();
         public ReactiveEvent<AddMinerData> AddMinerEvent => _addMinerEvent;
@@ -40,7 +43,9 @@ namespace _Proxy.Connectors
             PlayerMinersRepository playerMinersRepository,
             PlayerActionService playerActionService,
             MinerRepository minerRepository,
-            MinerConfig minerConfig)
+            MinerConfig minerConfig,
+            LocationHelper locationHelper,
+            BonusHelper bonusHelper)
         {
             _localPlayer = localPlayer;
             _eventSubscriptionService = eventSubscriptionService;
@@ -48,14 +53,32 @@ namespace _Proxy.Connectors
             _playerActionService = playerActionService;
             _minerRepository = minerRepository;
             _minerConfig = minerConfig;
+            _locationHelper = locationHelper;
+            _bonusHelper = bonusHelper;
 
-            _eventSubscriptionService.Subscribe<RelocateEvent>(_resizeEvent.Trigger);
+            _eventSubscriptionService.Subscribe<RelocateEvent>(OnRelocate);
             _eventSubscriptionService.Subscribe<AddMinerEvent>(OnAddMiner);
             _eventSubscriptionService.Subscribe<MergeMinersEvent>(OnMergeMiners);
             _eventSubscriptionService.Subscribe<SwapMinersEvent>(OnSwapMiners);
             _eventSubscriptionService.Subscribe<RemoveMinerEvent>(OnRemoveMiner);
+            _eventSubscriptionService.Subscribe<UseBonusEvent>(OnUseBonus);
+            _eventSubscriptionService.Subscribe<EndBonusEvent>(OnEndBonus);
         }
-        
+
+        private void Relocate(string playerId)
+        {
+            var location = _locationHelper.GetLocation(playerId);
+            var poweredSlots = _bonusHelper.IsBonusActive(playerId, BonusType.Power)
+                ? location.TotalSlots
+                : location.PoweredSlots;
+            _resizeEvent.Trigger(new RelocateData(location.Width, location.Height, poweredSlots));
+        }
+
+        private void OnRelocate(RelocateEvent gameEvent)
+        {
+            Relocate(gameEvent.Player);
+        }
+
         private void OnAddMiner(AddMinerEvent gameEvent)
         {
             var miner = _minerRepository.Get(gameEvent.Miner);
@@ -78,6 +101,20 @@ namespace _Proxy.Connectors
         private void OnRemoveMiner(RemoveMinerEvent gameEvent)
         {
             _removeMinerEvent.Trigger(new RemoveMinerData(gameEvent.Miner));
+        }
+        
+        private void OnUseBonus(UseBonusEvent gameEvent)
+        {
+            if (gameEvent.BonusType != BonusType.Power) return;
+            
+            Relocate(_localPlayer.Id);
+        }
+        
+        private void OnEndBonus(EndBonusEvent gameEvent)
+        {
+            if (gameEvent.BonusType != BonusType.Power) return;
+            
+            Relocate(_localPlayer.Id);
         }
 
         public bool Drop(string minerId, int slot)
@@ -104,6 +141,21 @@ namespace _Proxy.Connectors
         public void Remove(string minerId)
         {
             _playerActionService.Process(new RemoveMinerPlayerAction(_localPlayer.Id, minerId));
+        }
+    }
+    
+    public struct RelocateData
+    {
+        public int Width { get; }
+        public int Height { get; }
+        public int Total => Width * Height;
+        public int Powered { get; }
+        
+        public RelocateData(int width, int height, int powered)
+        {
+            Width = width;
+            Height = height;
+            Powered = powered;
         }
     }
 
