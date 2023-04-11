@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb46d19f23d47c54aa1ad1ad92f0ce58, type: 3}
   m_Name: FlashCard
   m_EditorClassIdentifier: 
-  Type: 1
+  Type: 0
   Sprite: {fileID: 21300000, guid: 17f9addb67ff97b4383c6d1986c31add, type: 3}
   NumOfBouncesToDestroy: 5
   TimeToFLyBetweenSides: 5

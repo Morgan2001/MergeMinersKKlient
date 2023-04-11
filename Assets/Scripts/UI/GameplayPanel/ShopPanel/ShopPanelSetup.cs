@@ -12,7 +12,7 @@ namespace UI.GameplayPanel.ShopPanel
         [SerializeField] private ShopPanelView _shopPanelView;
 
         private MinerShopConnector _minerShopConnector;
-        private IMinerResourceHelper _minerResourceHelper;
+        private IResourceHelper _resourceHelper;
         private GameplayViewStorage _gameplayViewStorage;
         
         private ShopPanelViewModel _shopPanelViewModel;
@@ -22,11 +22,11 @@ namespace UI.GameplayPanel.ShopPanel
         [Inject]
         private void Setup(
             MinerShopConnector minerShopConnector,
-            IMinerResourceHelper minerResourceHelper,
+            IResourceHelper resourceHelper,
             GameplayViewStorage gameplayViewStorage)
         {
             _minerShopConnector = minerShopConnector;
-            _minerResourceHelper = minerResourceHelper;
+            _resourceHelper = resourceHelper;
             _gameplayViewStorage = gameplayViewStorage;
             
             _shopPanelViewModel = new ShopPanelViewModel();
@@ -38,7 +38,7 @@ namespace UI.GameplayPanel.ShopPanel
 
         private void AddMinerShop(AddMinerShopData data)
         {
-            var icon = _minerResourceHelper.GetNormalIconByName(data.Name);
+            var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
             var viewModel = new MinerShopViewModel(data.Id, data.Level, icon);
             _shopPanelViewModel.AddMiner(viewModel);
             _minerShopItems.Add(data.Id, viewModel);

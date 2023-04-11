@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MergeMiner.Core.State.Config;
 
 public class FlyingBonusController : MonoBehaviour
 {
@@ -36,11 +36,11 @@ public class FlyingBonusController : MonoBehaviour
         flyingBonus.FlyOrDestroy();
     }
 
-    private FlyingBonuses ChooseBonusType()
+    private BonusType ChooseBonusType()
     {
-        var enumValues = Enum.GetValues(typeof(FlyingBonuses));
+        var enumValues = Enum.GetValues(typeof(BonusType));
 
-        return (FlyingBonuses)UnityEngine.Random.Range(0, enumValues.Length);
+        return (BonusType)UnityEngine.Random.Range(0, enumValues.Length);
     }
 
     private bool ChooseSide()
@@ -48,7 +48,7 @@ public class FlyingBonusController : MonoBehaviour
         return UnityEngine.Random.Range(0, 2) == 0;
     }
 
-    private FlyingBonus GenerateFlyingBonus(FlyingBonuses type, bool isOnLeftSide, FlyingBonusController flyingBonusController)
+    private FlyingBonus GenerateFlyingBonus(BonusType type, bool isOnLeftSide, FlyingBonusController flyingBonusController)
     {
         var startPos = GetNewPointToFly(isOnLeftSide);
         var flyingBonusGO = Instantiate(FlyingBonusPrefab);

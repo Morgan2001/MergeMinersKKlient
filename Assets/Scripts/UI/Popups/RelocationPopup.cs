@@ -42,12 +42,12 @@ namespace UI.Popups
             else if (_vm.CurrentMoney < _vm.RelocateCost)
             {
                 SetButtonActive(false);
-                _buttonText.text = "Relocate\n" + $"{_vm.RelocateCost} coins";
+                _buttonText.text = "Relocate\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
             }
             else
             {
                 SetButtonActive(true);
-                _buttonText.text = "Relocate\n" + $"{_vm.RelocateCost} coins";
+                _buttonText.text = "Relocate\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
             }
 
             _relocateButton.Subscribe(OnClick).AddTo(this);
@@ -63,7 +63,7 @@ namespace UI.Popups
 
         private void SetButtonActive(bool value)
         {
-            _relocateButton.interactable = true;
+            _relocateButton.interactable = value;
             _buttonText.color = value ? _activeTextColor : _inactiveTextColor;
         }
     }

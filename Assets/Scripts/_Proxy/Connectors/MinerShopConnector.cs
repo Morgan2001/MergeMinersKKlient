@@ -70,7 +70,7 @@ namespace _Proxy.Connectors
                 
                 if (!_shop.ContainsKey(minerShop))
                 {
-                    _addMinerShopEvent.Trigger(new AddMinerShopData(minerShop.Id, minerShop.MinerConfig, minerConfig.Level));
+                    _addMinerShopEvent.Trigger(new AddMinerShopData(minerShop.Id, minerConfig.Level));
                     _updateMinerShopEvent.Trigger(new UpdateMinerShopData(minerShop.MinerConfig, currency, price));
                     _shop.Add(minerShop, currency);
                 }
@@ -95,13 +95,11 @@ namespace _Proxy.Connectors
     public struct AddMinerShopData
     {
         public string Id { get; }
-        public string Name { get; }
         public int Level { get; }
 
-        public AddMinerShopData(string id, string name, int level)
+        public AddMinerShopData(string id, int level)
         {
             Id = id;
-            Name = name;
             Level = level;
         }
     }

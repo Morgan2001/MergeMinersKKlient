@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Proxy.Config;
 using _Proxy.Connectors;
 using _Proxy.Services;
 using Common.DI;
@@ -11,6 +12,7 @@ namespace _Proxy
 {
     public class StartUp : MonoInstaller
     {
+        [SerializeField] private MinersConfigLoader _minersConfigLoader;
         [SerializeField] private GameRules _gameRules;
 
         private IServiceProvider _serviceProvider;
@@ -32,6 +34,7 @@ namespace _Proxy
             Bind<RelocateConnector>();
             Bind<FreeGemConnector>();
             Bind<MinerShopConnector>();
+            Bind<BonusConnector>();
             Bind<PopupsConnector>();
         }
         
@@ -82,16 +85,17 @@ namespace _Proxy
         
         private MinerConfig GetMinerConfig()
         {
-            var items = _gameRules.MiningDevices.MiningDeviceDatas
+            var minersData = _minersConfigLoader.Process();
+            var items = minersData.Values
                 .Select(x => new KeyValuePair<int, MinerConfigItem>(x.Level,
                         new MinerConfigItem(
-                            x.Name,
+                            _gameRules.MiningDevices.MiningDeviceDatas.Find(y => y.Level == x.Level).Name,
                             x.Level,
-                            x.CoinsPerSecond,
-                            x.BuyPrice,
-                            1.0623f,
-                            100,
-                            0)
+                            x.Earning,
+                            x.Price,
+                            x.PriceMultiplier,
+                            x.PriceInGems,
+                            x.Bonus ?? 0)
                     )
                 );
             var config = new MinerConfig(new Dictionary<int, string>(items.Select(x => new KeyValuePair<int, string>(x.Key, x.Value.Id))), 10);

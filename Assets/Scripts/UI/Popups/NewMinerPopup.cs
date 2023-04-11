@@ -48,7 +48,7 @@ namespace UI.Popups
         {
             _level.text = _vm.Level.ToString();
             _name.text = _vm.Name;
-            _coinsPerSecond.text = _vm.Income + " per second";
+            _coinsPerSecond.text = LargeNumberFormatter.FormatNumber(_vm.Income) + " per second";
         }
     }
 

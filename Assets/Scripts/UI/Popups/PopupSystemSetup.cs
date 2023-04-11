@@ -1,5 +1,6 @@
 ﻿using _Proxy.Connectors;
 using Common.Utils.Extensions;
+using MergeMiner.Core.State.Config;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;
@@ -16,11 +17,16 @@ namespace UI.Popups
         [SerializeField] private RouletteWinPopup _rouletteWinPopup;
         [SerializeField] private RelocationPopup _relocationPopup;
         [SerializeField] private GiftPopup _giftPopup;
+        
+        [SerializeField] private BonusPopup _chipBonusPopup;
+        [SerializeField] private BonusPopup _flashBonusPopup;
+        [SerializeField] private BonusPopup _powerBonusPopup;
+        [SerializeField] private BonusPopup _minersBonusPopup;
 
         private PopupsConnector _popupsConnector;
         private RelocateConnector _relocateConnector;
         private FreeGemConnector _freeGemConnector;
-        private IMinerResourceHelper _resourceHelper;
+        private IResourceHelper _resourceHelper;
 
         private IPopup _currentPopup;
 
@@ -29,7 +35,7 @@ namespace UI.Popups
             PopupsConnector popupsConnector,
             RelocateConnector relocateConnector,
             FreeGemConnector freeGemConnector, 
-            IMinerResourceHelper resourceHelper)
+            IResourceHelper resourceHelper)
         {
             _popupsConnector = popupsConnector;
             _relocateConnector = relocateConnector;
@@ -40,24 +46,25 @@ namespace UI.Popups
             _popupsConnector.RoulettePopupEvent.Subscribe(OnRoulette);
             _popupsConnector.RelocationPopupEvent.Subscribe(OnRelocation);
             _popupsConnector.GiftPopupEvent.Subscribe(OnGift);
+            _popupsConnector.BonusPopupEvent.Subscribe(OnBonus);
         }
 
         private void OnNewMiner(NewMinerPopupData data)
         {
-            var icon = _resourceHelper.GetNormalIconByName(data.Config);
-            var previousIcon = _resourceHelper.GetNormalIconByName(data.PreviousConfig);
+            var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
+            var previousIcon = _resourceHelper.GetNormalIconByLevel(data.Level - 1);
             var viewModel = new NewMinerPopupViewModel(data.Config, data.Level, data.Income, icon, previousIcon);
             ShowPopup(_newMinerPopup, viewModel);
         }
 
         private void OnRoulette(RoulettePopupData data)
         {
-            var icon = _resourceHelper.GetNormalIconByName(data.Config.Config);
+            var icon = _resourceHelper.GetNormalIconByLevel(data.Config.Level);
             var win = new RouletteMinerInfo(data.Config.Level, icon);
             RouletteMinerInfo GetRandom()
             {
                 var config = data.Variants.Random();
-                var randomIcon = _resourceHelper.GetNormalIconByName(config.Config);
+                var randomIcon = _resourceHelper.GetNormalIconByLevel(config.Level);
                 return new RouletteMinerInfo(config.Level, randomIcon);
             }
             
@@ -69,7 +76,7 @@ namespace UI.Popups
 
         private void OnRouletteWin(MinerData data)
         {
-            var icon = _resourceHelper.GetNormalIconByName(data.Config);
+            var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
             var viewModel = new RouletteWinPopupViewModel(data.Level, icon);
             ShowPopup(_rouletteWinPopup, viewModel);
         }
@@ -91,6 +98,40 @@ namespace UI.Popups
             
             var viewModel = new GiftPopupViewModel(data.Gems);
             ShowPopup(_giftPopup, viewModel);
+        }
+
+        private void OnBonus(BonusPopupData data)
+        {
+            var viewModel = new BonusPopupViewModel();
+            BonusPopup popup = null;
+            switch (data.BonusType)
+            {
+                case BonusType.Chip:
+                {
+                    popup = _chipBonusPopup;
+                    break;
+                }
+                case BonusType.Flash:
+                {
+                    popup = _flashBonusPopup;
+                    break;
+                }
+                case BonusType.Miners:
+                {
+                    popup = _minersBonusPopup;
+                    break;
+                }
+                case BonusType.Power:
+                {
+                    popup = _powerBonusPopup;
+                    break;
+                }
+            }
+            if (popup == null) return;
+            
+            popup.AcceptEvent.Subscribe(data.Callback).AddTo(popup);
+            
+            ShowPopup(popup, viewModel);
         }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)

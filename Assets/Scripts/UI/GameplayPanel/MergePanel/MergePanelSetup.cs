@@ -27,7 +27,7 @@ namespace UI.GameplayPanel.MergePanel
 
         private MinerFieldConnector _minerFieldConnector;
         private PopupsConnector _popupsConnector;
-        private IMinerResourceHelper _minerResourceHelper;
+        private IResourceHelper _resourceHelper;
         private GameplayViewStorage _gameplayViewStorage;
         private DragHelper _dragHelper;
         
@@ -49,13 +49,13 @@ namespace UI.GameplayPanel.MergePanel
         private void Setup(
             MinerFieldConnector minerFieldConnector, 
             PopupsConnector popupsConnector,
-            IMinerResourceHelper minerResourceHelper,
+            IResourceHelper resourceHelper,
             GameplayViewStorage gameplayViewStorage,
             DragHelper dragHelper)
         {
             _minerFieldConnector = minerFieldConnector;
             _popupsConnector = popupsConnector;
-            _minerResourceHelper = minerResourceHelper;
+            _resourceHelper = resourceHelper;
             _gameplayViewStorage = gameplayViewStorage;
             _dragHelper = dragHelper;
 
@@ -169,8 +169,8 @@ namespace UI.GameplayPanel.MergePanel
 
         private void OnAddMiner(AddMinerData data)
         {
-            AddMiner(data.Id, data.Name, data.Level, data.Slot, data.Source);
-            if (data.Source == MinerSource.Common || data.Source == MinerSource.Random)
+            AddMiner(data.Id, data.Level, data.Slot, data.Source);
+            if (data.Source is MinerSource.Common or MinerSource.Random or MinerSource.RandomOpened)
             {
                 AnimateNewBox(data, _boxTransform);
             } else if (data.Source == MinerSource.Shop)
@@ -225,7 +225,7 @@ namespace UI.GameplayPanel.MergePanel
             {
                 RemoveMiner(id);
                 id = data.Id;
-                AddMiner(data.Id, data.Name, data.Level, data.Slot);
+                AddMiner(data.Id, data.Level, data.Slot);
                 _animatingCells.Remove(cell);
             });
             
@@ -253,11 +253,11 @@ namespace UI.GameplayPanel.MergePanel
             RemoveMiner(data.Miner);
         }
 
-        private void AddMiner(string id, string name, int level, int slot, MinerSource source = MinerSource.None)
+        private void AddMiner(string id, int level, int slot, MinerSource source = MinerSource.None)
         {
-            var normalIcon = _minerResourceHelper.GetNormalIconByName(name);
-            var poweredIcon = _minerResourceHelper.GetPoweredIconByName(name);
-            var boxIcon = _minerResourceHelper.GetBoxIconByType(source);
+            var normalIcon = _resourceHelper.GetNormalIconByLevel(level);
+            var poweredIcon = _resourceHelper.GetPoweredIconByLevel(level);
+            var boxIcon = _resourceHelper.GetBoxIconByType(source);
             var miner = new MinerViewModel(id, level, normalIcon, poweredIcon, boxIcon);
             _miners.Add(miner);
             _mergePanelViewModel.AddMiner(miner, slot);
@@ -281,7 +281,7 @@ namespace UI.GameplayPanel.MergePanel
                 {
                     if (source == MinerSource.Random)
                     {
-                        _popupsConnector.RollRandom(name);
+                        _popupsConnector.RollRandom(level);
                     }
                     miner.Unlock();
                 }).AddTo(miner);

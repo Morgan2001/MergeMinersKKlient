@@ -22,6 +22,7 @@ namespace _Proxy
             _container.RegisterSingleton<LocalPlayer>();
             
             _container.RegisterSingleton<GameLoop>();
+            _container.RegisterSingleton<FlyingBonuses>();
             
             _container.RegisterSingleton<TimerService>();
             
@@ -31,6 +32,7 @@ namespace _Proxy
             _container.RegisterSingleton<RelocateConnector>();
             _container.RegisterSingleton<FreeGemConnector>();
             _container.RegisterSingleton<MinerShopConnector>();
+            _container.RegisterSingleton<BonusConnector>();
             _container.RegisterSingleton<PopupsConnector>();
         }
     }

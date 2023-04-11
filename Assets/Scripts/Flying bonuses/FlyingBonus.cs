@@ -2,18 +2,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Config;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
-public enum FlyingBonuses
-{
-    Wallet,
-    FlashCard,
-    PowerTransformer,
-    Chip,
-    BoxWithMiners
-}
 
 public class FlyingBonus : MonoBehaviour, IPointerDownHandler
 {
@@ -66,7 +58,7 @@ public class FlyingBonus : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Data.Type == FlyingBonuses.Wallet)
+        if (Data.Type == BonusType.Money)
         {
             CreateWalletRewardInscription();
         }

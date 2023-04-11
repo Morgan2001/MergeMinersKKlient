@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Config;
 using UnityEngine;
 
 public class FlyingBonusHandler
@@ -15,23 +16,23 @@ public class FlyingBonusHandler
         this.gameRules = gameRules;
     }
 
-    public void HandleFlyingBonus(FlyingBonuses type)
+    public void HandleFlyingBonus(BonusType type)
     {
         switch (type)
         {
-            case FlyingBonuses.Wallet:
+            case BonusType.Money:
                 player.AddCoins(gameRules.WalletRewards.GetRewardByLevel(player.MaxAchivedMiningDeviceLevel));
                 break;
-            case FlyingBonuses.Chip:
+            case BonusType.Chip:
                 windowController.ShowChipBonusWindow();
                 break;
-            case FlyingBonuses.PowerTransformer:
+            case BonusType.Power:
                 windowController.ShowPowerTransformerBonusWindow();
                 break;
-            case FlyingBonuses.FlashCard:
+            case BonusType.Flash:
                 windowController.ShowFlashCardBonusWindow();
                 break;
-            case FlyingBonuses.BoxWithMiners:
+            case BonusType.Miners:
                 windowController.ShowBoxWithMinersBonusWindow();
                 break;
         }

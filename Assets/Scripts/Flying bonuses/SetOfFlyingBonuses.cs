@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using MergeMiner.Core.State.Config;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SetOfFlyingBonuses", menuName = "ScriptableObjects/SetOfFlyingBonuses", order = 1)]
 public class SetOfFlyingBonuses : ScriptableObject
 {
-    public FlyingBonusData this[FlyingBonuses type]
+    public FlyingBonusData this[BonusType type]
     {
         get => FlyingBonuses.Find(data => data.Type == type);
     }

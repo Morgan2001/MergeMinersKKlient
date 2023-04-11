@@ -67,7 +67,7 @@ namespace _Proxy.Connectors
         {
             var miner = _minerRepository.Get(gameEvent.NewMiner);
             var minerConfig = _minerConfig.Get(miner.ConfigId);
-            _mergeMinersEvent.Trigger(new MergeMinersData(gameEvent.NewMiner, miner.ConfigId, minerConfig.Level, gameEvent.Slot, gameEvent.Merged, gameEvent.MaxLevelIncreased));
+            _mergeMinersEvent.Trigger(new MergeMinersData(gameEvent.NewMiner, minerConfig.Level, gameEvent.Slot, gameEvent.Merged, gameEvent.MaxLevelIncreased));
         }
         
         private void OnSwapMiners(SwapMinersEvent gameEvent)
@@ -128,16 +128,14 @@ namespace _Proxy.Connectors
     public struct MergeMinersData
     {
         public string Id { get; }
-        public string Name { get; }
         public int Level { get; }
         public int Slot { get; }
         public string[] Merged { get; }
         public bool MaxLevelIncreased { get; }
 
-        public MergeMinersData(string id, string name, int level, int slot, string[] merged, bool maxLevelIncreased)
+        public MergeMinersData(string id, int level, int slot, string[] merged, bool maxLevelIncreased)
         {
             Id = id;
-            Name = name;
             Level = level;
             Slot = slot;
             Merged = merged;

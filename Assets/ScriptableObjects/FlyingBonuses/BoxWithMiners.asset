@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb46d19f23d47c54aa1ad1ad92f0ce58, type: 3}
   m_Name: BoxWithMiners
   m_EditorClassIdentifier: 
-  Type: 4
+  Type: 3
   Sprite: {fileID: 21300000, guid: 0cd016ded22aad948bd01e7b7b94d2d2, type: 3}
   NumOfBouncesToDestroy: 4
   TimeToFLyBetweenSides: 4
