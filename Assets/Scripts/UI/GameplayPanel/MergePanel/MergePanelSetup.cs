@@ -4,7 +4,6 @@ using System.Linq;
 using _Proxy.Connectors;
 using Coffee.UIExtensions;
 using Cysharp.Threading.Tasks;
-using MergeMiner.Core.Events.Events;
 using MergeMiner.Core.State.Enums;
 using UI.GameplayPanel.ShopPanel;
 using UI.Utils;

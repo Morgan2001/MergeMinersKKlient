@@ -1,8 +1,8 @@
 ﻿using _Proxy.Data;
 using _Proxy.Events;
 using Common.Utils.Misc;
-using MergeMiner.Core.Events.Services;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Services;
 
 namespace _Proxy.Services
 {

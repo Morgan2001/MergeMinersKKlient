@@ -1,5 +1,5 @@
-﻿using MergeMiner.Core.Events.Events;
-using MergeMiner.Core.Events.Services;
+﻿using MergeMiner.Core.State.Events;
+using MergeMiner.Core.State.Services;
 using Utils;
 
 namespace _Proxy.Connectors

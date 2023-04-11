@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Proxy.Data;
-using MergeMiner.Core.Events.Events;
-using MergeMiner.Core.Events.Services;
 using MergeMiner.Core.PlayerActions.Actions;
 using MergeMiner.Core.PlayerActions.Services;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Events;
+using MergeMiner.Core.State.Services;
 using Utils;
 
 namespace _Proxy.Connectors

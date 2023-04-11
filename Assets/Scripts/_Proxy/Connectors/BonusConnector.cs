@@ -1,10 +1,10 @@
 ﻿using _Proxy.Data;
 using _Proxy.Events;
-using MergeMiner.Core.Events.Events;
-using MergeMiner.Core.Events.Services;
 using MergeMiner.Core.PlayerActions.Actions;
 using MergeMiner.Core.PlayerActions.Services;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Events;
+using MergeMiner.Core.State.Services;
 using MergeMiner.Core.State.Utils;
 using Utils;
 

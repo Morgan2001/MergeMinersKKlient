@@ -1,5 +1,5 @@
-﻿using MergeMiner.Core.Events.Base;
-using MergeMiner.Core.State.Config;
+﻿using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Events.Base;
 
 namespace _Proxy.Events
 {
