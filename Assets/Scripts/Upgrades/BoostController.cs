@@ -19,11 +19,11 @@ public class BoostController : MonoBehaviour, ISavable
     private MiningController miningController;
     private Box box;
     private MergeFieldBuilder mergeFieldBuilder;
-    private Player player;
+    private P.Player player;
 
     private List<BoostTimeLeft> boostsTimeLeft;
 
-    public void Construct(MiningController miningController, Box box, MergeFieldBuilder mergeFieldBuilder, Player player)
+    public void Construct(MiningController miningController, Box box, MergeFieldBuilder mergeFieldBuilder, P.Player player)
     {
         this.miningController = miningController;
         this.box = box;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using P;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,14 +18,14 @@ public class MiningDeviceShop : MonoBehaviour, ISavable
     private List<MiningDevicePosition> positions;
     public List<OfferBoughtNum> OffersBoughtNum { get; private set; }
 
-    private Player player;
+    private P.Player player;
     private GameRules gameRules;
     private MergeFieldFiller mergeFieldFiller;
     private MergeFieldBuilder mergeFieldBuilder;
     private Ads ads;
     private Subscription subscription;
 
-    public void Construct(Player player, GameRules gameRules, MergeFieldFiller mergeFieldFiller, MergeFieldBuilder mergeFieldBuilder, Ads ads, Subscription subscription)
+    public void Construct(P.Player player, GameRules gameRules, MergeFieldFiller mergeFieldFiller, MergeFieldBuilder mergeFieldBuilder, Ads ads, Subscription subscription)
     {
         this.player = player;
         player.MaxAchivedMiningDeviceLevelUpdated += ShowAvailablePositions;

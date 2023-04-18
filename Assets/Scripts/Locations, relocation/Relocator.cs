@@ -10,7 +10,7 @@ public class Relocator : MonoBehaviour
 
     private MergeFieldBuilder mergeFieldBuilder;
     private MergeFieldFiller mergeFieldFiller;
-    private Player player;
+    private P.Player player;
     private GameRules gameRules;
     private FillIndicatorUI relocationIndicator;
 
@@ -21,7 +21,7 @@ public class Relocator : MonoBehaviour
 
     private ButtonHighlight buttonHighlight;
 
-    public void Construct(MergeFieldBuilder mergeFieldBuilder, MergeFieldFiller mergeFieldFiller, Player player, GameRules gameRules, 
+    public void Construct(MergeFieldBuilder mergeFieldBuilder, MergeFieldFiller mergeFieldFiller, P.Player player, GameRules gameRules, 
         FillIndicatorUI relocationIndicator, ButtonHighlight buttonHighlight)
     {
         this.mergeFieldBuilder = mergeFieldBuilder;

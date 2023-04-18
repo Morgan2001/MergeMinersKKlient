@@ -48,11 +48,11 @@ public class ButtonBinder : MonoBehaviour
     private Gift gift;
     private Ads ads;
     private Wheel wheel;
-    private Player player;
+    private P.Player player;
     private MiningController miningController;
 
     public void Construct(WindowController windowController, Relocator relocator, BoostController boostController, MergeFieldFiller mergeFieldFiller,
-        Gift gift, Ads ads, Wheel wheel, Player player, MiningController miningController)
+        Gift gift, Ads ads, Wheel wheel, P.Player player, MiningController miningController)
     {
         this.windowController = windowController;
         this.relocator = relocator;

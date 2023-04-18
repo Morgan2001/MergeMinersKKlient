@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using P;
 using UnityEngine;
 
 public class UpgradeShopController : MonoBehaviour
@@ -12,10 +13,10 @@ public class UpgradeShopController : MonoBehaviour
     private List<UpgradeShopPosition> upgradeShopPositions;
 
     private BoostController boostController;
-    private Player player;
+    private P.Player player;
     private Ads ads;
     
-    public void Construct(BoostController boostController, Player player, Ads ads)
+    public void Construct(BoostController boostController, P.Player player, Ads ads)
     {
         upgradeShopPositions = new List<UpgradeShopPosition>();
 

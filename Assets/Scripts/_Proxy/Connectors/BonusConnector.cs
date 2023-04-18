@@ -1,7 +1,5 @@
-﻿using _Proxy.Data;
-using _Proxy.Events;
-using MergeMiner.Core.PlayerActions.Actions;
-using MergeMiner.Core.PlayerActions.Services;
+﻿using _Proxy.Events;
+using _Proxy.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Services;
@@ -12,9 +10,8 @@ namespace _Proxy.Connectors
 {
     public class BonusConnector
     {
-        private readonly LocalPlayer _localPlayer;
         private readonly MinersBonusHelper _minersBonusHelper;
-        private readonly PlayerActionService _playerActionService;
+        private readonly PlayerActionProxy _playerActionProxy;
         private readonly EventSubscriptionService _eventSubscriptionService;
 
         private ReactiveEvent<AddBonusData> _addBonusEvent = new();
@@ -24,14 +21,12 @@ namespace _Proxy.Connectors
         public IReactiveSubscription<UseBonusData> UseBonusEvent => _useBonusEvent;
 
         public BonusConnector(
-            LocalPlayer localPlayer,
             MinersBonusHelper minersBonusHelper,
-            PlayerActionService playerActionService,
+            PlayerActionProxy playerActionProxy,
             EventSubscriptionService eventSubscriptionService)
         {
-            _localPlayer = localPlayer;
             _minersBonusHelper = minersBonusHelper;
-            _playerActionService = playerActionService;
+            _playerActionProxy = playerActionProxy;
             
             _eventSubscriptionService = eventSubscriptionService;
             _eventSubscriptionService.Subscribe<AddBonusEvent>(OnAddBonus);
@@ -55,7 +50,7 @@ namespace _Proxy.Connectors
 
         public void UseBonus(BonusType bonusType)
         {
-            _playerActionService.Process(new UseBonusPlayerAction(_localPlayer.Id, bonusType));
+            _playerActionProxy.UseBonus(bonusType);
         }
     }
 

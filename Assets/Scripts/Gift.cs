@@ -30,12 +30,12 @@ public class Gift : MonoBehaviour
         } 
     }
 
-    private Player player;
+    private P.Player player;
     private WindowController windowController;
     private FillIndicatorUI giftIndicator;
     private ButtonHighlight buttonHighlight;
 
-    public void Construct(Player player, WindowController windowController, FillIndicatorUI giftIndicator, ButtonHighlight buttonHighlight)
+    public void Construct(P.Player player, WindowController windowController, FillIndicatorUI giftIndicator, ButtonHighlight buttonHighlight)
     {
         this.player = player;
         this.windowController = windowController;

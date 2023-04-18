@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MiningDeviceChooser
 {
-    Player player;
+    P.Player player;
     GameRules gameRules;
     Subscription subscription;
 
-    public MiningDeviceChooser(Player player, GameRules gameRules, Subscription subscription)
+    public MiningDeviceChooser(P.Player player, GameRules gameRules, Subscription subscription)
     {
         this.player = player;
         this.gameRules = gameRules;

@@ -44,6 +44,11 @@ namespace UI.GameplayPanel.MergePanel
 
         private List<CellViewModel> _animatingCells = new();
 
+        private void Awake()
+        {
+            _minerFieldConnector.Restore();
+        }
+
         [Inject]
         private void Setup(
             MinerFieldConnector minerFieldConnector, 

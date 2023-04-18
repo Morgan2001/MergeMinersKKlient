@@ -1,7 +1,9 @@
-﻿using _Proxy.Connectors;
+﻿using _Proxy.Commands;
+using _Proxy.Connectors;
 using _Proxy.Data;
 using _Proxy.Services;
 using Common.DI;
+using MergeMiner.Core.Commands.Base;
 using MergeMiner.Core.Launcher;
 using MergeMiner.Core.State.Config;
 
@@ -19,13 +21,18 @@ namespace _Proxy
         {
             base.InstallBindings();
             
-            _container.RegisterSingleton<LocalPlayer>();
+            _container.RegisterSingleton<AliasRepository>();
             
+            _container.Register<GameStateApplier>();
             _container.RegisterSingleton<GameLoop>();
             _container.RegisterSingleton<FlyingBonuses>();
             
             _container.RegisterSingleton<TimerService>();
             
+            _container.Register<IGameCommandProcessor, AddMinerCommandProcessor>(true);
+            _container.Register<IGameCommandProcessor, MergeMinersCommandProcessor>(true);
+            
+            _container.RegisterSingleton<PlayerActionProxy>();
             _container.RegisterSingleton<PlayerConnector>();
             _container.RegisterSingleton<PlayerBoxConnector>();
             _container.RegisterSingleton<MinerFieldConnector>();

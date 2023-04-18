@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using _Proxy.Data;
+using _Proxy.Preloader;
 using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
@@ -12,7 +13,7 @@ namespace _Proxy.Connectors
 {
     public class PopupsConnector
     {
-        private readonly LocalPlayer _localPlayer;
+        private readonly SessionData _sessionData;
         private readonly GameConfig _gameConfig;
         private readonly MinerConfig _minerConfig;
         private readonly LocationConfig _locationConfig;
@@ -39,7 +40,7 @@ namespace _Proxy.Connectors
         public IReactiveSubscription<BonusPopupData> BonusPopupEvent => _bonusPopupEvent;
         
         public PopupsConnector(
-            LocalPlayer localPlayer,
+            SessionData sessionData,
             GameConfig gameConfig,
             MinerConfig minerConfig,
             LocationConfig locationConfig,
@@ -50,7 +51,7 @@ namespace _Proxy.Connectors
             FreeGemService freeGemService,
             EventSubscriptionService eventSubscriptionService)
         {
-            _localPlayer = localPlayer;
+            _sessionData = sessionData;
             _gameConfig = gameConfig;
             _minerConfig = minerConfig;
             _locationConfig = locationConfig;
@@ -67,22 +68,22 @@ namespace _Proxy.Connectors
         public void RollRandom(int level)
         {
             var winData = new MinerData(level);
-            _roulettePopupEvent.Trigger(new RoulettePopupData(winData, _randomMinerService.GetAvailableMiners(_localPlayer.Id)
+            _roulettePopupEvent.Trigger(new RoulettePopupData(winData, _randomMinerService.GetAvailableMiners(_sessionData.Token)
                 .Select(x => new MinerData(_minerConfig.Get(x).Level)).ToArray()));
         }
 
         public void ShowRelocation()
         {
-            var player = _playerRepository.Get(_localPlayer.Id);
-            var playerSlots = _playerSlotsRepository.Get(_localPlayer.Id);
-            var playerMiners = _playerMinersRepository.Get(_localPlayer.Id);
+            var player = _playerRepository.Get(_sessionData.Token);
+            var playerSlots = _playerSlotsRepository.Get(_sessionData.Token);
+            var playerMiners = _playerMinersRepository.Get(_sessionData.Token);
             var location = _locationConfig.GetLocation(playerSlots.Level + 1);
             _relocationPopupEvent.Trigger(new RelocationPopupData(playerSlots.Level + 1, location.TotalSlots, location.PoweredSlots, location.MaxMinerLevel, location.MinerLevelRequired, playerMiners.MaxLevelAchieved, player.Money, location.Price));
         }
         
         public void ShowGift()
         {
-            if (_freeGemService.GetGemProgress(_localPlayer.Id) < 1) return;
+            if (_freeGemService.GetGemProgress(_sessionData.Token) < 1) return;
             _giftPopupEvent.Trigger(new GiftPopupData(_gameConfig.FreeGems));
         }
         

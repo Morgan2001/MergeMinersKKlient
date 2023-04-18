@@ -9,7 +9,7 @@ public class GameplayController : MonoBehaviour
 {
     public bool resetProgress;
 
-    private Player player;
+    private P.Player player;
     public GameRules GameRules;
     
     public MiningController miningController;
@@ -269,7 +269,7 @@ public class GameplayController : MonoBehaviour
     }
     private void InitPlayer()
     {
-        player = Saver.Load(SaveNames.Player, Player.GetStartPlayerSettings());
+        player = Saver.Load(SaveNames.Player, P.Player.GetStartPlayerSettings());
         savables.Add(player);
     }
     private void InitMergeFieldFiller()

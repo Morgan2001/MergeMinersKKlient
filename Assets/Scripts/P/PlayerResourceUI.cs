@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using P;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,10 +8,10 @@ public class PlayerResourceUI : MonoBehaviour
 {
     public ResourceTypes resourceType;
 
-    private Player player;
+    private P.Player player;
     private Text text;
 
-    public void Construct(Player player)
+    public void Construct(P.Player player)
     {
         this.player = player;
         text = GetComponent<Text>();

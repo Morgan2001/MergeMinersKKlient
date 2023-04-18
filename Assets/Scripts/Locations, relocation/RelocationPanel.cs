@@ -22,10 +22,10 @@ public class RelocationPanel : MonoBehaviour
     LocationData curLoc;
     LocationData nextLoc;
 
-    Player player;
+    P.Player player;
     GameRules gameRules;
 
-    public void Construct(Player player, GameRules gameRules)
+    public void Construct(P.Player player, GameRules gameRules)
     {
         this.player = player;
         this.gameRules = gameRules;

@@ -1,4 +1,5 @@
 ﻿using _Proxy.Connectors;
+using MergeMiner.Core.State.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -36,23 +37,23 @@ namespace UI.GameplayPanel.ShopPanel
             _button.Subscribe(_vm.ButtonClick).AddTo(this);
         }
 
-        private void UpdateCurrency(CurrencyType value)
+        private void UpdateCurrency(Currency value)
         {
             switch (value)
             {
-                case CurrencyType.Money:
+                case Currency.Money:
                 {
                     _background.sprite = _backgroundMoneyNormal;
                     _button.spriteState = new SpriteState { pressedSprite = _backgroundMoneyPressed };
                     break;
                 }
-                case CurrencyType.Ads:
+                case Currency.Ads:
                 {
                     _background.sprite = _backgroundAdsNormal;
                     _button.spriteState = new SpriteState { pressedSprite = _backgroundAdsPressed };
                     break;
                 }
-                case CurrencyType.Gems:
+                case Currency.Gems:
                 {
                     _background.sprite = _backgroundGemsNormal;
                     _button.spriteState = new SpriteState { pressedSprite = _backgroundGemsPressed };
@@ -60,17 +61,17 @@ namespace UI.GameplayPanel.ShopPanel
                 }
             }
             
-            _money.SetActive(value != CurrencyType.Ads);
-            _ads.SetActive(value == CurrencyType.Ads);
-            _gem.SetActive(value == CurrencyType.Gems);
+            _money.SetActive(value != Currency.Ads);
+            _ads.SetActive(value == Currency.Ads);
+            _gem.SetActive(value == Currency.Gems);
         }
 
         private void UpdatePrice(double value)
         {
             switch (_vm.Currency.Value)
             {
-                case CurrencyType.Money:
-                case CurrencyType.Gems:
+                case Currency.Money:
+                case Currency.Gems:
                 {
                     _price.text = LargeNumberFormatter.FormatNumber(value);
                     break;
@@ -94,8 +95,8 @@ namespace UI.GameplayPanel.ShopPanel
         private readonly ReactiveProperty<double> _price = new();
         public IReactiveProperty<double> Price => _price;
         
-        private readonly ReactiveProperty<CurrencyType> _currency = new();
-        public IReactiveProperty<CurrencyType> Currency => _currency;
+        private readonly ReactiveProperty<Currency> _currency = new();
+        public IReactiveProperty<Currency> Currency => _currency;
 
         private readonly ReactiveEvent _clickEvent = new();
         public IReactiveSubscription ClickEvent => _clickEvent;
@@ -112,7 +113,7 @@ namespace UI.GameplayPanel.ShopPanel
             _clickEvent.Trigger();
         }
 
-        public void SetPrice(CurrencyType currency, double value)
+        public void SetPrice(Currency currency, double value)
         {
             _currency.Set(currency);
             _price.Set(value);

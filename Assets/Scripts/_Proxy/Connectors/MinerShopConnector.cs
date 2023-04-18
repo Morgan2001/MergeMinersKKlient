@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using _Proxy.Data;
-using MergeMiner.Core.PlayerActions.Actions;
-using MergeMiner.Core.PlayerActions.Services;
+using _Proxy.Services;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Services;
 using Utils;
@@ -13,10 +12,9 @@ namespace _Proxy.Connectors
     public class MinerShopConnector
     {
         private readonly EventSubscriptionService _eventSubscriptionService;
-        private readonly LocalPlayer _localPlayer;
         private readonly MinerShopConfig _minerShopConfig;
         private readonly MinerConfig _minerConfig;
-        private readonly PlayerActionService _playerActionService;
+        private readonly PlayerActionProxy _playerActionProxy;
 
         private ReactiveEvent<AddMinerShopData> _addMinerShopEvent = new();
         public IReactiveSubscription<AddMinerShopData> AddMinerShopEvent => _addMinerShopEvent;
@@ -24,28 +22,26 @@ namespace _Proxy.Connectors
         private ReactiveEvent<UpdateMinerShopData> _updateMinerShopEvent = new();
         public IReactiveSubscription<UpdateMinerShopData> UpdateMinerShopEvent => _updateMinerShopEvent;
 
-        private Dictionary<MinerShopConfigItem, CurrencyType> _shop = new();
+        private Dictionary<MinerShopConfigItem, Currency> _shop = new();
 
         public MinerShopConnector(
-            LocalPlayer localPlayer,
             EventSubscriptionService eventSubscriptionService,
             MinerShopConfig minerShopConfig,
             MinerConfig minerConfig,
-            PlayerActionService playerActionService)
+            PlayerActionProxy playerActionProxy)
         {
-            _localPlayer = localPlayer;
             _minerShopConfig = minerShopConfig;
             _minerConfig = minerConfig;
-            _playerActionService = playerActionService;
+            _playerActionProxy = playerActionProxy;
 
             _eventSubscriptionService = eventSubscriptionService;
             _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
             _eventSubscriptionService.Subscribe<UpdateShopEvent>(OnUpdateShop);
         }
 
-        public void BuyMiner(string minerId, CurrencyType currency)
+        public void BuyMiner(int level, Currency currency)
         {
-            _playerActionService.Process(new BuyMinerPlayerAction(_localPlayer.Id, minerId, currency == CurrencyType.Ads, currency == CurrencyType.Gems));
+            _playerActionProxy.BuyMiner(level, currency);
         }
 
         private void OnMaxLevelIncreased(MaxLevelIncreasedEvent gameEvent)
@@ -57,15 +53,15 @@ namespace _Proxy.Connectors
                 var minerConfig = _minerConfig.Get(minerShop.MinerConfig);
                 
                 var currency =
-                    minerShop.UnlockLevel <= level ? CurrencyType.Money :
-                    minerShop.UnlockLevelAds <= level ? CurrencyType.Ads :
-                    minerShop.UnlockLevelGems <= level ? CurrencyType.Gems :
-                    CurrencyType.None;
+                    minerShop.UnlockLevel <= level ? Currency.Money :
+                    minerShop.UnlockLevelAds <= level ? Currency.Ads :
+                    minerShop.UnlockLevelGems <= level ? Currency.Gems : 
+                    0;
                 
                 var price = 
-                    currency == CurrencyType.Money ? minerConfig.Price :
-                    currency == CurrencyType.Ads ? 0 :
-                    currency == CurrencyType.Gems ? minerConfig.PriceInGems :
+                    currency == Currency.Money ? minerConfig.Price :
+                    currency == Currency.Ads ? 0 :
+                    currency == Currency.Gems ? minerConfig.PriceInGems :
                     0;
                 
                 if (!_shop.ContainsKey(minerShop))
@@ -85,9 +81,9 @@ namespace _Proxy.Connectors
         {
             var minerConfig = _minerShopConfig.Get(gameEvent.MinerConfig);
             var currency = _shop[minerConfig];
-            if (currency == CurrencyType.Money)
+            if (currency == Currency.Money)
             {
-                _updateMinerShopEvent.Trigger(new UpdateMinerShopData(gameEvent.MinerConfig, CurrencyType.Money, gameEvent.Price));
+                _updateMinerShopEvent.Trigger(new UpdateMinerShopData(gameEvent.MinerConfig, Currency.Money, gameEvent.Price));
             }
         }
     }
@@ -107,22 +103,14 @@ namespace _Proxy.Connectors
     public struct UpdateMinerShopData
     {
         public string Id { get; }
-        public CurrencyType Currency { get; }
+        public Currency Currency { get; }
         public double Price { get; }
 
-        public UpdateMinerShopData(string id, CurrencyType currency, double price)
+        public UpdateMinerShopData(string id, Currency currency, double price)
         {
             Id = id;
             Currency = currency;
             Price = price;
         }
-    }
-
-    public enum CurrencyType
-    {
-        None,
-        Money,
-        Ads,
-        Gems
     }
 }

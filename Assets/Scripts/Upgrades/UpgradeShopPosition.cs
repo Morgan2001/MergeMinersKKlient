@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using P;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ public class UpgradeShopPosition : MonoBehaviour
     public Text CostText;
     public Button BuyButton;
 
-    public void Construct(BoostController boostController, Player player, UpgradeOffer upgradeOffer, Ads ads)
+    public void Construct(BoostController boostController, P.Player player, UpgradeOffer upgradeOffer, Ads ads)
     {
         Image.sprite = upgradeOffer.Sprite;
         DescriptionText.text = upgradeOffer.Description;

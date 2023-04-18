@@ -10,7 +10,7 @@ public class MergeFieldBuilder : MonoBehaviour
     public GameObject CellPrefab;
     public GameObject MiningCellBackPrefab;
 
-    private Player player;
+    private P.Player player;
     private MiningDeviceMerger miningDeviceMerger;
     private GameRules gameRules;
     private Subscription subscription;
@@ -19,7 +19,7 @@ public class MergeFieldBuilder : MonoBehaviour
     public List<Cell> Cells { get; private set; }
     public float CellSize { get; private set; }
 
-    public void Construct(Player player, MiningDeviceMerger miningDeviceMerger, GameRules gameRules, Subscription subscription)
+    public void Construct(P.Player player, MiningDeviceMerger miningDeviceMerger, GameRules gameRules, Subscription subscription)
     {
         this.player = player;
         this.miningDeviceMerger = miningDeviceMerger;

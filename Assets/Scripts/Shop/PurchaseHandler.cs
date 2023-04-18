@@ -5,9 +5,9 @@ using UnityEngine.Purchasing;
 
 public class PurchaseHandler : MonoBehaviour
 {
-    private Player player;
+    private P.Player player;
 
-    public void Construct(Player player)
+    public void Construct(P.Player player)
     {
         this.player = player;
     }

@@ -43,7 +43,7 @@ namespace UI.GameplayPanel.ShopPanel
             _shopPanelViewModel.AddMiner(viewModel);
             _minerShopItems.Add(data.Id, viewModel);
             
-            viewModel.ClickEvent.Subscribe(() => _minerShopConnector.BuyMiner(viewModel.Id, viewModel.Currency.Value)).AddTo(viewModel);
+            viewModel.ClickEvent.Subscribe(() => _minerShopConnector.BuyMiner(viewModel.Level, viewModel.Currency.Value)).AddTo(viewModel);
             
             var view = _shopPanelView.GetMinerShopView(viewModel);
             _gameplayViewStorage.AddMinerShopView(data.Id, view);

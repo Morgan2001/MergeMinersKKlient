@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using P;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "MiningDeviceOffer", menuName = "ScriptableObjects/MiningDeviceOffer", order = 1)]

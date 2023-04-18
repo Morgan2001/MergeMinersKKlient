@@ -1,7 +1,6 @@
 ﻿using _Proxy.Data;
+using _Proxy.Preloader;
 using _Proxy.Services;
-using MergeMiner.Core.PlayerActions.Actions;
-using MergeMiner.Core.PlayerActions.Services;
 using MergeMiner.Core.State.Utils;
 using Utils;
 
@@ -9,8 +8,8 @@ namespace _Proxy.Connectors
 {
     public class RelocateConnector
     {
-        private readonly LocalPlayer _localPlayer;
-        private readonly PlayerActionService _playerActionService;
+        private readonly SessionData _sessionData;
+        private readonly PlayerActionProxy _playerActionProxy;
         private readonly RelocateHelper _relocateHelper;
         private readonly TimerService _timerService;
 
@@ -18,13 +17,13 @@ namespace _Proxy.Connectors
         public ReactiveProperty<float> Progress => _progress;
 
         public RelocateConnector(
-            LocalPlayer localPlayer,
-            PlayerActionService playerActionService,
+            SessionData sessionData,
+            PlayerActionProxy playerActionProxy,
             RelocateHelper relocateHelper,
             TimerService timerService)
         {
-            _localPlayer = localPlayer;
-            _playerActionService = playerActionService;
+            _sessionData = sessionData;
+            _playerActionProxy = playerActionProxy;
             _relocateHelper = relocateHelper;
             _timerService = timerService;
 
@@ -33,12 +32,12 @@ namespace _Proxy.Connectors
 
         public void Relocate()
         {
-            _playerActionService.Process(new RelocatePlayerAction(_localPlayer.Id));
+            _playerActionProxy.Relocate();
         }
 
         private void UpdateProgress()
         {
-            var progress = (float) _relocateHelper.GetRelocationProgress(_localPlayer.Id);
+            var progress = (float) _relocateHelper.GetRelocationProgress(_sessionData.Token);
             _progress.Set(progress);
         }
     }

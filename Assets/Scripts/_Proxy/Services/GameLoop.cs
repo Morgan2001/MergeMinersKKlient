@@ -1,46 +1,50 @@
 ﻿using _Proxy.Data;
+using _Proxy.Preloader;
 using MergeMiner.Core.Commands.GameCommands;
 using MergeMiner.Core.Commands.Services;
-using MergeMiner.Core.State.Services;
 using UnityEngine;
 
 namespace _Proxy.Services
 {
     public class GameLoop
     {
-        private readonly LocalPlayer _localPlayer;
+        private readonly SessionData _sessionData;
         private readonly CreatePlayerService _createPlayerService;
         private readonly GameCommandService _gameCommandService;
         private readonly TimerService _timerService;
         private readonly FlyingBonuses _flyingBonuses;
+        private readonly GameStateApplier _gameStateApplier;
 
         public GameLoop(
-            LocalPlayer localPlayer,
+            SessionData sessionData,
             CreatePlayerService createPlayerService,
             GameCommandService gameCommandService,
             TimerService timerService,
-            FlyingBonuses flyingBonuses)
+            FlyingBonuses flyingBonuses,
+            GameStateApplier gameStateApplier)
         {
-            _localPlayer = localPlayer;
+            _sessionData = sessionData;
             _createPlayerService = createPlayerService;
             _gameCommandService = gameCommandService;
             _timerService = timerService;
             _flyingBonuses = flyingBonuses;
+            _gameStateApplier = gameStateApplier;
         }
 
         public void Init()
         {
-            var player = _createPlayerService.CreatePlayer();
-            _localPlayer.Set(player);
+            _createPlayerService.CreatePlayer(_sessionData.Token);
+            _createPlayerService.SetupPlayer(_sessionData.Token, _sessionData.GameState.Slots.Level);
 
+            _gameStateApplier.Apply(_sessionData.GameState, _sessionData.Token);
+            
             _flyingBonuses.Reset();
         }
         
         public void Update()
         {
-            _gameCommandService.Process(new CheckSpawnBoxGameCommand(_localPlayer.Id));
-            _gameCommandService.Process(new CheckBonusesGameCommand(_localPlayer.Id));
-            _gameCommandService.Process(new CalculateGameCommand(_localPlayer.Id));
+            _gameCommandService.Process(new CheckBonusesGameCommand(_sessionData.Token));
+            _gameCommandService.Process(new CalculateGameCommand(_sessionData.Token));
             _timerService.Tick(Time.deltaTime);
         }
     }

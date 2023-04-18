@@ -7,13 +7,13 @@ using MoreMountains.NiceVibrations;
 public class MiningDeviceMerger : MonoBehaviour
 {
     GameRules gameRules;
-    Player player;
+    P.Player player;
     WindowController windowController;
 
     private MiningDevice what;
     private MiningDevice with;
 
-    public void Construct(GameRules gameRules, Player player, WindowController windowController)
+    public void Construct(GameRules gameRules, P.Player player, WindowController windowController)
     {
         this.gameRules = gameRules;
         this.player = player;

@@ -1,6 +1,7 @@
 ﻿using _Proxy.Data;
-using MergeMiner.Core.PlayerActions.Actions;
-using MergeMiner.Core.PlayerActions.Services;
+using _Proxy.Preloader;
+using _Proxy.Services;
+using MergeMiner.Core.PlayerActions.Base;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Enums;
 using MergeMiner.Core.State.Events;
@@ -13,10 +14,10 @@ namespace _Proxy.Connectors
 {
     public class MinerFieldConnector
     {
-        private readonly LocalPlayer _localPlayer;
+        private readonly SessionData _sessionData;
         private readonly EventSubscriptionService _eventSubscriptionService;
         private readonly PlayerMinersRepository _playerMinersRepository;
-        private readonly PlayerActionService _playerActionService;
+        private readonly PlayerActionProxy _playerActionProxy;
         private readonly MinerRepository _minerRepository;
         private readonly MinerConfig _minerConfig;
         private readonly LocationHelper _locationHelper;
@@ -38,19 +39,19 @@ namespace _Proxy.Connectors
         public ReactiveEvent<RemoveMinerData> RemoveMinerEvent => _removeMinerEvent;
         
         public MinerFieldConnector(
-            LocalPlayer localPlayer,
+            SessionData sessionData,
             EventSubscriptionService eventSubscriptionService,
             PlayerMinersRepository playerMinersRepository,
-            PlayerActionService playerActionService,
+            PlayerActionProxy playerActionProxy,
             MinerRepository minerRepository,
             MinerConfig minerConfig,
             LocationHelper locationHelper,
             BonusHelper bonusHelper)
         {
-            _localPlayer = localPlayer;
+            _sessionData = sessionData;
             _eventSubscriptionService = eventSubscriptionService;
             _playerMinersRepository = playerMinersRepository;
-            _playerActionService = playerActionService;
+            _playerActionProxy = playerActionProxy;
             _minerRepository = minerRepository;
             _minerConfig = minerConfig;
             _locationHelper = locationHelper;
@@ -63,6 +64,22 @@ namespace _Proxy.Connectors
             _eventSubscriptionService.Subscribe<RemoveMinerEvent>(OnRemoveMiner);
             _eventSubscriptionService.Subscribe<UseBonusEvent>(OnUseBonus);
             _eventSubscriptionService.Subscribe<EndBonusEvent>(OnEndBonus);
+        }
+
+        public void Restore()
+        {
+            Relocate(_sessionData.Token);
+
+            var miners = _playerMinersRepository.Get(_sessionData.Token);
+            for (var i = 0; i < miners.Miners.Count; i++)
+            {
+                var minerId = miners.Miners[i];
+                if (minerId == null) continue;
+                
+                var miner = _minerRepository.Get(minerId);
+                var minerConfig = _minerConfig.Get(miner.ConfigId);
+                _addMinerEvent.Trigger(new AddMinerData(miner.Id, miner.ConfigId, minerConfig.Level, MinerSource.None, i));
+            }
         }
 
         private void Relocate(string playerId)
@@ -107,19 +124,19 @@ namespace _Proxy.Connectors
         {
             if (gameEvent.BonusType != BonusType.Power) return;
             
-            Relocate(_localPlayer.Id);
+            Relocate(_sessionData.Token);
         }
         
         private void OnEndBonus(EndBonusEvent gameEvent)
         {
             if (gameEvent.BonusType != BonusType.Power) return;
             
-            Relocate(_localPlayer.Id);
+            Relocate(_sessionData.Token);
         }
 
         public bool Drop(string minerId, int slot)
         {
-            var playerMiners = _playerMinersRepository.Get(_localPlayer.Id);
+            var playerMiners = _playerMinersRepository.Get(_sessionData.Token);
             var minerAtSlot = playerMiners.Miners[slot];
             
             var slotOfMiner = playerMiners.Miners.IndexOf(minerId);
@@ -127,20 +144,24 @@ namespace _Proxy.Connectors
 
             var miner1 = _minerRepository.Get(minerId);
             var miner2 = minerAtSlot != null ? _minerRepository.Get(minerAtSlot) : null;
-            
+
+            PlayerAction action = null;
             if (minerAtSlot == null || miner1.ConfigId != miner2.ConfigId)
             {
-                return _playerActionService.Process(new SwapMinersPlayerAction(_localPlayer.Id, slotOfMiner, slot));
+                _playerActionProxy.SwapMiners(slotOfMiner, slot);
+                return true;
             }
             else
             {
-                return _playerActionService.Process(new MergeMinersPlayerAction(_localPlayer.Id, slotOfMiner, slot));
+                _playerActionProxy.MergeMiners(slotOfMiner, slot);
+                return true;
             }
         }
 
         public void Remove(string minerId)
         {
-            _playerActionService.Process(new RemoveMinerPlayerAction(_localPlayer.Id, minerId));
+            var slot = _playerMinersRepository.Get(_sessionData.Token).Miners.IndexOf(minerId);
+            _playerActionProxy.RemoveMiner(slot);
         }
     }
     

@@ -45,7 +45,11 @@ namespace UI.GameplayPanel.FlyingBonuses
             var viewModel = new BonusViewModel(icon);
             
             var view = Instantiate(_bonusPrefab, _container);
-            view.ClickEvent.Subscribe(() => TryToUseBonus(data.BonusType)).AddTo(view);
+            view.ClickEvent.Subscribe(() =>
+            {
+                view.gameObject.SetActive(false);
+                TryToUseBonus(data.BonusType);
+            }).AddTo(view);
             
             view.Bind(viewModel);
             _bonuses.Add(view);

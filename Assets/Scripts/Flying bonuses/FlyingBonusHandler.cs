@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class FlyingBonusHandler
 {
-    public Player player;
+    public P.Player player;
     private WindowController windowController;
     public GameRules gameRules;
 
-    public FlyingBonusHandler(Player player, WindowController windowController, GameRules gameRules)
+    public FlyingBonusHandler(P.Player player, WindowController windowController, GameRules gameRules)
     {
         this.player = player;
         this.windowController = windowController;

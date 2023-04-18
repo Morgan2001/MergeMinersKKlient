@@ -6,14 +6,14 @@ public class MiningController : MonoBehaviour, ISavable
 {
     public const float multForAbseceReward = 3;
 
-    private Player player;
+    private P.Player player;
     private MergeFieldBuilder mergeFieldBuilder;
 
     public float Boost { get; set; } = 1;
 
     private DateTime lastActiveDateTime;
 
-    public void Construct(Player player, MergeFieldBuilder mergeFieldBuilder)
+    public void Construct(P.Player player, MergeFieldBuilder mergeFieldBuilder)
     {
         this.player = player;
         this.mergeFieldBuilder = mergeFieldBuilder;

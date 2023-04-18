@@ -12,12 +12,12 @@ public class Roulette : MonoBehaviour
     public GameObject WinCell;
     public List<GameObject> OtherCells;
 
-    private Player player;
+    private P.Player player;
     private GameRules gameRules;
 
     private MiningDevices desiredMiningDevice;
 
-    public void Construct(Player player, GameRules gameRules)
+    public void Construct(P.Player player, GameRules gameRules)
     {
         this.player = player;
         this.gameRules = gameRules;

@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Proxy.Config;
-using _Proxy.Connectors;
 using _Proxy.Services;
-using Common.DI;
 using MergeMiner.Core.State.Config;
 using UnityEngine;
 using Zenject;
@@ -15,8 +13,6 @@ namespace _Proxy
         [SerializeField] private MinersConfigLoader _minersConfigLoader;
         [SerializeField] private GameRules _gameRules;
 
-        private IServiceProvider _serviceProvider;
-        
         private GameLoop _gameLoop;
 
         private void Awake()
@@ -26,36 +22,13 @@ namespace _Proxy
 
         public override void InstallBindings()
         {
-            Setup();
-            
-            Bind<PlayerConnector>();
-            Bind<PlayerBoxConnector>();
-            Bind<MinerFieldConnector>();
-            Bind<RelocateConnector>();
-            Bind<FreeGemConnector>();
-            Bind<MinerShopConnector>();
-            Bind<BonusConnector>();
-            Bind<PopupsConnector>();
-        }
-        
-        private void Bind<T>()
-            where T : class
-        {
-            var instance = _serviceProvider.Resolve<T>();
-            Container.BindInstance(instance);
-        }
-
-        private void Setup()
-        {
-            var container = new ZenjectContainer();
+            var container = new ZenjectContainer(Container);
             var launcher = new Launcher(container,
                 new GameConfig(600, 1,
                     GetLocationConfig(),
                     GetMinerConfig(),
                     GetMinerShopConfig(),
                     GetBonusConfig()));
-
-            _serviceProvider = launcher.ServiceProvider;
             _gameLoop = launcher.GameLoop;
         }
 
@@ -89,7 +62,7 @@ namespace _Proxy
             var items = minersData.Values
                 .Select(x => new KeyValuePair<int, MinerConfigItem>(x.Level,
                         new MinerConfigItem(
-                            _gameRules.MiningDevices.MiningDeviceDatas.Find(y => y.Level == x.Level).Name,
+                            x.Item,
                             x.Level,
                             x.Earning,
                             x.Price,
@@ -108,12 +81,13 @@ namespace _Proxy
         
         private MinerShopConfig GetMinerShopConfig()
         {
-            var items = _gameRules.MiningDevices.MiningDeviceDatas
-                .Where(x => x.BuyPrice > 0)
-                .Select(x => new KeyValuePair<int, MinerShopConfigItem>(x.id,
+            var minersData = _minersConfigLoader.Process();
+            var items = minersData.Values
+                .Where(x => x.Price > 0)
+                .Select(x => new KeyValuePair<int, MinerShopConfigItem>(x.Level,
                     new MinerShopConfigItem(
-                        x.Name,
-                        x.Name,
+                        x.Item,
+                        x.Item,
                         x.Level + 5,
                         x.Level + 4,
                         x.Level + 3)
