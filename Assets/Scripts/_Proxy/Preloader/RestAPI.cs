@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using MergeMiner.Core.Network.Data;
+using MergeMiner.Core.Network.Helpers;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 
@@ -19,6 +20,21 @@ namespace _Proxy.Preloader
         public async Task<string> UserRegister()
         {
             return await _restClient.Get<string>("user/register");
+        }
+        
+        public async Task<string> UserLogin(string deviceId)
+        {
+            return await _restClient.Get<string>($"user/login?deviceId={deviceId}");
+        }
+        
+        public async Task<LocationsData> GetLocationsConfig(string token)
+        {
+            return await _restClient.Get<LocationsData>($"game/{token}/getLocationsConfig");
+        }
+        
+        public async Task<MinersData> GetMinersConfig(string token)
+        {
+            return await _restClient.Get<MinersData>($"game/{token}/getMinersConfig");
         }
         
         public async Task<GameState> GetState(string token)

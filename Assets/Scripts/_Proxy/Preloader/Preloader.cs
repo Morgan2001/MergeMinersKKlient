@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using MergeMiner.Core.Network.Helpers;
+using MergeMiner.Core.State.Config;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -21,33 +22,23 @@ namespace _Proxy.Preloader
         
         private async void Awake()
         {
-            if (!PlayerPrefs.HasKey("token"))
-            {
-                await Register();
-            }
-
-            while (true)
-            {
-                var token = PlayerPrefs.GetString("token");
-                var gameState = await _restAPI.GetState(token);
-                if (gameState == null)
-                {
-                    await Register();
-                }
-                else
-                {
-                    _sessionData.Setup(token, gameState);
-                    SceneManager.LoadScene("Gameplay_new");
-                    return;
-                }
-            }
-        }
-
-        private async Task Register()
-        {
-            var token = await _restAPI.UserRegister();
-            PlayerPrefs.SetString("token", token);
-            PlayerPrefs.Save();
+            var token = await _restAPI.UserLogin(SystemInfo.deviceUniqueIdentifier);
+            
+            var locationsConfig = await _restAPI.GetLocationsConfig(token);
+            var minersConfig = await _restAPI.GetMinersConfig(token);
+            
+            var config = new GameConfig(
+                600, 1,
+                ConfigHelper.GetLocationConfig(locationsConfig),
+                ConfigHelper.GetMinerConfig(minersConfig),
+                ConfigHelper.GetMinerShopConfig(minersConfig),
+                ConfigHelper.GetBonusConfig()
+            );
+            
+            var gameState = await _restAPI.GetState(token);
+            
+            _sessionData.Setup(token, config, gameState);
+            SceneManager.LoadScene("Gameplay_new");
         }
     }
 }

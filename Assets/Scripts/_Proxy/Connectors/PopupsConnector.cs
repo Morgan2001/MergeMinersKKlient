@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using _Proxy.Data;
 using _Proxy.Preloader;
 using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.State.Config;

@@ -46,9 +46,15 @@ namespace _Proxy.Preloader
             try
             {
                 var result = await uwr.SendWebRequest().ToUniTask();
-                if (result.result != UnityWebRequest.Result.Success) return default;
+                if (result.result != UnityWebRequest.Result.Success)
+                {
+                    result.Dispose();
+                    return default;
+                }
+                
                 var json = result.downloadHandler.text;
                 Debug.Log(json);
+                result.Dispose();
                 return JsonConvert.DeserializeObject<T>(json, _settings);
             }
             catch (Exception)

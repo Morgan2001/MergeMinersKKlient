@@ -1,5 +1,4 @@
-﻿using _Proxy.Data;
-using _Proxy.Events;
+﻿using _Proxy.Events;
 using _Proxy.Preloader;
 using Common.Utils.Misc;
 using MergeMiner.Core.State.Config;

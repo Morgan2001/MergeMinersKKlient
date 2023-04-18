@@ -1,6 +1,5 @@
 ﻿using _Proxy.Commands;
 using _Proxy.Connectors;
-using _Proxy.Data;
 using _Proxy.Services;
 using Common.DI;
 using MergeMiner.Core.Commands.Base;
@@ -20,8 +19,6 @@ namespace _Proxy
         protected override void InstallBindings()
         {
             base.InstallBindings();
-            
-            _container.RegisterSingleton<AliasRepository>();
             
             _container.Register<GameStateApplier>();
             _container.RegisterSingleton<GameLoop>();

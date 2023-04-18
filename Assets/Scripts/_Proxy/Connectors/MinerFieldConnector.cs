@@ -1,5 +1,4 @@
-﻿using _Proxy.Data;
-using _Proxy.Preloader;
+﻿using _Proxy.Preloader;
 using _Proxy.Services;
 using MergeMiner.Core.PlayerActions.Base;
 using MergeMiner.Core.State.Config;

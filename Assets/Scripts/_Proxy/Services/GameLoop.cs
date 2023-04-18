@@ -1,5 +1,4 @@
-﻿using _Proxy.Data;
-using _Proxy.Preloader;
+﻿using _Proxy.Preloader;
 using MergeMiner.Core.Commands.GameCommands;
 using MergeMiner.Core.Commands.Services;
 using UnityEngine;
