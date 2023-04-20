@@ -26,8 +26,8 @@ namespace _Proxy.Connectors
         private ReactiveEvent<NewMinerPopupData> _newMinerPopupEvent = new();
         public IReactiveSubscription<NewMinerPopupData> NewMinerPopupEvent => _newMinerPopupEvent;
         
-        private ReactiveEvent<RoulettePopupData> _roulettePopupEvent = new();
-        public IReactiveSubscription<RoulettePopupData> RoulettePopupEvent => _roulettePopupEvent;
+        private ReactiveEvent<MinerRoulettePopupData> _minerRoulettePopupEvent = new();
+        public IReactiveSubscription<MinerRoulettePopupData> MinerRoulettePopupEvent => _minerRoulettePopupEvent;
         
         private ReactiveEvent<RelocationPopupData> _relocationPopupEvent = new();
         public IReactiveSubscription<RelocationPopupData> RelocationPopupEvent => _relocationPopupEvent;
@@ -37,6 +37,9 @@ namespace _Proxy.Connectors
         
         private ReactiveEvent<BonusPopupData> _bonusPopupEvent = new();
         public IReactiveSubscription<BonusPopupData> BonusPopupEvent => _bonusPopupEvent;
+        
+        private ReactiveEvent<BonusPopupData> _roulettePopupEvent = new();
+        public IReactiveSubscription<BonusPopupData> RoulettePopupEvent => _roulettePopupEvent;
         
         public PopupsConnector(
             SessionData sessionData,
@@ -67,7 +70,7 @@ namespace _Proxy.Connectors
         public void RollRandom(int level)
         {
             var winData = new MinerData(level);
-            _roulettePopupEvent.Trigger(new RoulettePopupData(winData, _randomMinerService.GetAvailableMiners(_sessionData.Token)
+            _minerRoulettePopupEvent.Trigger(new MinerRoulettePopupData(winData, _randomMinerService.GetAvailableMiners(_sessionData.Token)
                 .Select(x => new MinerData(_minerConfig.Get(x).Level)).ToArray()));
         }
 
@@ -97,6 +100,11 @@ namespace _Proxy.Connectors
         {
             _bonusPopupEvent.Trigger(new BonusPopupData(bonusType, callback));
         }
+
+        public void RollRoulette()
+        {
+            
+        }
     }
 
     public struct NewMinerPopupData
@@ -113,12 +121,12 @@ namespace _Proxy.Connectors
         }
     }
 
-    public struct RoulettePopupData
+    public struct MinerRoulettePopupData
     {
         public MinerData Config { get; }
         public MinerData[] Variants { get; }
 
-        public RoulettePopupData(MinerData config, MinerData[] variants)
+        public MinerRoulettePopupData(MinerData config, MinerData[] variants)
         {
             Config = config;
             Variants = variants;

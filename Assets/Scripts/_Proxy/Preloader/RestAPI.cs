@@ -27,14 +27,9 @@ namespace _Proxy.Preloader
             return await _restClient.Get<string>($"user/login?deviceId={deviceId}");
         }
         
-        public async Task<LocationsData> GetLocationsConfig(string token)
+        public async Task<ConfigData> GetConfig(string token)
         {
-            return await _restClient.Get<LocationsData>($"game/{token}/getLocationsConfig");
-        }
-        
-        public async Task<MinersData> GetMinersConfig(string token)
-        {
-            return await _restClient.Get<MinersData>($"game/{token}/getMinersConfig");
+            return await _restClient.Get<ConfigData>($"game/{token}/getConfig");
         }
         
         public async Task<GameState> GetState(string token)
@@ -102,6 +97,14 @@ namespace _Proxy.Preloader
             return await _restClient.Post<RestResponse>($"game/{token}/useBonus", new Dictionary<string, object>
             {
                 { "bonusType", bonusType }
+            });
+        }
+        
+        public async Task<RestResponse> PurchaseTest(string token, string id)
+        {
+            return await _restClient.Post<RestResponse>($"purchase/{token}/test", new Dictionary<string, object>
+            {
+                { "id", id }
             });
         }
     }

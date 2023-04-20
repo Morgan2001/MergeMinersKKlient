@@ -13,7 +13,7 @@ namespace UI.Popups
         [SerializeField] private RectTransform _mainScreen;
         
         [SerializeField] private NewMinerPopup _newMinerPopup;
-        [SerializeField] private RoulettePopup _roulettePopup;
+        [SerializeField] private MinerRoulettePopup _minerRoulettePopup;
         [SerializeField] private RouletteWinPopup _rouletteWinPopup;
         [SerializeField] private RelocationPopup _relocationPopup;
         [SerializeField] private GiftPopup _giftPopup;
@@ -22,6 +22,8 @@ namespace UI.Popups
         [SerializeField] private BonusPopup _flashBonusPopup;
         [SerializeField] private BonusPopup _powerBonusPopup;
         [SerializeField] private BonusPopup _minersBonusPopup;
+        
+        // [SerializeField] private MinerRoulettePopup _roulettePopup;
 
         private PopupsConnector _popupsConnector;
         private RelocateConnector _relocateConnector;
@@ -43,10 +45,11 @@ namespace UI.Popups
             _resourceHelper = resourceHelper;
 
             _popupsConnector.NewMinerPopupEvent.Subscribe(OnNewMiner);
-            _popupsConnector.RoulettePopupEvent.Subscribe(OnRoulette);
+            _popupsConnector.MinerRoulettePopupEvent.Subscribe(OnMinerRoulette);
             _popupsConnector.RelocationPopupEvent.Subscribe(OnRelocation);
             _popupsConnector.GiftPopupEvent.Subscribe(OnGift);
             _popupsConnector.BonusPopupEvent.Subscribe(OnBonus);
+            // _popupsConnector.RoulettePopupEvent.Subscribe(OnRoulette);
         }
 
         private void OnNewMiner(NewMinerPopupData data)
@@ -57,7 +60,7 @@ namespace UI.Popups
             ShowPopup(_newMinerPopup, viewModel);
         }
 
-        private void OnRoulette(RoulettePopupData data)
+        private void OnMinerRoulette(MinerRoulettePopupData data)
         {
             var icon = _resourceHelper.GetNormalIconByLevel(data.Config.Level);
             var win = new RouletteMinerInfo(data.Config.Level, icon);
@@ -68,10 +71,10 @@ namespace UI.Popups
                 return new RouletteMinerInfo(config.Level, randomIcon);
             }
             
-            _roulettePopup.SpinEvent.Subscribe(() => OnRouletteWin(data.Config)).AddTo(_roulettePopup);
+            _minerRoulettePopup.SpinEvent.Subscribe(() => OnRouletteWin(data.Config)).AddTo(_minerRoulettePopup);
             
-            var viewModel = new RoulettePopupViewModel(win, GetRandom);
-            ShowPopup(_roulettePopup, viewModel);
+            var viewModel = new MinerRoulettePopupViewModel(win, GetRandom);
+            ShowPopup(_minerRoulettePopup, viewModel);
         }
 
         private void OnRouletteWin(MinerData data)
@@ -133,6 +136,12 @@ namespace UI.Popups
             
             ShowPopup(popup, viewModel);
         }
+        
+        // private void OnRoulette(NewMinerPopupData data)
+        // {
+            // var viewModel = new NewMinerPopupViewModel(data.Config, data.Level, data.Income, icon, previousIcon);
+            // ShowPopup(_ro, viewModel);
+        // }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)
         {

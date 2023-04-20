@@ -36,6 +36,7 @@ namespace _Proxy
             _container.RegisterSingleton<RelocateConnector>();
             _container.RegisterSingleton<FreeGemConnector>();
             _container.RegisterSingleton<MinerShopConnector>();
+            _container.RegisterSingleton<ShopConnector>();
             _container.RegisterSingleton<BonusConnector>();
             _container.RegisterSingleton<PopupsConnector>();
         }

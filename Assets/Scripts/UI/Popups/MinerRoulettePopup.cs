@@ -8,7 +8,7 @@ using Utils.MVVM;
 
 namespace UI.Popups
 {
-    public class RoulettePopup : Popup<RoulettePopupViewModel>
+    public class MinerRoulettePopup : Popup<MinerRoulettePopupViewModel>
     {
         [SerializeField] private RectTransform _spinner;
         [SerializeField] private Vector3 _spinPosition;
@@ -25,7 +25,7 @@ namespace UI.Popups
             _anotherCells.ForEach(x => x.Bind(new RouletteCellViewModel()));
         }
 
-        protected override void BindInner(RoulettePopupViewModel vm)
+        protected override void BindInner(MinerRoulettePopupViewModel vm)
         {
             UpdateCell(_winCell.ViewModel, _vm.Miner);
             
@@ -53,7 +53,7 @@ namespace UI.Popups
         }
     }
 
-    public class RoulettePopupViewModel : ViewModel
+    public class MinerRoulettePopupViewModel : ViewModel
     {
         private RouletteMinerInfo _miner;
         public RouletteMinerInfo Miner => _miner;
@@ -61,7 +61,7 @@ namespace UI.Popups
         private Func<RouletteMinerInfo> _random;
         public Func<RouletteMinerInfo> Random => _random;
 
-        public RoulettePopupViewModel(RouletteMinerInfo miner, Func<RouletteMinerInfo> random)
+        public MinerRoulettePopupViewModel(RouletteMinerInfo miner, Func<RouletteMinerInfo> random)
         {
             _miner = miner;
             _random = random;

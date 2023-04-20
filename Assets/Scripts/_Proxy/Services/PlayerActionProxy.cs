@@ -132,5 +132,10 @@ namespace _Proxy.Services
             }
             RestCall(token => _restAPI.UseBonus(token, bonusType));
         }
+        
+        public void PurchaseTest(string id)
+        {
+            RestCall(token => _restAPI.PurchaseTest(token, id));
+        }
     }
 }

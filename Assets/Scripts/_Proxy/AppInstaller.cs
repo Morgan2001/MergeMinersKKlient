@@ -2,10 +2,12 @@
 using UI.GameplayPanel;
 using UI.GameplayPanel.MergePanel;
 using UI.GameplayPanel.ShopPanel;
+using UI.ShopScreen;
 using UI.TopPanel;
 using UI.Utils;
 using UnityEngine;
 using Zenject;
+using ShopPanelSetup = UI.ShopScreen.ShopPanelSetup;
 
 namespace _Proxy
 {
@@ -19,6 +21,7 @@ namespace _Proxy
         [SerializeField] private TopPanelSetup _topPanelSetup;
         [SerializeField] private MergePanelSetup _mergePanelSetup;
         [SerializeField] private ShopPanelSetup _shopPanelSetup;
+        [SerializeField] private MinerShopPanelSetup _minerShopPanelSetup;
         [SerializeField] private BottomPanelSetup _bottomPanelSetup;
         
         [SerializeField] private DragHelper _dragHelper;
@@ -34,8 +37,10 @@ namespace _Proxy
             Container.BindInstance(_topPanelSetup);
             Container.BindInstance(_mergePanelSetup);
             Container.BindInstance(_shopPanelSetup);
+            Container.BindInstance(_minerShopPanelSetup);
             Container.BindInstance(_bottomPanelSetup);
             Container.Bind<GameplayViewStorage>().AsSingle();
+            Container.Bind<TabSwitcher>().AsSingle();
             
             Container.BindInstance(_dragHelper);
         }

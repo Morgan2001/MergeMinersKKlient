@@ -7,7 +7,7 @@ using Zenject;
 
 namespace UI.GameplayPanel.ShopPanel
 {
-    public class ShopPanelSetup : MonoBehaviour
+    public class MinerShopPanelSetup : MonoBehaviour
     {
         [SerializeField] private ShopPanelView _shopPanelView;
 
