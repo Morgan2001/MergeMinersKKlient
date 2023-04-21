@@ -1,42 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &13197498935844359
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7331187504785275257}
-  m_Layer: 5
-  m_Name: Popups_not_ready
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7331187504785275257
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13197498935844359}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4996404129944649829}
-  m_Father: {fileID: 917033730698455721}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &108558367123200306
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,11 +125,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4996404129944649829}
+  - component: {fileID: 8057072021824594369}
   - component: {fileID: 7144675134469822763}
   - component: {fileID: 3629545509390476335}
-  - component: {fileID: 5460100419478081205}
   m_Layer: 5
-  m_Name: ReturnWindow
+  m_Name: OfflineIncomeWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,7 +150,7 @@ RectTransform:
   - {fileID: 2095944513282029855}
   - {fileID: 9162869624643235001}
   - {fileID: 8409211114783058632}
-  m_Father: {fileID: 7331187504785275257}
+  m_Father: {fileID: 709762055296868621}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -195,6 +158,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8057072021824594369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521409805597865711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cdaf6d7de0429c879b36fa575b3d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _incomeText: {fileID: 293343800964410448}
+  _multipliedIncomeText: {fileID: 302430985735130923}
+  _buttonText: {fileID: 5394624903176671805}
+  _multiplyButton: {fileID: 1019718397637211722}
+  _skipButton: {fileID: 3241806686966868596}
 --- !u!222 &7144675134469822763
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -233,22 +213,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5460100419478081205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521409805597865711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9c530ee0379b0f4386f17fd0a999e4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idleSum: {fileID: 293343800964410448}
-  multSum: {fileID: 302430985735130923}
-  getIdleSum: {fileID: 5394624903176671805}
-  getIdleSumText: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C "
 --- !u!1 &554999078789278496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1014,7 @@ RectTransform:
   - {fileID: 223266196654672807}
   - {fileID: 8058289309367887901}
   - {fileID: 6754796510661222410}
+  - {fileID: 4996404129944649829}
   m_Father: {fileID: 917033730698455721}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1081,6 +1046,7 @@ MonoBehaviour:
   _giftPopup: {fileID: 5166451127754657128}
   _wheelPopup: {fileID: 7315228509325593753}
   _wheelRewardPopup: {fileID: 2312288602379926876}
+  _offlineIncomePopup: {fileID: 8057072021824594369}
   _chipBonusPopup: {fileID: 3141025027423126708}
   _flashBonusPopup: {fileID: 6273757930253438886}
   _powerBonusPopup: {fileID: 5541783091066396312}
@@ -2466,7 +2432,6 @@ RectTransform:
   m_Children:
   - {fileID: 4635491441759919236}
   - {fileID: 709762055296868621}
-  - {fileID: 7331187504785275257}
   m_Father: {fileID: 917033730978196496}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

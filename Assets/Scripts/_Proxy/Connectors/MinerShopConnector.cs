@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Proxy.Events;
+using _Proxy.Preloader;
 using _Proxy.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Events;
+using MergeMiner.Core.State.Repository;
 using MergeMiner.Core.State.Services;
 using Utils;
 
@@ -12,6 +15,8 @@ namespace _Proxy.Connectors
     public class MinerShopConnector
     {
         private readonly EventSubscriptionService _eventSubscriptionService;
+        private readonly PlayerMinersRepository _playerMinersRepository;
+        private readonly SessionData _sessionData;
         private readonly MinerShopConfig _minerShopConfig;
         private readonly MinerConfig _minerConfig;
         private readonly PlayerActionProxy _playerActionProxy;
@@ -25,18 +30,29 @@ namespace _Proxy.Connectors
         private Dictionary<MinerShopConfigItem, Currency> _shop = new();
 
         public MinerShopConnector(
+            SessionData sessionData,
             EventSubscriptionService eventSubscriptionService,
+            PlayerMinersRepository playerMinersRepository,
             MinerShopConfig minerShopConfig,
             MinerConfig minerConfig,
             PlayerActionProxy playerActionProxy)
         {
+            _sessionData = sessionData;
+            _playerMinersRepository = playerMinersRepository;
             _minerShopConfig = minerShopConfig;
             _minerConfig = minerConfig;
             _playerActionProxy = playerActionProxy;
 
             _eventSubscriptionService = eventSubscriptionService;
+            _eventSubscriptionService.Subscribe<InitGameEvent>(OnInit);
             _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
             _eventSubscriptionService.Subscribe<UpdateShopEvent>(OnUpdateShop);
+        }
+
+        private void OnInit(InitGameEvent gameEvent)
+        {
+            var playerMiners = _playerMinersRepository.Get(_sessionData.Token);
+            InitShop(playerMiners.MaxLevelAchieved);
         }
 
         public void BuyMiner(int level, Currency currency)
@@ -46,7 +62,11 @@ namespace _Proxy.Connectors
 
         private void OnMaxLevelIncreased(MaxLevelIncreasedEvent gameEvent)
         {
-            var level = gameEvent.Level;
+            InitShop(gameEvent.Level);
+        }
+
+        private void InitShop(int level)
+        {
             var filtered = _minerShopConfig.GetAll().Where(x => x.UnlockLevelGems <= level);
             foreach (var minerShop in filtered)
             {

@@ -167,5 +167,10 @@ namespace _Proxy.Services
         {
             RestCall(token => _restAPI.PurchaseTestSubscription(token));
         }
+
+        public void MultiplyIncome()
+        {
+            RestCall(token => _restAPI.MultiplyIncome(token));
+        }
     }
 }

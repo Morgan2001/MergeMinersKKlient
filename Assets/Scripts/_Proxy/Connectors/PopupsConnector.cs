@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using _Proxy.Events;
 using _Proxy.Preloader;
+using Common.Utils.Misc;
 using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
@@ -23,6 +25,8 @@ namespace _Proxy.Connectors
         private readonly PlayerMinersRepository _playerMinersRepository;
         private readonly RandomMinerService _randomMinerService;
         private readonly FreeGemService _freeGemService;
+        private readonly IncomeService _incomeService;
+        private readonly TimeService _timeService;
         private readonly EventSubscriptionService _eventSubscriptionService;
         private readonly IResourceHelper _resourceHelper;
 
@@ -47,6 +51,9 @@ namespace _Proxy.Connectors
         private ReactiveEvent<WheelRewardData> _wheelRewardPopupEvent = new();
         public IReactiveSubscription<WheelRewardData> WheelRewardPopupEvent => _wheelRewardPopupEvent;
         
+        private ReactiveEvent<OfflineIncomeData> _offlineIncomePopupEvent = new();
+        public IReactiveSubscription<OfflineIncomeData> OfflineIncomePopupEvent => _offlineIncomePopupEvent;
+        
         public PopupsConnector(
             SessionData sessionData,
             GameConfig gameConfig,
@@ -57,6 +64,8 @@ namespace _Proxy.Connectors
             PlayerMinersRepository playerMinersRepository,
             RandomMinerService randomMinerService,
             FreeGemService freeGemService,
+            IncomeService incomeService,
+            TimeService timeService,
             EventSubscriptionService eventSubscriptionService,
             IResourceHelper resourceHelper)
         {
@@ -69,10 +78,21 @@ namespace _Proxy.Connectors
             _playerMinersRepository = playerMinersRepository;
             _randomMinerService = randomMinerService;
             _freeGemService = freeGemService;
+            _incomeService = incomeService;
+            _timeService = timeService;
+            _resourceHelper = resourceHelper;
             
             _eventSubscriptionService = eventSubscriptionService;
-            _resourceHelper = resourceHelper;
+            _eventSubscriptionService.Subscribe<InitGameEvent>(OnInit);
             _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
+        }
+
+        private void OnInit(InitGameEvent gameEvent)
+        {
+            var player = _playerRepository.Get(_sessionData.Token);
+            var income = _incomeService.CalculateIncome(_sessionData.Token, player.LastUpdate, _timeService.GetCurrentTime);
+            var multiplier = _gameConfig.OfflineIncomeMultiplier;
+            _offlineIncomePopupEvent.Trigger(new OfflineIncomeData(income, income * multiplier));
         }
 
         public void RollRandom(int level)
@@ -213,6 +233,18 @@ namespace _Proxy.Connectors
         {
             Icon = icon;
             Description = description;
+        }
+    }
+    
+    public class OfflineIncomeData
+    {
+        public double Income { get; }
+        public double MultipliedIncome { get; }
+
+        public OfflineIncomeData(double income, double multipliedIncome)
+        {
+            Income = income;
+            MultipliedIncome = multipliedIncome;
         }
     }
 }

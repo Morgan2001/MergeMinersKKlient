@@ -23,6 +23,7 @@ namespace UI.Popups
         [SerializeField] private GiftPopup _giftPopup;
         [SerializeField] private WheelPopup _wheelPopup;
         [SerializeField] private WheelRewardPopup _wheelRewardPopup;
+        [SerializeField] private OfflineIncomePopup _offlineIncomePopup;
         
         [SerializeField] private BonusPopup _chipBonusPopup;
         [SerializeField] private BonusPopup _flashBonusPopup;
@@ -33,6 +34,7 @@ namespace UI.Popups
         private RelocateConnector _relocateConnector;
         private FreeGemConnector _freeGemConnector;
         private WheelConnector _wheelConnector;
+        private OfflineIncomeConnector _offlineIncomeConnector;
         private IResourceHelper _resourceHelper;
         private TabSwitcher _tabSwitcher;
 
@@ -44,6 +46,7 @@ namespace UI.Popups
             RelocateConnector relocateConnector,
             FreeGemConnector freeGemConnector, 
             WheelConnector wheelConnector,
+            OfflineIncomeConnector offlineIncomeConnector,
             IResourceHelper resourceHelper,
             TabSwitcher tabSwitcher)
         {
@@ -51,6 +54,7 @@ namespace UI.Popups
             _relocateConnector = relocateConnector;
             _freeGemConnector = freeGemConnector;
             _wheelConnector = wheelConnector;
+            _offlineIncomeConnector = offlineIncomeConnector;
             _resourceHelper = resourceHelper;
             _tabSwitcher = tabSwitcher;
 
@@ -61,10 +65,11 @@ namespace UI.Popups
             _popupsConnector.BonusPopupEvent.Subscribe(OnBonus);
             _popupsConnector.WheelPopupEvent.Subscribe(OnWheel);
             _popupsConnector.WheelRewardPopupEvent.Subscribe(OnWheelReward);
+            _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
-        
+
         private void Awake()
         {
             OnSwitchTab(Tab.Game);
@@ -176,6 +181,14 @@ namespace UI.Popups
         {
             var viewModel = new WheelRewardPopupViewModel(data.Icon, data.Description);
             ShowPopup(_wheelRewardPopup, viewModel);
+        }
+        
+        private void OnOfflineIncome(OfflineIncomeData data)
+        {
+            var viewModel = new OfflineIncomePopupViewModel(data.Income, data.MultipliedIncome);
+            ShowPopup(_offlineIncomePopup, viewModel);
+
+            _offlineIncomePopup.ClickEvent.Subscribe(_offlineIncomeConnector.MultiplyIncome).AddTo(_offlineIncomePopup);
         }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)

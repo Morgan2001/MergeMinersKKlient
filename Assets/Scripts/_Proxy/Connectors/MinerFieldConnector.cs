@@ -1,4 +1,5 @@
-﻿using _Proxy.Preloader;
+﻿using _Proxy.Events;
+using _Proxy.Preloader;
 using _Proxy.Services;
 using MergeMiner.Core.PlayerActions.Base;
 using MergeMiner.Core.State.Config;
@@ -49,7 +50,6 @@ namespace _Proxy.Connectors
             BonusHelper bonusHelper)
         {
             _sessionData = sessionData;
-            _eventSubscriptionService = eventSubscriptionService;
             _playerMinersRepository = playerMinersRepository;
             _playerActionProxy = playerActionProxy;
             _minerRepository = minerRepository;
@@ -57,6 +57,8 @@ namespace _Proxy.Connectors
             _locationHelper = locationHelper;
             _bonusHelper = bonusHelper;
 
+            _eventSubscriptionService = eventSubscriptionService;
+            _eventSubscriptionService.Subscribe<InitGameEvent>(OnInit);
             _eventSubscriptionService.Subscribe<RelocateEvent>(OnRelocate);
             _eventSubscriptionService.Subscribe<AddMinerEvent>(OnAddMiner);
             _eventSubscriptionService.Subscribe<MergeMinersEvent>(OnMergeMiners);
@@ -65,8 +67,8 @@ namespace _Proxy.Connectors
             _eventSubscriptionService.Subscribe<UseBonusEvent>(OnUseBonus);
             _eventSubscriptionService.Subscribe<EndBonusEvent>(OnEndBonus);
         }
-
-        public void Restore()
+        
+        private void OnInit(InitGameEvent gameEvent)
         {
             Relocate(_sessionData.Token);
 

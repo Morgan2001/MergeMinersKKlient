@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using MergeMiner.Core.Network.Data;
 using MergeMiner.Core.Network.Helpers;
-using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 
 namespace _Proxy.Preloader
@@ -106,6 +105,11 @@ namespace _Proxy.Preloader
             {
                 { "currency", currency }
             });
+        }
+
+        public async Task<RestResponse> MultiplyIncome(string token)
+        {
+            return await _restClient.Post<RestResponse>($"game/{token}/multiplyIncome");
         }
         
         public async Task<RestResponse> PurchaseTest(string token, string id)
