@@ -115,5 +115,10 @@ namespace _Proxy.Preloader
                 { "id", id }
             });
         }
+        
+        public async Task<RestResponse> PurchaseTestSubscription(string token)
+        {
+            return await _restClient.Post<RestResponse>($"purchase/{token}/testSubscription");
+        }
     }
 }

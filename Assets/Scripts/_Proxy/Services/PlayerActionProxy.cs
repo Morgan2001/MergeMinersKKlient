@@ -162,5 +162,10 @@ namespace _Proxy.Services
         {
             RestCall(token => _restAPI.PurchaseTest(token, id));
         }
+        
+        public void PurchaseTestSubscription()
+        {
+            RestCall(token => _restAPI.PurchaseTestSubscription(token));
+        }
     }
 }

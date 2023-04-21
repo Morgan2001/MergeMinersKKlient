@@ -71,7 +71,8 @@ namespace _Proxy.Connectors
             Relocate(_sessionData.Token);
 
             var miners = _playerMinersRepository.Get(_sessionData.Token);
-            for (var i = 0; i < miners.Miners.Count; i++)
+            var size = miners.Size + _bonusHelper.GetBonusPower(_sessionData.Token, BoostType.Slots);
+            for (var i = 0; i < size; i++)
             {
                 var minerId = miners.Miners[i];
                 if (minerId == null) continue;
@@ -85,10 +86,12 @@ namespace _Proxy.Connectors
         private void Relocate(string playerId)
         {
             var location = _locationHelper.GetLocation(playerId);
+            var bonusSlots = _bonusHelper.GetBonusPower(playerId, BoostType.Slots); 
             var poweredSlots = _bonusHelper.IsBonusActive(playerId, BoostType.PowerAll)
-                ? location.TotalSlots
+                ? location.TotalSlots + bonusSlots
                 : location.PoweredSlots;
-            _resizeEvent.Trigger(new RelocateData(location.Width, location.Height, poweredSlots));
+
+            _resizeEvent.Trigger(new RelocateData(location.Width, location.Height, poweredSlots, bonusSlots));
         }
 
         private void OnRelocate(RelocateEvent gameEvent)
@@ -122,16 +125,18 @@ namespace _Proxy.Connectors
         
         private void OnUseBonus(UseBonusEvent gameEvent)
         {
-            if (gameEvent.BoostType != BoostType.PowerAll) return;
-            
-            Relocate(_sessionData.Token);
+            if (gameEvent.BoostType is BoostType.PowerAll or BoostType.Slots)
+            {
+                Relocate(_sessionData.Token);
+            }
         }
         
         private void OnEndBonus(EndBonusEvent gameEvent)
         {
-            if (gameEvent.BoostType != BoostType.PowerAll) return;
-            
-            Relocate(_sessionData.Token);
+            if (gameEvent.BoostType is BoostType.PowerAll or BoostType.Slots)
+            {
+                Relocate(_sessionData.Token);
+            }
         }
 
         public bool Drop(string minerId, int slot)
@@ -171,12 +176,14 @@ namespace _Proxy.Connectors
         public int Height { get; }
         public int Total => Width * Height;
         public int Powered { get; }
+        public int BonusSlots { get; }
         
-        public RelocateData(int width, int height, int powered)
+        public RelocateData(int width, int height, int powered, int bonusSlots)
         {
             Width = width;
             Height = height;
             Powered = powered;
+            BonusSlots = bonusSlots;
         }
     }
 

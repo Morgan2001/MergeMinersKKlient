@@ -32,7 +32,7 @@ namespace _Proxy.Connectors
 
         public void InitSubscription()
         {
-            
+            _playerActionProxy.PurchaseTestSubscription();
         }
     }
 
