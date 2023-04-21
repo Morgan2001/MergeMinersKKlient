@@ -5110,6 +5110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3907959260253976652}
+  - component: {fileID: 8219366749060993767}
   - component: {fileID: 6384535157398426683}
   - component: {fileID: 5191311327046160368}
   m_Layer: 5
@@ -5140,6 +5141,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8219366749060993767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432289271698872358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02610235b8c24ba981a519f667a553c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradePrefabGems: {fileID: 3386941962588165514, guid: 10cb5826191ab8f4d869764c06a3f5d3,
+    type: 3}
+  _upgradePrefabAds: {fileID: 8951330907001042258, guid: c4d7a7e22abff79499eb6d10a762c0d1,
+    type: 3}
+  _container: {fileID: 8405121152493802434}
 --- !u!222 &6384535157398426683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15845,7 +15863,6 @@ GameObject:
   - component: {fileID: 8405121152493802434}
   - component: {fileID: 3376616676452721547}
   - component: {fileID: 8431142822201962267}
-  - component: {fileID: 5209172639533269971}
   m_Layer: 5
   m_Name: UpgradeShopPanel
   m_TagString: Untagged
@@ -15913,31 +15930,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
---- !u!114 &5209172639533269971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8860583078156211121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5af11fc0cd73f940b485d83df08c3e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UpgradeShopPositionForDiamondsPrefab: {fileID: 2733866712736336545, guid: 10cb5826191ab8f4d869764c06a3f5d3,
-    type: 3}
-  UpgradeShopPositionForAdsPrefab: {fileID: 2733866712736336545, guid: 54d571ff44d55034abe8233ce604ec29,
-    type: 3}
-  upgradeOffers:
-  - {fileID: 11400000, guid: d17c4294ac24cd24cae101d0a61e08da, type: 2}
-  - {fileID: 11400000, guid: 0864dd29aa2625f4bad973d9ebec7147, type: 2}
-  - {fileID: 11400000, guid: 7b0eb792d64641b4bb3f5089b1b2bbc9, type: 2}
-  - {fileID: 11400000, guid: 6c6af50d48b8ffd4e9b3ca9e44e1f152, type: 2}
-  - {fileID: 11400000, guid: bbdcc3db972123444bb4f962be9837e3, type: 2}
-  - {fileID: 11400000, guid: 323f0edd010c0a9428b96f61574ab707, type: 2}
-  - {fileID: 11400000, guid: 6c25f6cbc745188439bc6a16b5619373, type: 2}
-  - {fileID: 11400000, guid: a52ed6f6870af474498fce05342af814, type: 2}
 --- !u!1 &8862640633351021930
 GameObject:
   m_ObjectHideFlags: 0

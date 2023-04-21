@@ -18,6 +18,7 @@ namespace _Proxy
         [SerializeField] private SetOfLocations _locations;
         [SerializeField] private SetOfFlyingBonuses _flyingBonuses;
         [SerializeField] private SetOfWheelRewards _wheelRewards;
+        [SerializeField] private SetOfUpgrades _upgrades;
         
         [SerializeField] private TopPanelSetup _topPanelSetup;
         [SerializeField] private MergePanelSetup _mergePanelSetup;
@@ -34,6 +35,7 @@ namespace _Proxy
             Container.BindInstance(_locations);
             Container.BindInstance(_flyingBonuses);
             Container.BindInstance(_wheelRewards);
+            Container.BindInstance(_upgrades);
             Container.BindInterfacesTo<ResourceHelper>().AsSingle();
             
             Container.BindInstance(_topPanelSetup);

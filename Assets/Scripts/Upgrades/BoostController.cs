@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Data;
 using UnityEngine;
 
 public enum Boosts
@@ -60,48 +61,48 @@ public class BoostController : MonoBehaviour, ISavable
         }
     }
 
-    public void Boost(Boosts type, float power = 1, float duration = 0)
+    public void Boost(BoostType type, float power = 1, float duration = 0)
     {
         switch (type)
         {
-            case Boosts.MiningPower:
+            case BoostType.PowerUp:
                 BoostMiningPower(power);
                 boostsTimeLeft.Add(new BoostTimeLeft(type, power, duration));
                 break;
-            case Boosts.EverySlotIsMining:
+            case BoostType.PowerAll:
                 BoostSlots();
                 boostsTimeLeft.Add(new BoostTimeLeft(type, power, duration));
                 break;
-            case Boosts.BoxFillingSpeed:
+            case BoostType.BoxFilling:
                 BoostBoxFillingSpeed(power);
                 boostsTimeLeft.Add(new BoostTimeLeft(type, power, duration));
                 break;
-            case Boosts.TimeRewind:
+            case BoostType.TimeRewind:
                 RewindTime(duration);
                 break;
-            case Boosts.MinerFromBoxUpgrade:
+            case BoostType.Miners:
                 UpgradeMinerFromBox();
                 break;
-            case Boosts.Diamonds:
+            case BoostType.Gems:
                 player.AddDiamonds(power);
                 break;
         }
     }
-    public void Boost(Boosts type, int power = 1, int duration = 0)
+    public void Boost(BoostType type, int power = 1, int duration = 0)
     {
         Boost(type, (float)power, (float)duration);
     }
-    public void RemoveBoost(Boosts type)
+    public void RemoveBoost(BoostType type)
     {
         switch (type)
         {
-            case Boosts.MiningPower:
+            case BoostType.PowerUp:
                 RemoveMiningPowerBoost();
                 break;
-            case Boosts.EverySlotIsMining:
+            case BoostType.PowerAll:
                 RemoveSlotsBoost();
                 break;
-            case Boosts.BoxFillingSpeed:
+            case BoostType.BoxFilling:
                 RemoveBoxFillingSpeedBoost();
                 break;
         }
@@ -176,13 +177,13 @@ public class BoostController : MonoBehaviour, ISavable
 public class BoostTimeLeft
 {
     [SerializeField]
-    private Boosts type;
+    private BoostType type;
     [SerializeField]
     private float power;
     [SerializeField]
     private float timeLeft;
 
-    public Boosts Type
+    public BoostType Type
     {
         get => type;
     }
@@ -195,7 +196,7 @@ public class BoostTimeLeft
         get => timeLeft;
     }
 
-    public BoostTimeLeft(Boosts type, float power, float timeLeft)
+    public BoostTimeLeft(BoostType type, float power, float timeLeft)
     {
         this.type = type;
         this.timeLeft = timeLeft;

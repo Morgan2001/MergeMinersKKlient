@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Data;
 using P;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class UpgradeOffer : ScriptableObject
     public string Description;
     public int Cost;
     public ResourceTypes Currency;
-    public Boosts BoostType;
+    public BoostType BoostType;
     public int Power;
     public int Duration;
 }

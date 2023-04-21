@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MergeMiner.Core.State.Data;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "WheelReward", menuName = "ScriptableObjects/WheelReward", order = 1)]
 public class WheelReward : ScriptableObject
@@ -6,7 +7,7 @@ public class WheelReward : ScriptableObject
     public int Id;
     
     [Header("Data")]
-    public Boosts BoostType;
+    public BoostType BoostType;
     public float Duration;
     public float Power;
 

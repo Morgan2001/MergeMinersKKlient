@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MergeMiner.Core.State.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -154,7 +155,7 @@ public class ButtonBinder : MonoBehaviour
     {
         PowerTransformerButton.onClick.AddListener(() =>
         {
-            ads.ShowRewarded(() => boostController.Boost(Boosts.EverySlotIsMining, 1, 5));
+            ads.ShowRewarded(() => boostController.Boost(BoostType.PowerAll, 1, 5));
         });
     }
 
@@ -162,7 +163,7 @@ public class ButtonBinder : MonoBehaviour
     {
         FlashCardButton.onClick.AddListener(() =>
         {
-            ads.ShowRewarded(() => boostController.Boost(Boosts.MiningPower, 10, 5));
+            ads.ShowRewarded(() => boostController.Boost(BoostType.PowerUp, 10, 5));
         });
     }
 
@@ -170,7 +171,7 @@ public class ButtonBinder : MonoBehaviour
     {
         ChipButton.onClick.AddListener(() =>
         {
-            ads.ShowRewarded(() => boostController.Boost(Boosts.BoxFillingSpeed, 3, 5));
+            ads.ShowRewarded(() => boostController.Boost(BoostType.BoxFilling, 3, 5));
         });
     }
 

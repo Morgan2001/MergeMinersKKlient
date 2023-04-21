@@ -157,6 +157,16 @@ namespace _Proxy.Services
                 _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.SpinResult!));
             });
         }
+
+        public void MultiplyIncome()
+        {
+            RestCall(token => _restAPI.MultiplyIncome(token));
+        }
+
+        public void BuyUpgrade(string id)
+        {
+            RestCall(token => _restAPI.BuyUpgrade(token, id));
+        }
         
         public void PurchaseTest(string id)
         {
@@ -166,11 +176,6 @@ namespace _Proxy.Services
         public void PurchaseTestSubscription()
         {
             RestCall(token => _restAPI.PurchaseTestSubscription(token));
-        }
-
-        public void MultiplyIncome()
-        {
-            RestCall(token => _restAPI.MultiplyIncome(token));
         }
     }
 }

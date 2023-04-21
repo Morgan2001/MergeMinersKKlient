@@ -112,6 +112,14 @@ namespace _Proxy.Preloader
             return await _restClient.Post<RestResponse>($"game/{token}/multiplyIncome");
         }
         
+        public async Task<RestResponse> BuyUpgrade(string token, string id)
+        {
+            return await _restClient.Post<RestResponse>($"game/{token}/buyUpgrade", new Dictionary<string, object>
+            {
+                { "id", id }
+            });
+        }
+        
         public async Task<RestResponse> PurchaseTest(string token, string id)
         {
             return await _restClient.Post<RestResponse>($"purchase/{token}/test", new Dictionary<string, object>

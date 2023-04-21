@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Enums;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace UI.Utils
         FlyingBonusData GetBonusDataById(string id);
         Sprite GetWheelRewardIcon(int reward);
         string GetWheelRewardDescription(int reward);
+        Sprite GetUpgradeIcon(int index);
+        string GetUpgradeDescription(int index);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -24,19 +27,22 @@ namespace UI.Utils
         private readonly SetOfLocations _locationsConfig;
         private readonly SetOfFlyingBonuses _flyingBonusesConfig;
         private readonly SetOfWheelRewards _wheelRewards;
+        private readonly SetOfUpgrades _upgrades;
 
         public ResourceHelper(
             SetOfMiningDeviceDatas minersConfig,
             SetOfMiningDeviceBoxes minerBoxesConfig,
             SetOfLocations locationsConfig,
             SetOfFlyingBonuses flyingBonusesConfig,
-            SetOfWheelRewards wheelRewards)
+            SetOfWheelRewards wheelRewards,
+            SetOfUpgrades upgrades)
         {
             _minersConfig = minersConfig;
             _minerBoxesConfig = minerBoxesConfig;
             _locationsConfig = locationsConfig;
             _flyingBonusesConfig = flyingBonusesConfig;
             _wheelRewards = wheelRewards;
+            _upgrades = upgrades;
         }
 
         public Sprite GetNormalIconByLevel(int level)
@@ -84,6 +90,16 @@ namespace UI.Utils
         public string GetWheelRewardDescription(int reward)
         {
             return _wheelRewards.Rewards.Find(x => x.Id == reward).Description;
+        }
+
+        public Sprite GetUpgradeIcon(int index)
+        {
+            return _upgrades.Upgrades[index].Sprite;
+        }
+
+        public string GetUpgradeDescription(int index)
+        {
+            return _upgrades.Upgrades[index].Description;
         }
     }
 }
