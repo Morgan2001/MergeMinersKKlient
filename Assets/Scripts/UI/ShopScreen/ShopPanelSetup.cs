@@ -28,7 +28,7 @@ namespace UI.ShopScreen
 
             _popupsConnector = popupsConnector;
 
-            _rouletteButton.Subscribe(_popupsConnector.RollRoulette);
+            _rouletteButton.Subscribe(_popupsConnector.SpinWheel);
             _subscriptionButton.Subscribe(_shopConnector.InitSubscription);
         }
 

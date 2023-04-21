@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using _Proxy.Connectors;
+using _Proxy.Data;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Data;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;
@@ -41,32 +43,32 @@ namespace UI.GameplayPanel.FlyingBonuses
 
         private void AddBonus(AddBonusData data)
         {
-            var icon = _resourceHelper.GetBonusIconByType(data.BonusType);
+            var icon = _resourceHelper.GetBonusIconByType(data.Id);
             var viewModel = new BonusViewModel(icon);
             
             var view = Instantiate(_bonusPrefab, _container);
             view.ClickEvent.Subscribe(() =>
             {
                 view.gameObject.SetActive(false);
-                TryToUseBonus(data.BonusType);
+                TryToUseBonus(data.Id);
             }).AddTo(view);
             
             view.Bind(viewModel);
             _bonuses.Add(view);
 
             Rotate(view);
-            Move(view, data.BonusType);
+            Move(view, data.Id);
         }
 
-        private void TryToUseBonus(BonusType bonusType)
+        private void TryToUseBonus(string id)
         {
-            if (bonusType == BonusType.Money)
+            if (id == BonusNames.Wallet)
             {
-                _bonusConnector.UseBonus(bonusType);
+                _bonusConnector.UseBonus(id);
             }
             else
             {
-                _popupsConnector.ShowBonus(bonusType, () => _bonusConnector.UseBonus(bonusType));
+                _popupsConnector.ShowBonus(id, () => _bonusConnector.UseBonus(id));
             }
         }
 
@@ -81,9 +83,9 @@ namespace UI.GameplayPanel.FlyingBonuses
                 .ToUniTask();
         }
 
-        private async void Move(BonusView view, BonusType bonusType)
+        private async void Move(BonusView view, string id)
         {
-            var config = _resourceHelper.GetBonusDataByType(bonusType);
+            var config = _resourceHelper.GetBonusDataById(id);
             var bounces = config.NumOfBouncesToDestroy;
             var timeToFly = config.TimeToFLyBetweenSides;
             var onTheLeft = Random.value < 0.5f;
@@ -104,9 +106,11 @@ namespace UI.GameplayPanel.FlyingBonuses
 
         private void UseBonus(UseBonusData data)
         {
+            if (!_bonuses.Any()) return;
+            
             var currentBonus = _bonuses.Last();
 
-            if (data.BonusType == BonusType.Money)
+            if (data.BoostType == BoostType.Money)
             {
                 var viewModel = new MoneyBonusRewardViewModel(data.Value);
                 var view = Instantiate(_moneyBonusRewardPrefab, _container);

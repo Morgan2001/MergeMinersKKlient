@@ -2,11 +2,11 @@
 
 namespace _Proxy.Events
 {
-    public class AddBonusEvent : GameEvent
+    public class SpinWheelEvent : GameEvent
     {
         public string Id { get; }
-
-        public AddBonusEvent(string player, string id) : base(player)
+        
+        public SpinWheelEvent(string player, string id) : base(player)
         {
             Id = id;
         }

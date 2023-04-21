@@ -6,6 +6,8 @@ using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Repository;
 using MergeMiner.Core.State.Services;
+using UI.Utils;
+using UnityEngine;
 using Utils;
 
 namespace _Proxy.Connectors
@@ -22,6 +24,7 @@ namespace _Proxy.Connectors
         private readonly RandomMinerService _randomMinerService;
         private readonly FreeGemService _freeGemService;
         private readonly EventSubscriptionService _eventSubscriptionService;
+        private readonly IResourceHelper _resourceHelper;
 
         private ReactiveEvent<NewMinerPopupData> _newMinerPopupEvent = new();
         public IReactiveSubscription<NewMinerPopupData> NewMinerPopupEvent => _newMinerPopupEvent;
@@ -38,8 +41,11 @@ namespace _Proxy.Connectors
         private ReactiveEvent<BonusPopupData> _bonusPopupEvent = new();
         public IReactiveSubscription<BonusPopupData> BonusPopupEvent => _bonusPopupEvent;
         
-        private ReactiveEvent<BonusPopupData> _roulettePopupEvent = new();
-        public IReactiveSubscription<BonusPopupData> RoulettePopupEvent => _roulettePopupEvent;
+        private ReactiveEvent _wheelPopupEvent = new();
+        public IReactiveSubscription WheelPopupEvent => _wheelPopupEvent;
+        
+        private ReactiveEvent<WheelRewardData> _wheelRewardPopupEvent = new();
+        public IReactiveSubscription<WheelRewardData> WheelRewardPopupEvent => _wheelRewardPopupEvent;
         
         public PopupsConnector(
             SessionData sessionData,
@@ -51,7 +57,8 @@ namespace _Proxy.Connectors
             PlayerMinersRepository playerMinersRepository,
             RandomMinerService randomMinerService,
             FreeGemService freeGemService,
-            EventSubscriptionService eventSubscriptionService)
+            EventSubscriptionService eventSubscriptionService,
+            IResourceHelper resourceHelper)
         {
             _sessionData = sessionData;
             _gameConfig = gameConfig;
@@ -64,6 +71,7 @@ namespace _Proxy.Connectors
             _freeGemService = freeGemService;
             
             _eventSubscriptionService = eventSubscriptionService;
+            _resourceHelper = resourceHelper;
             _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
         }
 
@@ -96,14 +104,21 @@ namespace _Proxy.Connectors
             _newMinerPopupEvent.Trigger(new NewMinerPopupData(newMiner, gameEvent.Level, miner));
         }
 
-        public void ShowBonus(BonusType bonusType, Action callback)
+        public void ShowBonus(string id, Action callback)
         {
-            _bonusPopupEvent.Trigger(new BonusPopupData(bonusType, callback));
+            _bonusPopupEvent.Trigger(new BonusPopupData(id, callback));
         }
 
-        public void RollRoulette()
+        public void SpinWheel()
         {
-            
+            _wheelPopupEvent.Trigger();
+        }
+
+        public void ShowWheelReward(int reward)
+        {
+            var icon = _resourceHelper.GetWheelRewardIcon(reward);
+            var description = _resourceHelper.GetWheelRewardDescription(reward);
+            _wheelRewardPopupEvent.Trigger(new WheelRewardData(icon, description));
         }
     }
 
@@ -179,13 +194,25 @@ namespace _Proxy.Connectors
 
     public class BonusPopupData
     {
-        public BonusType BonusType { get; }
+        public string Id { get; }
         public Action Callback { get; }
 
-        public BonusPopupData(BonusType bonusType, Action callback)
+        public BonusPopupData(string id, Action callback)
         {
-            BonusType = bonusType;
+            Id = id;
             Callback = callback;
+        }
+    }
+
+    public class WheelRewardData
+    {
+        public Sprite Icon { get; }
+        public string Description { get; }
+
+        public WheelRewardData(Sprite icon, string description)
+        {
+            Icon = icon;
+            Description = description;
         }
     }
 }

@@ -2,6 +2,7 @@
 using _Proxy.Services;
 using MergeMiner.Core.PlayerActions.Base;
 using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Enums;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Repository;
@@ -84,7 +85,7 @@ namespace _Proxy.Connectors
         private void Relocate(string playerId)
         {
             var location = _locationHelper.GetLocation(playerId);
-            var poweredSlots = _bonusHelper.IsBonusActive(playerId, BonusType.Power)
+            var poweredSlots = _bonusHelper.IsBonusActive(playerId, BoostType.PowerAll)
                 ? location.TotalSlots
                 : location.PoweredSlots;
             _resizeEvent.Trigger(new RelocateData(location.Width, location.Height, poweredSlots));
@@ -121,14 +122,14 @@ namespace _Proxy.Connectors
         
         private void OnUseBonus(UseBonusEvent gameEvent)
         {
-            if (gameEvent.BonusType != BonusType.Power) return;
+            if (gameEvent.BoostType != BoostType.PowerAll) return;
             
             Relocate(_sessionData.Token);
         }
         
         private void OnEndBonus(EndBonusEvent gameEvent)
         {
-            if (gameEvent.BonusType != BonusType.Power) return;
+            if (gameEvent.BoostType != BoostType.PowerAll) return;
             
             Relocate(_sessionData.Token);
         }

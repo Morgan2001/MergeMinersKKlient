@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 using _Proxy.Commands;
+using _Proxy.Data;
+using _Proxy.Events;
 using _Proxy.Preloader;
+using MergeMiner.Core.Bonuses.Services;
 using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.Network.Data;
 using MergeMiner.Core.PlayerActions.Actions;
 using MergeMiner.Core.PlayerActions.Services;
-using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Services;
@@ -23,6 +25,7 @@ namespace _Proxy.Services
         private readonly BoxService _boxService;
         private readonly PlayerStateService _playerStateService;
         private readonly PlayerSlotsStateService _playerSlotsStateService;
+        private readonly BonusApplierService _bonusApplierService;
         private readonly EventDispatcherService _eventDispatcherService;
 
         public PlayerActionProxy(
@@ -33,6 +36,7 @@ namespace _Proxy.Services
             BoxService boxService,
             PlayerStateService playerStateService,
             PlayerSlotsStateService playerSlotsStateService,
+            BonusApplierService bonusApplierService,
             EventDispatcherService eventDispatcherService)
         {
             _sessionData = sessionData;
@@ -42,10 +46,12 @@ namespace _Proxy.Services
             _boxService = boxService;
             _playerStateService = playerStateService;
             _playerSlotsStateService = playerSlotsStateService;
+            _bonusApplierService = bonusApplierService;
             _eventDispatcherService = eventDispatcherService;
         }
 
-        private async void RestCall(Func<string, Task<RestResponse>> call, Action<RestResponse> callback = null)
+        private async void RestCall<T>(Func<string, Task<T>> call, Action<T> callback = null)
+            where T : RestResponse
         {
             var response = await call.Invoke(_sessionData.Token);
             if (response.Success)
@@ -75,6 +81,17 @@ namespace _Proxy.Services
                 foreach (var miner in response.AddedMiners)
                 {
                     _gameCommandService.Process(new AddMinerCommand(_sessionData.Token, miner.Config, miner.Slot, miner.Source));
+                }
+            }
+            
+            if (response.AddedBoosts != null)
+            {
+                foreach (var boost in response.AddedBoosts)
+                {
+                    if (boost.Duration > 0)
+                    {
+                        _bonusApplierService.Apply(_sessionData.Token, boost.Type, boost.Duration, boost.Power);
+                    }
                 }
             }
         }
@@ -124,13 +141,21 @@ namespace _Proxy.Services
             RestCall(_restAPI.SpeedUpBlueBox);
         }
         
-        public void UseBonus(BonusType bonusType)
+        public void UseBonus(string id)
         {
-            if (bonusType != BonusType.Miners)
+            if (id == BonusNames.Wallet)
             {
-                _playerActionService.Process(new UseBonusPlayerAction(_sessionData.Token, bonusType));
+                _playerActionService.Process(new UseBonusPlayerAction(_sessionData.Token, id));
             }
-            RestCall(token => _restAPI.UseBonus(token, bonusType));
+            RestCall(token => _restAPI.UseBonus(token, id));
+        }
+        
+        public void SpinWheel(Currency currency)
+        {
+            RestCall(token => _restAPI.SpinWheel(token, currency), response =>
+            {
+                _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.SpinResult!));
+            });
         }
         
         public void PurchaseTest(string id)

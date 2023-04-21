@@ -1,6 +1,6 @@
 ﻿using _Proxy.Events;
 using _Proxy.Services;
-using MergeMiner.Core.State.Config;
+using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Services;
 using MergeMiner.Core.State.Utils;
@@ -35,43 +35,43 @@ namespace _Proxy.Connectors
 
         private void OnAddBonus(AddBonusEvent gameEvent)
         {
-            _addBonusEvent.Trigger(new AddBonusData(gameEvent.BonusType));
+            _addBonusEvent.Trigger(new AddBonusData(gameEvent.Id));
         }
         
         private void OnUseBonus(UseBonusEvent gameEvent)
         {
             double value = 0;
-            if (gameEvent.BonusType == BonusType.Money)
+            if (gameEvent.BoostType == BoostType.Money)
             {
                 value = _minersBonusHelper.GetMinersBonus(gameEvent.Player);
             }
-            _useBonusEvent.Trigger(new UseBonusData(gameEvent.BonusType, value));
+            _useBonusEvent.Trigger(new UseBonusData(gameEvent.BoostType, value));
         }
 
-        public void UseBonus(BonusType bonusType)
+        public void UseBonus(string id)
         {
-            _playerActionProxy.UseBonus(bonusType);
+            _playerActionProxy.UseBonus(id);
         }
     }
 
     public struct AddBonusData
     {
-        public BonusType BonusType { get; }
+        public string Id { get; }
 
-        public AddBonusData(BonusType bonusType)
+        public AddBonusData(string id)
         {
-            BonusType = bonusType;
+            Id = id;
         }
     }
     
     public struct UseBonusData
     {
-        public BonusType BonusType { get; }
+        public BoostType BoostType { get; }
         public double Value { get; }
 
-        public UseBonusData(BonusType bonusType, double value)
+        public UseBonusData(BoostType boostType, double value)
         {
-            BonusType = bonusType;
+            BoostType = boostType;
             Value = value;
         }
     }

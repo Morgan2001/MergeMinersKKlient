@@ -1,6 +1,6 @@
 ﻿using _Proxy.Connectors;
+using _Proxy.Data;
 using Common.Utils.Extensions;
-using MergeMiner.Core.State.Config;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;
@@ -10,25 +10,31 @@ namespace UI.Popups
 {
     public class PopupSystemSetup : MonoBehaviour
     {
-        [SerializeField] private RectTransform _mainScreen;
+        [SerializeField] private GameObject _container;
+        
+        [SerializeField] private GameObject _shopScreen;
+        [SerializeField] private GameObject _upgradesScreen;
+        [SerializeField] private GameObject _mainScreen;
         
         [SerializeField] private NewMinerPopup _newMinerPopup;
         [SerializeField] private MinerRoulettePopup _minerRoulettePopup;
         [SerializeField] private RouletteWinPopup _rouletteWinPopup;
         [SerializeField] private RelocationPopup _relocationPopup;
         [SerializeField] private GiftPopup _giftPopup;
+        [SerializeField] private WheelPopup _wheelPopup;
+        [SerializeField] private WheelRewardPopup _wheelRewardPopup;
         
         [SerializeField] private BonusPopup _chipBonusPopup;
         [SerializeField] private BonusPopup _flashBonusPopup;
         [SerializeField] private BonusPopup _powerBonusPopup;
         [SerializeField] private BonusPopup _minersBonusPopup;
-        
-        // [SerializeField] private MinerRoulettePopup _roulettePopup;
 
         private PopupsConnector _popupsConnector;
         private RelocateConnector _relocateConnector;
         private FreeGemConnector _freeGemConnector;
+        private WheelConnector _wheelConnector;
         private IResourceHelper _resourceHelper;
+        private TabSwitcher _tabSwitcher;
 
         private IPopup _currentPopup;
 
@@ -37,19 +43,38 @@ namespace UI.Popups
             PopupsConnector popupsConnector,
             RelocateConnector relocateConnector,
             FreeGemConnector freeGemConnector, 
-            IResourceHelper resourceHelper)
+            WheelConnector wheelConnector,
+            IResourceHelper resourceHelper,
+            TabSwitcher tabSwitcher)
         {
             _popupsConnector = popupsConnector;
             _relocateConnector = relocateConnector;
             _freeGemConnector = freeGemConnector;
+            _wheelConnector = wheelConnector;
             _resourceHelper = resourceHelper;
+            _tabSwitcher = tabSwitcher;
 
             _popupsConnector.NewMinerPopupEvent.Subscribe(OnNewMiner);
             _popupsConnector.MinerRoulettePopupEvent.Subscribe(OnMinerRoulette);
             _popupsConnector.RelocationPopupEvent.Subscribe(OnRelocation);
             _popupsConnector.GiftPopupEvent.Subscribe(OnGift);
             _popupsConnector.BonusPopupEvent.Subscribe(OnBonus);
-            // _popupsConnector.RoulettePopupEvent.Subscribe(OnRoulette);
+            _popupsConnector.WheelPopupEvent.Subscribe(OnWheel);
+            _popupsConnector.WheelRewardPopupEvent.Subscribe(OnWheelReward);
+            
+            _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
+        }
+        
+        private void Awake()
+        {
+            OnSwitchTab(Tab.Game);
+        }
+        
+        private void OnSwitchTab(Tab tab)
+        {
+            _shopScreen.SetActive(tab == Tab.Shop);
+            _upgradesScreen.SetActive(tab == Tab.Upgrades);
+            _mainScreen.SetActive(tab == Tab.Game);
         }
 
         private void OnNewMiner(NewMinerPopupData data)
@@ -107,24 +132,24 @@ namespace UI.Popups
         {
             var viewModel = new BonusPopupViewModel();
             BonusPopup popup = null;
-            switch (data.BonusType)
+            switch (data.Id)
             {
-                case BonusType.Chip:
+                case BonusNames.Chip:
                 {
                     popup = _chipBonusPopup;
                     break;
                 }
-                case BonusType.Flash:
+                case BonusNames.Flash:
                 {
                     popup = _flashBonusPopup;
                     break;
                 }
-                case BonusType.Miners:
+                case BonusNames.Miners:
                 {
                     popup = _minersBonusPopup;
                     break;
                 }
-                case BonusType.Power:
+                case BonusNames.Power:
                 {
                     popup = _powerBonusPopup;
                     break;
@@ -137,34 +162,41 @@ namespace UI.Popups
             ShowPopup(popup, viewModel);
         }
         
-        // private void OnRoulette(NewMinerPopupData data)
-        // {
-            // var viewModel = new NewMinerPopupViewModel(data.Config, data.Level, data.Income, icon, previousIcon);
-            // ShowPopup(_ro, viewModel);
-        // }
+        private void OnWheel()
+        {
+            var viewModel = new WheelPopupViewModel();
+            ShowPopup(_wheelPopup, viewModel);
+            
+            _wheelConnector.SpinEvent.Subscribe(data => viewModel.Spin(data.Id)).AddTo(_wheelPopup);
+            _wheelPopup.SpinEvent.Subscribe(_wheelConnector.Spin).AddTo(_wheelPopup);
+            _wheelPopup.EndSpinEvent.Subscribe(_popupsConnector.ShowWheelReward).AddTo(_wheelPopup);
+        }
+        
+        private void OnWheelReward(WheelRewardData data)
+        {
+            var viewModel = new WheelRewardPopupViewModel(data.Icon, data.Description);
+            ShowPopup(_wheelRewardPopup, viewModel);
+        }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)
         {
             if (_currentPopup != null)
             {
-                _currentPopup.Hide();
+                _currentPopup.HideForce();
+                _currentPopup = null;
             }
             
             _currentPopup = popup;
-            _currentPopup.CloseEvent.Subscribe(OnClosePopup);
             
+            popup.CloseEvent.Subscribe(OnClosePopup).AddTo(popup);
             popup.Show(data);
             
-            _mainScreen.gameObject.SetActive(false);
+            _container.SetActive(false);
         }
 
         private void OnClosePopup(IPopup popup)
         {
-            popup.CloseEvent.Unsubscribe(OnClosePopup);
-
-            if (_currentPopup != popup) return;
-            
-            _mainScreen.gameObject.SetActive(true);
+            _container.SetActive(true);
             _currentPopup = null;
         }
     }

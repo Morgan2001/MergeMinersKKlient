@@ -1,21 +1,21 @@
 ﻿namespace Utils.MVVM
 {
-    public interface IPopup
+    public interface IPopup : IDisposableCarrier
     {
-        IReactiveSubscription<IPopup> CloseEvent { get; }
-        void Hide();
+        void HideForce();
     }
     
     public interface IPopup<in T> : IPopup
     {
+        IReactiveSubscription<IPopup<T>> CloseEvent { get; }
         void Show(T vm);
     }
     
     public abstract class Popup<T> : View<T>, IPopup<T>
         where T : ViewModel
     {
-        private ReactiveEvent<IPopup> _closeEvent = new();
-        public IReactiveSubscription<IPopup> CloseEvent => _closeEvent;
+        private ReactiveEvent<IPopup<T>> _closeEvent = new();
+        public IReactiveSubscription<IPopup<T>> CloseEvent => _closeEvent;
         
         private void Awake()
         {
@@ -33,13 +33,26 @@
             Bind(vm);
         }
 
-        public void Hide()
+        private void HideInner(bool force)
         {
-            Dispose();
-            
             gameObject.SetActive(false);
+
+            if (!force)
+            {
+                _closeEvent.Trigger(this);
+            }
             
-            _closeEvent.Trigger(this);
+            Dispose();
+        }
+
+        protected void Hide()
+        {
+            HideInner(false);
+        }
+        
+        public void HideForce()
+        {
+            HideInner(true);
         }
     }
 }

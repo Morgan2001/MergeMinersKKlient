@@ -30,36 +30,36 @@ public class FlyingBonusController : MonoBehaviour
 
     public void CreateAndLaunchBonus()
     {
-        var flyingBonusType = ChooseBonusType();
-        var isOnLeftSide = ChooseSide();
-        var flyingBonus = GenerateFlyingBonus(flyingBonusType, isOnLeftSide, this);
-        flyingBonus.FlyOrDestroy();
+        // var flyingBonusType = ChooseBonusType();
+        // var isOnLeftSide = ChooseSide();
+        // var flyingBonus = GenerateFlyingBonus(flyingBonusType, isOnLeftSide, this);
+        // flyingBonus.FlyOrDestroy();
     }
 
-    private BonusType ChooseBonusType()
-    {
-        var enumValues = Enum.GetValues(typeof(BonusType));
+    // private BonusType ChooseBonusType()
+    // {
+        // var enumValues = Enum.GetValues(typeof(BonusType));
 
-        return (BonusType)UnityEngine.Random.Range(0, enumValues.Length);
-    }
+        // return (BonusType)UnityEngine.Random.Range(0, enumValues.Length);
+    // }
 
     private bool ChooseSide()
     {
         return UnityEngine.Random.Range(0, 2) == 0;
     }
 
-    private FlyingBonus GenerateFlyingBonus(BonusType type, bool isOnLeftSide, FlyingBonusController flyingBonusController)
-    {
-        var startPos = GetNewPointToFly(isOnLeftSide);
-        var flyingBonusGO = Instantiate(FlyingBonusPrefab);
-        flyingBonusGO.transform.SetParent(transform);
-        flyingBonusGO.GetComponent<RectTransform>().anchoredPosition = startPos;
-        flyingBonusGO.transform.localScale = Vector3.one;
-        var flyingBonus = flyingBonusGO.GetComponent<FlyingBonus>();
-        flyingBonus.Construct(gameRules.SetOfFlyingBonuses[type], isOnLeftSide, flyingBonusController, flyingBonusHandler);
+    // private FlyingBonus GenerateFlyingBonus(BonusType type, bool isOnLeftSide, FlyingBonusController flyingBonusController)
+    // {
+        // var startPos = GetNewPointToFly(isOnLeftSide);
+        // var flyingBonusGO = Instantiate(FlyingBonusPrefab);
+        // flyingBonusGO.transform.SetParent(transform);
+        // flyingBonusGO.GetComponent<RectTransform>().anchoredPosition = startPos;
+        // flyingBonusGO.transform.localScale = Vector3.one;
+        // var flyingBonus = flyingBonusGO.GetComponent<FlyingBonus>();
+        // flyingBonus.Construct(gameRules.SetOfFlyingBonuses[type], isOnLeftSide, flyingBonusController, flyingBonusHandler);
 
-        return flyingBonus;
-    }
+        // return flyingBonus;
+    // }
 
     public Vector2 GetNewPointToFly(bool onLeftSide)
     {

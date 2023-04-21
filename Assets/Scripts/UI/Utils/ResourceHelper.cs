@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Enums;
 using UnityEngine;
 
@@ -12,8 +11,10 @@ namespace UI.Utils
         string GetLocationNameByLevel(int level);
         Sprite GetLocationImageByLevel(int level);
         Sprite GetBoxIconByType(MinerSource source);
-        Sprite GetBonusIconByType(BonusType bonusType);
-        FlyingBonusData GetBonusDataByType(BonusType bonusType);
+        Sprite GetBonusIconByType(string id);
+        FlyingBonusData GetBonusDataById(string id);
+        Sprite GetWheelRewardIcon(int reward);
+        string GetWheelRewardDescription(int reward);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -22,17 +23,20 @@ namespace UI.Utils
         private readonly SetOfMiningDeviceBoxes _minerBoxesConfig;
         private readonly SetOfLocations _locationsConfig;
         private readonly SetOfFlyingBonuses _flyingBonusesConfig;
+        private readonly SetOfWheelRewards _wheelRewards;
 
         public ResourceHelper(
             SetOfMiningDeviceDatas minersConfig,
             SetOfMiningDeviceBoxes minerBoxesConfig,
             SetOfLocations locationsConfig,
-            SetOfFlyingBonuses flyingBonusesConfig)
+            SetOfFlyingBonuses flyingBonusesConfig,
+            SetOfWheelRewards wheelRewards)
         {
             _minersConfig = minersConfig;
             _minerBoxesConfig = minerBoxesConfig;
             _locationsConfig = locationsConfig;
             _flyingBonusesConfig = flyingBonusesConfig;
+            _wheelRewards = wheelRewards;
         }
 
         public Sprite GetNormalIconByLevel(int level)
@@ -62,14 +66,24 @@ namespace UI.Utils
             return _minerBoxesConfig.MiningDeviceBoxSprites.First(x => x.Type == source).Sprite;
         }
 
-        public Sprite GetBonusIconByType(BonusType bonusType)
+        public Sprite GetBonusIconByType(string id)
         {
-            return _flyingBonusesConfig.FlyingBonuses.First(x => x.Type == bonusType).Sprite;
+            return _flyingBonusesConfig[id].Sprite;
         }
 
-        public FlyingBonusData GetBonusDataByType(BonusType bonusType)
+        public FlyingBonusData GetBonusDataById(string id)
         {
-            return _flyingBonusesConfig.FlyingBonuses.First(x => x.Type == bonusType);
+            return _flyingBonusesConfig[id];
+        }
+
+        public Sprite GetWheelRewardIcon(int reward)
+        {
+            return _wheelRewards.Rewards.Find(x => x.Id == reward).Sprite;
+        }
+
+        public string GetWheelRewardDescription(int reward)
+        {
+            return _wheelRewards.Rewards.Find(x => x.Id == reward).Description;
         }
     }
 }

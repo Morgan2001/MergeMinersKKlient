@@ -16,25 +16,25 @@ public class FlyingBonusHandler
         this.gameRules = gameRules;
     }
 
-    public void HandleFlyingBonus(BonusType type)
-    {
-        switch (type)
-        {
-            case BonusType.Money:
-                player.AddCoins(gameRules.WalletRewards.GetRewardByLevel(player.MaxAchivedMiningDeviceLevel));
-                break;
-            case BonusType.Chip:
-                windowController.ShowChipBonusWindow();
-                break;
-            case BonusType.Power:
-                windowController.ShowPowerTransformerBonusWindow();
-                break;
-            case BonusType.Flash:
-                windowController.ShowFlashCardBonusWindow();
-                break;
-            case BonusType.Miners:
-                windowController.ShowBoxWithMinersBonusWindow();
-                break;
-        }
-    }
+    // public void HandleFlyingBonus(BonusType type)
+    // {
+        // switch (type)
+        // {
+            // case BonusType.Money:
+                // player.AddCoins(gameRules.WalletRewards.GetRewardByLevel(player.MaxAchivedMiningDeviceLevel));
+                // break;
+            // case BonusType.Chip:
+                // windowController.ShowChipBonusWindow();
+                // break;
+            // case BonusType.Power:
+                // windowController.ShowPowerTransformerBonusWindow();
+                // break;
+            // case BonusType.Flash:
+                // windowController.ShowFlashCardBonusWindow();
+                // break;
+            // case BonusType.Miners:
+                // windowController.ShowBoxWithMinersBonusWindow();
+                // break;
+        // }
+    // }
 }

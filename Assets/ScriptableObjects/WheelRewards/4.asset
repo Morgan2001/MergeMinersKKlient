@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf960daae489254f930c02a1887620d, type: 3}
   m_Name: 4
   m_EditorClassIdentifier: 
+  Id: 3
   BoostType: 6
   Duration: 0
   Power: 10

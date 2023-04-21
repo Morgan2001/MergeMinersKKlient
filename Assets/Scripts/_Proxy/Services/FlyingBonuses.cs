@@ -1,5 +1,6 @@
 ﻿using _Proxy.Events;
 using _Proxy.Preloader;
+using Common.Utils.Extensions;
 using Common.Utils.Misc;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Services;
@@ -11,6 +12,7 @@ namespace _Proxy.Services
         private readonly SessionData _sessionData;
         private readonly EventDispatcherService _eventDispatcherService;
         private readonly TimerService _timerService;
+        private readonly BonusConfig _bonusConfig;
         private readonly RandomExecutor _randomExecutor;
 
         private float _delay;
@@ -19,6 +21,7 @@ namespace _Proxy.Services
             SessionData sessionData,
             EventDispatcherService eventDispatcherService,
             TimerService timerService,
+            BonusConfig bonusConfig,
             RandomExecutor randomExecutor)
         {
             _sessionData = sessionData;
@@ -26,6 +29,7 @@ namespace _Proxy.Services
             _randomExecutor = randomExecutor;
             
             _timerService = timerService;
+            _bonusConfig = bonusConfig;
             _timerService.TickDeltaEvent.Subscribe(OnTick);
         }
 
@@ -38,9 +42,9 @@ namespace _Proxy.Services
         {
             _delay -= deltaTime;
             if (_delay > 0) return;
-            
-            var bonus = _randomExecutor.Random<BonusType>();
-            _eventDispatcherService.Dispatch(new AddBonusEvent(_sessionData.Token, bonus));
+
+            var bonus = _bonusConfig.GetAll().Random();
+            _eventDispatcherService.Dispatch(new AddBonusEvent(_sessionData.Token, bonus.Id));
             Reset();
         }
     }

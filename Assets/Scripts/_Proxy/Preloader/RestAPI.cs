@@ -92,11 +92,19 @@ namespace _Proxy.Preloader
             return await _restClient.Post<RestResponse>($"game/{token}/speedUpBlueBox");
         }
         
-        public async Task<RestResponse> UseBonus(string token, BonusType bonusType)
+        public async Task<RestResponse> UseBonus(string token, string id)
         {
             return await _restClient.Post<RestResponse>($"game/{token}/useBonus", new Dictionary<string, object>
             {
-                { "bonusType", bonusType }
+                { "id", id }
+            });
+        }
+        
+        public async Task<SpinResponse> SpinWheel(string token, Currency currency)
+        {
+            return await _restClient.Post<SpinResponse>($"game/{token}/spinWheel", new Dictionary<string, object>
+            {
+                { "currency", currency }
             });
         }
         

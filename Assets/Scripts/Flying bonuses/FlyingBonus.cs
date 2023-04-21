@@ -58,12 +58,12 @@ public class FlyingBonus : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Data.Type == BonusType.Money)
-        {
-            CreateWalletRewardInscription();
-        }
+        // if (Data.Type == BonusType.Money)
+        // {
+            // CreateWalletRewardInscription();
+        // }
 
-        flyingBonusHandler.HandleFlyingBonus(Data.Type);
+        // flyingBonusHandler.HandleFlyingBonus(Data.Type);
 
         Destroy(gameObject);
     }
