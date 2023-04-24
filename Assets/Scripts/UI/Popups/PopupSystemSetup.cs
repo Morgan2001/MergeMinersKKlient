@@ -1,5 +1,5 @@
-﻿using _Proxy.Connectors;
-using _Proxy.Data;
+﻿using GameCore.Connectors;
+using GameCore.Data;
 using Common.Utils.Extensions;
 using UI.Utils;
 using UnityEngine;

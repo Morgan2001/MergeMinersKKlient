@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Utils;
 using Utils.MVVM;
+using Utils.Reactive;
 
 namespace UI.GameplayPanel.FlyingBonuses
 {

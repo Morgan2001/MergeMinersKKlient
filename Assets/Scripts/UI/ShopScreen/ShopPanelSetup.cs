@@ -1,8 +1,8 @@
-﻿using _Proxy.Connectors;
+﻿using GameCore.Connectors;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using Utils.MVVM;
+using Utils.Reactive;
 using Zenject;
 
 namespace UI.ShopScreen

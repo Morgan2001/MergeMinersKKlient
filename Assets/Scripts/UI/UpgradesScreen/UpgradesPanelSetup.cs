@@ -1,4 +1,4 @@
-﻿using _Proxy.Connectors;
+﻿using GameCore.Connectors;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 using UI.Utils;

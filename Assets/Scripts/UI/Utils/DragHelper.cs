@@ -1,6 +1,7 @@
 ﻿using UI.GameplayPanel.MergePanel;
 using UnityEngine;
 using Utils;
+using Utils.Reactive;
 
 namespace UI.Utils
 {

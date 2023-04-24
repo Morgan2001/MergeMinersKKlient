@@ -1,9 +1,10 @@
-﻿using _Proxy.Connectors;
+﻿using GameCore.Connectors;
 using MergeMiner.Core.State.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 using Utils.MVVM;
+using Utils.Reactive;
 
 namespace UI.GameplayPanel.ShopPanel
 {

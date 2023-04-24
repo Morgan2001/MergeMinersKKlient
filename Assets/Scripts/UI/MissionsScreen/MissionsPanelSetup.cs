@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using _Proxy.Connectors;
+using GameCore.Connectors;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Proxy.Connectors;
+using GameCore.Connectors;
 using Coffee.UIExtensions;
 using Cysharp.Threading.Tasks;
 using MergeMiner.Core.State.Enums;
@@ -10,6 +10,7 @@ using UI.Utils;
 using UnityEngine;
 using Utils;
 using Utils.MVVM;
+using Utils.Reactive;
 using Zenject;
 
 namespace UI.GameplayPanel.MergePanel

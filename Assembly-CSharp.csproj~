@@ -1,0 +1,1354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{8441f412-22a4-275f-22e6-507969043f15}</ProjectGuid>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>.</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
+    <DefineConstants>UNITY_2022_2_15;UNITY_2022_2;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_ANDROID;TEXTCORE_1_0_OR_NEWER;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;UNITY_CAN_SHOW_SPLASH_SCREEN;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_ETC_COMPRESSION;PLATFORM_EXTENDS_VULKAN_DEVICE;PLATFORM_HAS_MULTIPLE_SWAPCHAINS;UNITY_ANDROID_SUPPORTS_SHADOWFILES;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITASK_DOTWEEN_SUPPORT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169,0649</NoWarn>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+  </PropertyGroup>
+  <ItemGroup>
+    <Analyzer Include="D:\UnityHub\2022.2.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
+    <Analyzer Include="D:\UnityHub\2022.2.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\MaxLevelIncreasedEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Factory\PlayerFactory.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Services\GameLoop.cs" />
+     <Compile Include="Assets\Scripts\Locations, relocation\SetOfLocations.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\ChangeGemsEvent.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\ZenjectContainer.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\Bonus.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\OfflineIncomeConnector.cs" />
+     <Compile Include="Assets\Scripts\Roulette\Roulette.cs" />
+     <Compile Include="Assets\Scripts\UI\TopPanel\TopPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerShop.cs" />
+     <Compile Include="Assets\Scripts\UI\MissionsScreen\MissionsPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Factory\BonusFactory.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Base\PlayerActionExecutor.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\UpgradesConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\BoxUpgradeInstantBonusApplier.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Events\GameEventHandler.cs" />
+     <Compile Include="Assets\NiceVibrations\Demo\Scripts\NiceVibrationsDemoManager.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\ListExtensions.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Events\SpinWheelEvent.cs" />
+     <Compile Include="Assets\Scripts\Animation\DiamondPurchaseAnimation.cs" />
+     <Compile Include="Assets\Scripts\Shop\Shop.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\MergePanel\CellView.cs" />
+     <Compile Include="Assets\Scripts\UI\BottomPanel\SocialView.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\ShopPanel\MinerShopPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.TopLevel\TopLevelLayerBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Preloader\SessionData.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceImpressionData.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\RelocateEvent.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\RepositoryExtensions.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\ShopPanel\MinerShopView.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\TabSwitcher.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\BonusRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\RandomSlotService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\GameCommandService.cs" />
+     <Compile Include="Assets\Scripts\Utils\ReactiveProperty.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourcePlacement.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\PowerUpBonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerBonuses.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\WheelConnector.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Preloader\RestClient.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\MergeMinersGameCommand.cs" />
+     <Compile Include="Assets\Scripts\Utils\ReactiveEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\MergePanel\MergePanelView.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\RandomExtensions.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\SubscriptionConfig.cs" />
+     <Compile Include="Assets\CrystalFramework\Utility\Demos\SafeAreaDemo.cs" />
+     <Compile Include="Assets\Scripts\UI\ShopScreen\ShopPurchaseView.cs" />
+     <Compile Include="Assets\Scripts\Ads.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\RemoveMinerPlayerAction.cs" />
+     <Compile Include="Assets\Scripts\Shop\PurchaseHandler.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Base\InstantBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\Shop\ShopDiamondOffer.cs" />
+     <Compile Include="Assets\Core\Common.DI\IInstaller.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\BonusConfig.cs" />
+     <Compile Include="Assets\Scripts\UI\BottomPanel\BottomPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerMinersRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\RelocateService.cs" />
+     <Compile Include="Assets\Scripts\UI\TopPanel\FreeGemView.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\GetFreeGemPlayerAction.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceIAgent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\FlyingBonuses\MoneyBonusRewardView.cs" />
+     <Compile Include="Assets\Scripts\Animation\ShakeAnimation.cs" />
+     <Compile Include="Assets\IronSource\Scripts\UnsupportedPlatformAgent.cs" />
+     <Compile Include="Assets\Scripts\Utils\ReactiveList.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerBonusesRepository.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\MovableList.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\GameplayViewStorage.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\StateLayerBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Commands\AddMinerCommand.cs" />
+     <Compile Include="Assets\Scripts\Utils\MVVM\Popup.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Misc\RandomExecutor.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\BuyMinerPlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerShopStateService.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\PlayerConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\RandomMinerService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerSlots.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Services\TimerService.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\ReferralConnector.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\PopupSystemSetup.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\FlyingBonuses\FlyingBonusesSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Network\Helpers\ConfigHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\UseBonusPlayerAction.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\ShopPanel\ShopPanelView.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\MergePanel\MergePanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Utils\BonusHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\AddMinerEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerFreeGemRepository.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Misc\TimeService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\ChangeMoneyEvent.cs" />
+     <Compile Include="Assets\Core\Common.DI\IServiceProvider.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\FreeGemConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\UpdateSlotsLevelEvent.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Preloader\Preloader.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\RelocatePlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Base\BonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerRepository.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Repository\IRepositoryItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ReferralScreen\ReferralPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Services\PlayerActionService.cs" />
+     <Compile Include="Assets\Scripts\UI\TopPanel\RelocateView.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\PlayerBoxConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\CommandsLayerBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\GiftPopup.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\RelocationPopup.cs" />
+     <Compile Include="Assets\Scripts\Wheel\SetOfWheelRewards.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\StartUp.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\AnimationHelper.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Launcher.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerMinersStateService.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\NewMiningDeviceWindow.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\SpawnBoxGameCommand.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerFreeGem.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\EndBonusEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\CheckBonusesGameCommand.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\HapticsHelper.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\BonusPopup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\EventsLayerBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\P\Player.cs" />
+     <Compile Include="Assets\Scripts\Utils\MVVM\View.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\MergeMinersEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\AddStatsEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerSlotsStateService.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Services\FlyingBonuses.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\UseBonusEvent.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\LinqExtensions.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\MiningDevice.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Network\Data\GameState.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Utils\LocationHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Pool\BonusPool.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\Validation\PlayerBoxStateValidator.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\UpdateBoxUnlockTimeEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Factory\MinerFactory.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceMediationSettings.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\Base\GameEvent.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\LocalAppInstaller.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\PowerAllBonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\MinerPoolService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\SwapMinersPlayerAction.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\RelocateConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\MinersBonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerStateService.cs" />
+     <Compile Include="Assets\CrystalFramework\Utility\SafeArea.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Base\ContinuousBonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Base\PlayerActionExecutor.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\RouletteCellView.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\MiningDeviceMerger.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\RouletteWinPopup.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceConstants.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Repository\IRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Base\GameCommand.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\FlyingBonuses\BonusView.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\IAPConfig.cs" />
+     <Compile Include="Assets\IronSource\DemoScene\IronSourceDemoScript.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSource.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\Base\GameEventType.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerMissionsRepository.cs" />
+     <Compile Include="Assets\IronSource\Scripts\iOSAgent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerBoxRepository.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\ProjectInstaller.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\MoneyBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\UI\UpgradesScreen\UpgradeView.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\MergeMinersPlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\Currency.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\BoxService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\IncomeService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\CollectMissionPlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Utils\RelocateHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\GemsBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\ShopConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerMiners.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\MiningDeviceData.cs" />
+     <Compile Include="Assets\Scripts\UI\UpgradesScreen\UpgradesPanelSetup.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Commands\MergeMinersCommand.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\SetOfMiningDeviceBoxes.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\WheelConfig.cs" />
+     <Compile Include="Assets\Scripts\PurchaseInitialiser.cs" />
+     <Compile Include="Assets\Scripts\Flying bonuses\FlyingBonusData.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Services\GameStateApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Base\PlayerAction.cs" />
+     <Compile Include="Assets\Core\Common.DI\IServiceFactory.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\PopupsConnector.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\WheelPopup.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\MinerFieldConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Launcher\GameInstaller.cs" />
+     <Compile Include="Assets\Scripts\UI\ShopScreen\ShopPanelSetup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\UpdateShopEvent.cs" />
+     <Compile Include="Assets\Core\Common.DI\IBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\LargeNumberFormatter.cs" />
+     <Compile Include="Assets\Scripts\Upgrades\SetOfUpgrades.cs" />
+     <Compile Include="Assets\Scripts\Wheel\WheelReward.cs" />
+     <Compile Include="Assets\Scripts\ButtonHighlight.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\Validation\PlayerSlotsStateValidator.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\NewMinerPopup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\LocationConfig.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Enums\MinerSource.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\MinerAnimationSetup.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Events\InitGameEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\SpawnBoxService.cs" />
+     <Compile Include="Assets\Scripts\UI\BottomPanel\TrashCanView.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\MissionsConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\MinerRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\Miner.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\EventDispatcherService.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\AppInstaller.cs" />
+     <Compile Include="Assets\Scripts\UI\TopPanel\ResourcesView.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\FreeGemService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\SwapMinersEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerBonusesStateService.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceEvents.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\Player.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\CalculateGameCommand.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Utils\MinerShopHelper.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\DragHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\BonusPoolService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.TopLevel\Services\SpinWheelService.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\WheelRewardPopup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Utils\MinersBonusHelper.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\SizeHelper.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Repository\Repository.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Events\AddBonusEvent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Network\Converters\GameEventConverter.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\SetOfMiningDeviceDatas.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceJSON.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\SetOfMergeRules.cs" />
+     <Compile Include="Assets\Scripts\Flying bonuses\SetOfFlyingBonuses.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Services\BonusApplierService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\BoostType.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\MiningDeviceGenerator.cs" />
+     <Compile Include="Assets\Scripts\Upgrades\UpgradeOffer.cs" />
+     <Compile Include="Assets\Core\Common.Utils\Extensions\Inventory.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\SpawnBoxPlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerShopRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Network\Data\RestResponse.cs" />
+     <Compile Include="Assets\Scripts\UI\MissionsScreen\MissionView.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Services\PlayerActionProxy.cs" />
+     <Compile Include="Assets\Scripts\Locations, relocation\LocationData.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\State\PlayerBoxStateService.cs" />
+     <Compile Include="Assets\Scripts\Roulette\RouletteWinWindow.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerSlotsRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\MinerConfig.cs" />
+     <Compile Include="Assets\Scripts\GameRules.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\BonusConnector.cs" />
+     <Compile Include="Assets\NiceVibrations\Common\Scripts\MMVibrationManager.cs" />
+     <Compile Include="Assets\IronSource\Scripts\AndroidAgent.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerSubscription.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\BuyUpgradePlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\CreatePlayerService.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceUtils.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceInitilizer.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Pool\MinerPool.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\Validation\PlayerMinersStateValidator.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\PlayerActionsLayerBootstrapper.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\MinerRoulettePopup.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Connectors\MinerShopConnector.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\NoAdsBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\UI\BottomPanel\BlueBoxView.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\BoxFillingBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Preloader\RestAPI.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\GameConfig.cs" />
+     <Compile Include="Assets\Core\Common.DI\Installer.cs" />
+     <Compile Include="Assets\Scripts\UI\Popups\OfflineIncomePopup.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\UpgradesConfig.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Network\Helpers\GameStateExtensions.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\RemoveMinerGameCommand.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerMissions.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\TimeRewindBonusApplier.cs" />
+     <Compile Include="Assets\Scripts\Shop\ShopDiamondPosition.cs" />
+     <Compile Include="Assets\Core\Common.DI\Bootstrapper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions\SpeedUpBlueBoxPlayerAction.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\BoxUpgradeBonusApplier.cs" />
+     <Compile Include="Assets\Core\Common.DI\IServiceCollection.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\GameCommands\BuyMinerGameCommand.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\EventSubscriptionService.cs" />
+     <Compile Include="Assets\Scripts\UI\Utils\ResourceHelper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\MissionsConfig.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Commands\Services\StatsService.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Events\RemoveMinerEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameplayPanel\MergePanel\MinerView.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceSegment.cs" />
+     <Compile Include="Assets\Scripts\P\PlayerResourceUI.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\Validation\PlayerStateValidator.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\BonusesLayerBootstrapper.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Services\Validation\PlayerShopStateValidator.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceError.cs" />
+     <Compile Include="Assets\IronSource\Scripts\IronSourceConfig.cs" />
+     <Compile Include="Assets\Scripts\_Proxy\Data\BonusNames.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Repository\PlayerSubscriptionRepository.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses\SlotsBonusApplier.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Data\PlayerBox.cs" />
+     <Compile Include="Assets\Scripts\Wheel\DoNotRotatateWithParent.cs" />
+     <Compile Include="Assets\Scripts\Utils\ReactiveSubscription.cs" />
+     <Compile Include="Assets\Scripts\Mining devices\MiningDevicePlacer.cs" />
+     <Compile Include="Assets\Core\MergeMiner.Core.State\Config\MinerShopConfig.cs" />
+     <Folder Include="Assets" />
+     <Folder Include="Assets\Scripts\Utils" />
+     <Folder Include="Assets\Sprites\Gameplay" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Bonuses\Services" />
+     <Folder Include="Assets\Sprites" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Commands\Services" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Data" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\Notebook" />
+     <Folder Include="Assets\Prefabs\UI\Missions" />
+     <Folder Include="Assets\ScriptableObjects\MiningDeviceShopOffer" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\CPU" />
+     <Folder Include="Assets\Scripts\UI\Utils" />
+     <Folder Include="Assets\Scripts\Flying bonuses" />
+     <Folder Include="Assets\ScriptableObjects\FlyingBonuses" />
+     <Folder Include="Library\PackageCache\com.coffee.ui-particle@a499f0c046\Shaders" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Network\Data" />
+     <Folder Include="Assets\Scripts\UI\BottomPanel" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Bonuses\Base" />
+     <Folder Include="Assets\NiceVibrations" />
+     <Folder Include="Assets\NiceVibrations\Common\Scripts" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Events\Base" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\Monitor" />
+     <None Include="Library\PackageCache\com.coffee.ui-particle@a499f0c046\package.json" />
+     <Folder Include="Assets\IronSource\Plugins" />
+     <Folder Include="Assets\CrystalFramework\Utility\Demos" />
+     <Folder Include="Assets\Scripts\UI" />
+     <Folder Include="Assets\ScriptableObjects\Locations" />
+     <Folder Include="Assets\Scripts\UI\GameplayPanel\MergePanel" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\Notebook\Frame" />
+     <Folder Include="Assets\Scripts\Upgrades" />
+     <Folder Include="Assets\Core\MergeMiner.Core.TopLevel\Services" />
+     <Folder Include="Assets\Prefabs" />
+     <Folder Include="Assets\Core\Common.Utils\Events" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Commands\Base" />
+     <Folder Include="Assets\Sprites\Gameplay\Bin" />
+     <Folder Include="Assets\Sprites\Missions" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Commands\GameCommands" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Commands" />
+     <Folder Include="Assets\Sprites\Wheel" />
+     <Folder Include="Assets\NiceVibrations\Demo\Sprites" />
+     <Folder Include="Assets\Sprites\MiningDeviceShop" />
+     <Folder Include="Assets\CrystalFramework\Utility" />
+     <Folder Include="Assets\ExternalDependencyManager" />
+     <Folder Include="Assets\Core\MergeMiner.Core.PlayerActions\Services" />
+     <Folder Include="Assets\Sprites\Gameplay\Bottom panel" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines" />
+     <Folder Include="Assets\Scripts\UI\Popups" />
+     <Folder Include="Assets\Scripts\UI\TopPanel" />
+     <Folder Include="Assets\Scripts\Mining devices" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\SystemUnit\Frame" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Network\Converters" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Utils" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Config" />
+     <Folder Include="Assets\CrystalFramework" />
+     <Folder Include="Assets\Sprites\Shop" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\HDD\Frame" />
+     <Folder Include="Assets\Scripts\_Proxy" />
+     <Folder Include="Assets\Sprites\Gameplay\Boxes" />
+     <Folder Include="Assets\NiceVibrations\Demo" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\CPU\Frame" />
+     <Folder Include="Assets\Core\MergeMiner.Core.TopLevel" />
+     <Folder Include="Assets\IronSource\Resources" />
+     <Folder Include="Library\PackageCache\com.coffee.ui-particle@a499f0c046" />
+     <Folder Include="Assets\IronSource\DemoScene" />
+     <Folder Include="Assets\ScriptableObjects\WheelRewards" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Network\Helpers" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\HDD" />
+     <Folder Include="Assets\NiceVibrations\Demo\Prefabs" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Enums" />
+     <Folder Include="Assets\Sprites\Gameplay\Mining device shop" />
+     <Folder Include="Assets\Core\Common.Utils\Misc" />
+     <None Include="Assets\NiceVibrations\Demo\Fonts\Lato\OFL.txt" />
+     <Folder Include="Assets\Core\MergeMiner.Core.PlayerActions\Base" />
+     <Folder Include="Assets\Prefabs\UI\Upgrades" />
+     <Folder Include="Assets\Scripts\Roulette" />
+     <Folder Include="Assets\Scripts\_Proxy\Commands" />
+     <None Include="Assets\NiceVibrations\readme.txt" />
+     <None Include="Assets\NiceVibrations\Common\Plugins\Android\AndroidManifest.xml" />
+     <Folder Include="Assets\Sprites\Gameplay\Top panel" />
+     <Folder Include="Assets\Core\Common.Utils\Extensions" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Pool" />
+     <Folder Include="Assets\Scripts\_Proxy\Preloader" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\GPU" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Bonuses" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Events" />
+     <Folder Include="Assets\NiceVibrations\Common" />
+     <Folder Include="Assets\Core\Common.Utils" />
+     <Folder Include="Assets\Scripts\UI\MissionsScreen" />
+     <Folder Include="Assets\Sprites\Return window" />
+     <Folder Include="Assets\Core\MergeMiner.Core.PlayerActions\Actions" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\GPU" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Repository" />
+     <Folder Include="Assets\ScriptableObjects\ShopDiamondOffers" />
+     <Folder Include="Assets\Sprites\Relocation" />
+     <Folder Include="Assets\Sprites\Gameplay\New mining device screen" />
+     <Folder Include="Assets\Sprites\Upgrades" />
+     <None Include="Assets\NiceVibrations\license.txt" />
+     <Folder Include="Assets\Core\Common.DI" />
+     <Folder Include="Assets\Sprites\NewMinerWindow" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\SystemUnit" />
+     <Folder Include="Assets\Core\MergeMiner.Core.PlayerActions" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Bonuses\Bonuses" />
+     <Folder Include="Assets\NiceVibrations\Common\Plugins\Android" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\RAM" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Services\Validation" />
+     <Folder Include="Assets\Prefabs\UI\Gameplay" />
+     <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Prefabs\UI" />
+     <Folder Include="Assets\ScriptableObjects\UpgradeShopOffers" />
+     <Folder Include="Assets\NiceVibrations\Demo\Fonts\Lato" />
+     <Folder Include="Assets\ScriptableObjects\MiningDevices" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Factory" />
+     <Folder Include="Assets\Prefabs\Config" />
+     <None Include="Assets\Resources\IAPProductCatalog.json" />
+     <Folder Include="Assets\IronSource\Scripts" />
+     <Folder Include="Assets\Sprites\Gameplay\Cell" />
+     <Folder Include="Assets\Scripts\_Proxy\Services" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\GPU\Frame" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Launcher" />
+     <None Include="Assets\Resources\BillingMode.json" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\Notebook" />
+     <Folder Include="Assets\Core\Common.Utils\Repository" />
+     <Folder Include="Assets\Core\MergeMiner.Core.Network" />
+     <Folder Include="Assets\Scripts\UI\GameplayPanel\ShopPanel" />
+     <Folder Include="Assets\NiceVibrations\Demo\Scripts" />
+     <Folder Include="Assets\Scripts\Shop" />
+     <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Scripts\Animation" />
+     <Folder Include="Assets\Scripts\P" />
+     <Folder Include="Assets\Core" />
+     <Folder Include="Assets\Scripts\Wheel" />
+     <Folder Include="Assets\Scripts\_Proxy\Data" />
+     <None Include="Assets\CrystalFramework\Utility\Demos\SafeAreaDemo.txt" />
+     <Folder Include="Assets\Particles" />
+     <Folder Include="Assets\Scripts\UI\GameplayPanel" />
+     <Folder Include="Assets\Scripts\_Proxy\Events" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\RAM\Frame" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Services" />
+     <Folder Include="Assets\NiceVibrations\Common\Plugins\iOS" />
+     <Folder Include="Assets\Sprites\Gameplay\Flying bonuses" />
+     <Folder Include="Assets\Core\MergeMiner.Core.State\Services\State" />
+     <None Include="Library\PackageCache\com.coffee.ui-particle@a499f0c046\Shaders\UIAdditive.shader" />
+     <Folder Include="Assets\Resources\Sprites" />
+     <Folder Include="Assets\Sprites\Locations" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\HDD" />
+     <Folder Include="Assets\IronSource\Plugins\iOS" />
+     <Folder Include="Assets\Scripts\Utils\MVVM" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\RAM" />
+     <Folder Include="Assets\NiceVibrations\Common\Plugins" />
+     <Folder Include="Assets\Scripts\UI\ShopScreen" />
+     <Folder Include="Assets\Scripts\_Proxy\Connectors" />
+     <Folder Include="Assets\Scripts\Locations, relocation" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\Monitor" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\Monitor\Frame" />
+     <Folder Include="Assets\Scripts\UI\GameplayPanel\FlyingBonuses" />
+     <Folder Include="Assets\Scripts\UI\ReferralScreen" />
+     <Folder Include="Assets\Sprites\Gameplay\Roullette" />
+     <Folder Include="Assets\IronSource" />
+     <Folder Include="Assets\NiceVibrations\Demo\Fonts" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices with green outlines\CPU" />
+     <Folder Include="Assets\Prefabs\UI\Shop" />
+     <Folder Include="Assets\ScriptableObjects" />
+     <Folder Include="Assets\IronSource\Plugins\Android" />
+     <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Resources\Sprites\Mining devices\SystemUnit" />
+     <Folder Include="Assets\Scripts\UI\UpgradesScreen" />
+     <Reference Include="UnityEngine">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ARModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AccessibilityModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AndroidJNIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AnimationModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AssetBundleModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.AudioModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ClothModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ContentLoadModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ContentLoadModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.CoreModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.CrashReportingModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.DSPGraphModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.DirectorModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GameCenterModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.GridModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.HotReloadModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.IMGUIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ImageConversionModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.InputModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.InputLegacyModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.JSONSerializeModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.LocalizationModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ParticleSystemModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PerformanceReportingModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PhysicsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Physics2DModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ProfilerModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.PropertiesModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.PropertiesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.ScreenCaptureModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SharedInternalsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SpriteMaskModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SpriteShapeModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.StreamingModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SubstanceModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SubsystemsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TLSModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TerrainModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TerrainPhysicsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextCoreFontEngineModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextCoreTextEngineModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TextRenderingModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.TilemapModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UIElementsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UmbraModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityAnalyticsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityConnectModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityCurlModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityTestProtocolModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VFXModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VRModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VehiclesModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.VideoModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.WindModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.XRModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.CoreModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.DeviceSimulatorModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.DeviceSimulatorModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.DiagnosticsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.DiagnosticsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.EditorToolbarModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.EditorToolbarModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.GraphViewModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.PresetsUIModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.PresetsUIModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.QuickSearchModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.QuickSearchModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.SceneTemplateModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.SceneViewModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneViewModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.TextCoreFontEngineModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreFontEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.TextCoreTextEngineModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.TextCoreTextEngineModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIBuilderModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIBuilderModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIElementsModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UIElementsSamplesModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UnityConnectModule">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject-usage">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections.LowLevel.ILSupport">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.1.0\Runtime\Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.iOS.Extensions.Common">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Types">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.Gradle">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Android.GradleProject">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
+     </Reference>
+     <Reference Include="netstandard">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
+     </Reference>
+     <Reference Include="Microsoft.Win32.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\Microsoft.Win32.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.AppContext">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.AppContext.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Buffers">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Buffers.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.Concurrent">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Concurrent.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.NonGeneric">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.NonGeneric.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Collections.Specialized">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Collections.Specialized.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.EventBasedAsync">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.EventBasedAsync.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.TypeConverter">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ComponentModel.TypeConverter.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Console">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Console.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Data.Common">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Data.Common.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Contracts">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Contracts.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Debug">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Debug.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.FileVersionInfo">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.FileVersionInfo.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Process">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Process.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.StackTrace">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.StackTrace.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.TextWriterTraceListener">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Tools">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tools.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.TraceSource">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.TraceSource.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Diagnostics.Tracing">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Diagnostics.Tracing.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Drawing.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Drawing.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Dynamic.Runtime">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Dynamic.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization.Calendars">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Calendars.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Globalization.Extensions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Globalization.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression.ZipFile">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Compression.ZipFile.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.DriveInfo">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.DriveInfo.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.FileSystem.Watcher">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.FileSystem.Watcher.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.IsolatedStorage">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.IsolatedStorage.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.MemoryMappedFiles">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.MemoryMappedFiles.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Pipes">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.Pipes.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.UnmanagedMemoryStream">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.IO.UnmanagedMemoryStream.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Expressions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Expressions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Parallel">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Parallel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Linq.Queryable">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Linq.Queryable.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Memory">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Memory.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Http">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Http.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.NameResolution">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NameResolution.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.NetworkInformation">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.NetworkInformation.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Ping">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Ping.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Requests">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Requests.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Security">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Security.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.Sockets">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.Sockets.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebHeaderCollection">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebHeaderCollection.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebSockets.Client">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.Client.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net.WebSockets">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Net.WebSockets.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Numerics.Vectors">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Numerics.Vectors.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ObjectModel">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ObjectModel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.DispatchProxy">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.DispatchProxy.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit.ILGeneration">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.ILGeneration.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Emit.Lightweight">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Emit.Lightweight.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Extensions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Reflection.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Reflection.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.Reader">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Reader.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.ResourceManager">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.ResourceManager.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Resources.Writer">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Resources.Writer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.CompilerServices.VisualC">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.CompilerServices.VisualC.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Extensions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Handles">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Handles.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Numerics">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Numerics.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Formatters">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Formatters.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Json">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization.Xml">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Runtime.Serialization.Xml.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Claims">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Claims.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Algorithms">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Algorithms.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Csp">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Csp.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Encoding">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Encoding.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.Primitives">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.Primitives.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Cryptography.X509Certificates">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Cryptography.X509Certificates.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.Principal">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.Principal.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Security.SecureString">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Security.SecureString.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.Encoding.Extensions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.Encoding.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Text.RegularExpressions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Text.RegularExpressions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Overlapped">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Overlapped.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks.Extensions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Tasks.Parallel">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Tasks.Parallel.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Thread">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Thread.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.ThreadPool">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.ThreadPool.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Threading.Timer">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Threading.Timer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ValueTuple">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.ValueTuple.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.ReaderWriter">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.ReaderWriter.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XDocument">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XmlDocument">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XmlSerializer">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XmlSerializer.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XPath">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.XPath.XDocument">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard\System.Xml.XPath.XDocument.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\Extensions\2.0.0\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
+     </Reference>
+     <Reference Include="mscorlib">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\mscorlib.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ComponentModel.Composition">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ComponentModel.Composition.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Core">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Data">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Data.dll</HintPath>
+     </Reference>
+     <Reference Include="System">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Drawing">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Drawing.dll</HintPath>
+     </Reference>
+     <Reference Include="System.IO.Compression.FileSystem">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.IO.Compression.FileSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Net">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Net.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Numerics">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Numerics.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Runtime.Serialization">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Runtime.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="System.ServiceModel.Web">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.ServiceModel.Web.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Transactions">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Transactions.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Web">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Web.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Windows">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Windows.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.Linq">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Linq.dll</HintPath>
+     </Reference>
+     <Reference Include="System.Xml.Serialization">
+     <HintPath>D:\UnityHub\2022.2.15f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.IK.Runtime">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing.Stores">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Common.Path.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.PixelPerfect.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Environments">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing.SecurityCore">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Collections">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing.Codeless">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.SpriteShape.Runtime">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.PixelPerfect">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Purchasing">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Analytics">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
+     </Reference>
+     <Reference Include="PsdPlugin">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing.SecurityStub">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualStudio.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UI">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Animation.Runtime">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Purchasing.Common">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InternalAPIEngineBridge.001">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Common.Runtime">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InternalAPIEditorBridge.001">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Psdimporter.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Common.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.SpriteShape.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Tilemap.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Animation.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.IK.Editor">
+     <HintPath>C:\Users\viric\RiderProjects\Freelance\MergeMiner\Client\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{8e399d07-fc4a-7ecd-7881-f923d075ebd1}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{edf9bd84-a96c-3edf-a9da-3d0eac9bb002}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject.csproj">
+      <Project>{1cfb9808-d979-347d-fc5a-21903b2631da}</Project>
+      <Name>Zenject</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{122a9434-3d85-f474-b766-201e3676b0c8}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{0994afac-7be2-100c-7f26-fa89637f615f}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{63b2b48a-78b3-8da0-b943-c308151a6ef3}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Coffee.UIParticle.csproj">
+      <Project>{92a152db-4ad1-64d7-7e31-575f9de80204}</Project>
+      <Name>Coffee.UIParticle</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{1bae22e7-00bf-7319-5bbe-188e81641616}</Project>
+      <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{41c99686-a020-df23-0a15-667f30a831c4}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
+      <Project>{4e3d4c2c-836e-080c-5950-b3af7e3c0286}</Project>
+      <Name>Zenject-ReflectionBaking-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{814740d6-86fa-cd99-5b8c-dfa02f017587}</Project>
+      <Name>UniTask.DOTween</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

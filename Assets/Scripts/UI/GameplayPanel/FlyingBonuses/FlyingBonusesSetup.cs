@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using _Proxy.Connectors;
-using _Proxy.Data;
+using GameCore.Connectors;
+using GameCore.Data;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using MergeMiner.Core.State.Config;

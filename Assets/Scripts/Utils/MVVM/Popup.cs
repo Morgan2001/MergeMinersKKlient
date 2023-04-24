@@ -1,4 +1,6 @@
-﻿namespace Utils.MVVM
+﻿using Utils.Reactive;
+
+namespace Utils.MVVM
 {
     public interface IPopup : IDisposableCarrier
     {
