@@ -120,6 +120,14 @@ namespace _Proxy.Preloader
             });
         }
         
+        public async Task<RestResponse> CollectMission(string token, string id)
+        {
+            return await _restClient.Post<RestResponse>($"game/{token}/collectMission", new Dictionary<string, object>
+            {
+                { "id", id }
+            });
+        }
+        
         public async Task<RestResponse> PurchaseTest(string token, string id)
         {
             return await _restClient.Post<RestResponse>($"purchase/{token}/test", new Dictionary<string, object>

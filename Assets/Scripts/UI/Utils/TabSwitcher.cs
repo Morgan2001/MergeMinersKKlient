@@ -17,6 +17,8 @@ namespace UI.Utils
     {
         Game,
         Shop,
-        Upgrades
+        Upgrades,
+        Missions,
+        Referral
     }
 }

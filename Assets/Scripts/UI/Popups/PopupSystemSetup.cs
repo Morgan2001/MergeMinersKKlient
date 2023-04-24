@@ -15,6 +15,8 @@ namespace UI.Popups
         [SerializeField] private GameObject _shopScreen;
         [SerializeField] private GameObject _upgradesScreen;
         [SerializeField] private GameObject _mainScreen;
+        [SerializeField] private GameObject _missionsScreen;
+        [SerializeField] private GameObject _referralScreen;
         
         [SerializeField] private NewMinerPopup _newMinerPopup;
         [SerializeField] private MinerRoulettePopup _minerRoulettePopup;
@@ -80,13 +82,16 @@ namespace UI.Popups
             _shopScreen.SetActive(tab == Tab.Shop);
             _upgradesScreen.SetActive(tab == Tab.Upgrades);
             _mainScreen.SetActive(tab == Tab.Game);
+            _missionsScreen.SetActive(tab == Tab.Missions);
+            _referralScreen.SetActive(tab == Tab.Referral);
         }
 
         private void OnNewMiner(NewMinerPopupData data)
         {
+            var title = _resourceHelper.GetMinerNameByLevel(data.Level);
             var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
             var previousIcon = _resourceHelper.GetNormalIconByLevel(data.Level - 1);
-            var viewModel = new NewMinerPopupViewModel(data.Config, data.Level, data.Income, icon, previousIcon);
+            var viewModel = new NewMinerPopupViewModel(title, data.Level, data.Income, icon, previousIcon);
             ShowPopup(_newMinerPopup, viewModel);
         }
 

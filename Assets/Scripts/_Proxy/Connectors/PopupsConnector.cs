@@ -89,6 +89,8 @@ namespace _Proxy.Connectors
 
         private void OnInit(InitGameEvent gameEvent)
         {
+            if (!gameEvent.Offline) return;
+            
             var player = _playerRepository.Get(_sessionData.Token);
             var income = _incomeService.CalculateIncome(_sessionData.Token, player.LastUpdate, _timeService.GetCurrentTime);
             var multiplier = _gameConfig.OfflineIncomeMultiplier;

@@ -8,6 +8,7 @@ namespace UI.Utils
     public interface IResourceHelper
     {
         Sprite GetNormalIconByLevel(int level);
+        string GetMinerNameByLevel(int level);
         Sprite GetPoweredIconByLevel(int level);
         string GetLocationNameByLevel(int level);
         Sprite GetLocationImageByLevel(int level);
@@ -18,6 +19,7 @@ namespace UI.Utils
         string GetWheelRewardDescription(int reward);
         Sprite GetUpgradeIcon(int index);
         string GetUpgradeDescription(int index);
+        string GetMissionDescription(int index);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -48,6 +50,11 @@ namespace UI.Utils
         public Sprite GetNormalIconByLevel(int level)
         {
             return _minersConfig.MiningDeviceDatas.First(x => x.Level == level).Sprite;
+        }
+        
+        public string GetMinerNameByLevel(int level)
+        {
+            return _minersConfig.MiningDeviceDatas.First(x => x.Level == level).Name;
         }
         
         public Sprite GetPoweredIconByLevel(int level)
@@ -100,6 +107,11 @@ namespace UI.Utils
         public string GetUpgradeDescription(int index)
         {
             return _upgrades.Upgrades[index].Description;
+        }
+
+        public string GetMissionDescription(int index)
+        {
+            return "Поставь {0} майнеров {1} уровня в розетку";
         }
     }
 }

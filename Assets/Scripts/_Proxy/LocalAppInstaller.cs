@@ -38,6 +38,7 @@ namespace _Proxy
             _container.RegisterSingleton<WheelConnector>();
             _container.RegisterSingleton<OfflineIncomeConnector>();
             _container.RegisterSingleton<UpgradesConnector>();
+            _container.RegisterSingleton<MissionsConnector>();
             _container.RegisterSingleton<MinerShopConnector>();
             _container.RegisterSingleton<ShopConnector>();
             _container.RegisterSingleton<BonusConnector>();

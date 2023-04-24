@@ -14,6 +14,7 @@ namespace _Proxy.Services
         private readonly PlayerShopRepository _playerShopRepository;
         private readonly PlayerBonusesRepository _playerBonusesRepository;
         private readonly PlayerFreeGemRepository _playerFreeGemRepository;
+        private readonly PlayerMissionsRepository _playerMissionsRepository;
         private readonly MinerPoolService _minerPoolService;
         private readonly BonusPoolService _bonusPoolService;
 
@@ -25,6 +26,7 @@ namespace _Proxy.Services
             PlayerShopRepository playerShopRepository,
             PlayerBonusesRepository playerBonusesRepository,
             PlayerFreeGemRepository playerFreeGemRepository,
+            PlayerMissionsRepository playerMissionsRepository,
             MinerPoolService minerPoolService,
             BonusPoolService bonusPoolService)
         {
@@ -35,6 +37,7 @@ namespace _Proxy.Services
             _playerShopRepository = playerShopRepository;
             _playerBonusesRepository = playerBonusesRepository;
             _playerFreeGemRepository = playerFreeGemRepository;
+            _playerMissionsRepository = playerMissionsRepository;
             _minerPoolService = minerPoolService;
             _bonusPoolService = bonusPoolService;
         }
@@ -48,6 +51,7 @@ namespace _Proxy.Services
             _playerShopRepository.Get(playerId).Apply(gameState.Shop);
             _playerBonusesRepository.Get(playerId).Apply(gameState.Bonuses, _bonusPoolService);
             _playerFreeGemRepository.Get(playerId).Apply(gameState.FreeGem);
+            _playerMissionsRepository.Get(playerId).Apply(gameState.Missions);
         }
     }
 }

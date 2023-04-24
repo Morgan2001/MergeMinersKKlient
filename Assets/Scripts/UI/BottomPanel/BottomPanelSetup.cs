@@ -12,6 +12,8 @@ namespace UI.BottomPanel
     {
         [SerializeField] private Button _shopButton;
         [SerializeField] private Button _upgradesButton;
+        [SerializeField] private Button _missionsButton;
+        [SerializeField] private Button _referralButton;
         [SerializeField] private BlueBoxView _boxView;
         [SerializeField] private SocialView _socialView;
         [SerializeField] private TrashCanView _trashCanView;
@@ -42,6 +44,8 @@ namespace UI.BottomPanel
             
             _shopButton.Subscribe(OnShopClick);
             _upgradesButton.Subscribe(OnUpgradesClick);
+            _missionsButton.Subscribe(OnMissionsClick);
+            _referralButton.Subscribe(OnReferralClick);
 
             _dragHelper = dragHelper;
             _dragHelper.StartDragEvent.Subscribe(OnStartDrag);
@@ -76,6 +80,16 @@ namespace UI.BottomPanel
         private void OnUpgradesClick()
         {
             _tabSwitcher.SwitchTab(Tab.Upgrades);
+        }
+        
+        private void OnMissionsClick()
+        {
+            _tabSwitcher.SwitchTab(Tab.Missions);
+        }
+        
+        private void OnReferralClick()
+        {
+            _tabSwitcher.SwitchTab(Tab.Referral);
         }
 
         private void OnStartDrag()

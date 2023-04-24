@@ -9,11 +9,17 @@ namespace UI.TopPanel
     {
         [SerializeField] private Text _money;
         [SerializeField] private Text _gems;
+        [SerializeField] private Button _shopButton;
+
+        private ReactiveEvent _shopEvent = new();
+        public IReactiveSubscription ShopEvent => _shopEvent;
 
         protected override void BindInner(ResourcesViewModel vm)
         {
             _vm.Money.Bind(UpdateMoney).AddTo(this);
             _vm.Gems.Bind(UpdateGems).AddTo(this);
+            
+            _shopButton.Subscribe(_shopEvent.Trigger).AddTo(this);
         }
 
         private void UpdateMoney(double value)

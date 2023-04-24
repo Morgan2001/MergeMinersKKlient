@@ -1,5 +1,6 @@
 ﻿using System;
 using MergeMiner.Core.Commands.Base;
+using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
 using MergeMiner.Core.State.Repository;
@@ -31,6 +32,7 @@ namespace _Proxy.Commands
         private readonly PlayerMinersStateService _playerMinersStateService;
         private readonly MinerPoolService _minerPoolService;
         private readonly MinerConfig _minerConfig;
+        private readonly StatsService _statsService;
         private readonly EventDispatcherService _eventDispatcherService;
 
         public MergeMinersCommandProcessor(
@@ -38,12 +40,14 @@ namespace _Proxy.Commands
             PlayerMinersStateService playerMinersStateService,
             MinerPoolService minerPoolService,
             MinerConfig minerConfig,
+            StatsService statsService,
             EventDispatcherService eventDispatcherService)
         {
             _playerMinersRepository = playerMinersRepository;
             _playerMinersStateService = playerMinersStateService;
             _minerPoolService = minerPoolService;
             _minerConfig = minerConfig;
+            _statsService = statsService;
             _eventDispatcherService = eventDispatcherService;
         }
         
@@ -68,6 +72,8 @@ namespace _Proxy.Commands
             _playerMinersStateService.SetMiner(gameCommand.Player, newMiner.Id, gameCommand.Slot2);
             _playerMinersStateService.RemoveMiner(gameCommand.Player, gameCommand.Slot1);
             _eventDispatcherService.Dispatch(new MergeMinersEvent(gameCommand.Player, newMiner.Id, gameCommand.Slot2, newLevel, minerId1, minerId2));
+            
+            _statsService.IncrementMission(gameCommand.Player, minerConfig.Level);
             
             _minerPoolService.ReturnMiner(minerId1);
             _minerPoolService.ReturnMiner(minerId2);

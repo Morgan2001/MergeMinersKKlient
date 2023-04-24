@@ -167,6 +167,11 @@ namespace _Proxy.Services
         {
             RestCall(token => _restAPI.BuyUpgrade(token, id));
         }
+
+        public void CollectMission(string id)
+        {
+            RestCall(token => _restAPI.CollectMission(token, id));
+        }
         
         public void PurchaseTest(string id)
         {

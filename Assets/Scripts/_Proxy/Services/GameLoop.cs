@@ -43,8 +43,13 @@ namespace _Proxy.Services
             _gameStateApplier.Apply(_sessionData.GameState, _sessionData.Token);
             
             _flyingBonuses.Reset();
-            
-            _eventDispatcherService.Dispatch(new InitGameEvent(_sessionData.Token, true));
+
+            var newPlayer = _sessionData.GameState.Player.Money == 0;
+            _eventDispatcherService.Dispatch(new InitGameEvent(_sessionData.Token, !newPlayer));
+            if (newPlayer)
+            {
+                _sessionData.Start();
+            }
         }
         
         public void Update()
