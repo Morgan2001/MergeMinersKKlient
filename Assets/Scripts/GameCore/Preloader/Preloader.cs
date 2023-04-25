@@ -29,7 +29,7 @@ namespace GameCore.Preloader
             var gameState = await _restAPI.GetState(token);
             
             _sessionData.Setup(token, config, gameState);
-            SceneManager.LoadScene("Gameplay_new");
+            SceneManager.LoadScene("Gameplay");
         }
     }
 }
