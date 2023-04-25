@@ -52,8 +52,12 @@ namespace GameCore.Connectors
             var subscription = _playerSubscriptionRepository.Get(_sessionData.Token);
             _addProductEvent.Trigger(new ProductsData(
                 _iapConfig.GetAll().Select(x => new ProductData(x.Id, x.Gems, x.Price, true)),
-                Enumerable.Repeat(new ProductData(SUBSCRIPTION, 0, 0, false), 1),
-                new DateTime(subscription.ActiveTill) > DateTime.Now));
+                Enumerable.Repeat(new ProductData(SUBSCRIPTION, 0, 0, false), 1)));
+            
+            if (new DateTime(subscription.ActiveTill) > DateTime.Now)
+            {
+                _subscriptionEvent.Trigger();
+            }
         }
 
         public void InitPurchase(string product)
@@ -82,11 +86,9 @@ namespace GameCore.Connectors
     {
         public List<ProductData> Products { get; }
         public List<ProductData> Subscriptions { get; }
-        public bool SubscriptionActive { get; }
 
-        public ProductsData(IEnumerable<ProductData> products, IEnumerable<ProductData> subscriptions, bool subscriptionActive)
+        public ProductsData(IEnumerable<ProductData> products, IEnumerable<ProductData> subscriptions)
         {
-            SubscriptionActive = subscriptionActive;
             Products = new List<ProductData>(products);
             Subscriptions = new List<ProductData>(subscriptions);
         }

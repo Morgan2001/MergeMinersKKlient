@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GameCore.Connectors;
+using MergeMiner.Core.State.Data;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;
@@ -14,6 +15,7 @@ namespace UI.GameplayPanel.ShopPanel
         private MinerShopConnector _minerShopConnector;
         private IResourceHelper _resourceHelper;
         private GameplayViewStorage _gameplayViewStorage;
+        private AdsConnector _adsConnector;
         
         private ShopPanelViewModel _shopPanelViewModel;
 
@@ -23,11 +25,13 @@ namespace UI.GameplayPanel.ShopPanel
         private void Setup(
             MinerShopConnector minerShopConnector,
             IResourceHelper resourceHelper,
-            GameplayViewStorage gameplayViewStorage)
+            GameplayViewStorage gameplayViewStorage,
+            AdsConnector adsConnector)
         {
             _minerShopConnector = minerShopConnector;
             _resourceHelper = resourceHelper;
             _gameplayViewStorage = gameplayViewStorage;
+            _adsConnector = adsConnector;
             
             _shopPanelViewModel = new ShopPanelViewModel();
             _shopPanelView.Bind(_shopPanelViewModel);
@@ -43,10 +47,28 @@ namespace UI.GameplayPanel.ShopPanel
             _shopPanelViewModel.AddMiner(viewModel);
             _minerShopItems.Add(data.Id, viewModel);
             
-            viewModel.ClickEvent.Subscribe(() => _minerShopConnector.BuyMiner(viewModel.Level, viewModel.Currency.Value)).AddTo(viewModel);
+            viewModel.ClickEvent.Subscribe(() =>
+            {
+                if (viewModel.Currency.Value == Currency.Ads)
+                {
+                    _adsConnector.ShowRewarded(x =>
+                    {
+                        if (x) BuyMiner(viewModel.Level, viewModel.Currency.Value);
+                    });
+                }
+                else
+                {
+                    BuyMiner(viewModel.Level, viewModel.Currency.Value);
+                }
+            }).AddTo(viewModel);
             
             var view = _shopPanelView.GetMinerShopView(viewModel);
             _gameplayViewStorage.AddMinerShopView(data.Id, view);
+        }
+
+        private void BuyMiner(int level, Currency currency)
+        {
+            _minerShopConnector.BuyMiner(level, currency);
         }
         
         private void UpdateMinerShop(UpdateMinerShopData data)

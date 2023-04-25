@@ -1,4 +1,5 @@
-﻿using IAP;
+﻿using Ads;
+using IAP;
 using UI.BottomPanel;
 using UI.GameplayPanel;
 using UI.GameplayPanel.MergePanel;
@@ -29,6 +30,7 @@ namespace GameCore
         [SerializeField] private DragHelper _dragHelper;
         
         [SerializeField] private IAPController _iapController;
+        [SerializeField] private AdsController _adsController;
 
         public override void InstallBindings()
         {
@@ -50,8 +52,9 @@ namespace GameCore
             
             Container.BindInstance(_dragHelper);
             
-            Container.BindInstance(_iapController);
             Container.Bind<StoreListener>().AsSingle();
+            Container.BindInstance(_iapController);
+            Container.BindInstance(_adsController);
         }
     }
 }

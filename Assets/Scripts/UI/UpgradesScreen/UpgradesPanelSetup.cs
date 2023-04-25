@@ -15,14 +15,17 @@ namespace UI.UpgradesScreen
         [SerializeField] private Transform _container;
 
         private UpgradesConnector _upgradesConnector;
+        private AdsConnector _adsConnector;
         private IResourceHelper _resourceHelper;
         
         [Inject]
         private void Setup(
             UpgradesConnector upgradesConnector,
+            AdsConnector adsConnector,
             IResourceHelper resourceHelper)
         {
             _upgradesConnector = upgradesConnector;
+            _adsConnector = adsConnector;
             _resourceHelper = resourceHelper;
 
             var upgrades = _upgradesConnector.GetUpgrades();
@@ -43,7 +46,28 @@ namespace UI.UpgradesScreen
             var view = Instantiate(prefab, _container);
             view.Bind(viewModel);
 
-            view.BuyEvent.Subscribe(_upgradesConnector.Buy).AddTo(view);
+            view.BuyEvent.Subscribe(id =>
+            {
+                if (data.Currency == Currency.Ads)
+                {
+                    _adsConnector.ShowRewarded(x =>
+                    {
+                        if (x)
+                        {
+                            Buy(id);
+                        }
+                    });
+                }
+                else
+                {
+                    Buy(id);
+                }
+            }).AddTo(view);
+        }
+
+        private void Buy(string id)
+        {
+            _upgradesConnector.Buy(id);
         }
     }
 }

@@ -34,6 +34,8 @@ namespace UI.ShopScreen
 
             _rouletteButton.Subscribe(_popupsConnector.SpinWheel);
             _subscriptionButton.Subscribe(_purchaseConnector.InitSubscription);
+            
+            UpdateSubscription(false);
         }
 
         private void OnInitIAPs(ProductsData data)
@@ -47,8 +49,6 @@ namespace UI.ShopScreen
                 
                 view.ClickEvent.Subscribe(() => _purchaseConnector.InitPurchase(id)).AddTo(view);
             }
-            
-            UpdateSubscription(data.SubscriptionActive);
         }
 
         private void OnSubscription()

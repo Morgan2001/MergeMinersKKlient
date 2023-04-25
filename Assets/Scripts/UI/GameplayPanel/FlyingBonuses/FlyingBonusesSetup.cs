@@ -24,6 +24,7 @@ namespace UI.GameplayPanel.FlyingBonuses
         private BonusConnector _bonusConnector;
         private PopupsConnector _popupsConnector;
         private IResourceHelper _resourceHelper;
+        private AdsConnector _adsConnector;
 
         private List<BonusView> _bonuses = new();
 
@@ -31,11 +32,13 @@ namespace UI.GameplayPanel.FlyingBonuses
         private void Setup(
             BonusConnector bonusConnector,
             PopupsConnector popupsConnector,
-            IResourceHelper resourceHelper)
+            IResourceHelper resourceHelper,
+            AdsConnector adsConnector)
         {
             _bonusConnector = bonusConnector;
             _popupsConnector = popupsConnector;
             _resourceHelper = resourceHelper;
+            _adsConnector = adsConnector;
 
             _bonusConnector.AddBonusEvent.Subscribe(AddBonus);
             _bonusConnector.UseBonusEvent.Subscribe(UseBonus);
@@ -68,7 +71,16 @@ namespace UI.GameplayPanel.FlyingBonuses
             }
             else
             {
-                _popupsConnector.ShowBonus(id, () => _bonusConnector.UseBonus(id));
+                _popupsConnector.ShowBonus(id, () =>
+                {
+                    _adsConnector.ShowRewarded(x =>
+                    {
+                        if (x)
+                        {
+                            _bonusConnector.UseBonus(id);
+                        }
+                    });
+                });
             }
         }
 

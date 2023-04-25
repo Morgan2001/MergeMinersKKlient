@@ -1,6 +1,7 @@
 ﻿using GameCore.Connectors;
 using GameCore.Data;
 using Common.Utils.Extensions;
+using MergeMiner.Core.State.Data;
 using UI.Utils;
 using UnityEngine;
 using Utils.MVVM;
@@ -36,6 +37,7 @@ namespace UI.Popups
         private RelocateConnector _relocateConnector;
         private FreeGemConnector _freeGemConnector;
         private WheelConnector _wheelConnector;
+        private AdsConnector _adsConnector;
         private OfflineIncomeConnector _offlineIncomeConnector;
         private IResourceHelper _resourceHelper;
         private TabSwitcher _tabSwitcher;
@@ -48,6 +50,7 @@ namespace UI.Popups
             RelocateConnector relocateConnector,
             FreeGemConnector freeGemConnector, 
             WheelConnector wheelConnector,
+            AdsConnector adsConnector,
             OfflineIncomeConnector offlineIncomeConnector,
             IResourceHelper resourceHelper,
             TabSwitcher tabSwitcher)
@@ -56,6 +59,7 @@ namespace UI.Popups
             _relocateConnector = relocateConnector;
             _freeGemConnector = freeGemConnector;
             _wheelConnector = wheelConnector;
+            _adsConnector = adsConnector;
             _offlineIncomeConnector = offlineIncomeConnector;
             _resourceHelper = resourceHelper;
             _tabSwitcher = tabSwitcher;
@@ -178,10 +182,28 @@ namespace UI.Popups
             ShowPopup(_wheelPopup, viewModel);
             
             _wheelConnector.SpinEvent.Subscribe(data => viewModel.Spin(data.Id)).AddTo(_wheelPopup);
-            _wheelPopup.SpinEvent.Subscribe(_wheelConnector.Spin).AddTo(_wheelPopup);
+            _wheelPopup.SpinEvent.Subscribe(Spin).AddTo(_wheelPopup);
             _wheelPopup.EndSpinEvent.Subscribe(_popupsConnector.ShowWheelReward).AddTo(_wheelPopup);
         }
-        
+
+        private void Spin(Currency currency)
+        {
+            if (currency == Currency.Ads)
+            {
+                _adsConnector.ShowRewarded(x =>
+                {
+                    if (x)
+                    {
+                        _wheelConnector.Spin(currency);
+                    }
+                });
+            }
+            else
+            {
+                _wheelConnector.Spin(currency);
+            }
+        }
+
         private void OnWheelReward(WheelRewardData data)
         {
             var viewModel = new WheelRewardPopupViewModel(data.Icon, data.Description);
@@ -193,7 +215,19 @@ namespace UI.Popups
             var viewModel = new OfflineIncomePopupViewModel(data.Income, data.MultipliedIncome);
             ShowPopup(_offlineIncomePopup, viewModel);
 
-            _offlineIncomePopup.ClickEvent.Subscribe(_offlineIncomeConnector.MultiplyIncome).AddTo(_offlineIncomePopup);
+            _offlineIncomePopup.ClickEvent.Subscribe(MultiplyIncome).AddTo(_offlineIncomePopup);
+        }
+
+        private void MultiplyIncome(bool value)
+        {
+            if (value)
+            {
+                _adsConnector.ShowRewarded(_offlineIncomeConnector.MultiplyIncome);
+            }
+            else
+            {
+                _offlineIncomeConnector.MultiplyIncome(false);
+            }
         }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)
