@@ -14,40 +14,53 @@ namespace UI.ShopScreen
 
         [SerializeField] private Button _rouletteButton;
         [SerializeField] private Button _subscriptionButton;
+        
+        [SerializeField] private GameObject _subscriptionActive;
+        [SerializeField] private GameObject _subscriptionNotActive;
 
-        private ShopConnector _shopConnector;
+        private PurchaseConnector _purchaseConnector;
         private PopupsConnector _popupsConnector;
 
         [Inject]
         private void Setup(
-            ShopConnector shopConnector,
+            PurchaseConnector purchaseConnector,
             PopupsConnector popupsConnector)
         {
-            _shopConnector = shopConnector;
-            _shopConnector.InitIAPsEvent.Subscribe(OnInitIAPs);
+            _purchaseConnector = purchaseConnector;
+            _purchaseConnector.AddProductEvent.Subscribe(OnInitIAPs);
+            _purchaseConnector.SubscriptionEvent.Subscribe(OnSubscription);
 
             _popupsConnector = popupsConnector;
 
             _rouletteButton.Subscribe(_popupsConnector.SpinWheel);
-            _subscriptionButton.Subscribe(_shopConnector.InitSubscription);
+            _subscriptionButton.Subscribe(_purchaseConnector.InitSubscription);
         }
 
-        private void Awake()
+        private void OnInitIAPs(ProductsData data)
         {
-            _shopConnector.Restore();
-        }
-
-        private void OnInitIAPs(InitIAPsData data)
-        {
-            foreach (var item in data.IAPs.GetAll())
+            foreach (var item in data.Products)
             {
                 var id = item.Id;
                 var viewModel = new ShopPurchaseViewModel(item.Gems, item.Price);
                 var view = Instantiate(_shopPurchasePrefab, _shopPurchaseContainer);
                 view.Bind(viewModel);
                 
-                view.ClickEvent.Subscribe(() => _shopConnector.InitPurchase(id)).AddTo(view);
+                view.ClickEvent.Subscribe(() => _purchaseConnector.InitPurchase(id)).AddTo(view);
             }
+            
+            UpdateSubscription(data.SubscriptionActive);
+        }
+
+        private void OnSubscription()
+        {
+            UpdateSubscription(true);
+        }
+
+        private void UpdateSubscription(bool value)
+        {
+            _subscriptionActive.SetActive(value);
+            _subscriptionNotActive.SetActive(!value);
+            _subscriptionButton.interactable = !value;
         }
     }
 }

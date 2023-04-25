@@ -15,6 +15,7 @@ namespace GameCore.Services
         private readonly PlayerBonusesRepository _playerBonusesRepository;
         private readonly PlayerFreeGemRepository _playerFreeGemRepository;
         private readonly PlayerMissionsRepository _playerMissionsRepository;
+        private readonly PlayerSubscriptionRepository _playerSubscriptionRepository;
         private readonly MinerPoolService _minerPoolService;
         private readonly BonusPoolService _bonusPoolService;
 
@@ -27,6 +28,7 @@ namespace GameCore.Services
             PlayerBonusesRepository playerBonusesRepository,
             PlayerFreeGemRepository playerFreeGemRepository,
             PlayerMissionsRepository playerMissionsRepository,
+            PlayerSubscriptionRepository playerSubscriptionRepository,
             MinerPoolService minerPoolService,
             BonusPoolService bonusPoolService)
         {
@@ -38,6 +40,7 @@ namespace GameCore.Services
             _playerBonusesRepository = playerBonusesRepository;
             _playerFreeGemRepository = playerFreeGemRepository;
             _playerMissionsRepository = playerMissionsRepository;
+            _playerSubscriptionRepository = playerSubscriptionRepository;
             _minerPoolService = minerPoolService;
             _bonusPoolService = bonusPoolService;
         }
@@ -52,6 +55,7 @@ namespace GameCore.Services
             _playerBonusesRepository.Get(playerId).Apply(gameState.Bonuses, _bonusPoolService);
             _playerFreeGemRepository.Get(playerId).Apply(gameState.FreeGem);
             _playerMissionsRepository.Get(playerId).Apply(gameState.Missions);
+            _playerSubscriptionRepository.Get(playerId).Apply(gameState.Subscription);
         }
     }
 }

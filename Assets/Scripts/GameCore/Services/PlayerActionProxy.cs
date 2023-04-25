@@ -173,14 +173,14 @@ namespace GameCore.Services
             RestCall(token => _restAPI.CollectMission(token, id));
         }
         
-        public void PurchaseTest(string id)
+        public void Purchase(string id, string purchaseToken)
         {
-            RestCall(token => _restAPI.PurchaseTest(token, id));
+            RestCall(token => _restAPI.Purchase(token, id, purchaseToken));
         }
         
-        public void PurchaseTestSubscription()
+        public void Subscription(string purchaseToken)
         {
-            RestCall(token => _restAPI.PurchaseTestSubscription(token));
+            RestCall(token => _restAPI.Subscription(token, purchaseToken));
         }
     }
 }

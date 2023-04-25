@@ -128,17 +128,21 @@ namespace GameCore.Preloader
             });
         }
         
-        public async Task<RestResponse> PurchaseTest(string token, string id)
+        public async Task<RestResponse> Purchase(string token, string id, string purchaseToken)
         {
-            return await _restClient.Post<RestResponse>($"purchase/{token}/test", new Dictionary<string, object>
+            return await _restClient.Post<RestResponse>($"purchase/{token}/purchase", new Dictionary<string, object>
             {
-                { "id", id }
+                { "id", id },
+                { "purchaseToken", purchaseToken }
             });
         }
         
-        public async Task<RestResponse> PurchaseTestSubscription(string token)
+        public async Task<RestResponse> Subscription(string token, string purchaseToken)
         {
-            return await _restClient.Post<RestResponse>($"purchase/{token}/testSubscription");
+            return await _restClient.Post<RestResponse>($"purchase/{token}/subscription", new Dictionary<string, object>
+            {
+                { "purchaseToken", purchaseToken }
+            });
         }
     }
 }

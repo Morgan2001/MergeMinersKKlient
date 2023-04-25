@@ -74,7 +74,9 @@ namespace GameCore.Connectors
             Relocate(_sessionData.Token);
 
             var miners = _playerMinersRepository.Get(_sessionData.Token);
-            var size = miners.Size + _bonusHelper.GetBonusPower(_sessionData.Token, BoostType.Slots);
+            var location = _locationHelper.GetLocation(_sessionData.Token);
+            var bonusSlots = _bonusHelper.IsBonusActive(_sessionData.Token, BoostType.Slots) ? location.Width : 0; 
+            var size = miners.Size + bonusSlots;
             for (var i = 0; i < size; i++)
             {
                 var minerId = miners.Miners[i];
@@ -89,12 +91,13 @@ namespace GameCore.Connectors
         private void Relocate(string playerId)
         {
             var location = _locationHelper.GetLocation(playerId);
-            var bonusSlots = _bonusHelper.GetBonusPower(playerId, BoostType.Slots); 
+            var hasBonusSlots = _bonusHelper.IsBonusActive(playerId, BoostType.Slots);
+            var bonusSlots = hasBonusSlots ? location.Width : 0; 
             var poweredSlots = _bonusHelper.IsBonusActive(playerId, BoostType.PowerAll)
                 ? location.TotalSlots + bonusSlots
                 : location.PoweredSlots;
 
-            _resizeEvent.Trigger(new RelocateData(location.Width, location.Height, poweredSlots, bonusSlots));
+            _resizeEvent.Trigger(new RelocateData(location.Width, hasBonusSlots ? location.Height + 1 : location.Height, poweredSlots));
         }
 
         private void OnRelocate(RelocateEvent gameEvent)
@@ -179,14 +182,12 @@ namespace GameCore.Connectors
         public int Height { get; }
         public int Total => Width * Height;
         public int Powered { get; }
-        public int BonusSlots { get; }
         
-        public RelocateData(int width, int height, int powered, int bonusSlots)
+        public RelocateData(int width, int height, int powered)
         {
             Width = width;
             Height = height;
             Powered = powered;
-            BonusSlots = bonusSlots;
         }
     }
 

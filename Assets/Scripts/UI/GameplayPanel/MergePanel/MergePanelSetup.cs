@@ -112,7 +112,7 @@ namespace UI.GameplayPanel.MergePanel
         private void OnResize(RelocateData data)
         {
             _mergePanelViewModel.SetSize(data.Width, data.Height);
-            CreateCells(data.Total - _cells.Count + data.BonusSlots);
+            CreateCells(data.Total - _cells.Count);
             UpdateCells(data.Powered);
         }
 

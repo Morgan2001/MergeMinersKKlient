@@ -1,4 +1,5 @@
-﻿using UI.BottomPanel;
+﻿using IAP;
+using UI.BottomPanel;
 using UI.GameplayPanel;
 using UI.GameplayPanel.MergePanel;
 using UI.GameplayPanel.ShopPanel;
@@ -26,6 +27,8 @@ namespace GameCore
         [SerializeField] private BottomPanelSetup _bottomPanelSetup;
         
         [SerializeField] private DragHelper _dragHelper;
+        
+        [SerializeField] private IAPController _iapController;
 
         public override void InstallBindings()
         {
@@ -46,6 +49,9 @@ namespace GameCore
             Container.Bind<TabSwitcher>().AsSingle();
             
             Container.BindInstance(_dragHelper);
+            
+            Container.BindInstance(_iapController);
+            Container.Bind<StoreListener>().AsSingle();
         }
     }
 }

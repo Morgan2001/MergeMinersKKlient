@@ -40,10 +40,10 @@ namespace GameCore
             _container.RegisterSingleton<UpgradesConnector>();
             _container.RegisterSingleton<MissionsConnector>();
             _container.RegisterSingleton<MinerShopConnector>();
-            _container.RegisterSingleton<ShopConnector>();
             _container.RegisterSingleton<BonusConnector>();
             _container.RegisterSingleton<ReferralConnector>();
             _container.RegisterSingleton<PopupsConnector>();
+            _container.RegisterSingleton<PurchaseConnector>();
         }
     }
 }
