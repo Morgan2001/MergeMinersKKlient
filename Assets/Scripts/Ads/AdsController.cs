@@ -59,6 +59,11 @@ namespace Ads
                 _rewardedAwaits?.Invoke(false);
                 _rewardedAwaits = null;
             };
+            
+            _manager.OnRewardedAdClosed += () =>
+            {
+                _rewardedAwaits = null;
+            };
         }
 
         private void OnSubscription()

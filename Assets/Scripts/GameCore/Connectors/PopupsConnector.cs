@@ -55,6 +55,9 @@ namespace GameCore.Connectors
         private ReactiveEvent<OfflineIncomeData> _offlineIncomePopupEvent = new();
         public IReactiveSubscription<OfflineIncomeData> OfflineIncomePopupEvent => _offlineIncomePopupEvent;
         
+        private ReactiveEvent _emailPopupEvent = new();
+        public IReactiveSubscription EmailPopupEvent => _emailPopupEvent;
+        
         public PopupsConnector(
             SessionData sessionData,
             GameConfig gameConfig,
@@ -142,6 +145,11 @@ namespace GameCore.Connectors
             var icon = _resourceHelper.GetWheelRewardIcon(reward);
             var description = _resourceHelper.GetWheelRewardDescription(reward);
             _wheelRewardPopupEvent.Trigger(new WheelRewardData(icon, description));
+        }
+
+        public void ShowEmail()
+        {
+            _emailPopupEvent.Trigger();
         }
     }
 

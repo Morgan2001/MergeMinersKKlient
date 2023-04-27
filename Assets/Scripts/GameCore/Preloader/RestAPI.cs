@@ -15,15 +15,39 @@ namespace GameCore.Preloader
         {
             _restClient = restClient;
         }
-
-        public async Task<string> UserRegister()
-        {
-            return await _restClient.Get<string>("user/register");
-        }
         
         public async Task<string> UserLogin(string deviceId)
         {
             return await _restClient.Get<string>($"user/login?deviceId={deviceId}");
+        }
+
+        public async Task<bool> Register(string token, string email, string password, string referralCode)
+        {
+            return await _restClient.Post("user/registerEmail", new Dictionary<string, object>
+            {
+                { "token", token },
+                { "email", email },
+                { "password", password },
+                { "referralCode", referralCode }
+            });
+        }
+        
+        public async Task<bool> Recover(string email)
+        {
+            return await _restClient.Post($"user/recoverEmail", new Dictionary<string, object>
+            {
+                { "email", email }
+            });
+        }
+        
+        public async Task<string> RestoreByEmail(string deviceId, string email, string password)
+        {
+            return await _restClient.Post<string>("user/restoreByEmail", new Dictionary<string, object>
+            {
+                { "deviceId", deviceId },
+                { "email", email },
+                { "password", password }
+            });
         }
         
         public async Task<ConfigData> GetConfig(string token)

@@ -40,6 +40,21 @@ namespace GameCore.Preloader
             Debug.Log(_baseUrl + path);
             return await SendRequest<T>(UnityWebRequest.Post(_baseUrl + path, parameters));
         }
+        
+        public async Task<bool> Get(string path)
+        {
+            Debug.Log(_baseUrl + path);
+            return await SendRequest(UnityWebRequest.Get(_baseUrl + path));
+        }
+        
+        public async Task<bool> Post(string path, Dictionary<string, object> data = null)
+        {
+            var parameters = data != null
+                ? new Dictionary<string, string>(data.Select(x => new KeyValuePair<string, string>(x.Key, x.Value.ToString())))
+                : new Dictionary<string, string>();
+            Debug.Log(_baseUrl + path);
+            return await SendRequest(UnityWebRequest.Post(_baseUrl + path, parameters));
+        }
 
         private async Task<T> SendRequest<T>(UnityWebRequest uwr)
         {
@@ -56,6 +71,26 @@ namespace GameCore.Preloader
                 Debug.Log(json);
                 result.Dispose();
                 return JsonConvert.DeserializeObject<T>(json, _settings);
+            }
+            catch (Exception)
+            {
+                return default;
+            }
+        }
+        
+        private async Task<bool> SendRequest(UnityWebRequest uwr)
+        {
+            try
+            {
+                var result = await uwr.SendWebRequest().ToUniTask();
+                if (result.result != UnityWebRequest.Result.Success)
+                {
+                    result.Dispose();
+                    return default;
+                }
+                
+                result.Dispose();
+                return true;
             }
             catch (Exception)
             {

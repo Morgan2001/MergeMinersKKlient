@@ -17,6 +17,11 @@ namespace GameCore.Preloader
             GameState = gameState;
         }
 
+        public void SetToken(string token)
+        {
+            Token = token;
+        }
+
         public void Start()
         {
             Started = true;

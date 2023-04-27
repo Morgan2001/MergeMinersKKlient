@@ -1,13 +1,16 @@
 ﻿using GameCore.Connectors;
 using UI.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 using Utils.MVVM;
+using Utils.Reactive;
 using Zenject;
 
 namespace UI.TopPanel
 {
     public class TopPanelSetup : MonoBehaviour
     {
+        [SerializeField] private Button _settingsButton;
         [SerializeField] private ResourcesView _resourcesView;
         [SerializeField] private FreeGemView _freeGemView;
         [SerializeField] private RelocateView _relocateView;
@@ -39,6 +42,8 @@ namespace UI.TopPanel
             SetupResources();
             SetupFreeGems();
             SetupRelocator();
+
+            _settingsButton.Subscribe(_popupsConnector.ShowEmail);
         }
 
         private void SetupResources()

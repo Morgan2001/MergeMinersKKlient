@@ -27,6 +27,7 @@ namespace UI.Popups
         [SerializeField] private WheelPopup _wheelPopup;
         [SerializeField] private WheelRewardPopup _wheelRewardPopup;
         [SerializeField] private OfflineIncomePopup _offlineIncomePopup;
+        [SerializeField] private EmailPopup _emailPopup;
         
         [SerializeField] private BonusPopup _chipBonusPopup;
         [SerializeField] private BonusPopup _flashBonusPopup;
@@ -39,6 +40,7 @@ namespace UI.Popups
         private WheelConnector _wheelConnector;
         private AdsConnector _adsConnector;
         private OfflineIncomeConnector _offlineIncomeConnector;
+        private EmailConnector _emailConnector;
         private IResourceHelper _resourceHelper;
         private TabSwitcher _tabSwitcher;
 
@@ -52,6 +54,7 @@ namespace UI.Popups
             WheelConnector wheelConnector,
             AdsConnector adsConnector,
             OfflineIncomeConnector offlineIncomeConnector,
+            EmailConnector emailConnector,
             IResourceHelper resourceHelper,
             TabSwitcher tabSwitcher)
         {
@@ -61,6 +64,7 @@ namespace UI.Popups
             _wheelConnector = wheelConnector;
             _adsConnector = adsConnector;
             _offlineIncomeConnector = offlineIncomeConnector;
+            _emailConnector = emailConnector;
             _resourceHelper = resourceHelper;
             _tabSwitcher = tabSwitcher;
 
@@ -72,6 +76,7 @@ namespace UI.Popups
             _popupsConnector.WheelPopupEvent.Subscribe(OnWheel);
             _popupsConnector.WheelRewardPopupEvent.Subscribe(OnWheelReward);
             _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
+            _popupsConnector.EmailPopupEvent.Subscribe(OnEmail);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
@@ -216,6 +221,16 @@ namespace UI.Popups
             ShowPopup(_offlineIncomePopup, viewModel);
 
             _offlineIncomePopup.ClickEvent.Subscribe(MultiplyIncome).AddTo(_offlineIncomePopup);
+        }
+        
+        private void OnEmail()
+        {
+            var viewModel = new EmailPopupViewModel();
+            ShowPopup(_emailPopup, viewModel);
+            
+            _emailPopup.RegistrationEvent.Subscribe(_emailConnector.Register).AddTo(_emailPopup);
+            _emailPopup.ForgetEvent.Subscribe(_emailConnector.Forget).AddTo(_emailPopup);
+            _emailPopup.LoginEvent.Subscribe(_emailConnector.Login).AddTo(_emailPopup);
         }
 
         private void MultiplyIncome(bool value)
