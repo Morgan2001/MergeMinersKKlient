@@ -1,3 +1,3 @@
 [submodule "Assets/Core"]
 	path = Assets/Core
-	url = git@bitbucket.org:agnither/mergeminer.core.git
+	url = git@github.com:Morgan2001/MergeMinersKCore.git
