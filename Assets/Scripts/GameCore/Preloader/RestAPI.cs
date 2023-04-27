@@ -161,10 +161,11 @@ namespace GameCore.Preloader
             });
         }
         
-        public async Task<RestResponse> Subscription(string token, string purchaseToken)
+        public async Task<RestResponse> Subscription(string token, string subscriptionId, string purchaseToken)
         {
             return await _restClient.Post<RestResponse>($"purchase/{token}/subscription", new Dictionary<string, object>
             {
+                { "subscriptionId", subscriptionId },
                 { "purchaseToken", purchaseToken }
             });
         }

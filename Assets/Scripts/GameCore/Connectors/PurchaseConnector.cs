@@ -78,7 +78,7 @@ namespace GameCore.Connectors
         public void Subscription(PurchaseResult data)
         {
             _subscriptionEvent.Trigger();
-            _playerActionProxy.Subscription(data.Token);
+            _playerActionProxy.Subscription(SUBSCRIPTION, data.Token);
         }
     }
 

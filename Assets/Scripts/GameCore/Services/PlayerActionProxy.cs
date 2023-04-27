@@ -178,9 +178,9 @@ namespace GameCore.Services
             RestCall(token => _restAPI.Purchase(token, id, purchaseToken));
         }
         
-        public void Subscription(string purchaseToken)
+        public void Subscription(string subscriptionId, string purchaseToken)
         {
-            RestCall(token => _restAPI.Subscription(token, purchaseToken));
+            RestCall(token => _restAPI.Subscription(token, subscriptionId, purchaseToken));
         }
     }
 }
