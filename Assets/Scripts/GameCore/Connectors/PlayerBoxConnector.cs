@@ -4,7 +4,6 @@ using GameCore.Preloader;
 using GameCore.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Repository;
-using Utils;
 using Utils.Reactive;
 
 namespace GameCore.Connectors

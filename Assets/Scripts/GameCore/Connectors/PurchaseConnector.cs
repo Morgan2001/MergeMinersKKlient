@@ -54,7 +54,7 @@ namespace GameCore.Connectors
                 _iapConfig.GetAll().Select(x => new ProductData(x.Id, x.Gems, x.Price, true)),
                 Enumerable.Repeat(new ProductData(SUBSCRIPTION, 0, 0, false), 1)));
             
-            if (new DateTime(subscription.ActiveTill) > DateTime.Now)
+            if (new DateTime(subscription.ActiveTill) > DateTime.UtcNow)
             {
                 _subscriptionEvent.Trigger();
             }
