@@ -13,7 +13,7 @@ namespace GameCore.Preloader
 {
     public class RestClient
     {
-        private const string _baseUrl = "http://mergeminers.fun/";
+        private const string _baseUrl = "https://mergeminers.fun/";
         
         private readonly JsonSerializerSettings _settings;
 
