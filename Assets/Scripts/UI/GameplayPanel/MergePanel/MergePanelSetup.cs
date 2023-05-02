@@ -114,6 +114,11 @@ namespace UI.GameplayPanel.MergePanel
             _mergePanelViewModel.SetSize(data.Width, data.Height);
             CreateCells(data.Total - _cells.Count);
             UpdateCells(data.Powered);
+            
+            foreach (var miner in _miners)
+            {
+                miner.SetIsMaxLevel(miner.Level == data.MaxLevel);
+            }
         }
 
         private void CreateCells(int count)
@@ -174,7 +179,7 @@ namespace UI.GameplayPanel.MergePanel
 
         private void OnAddMiner(AddMinerData data)
         {
-            AddMiner(data.Id, data.Level, data.Slot, data.Source);
+            AddMiner(data.Id, data.Level, data.Slot, data.IsMaxLevel, data.Source);
             if (data.Source is MinerSource.Common or MinerSource.Random or MinerSource.RandomOpened)
             {
                 AnimateNewBox(data, _boxTransform);
@@ -230,7 +235,7 @@ namespace UI.GameplayPanel.MergePanel
             {
                 RemoveMiner(id);
                 id = data.Id;
-                AddMiner(data.Id, data.Level, data.Slot);
+                AddMiner(data.Id, data.Level, data.Slot, data.IsMaxLevel);
                 _animatingCells.Remove(cell);
             });
             
@@ -258,7 +263,7 @@ namespace UI.GameplayPanel.MergePanel
             RemoveMiner(data.Miner);
         }
 
-        private void AddMiner(string id, int level, int slot, MinerSource source = MinerSource.None)
+        private void AddMiner(string id, int level, int slot, bool isMaxLevel, MinerSource source = MinerSource.None)
         {
             var normalIcon = _resourceHelper.GetNormalIconByLevel(level);
             var poweredIcon = _resourceHelper.GetPoweredIconByLevel(level);
@@ -267,6 +272,7 @@ namespace UI.GameplayPanel.MergePanel
             _miners.Add(miner);
             _mergePanelViewModel.AddMiner(miner, slot);
             _slotsByMiners.Add(miner, slot);
+            miner.SetIsMaxLevel(isMaxLevel);
             
             var view = _mergePanelView.GetMiner(miner);
             view.BeginDragEvent.Subscribe(OnDrag).AddTo(view);

@@ -133,7 +133,6 @@ MonoBehaviour:
   _rectTransform: {fileID: 368871656531481050}
   _commonState: {fileID: 3251111779633404924}
   _boxState: {fileID: 4790286549351707966}
-  _particles: {fileID: 0}
   _shakeAnimation: {fileID: 8330599582747573040}
   _icon: {fileID: 368871656088348353}
   _level: {fileID: 368871657735867621}
@@ -225,8 +224,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75.3, y: -58.100006}
-  m_SizeDelta: {x: 130, y: 90}
+  m_AnchoredPosition: {x: -85, y: -58.100006}
+  m_SizeDelta: {x: 160, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &368871656649781134
 CanvasRenderer:
@@ -336,16 +335,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 8261aa344a446cc4d8fed11f893904eb, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 77
+    m_BestFit: 1
+    m_MinSize: 30
+    m_MaxSize: 70
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 8
+  m_Text: 1
 --- !u!1 &3251111779633404924
 GameObject:
   m_ObjectHideFlags: 0

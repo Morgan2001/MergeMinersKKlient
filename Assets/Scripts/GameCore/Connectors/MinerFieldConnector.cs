@@ -84,7 +84,7 @@ namespace GameCore.Connectors
                 
                 var miner = _minerRepository.Get(minerId);
                 var minerConfig = _minerConfig.Get(miner.ConfigId);
-                _addMinerEvent.Trigger(new AddMinerData(miner.Id, miner.ConfigId, minerConfig.Level, MinerSource.None, i));
+                _addMinerEvent.Trigger(new AddMinerData(miner.Id, miner.ConfigId, minerConfig.Level, MinerSource.None, i, minerConfig.Level == location.MaxMinerLevel));
             }
         }
 
@@ -97,7 +97,7 @@ namespace GameCore.Connectors
                 ? location.TotalSlots + bonusSlots
                 : location.PoweredSlots;
 
-            _resizeEvent.Trigger(new RelocateData(location.Width, hasBonusSlots ? location.Height + 1 : location.Height, poweredSlots));
+            _resizeEvent.Trigger(new RelocateData(location.Width, hasBonusSlots ? location.Height + 1 : location.Height, poweredSlots, location.MaxMinerLevel));
         }
 
         private void OnRelocate(RelocateEvent gameEvent)
@@ -107,16 +107,18 @@ namespace GameCore.Connectors
 
         private void OnAddMiner(AddMinerEvent gameEvent)
         {
+            var location = _locationHelper.GetLocation(_sessionData.Token);
             var miner = _minerRepository.Get(gameEvent.Miner);
             var minerConfig = _minerConfig.Get(miner.ConfigId);
-            _addMinerEvent.Trigger(new AddMinerData(gameEvent.Miner, miner.ConfigId, minerConfig.Level, gameEvent.Source, gameEvent.Slot));
+            _addMinerEvent.Trigger(new AddMinerData(gameEvent.Miner, miner.ConfigId, minerConfig.Level, gameEvent.Source, gameEvent.Slot, minerConfig.Level == location.MaxMinerLevel));
         }
         
         private void OnMergeMiners(MergeMinersEvent gameEvent)
         {
+            var location = _locationHelper.GetLocation(_sessionData.Token);
             var miner = _minerRepository.Get(gameEvent.NewMiner);
             var minerConfig = _minerConfig.Get(miner.ConfigId);
-            _mergeMinersEvent.Trigger(new MergeMinersData(gameEvent.NewMiner, minerConfig.Level, gameEvent.Slot, gameEvent.Merged, gameEvent.MaxLevelIncreased));
+            _mergeMinersEvent.Trigger(new MergeMinersData(gameEvent.NewMiner, minerConfig.Level, gameEvent.Slot, gameEvent.Merged, gameEvent.MaxLevelIncreased, minerConfig.Level == location.MaxMinerLevel));
         }
         
         private void OnSwapMiners(SwapMinersEvent gameEvent)
@@ -182,12 +184,14 @@ namespace GameCore.Connectors
         public int Height { get; }
         public int Total => Width * Height;
         public int Powered { get; }
-        
-        public RelocateData(int width, int height, int powered)
+        public int MaxLevel { get; set; }
+
+        public RelocateData(int width, int height, int powered, int maxLevel)
         {
             Width = width;
             Height = height;
             Powered = powered;
+            MaxLevel = maxLevel;
         }
     }
 
@@ -198,14 +202,16 @@ namespace GameCore.Connectors
         public int Level { get; }
         public MinerSource Source { get; }
         public int Slot { get; }
+        public bool IsMaxLevel { get; }
 
-        public AddMinerData(string id, string name, int level, MinerSource source, int slot)
+        public AddMinerData(string id, string name, int level, MinerSource source, int slot, bool isMaxLevel)
         {
             Id = id;
             Name = name;
             Level = level;
             Source = source;
             Slot = slot;
+            IsMaxLevel = isMaxLevel;
         }
     }
     
@@ -216,14 +222,16 @@ namespace GameCore.Connectors
         public int Slot { get; }
         public string[] Merged { get; }
         public bool MaxLevelIncreased { get; }
+        public bool IsMaxLevel { get; }
 
-        public MergeMinersData(string id, int level, int slot, string[] merged, bool maxLevelIncreased)
+        public MergeMinersData(string id, int level, int slot, string[] merged, bool maxLevelIncreased, bool isMaxLevel)
         {
             Id = id;
             Level = level;
             Slot = slot;
             Merged = merged;
             MaxLevelIncreased = maxLevelIncreased;
+            IsMaxLevel = isMaxLevel;
         }
     }
     

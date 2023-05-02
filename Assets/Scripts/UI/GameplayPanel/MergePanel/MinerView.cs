@@ -30,12 +30,17 @@ namespace UI.GameplayPanel.MergePanel
         
         protected override void BindInner(MinerViewModel vm)
         {
-            _level.text = _vm.Level.ToString();
             _box.sprite = _vm.BoxIcon;
             
+            _vm.IsMaxLevel.Bind(UpdateLevel).AddTo(this);
             _vm.IsUnlocked.Bind(UpdateUnlockedState).AddTo(this);
             _vm.IsPowered.Bind(UpdatePoweredState).AddTo(this);
             _vm.Size.Bind(UpdateSize).AddTo(this);
+        }
+
+        private void UpdateLevel(bool value)
+        {
+            _level.text = value ? "MAX" : _vm.Level.ToString();
         }
 
         private void UpdateSize(float value)
@@ -88,6 +93,9 @@ namespace UI.GameplayPanel.MergePanel
         public Sprite PoweredIcon { get; }
         public Sprite BoxIcon { get; }
         
+        private ReactiveProperty<bool> _isMaxLevel = new();
+        public IReactiveProperty<bool> IsMaxLevel => _isMaxLevel;
+        
         private ReactiveProperty<float> _size = new();
         public IReactiveProperty<float> Size => _size;
         
@@ -118,6 +126,11 @@ namespace UI.GameplayPanel.MergePanel
         public void Unlock()
         {
             _isUnlocked.Set(true);
+        }
+
+        public void SetIsMaxLevel(bool value)
+        {
+            _isMaxLevel.Set(value);
         }
 
         public void SetSize(float value)

@@ -54,10 +54,7 @@ namespace GameCore.Services
             where T : RestResponse
         {
             var response = await call.Invoke(_sessionData.Token);
-            if (response.Success)
-            {
-                callback?.Invoke(response);
-            }
+            callback?.Invoke(response);
 
             if (_playerStateService.SetMoney(_sessionData.Token, response.Money))
             {
@@ -96,9 +93,9 @@ namespace GameCore.Services
             }
         }
 
-        public void SpawnBox()
+        public void SpawnBox(Action<RestResponse> callback)
         {
-            RestCall(_restAPI.SpawnBox);
+            RestCall(_restAPI.SpawnBox, callback);
         }
         
         public void BuyMiner(int level, Currency currency)
@@ -154,7 +151,10 @@ namespace GameCore.Services
         {
             RestCall(token => _restAPI.SpinWheel(token, currency), response =>
             {
-                _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.SpinResult!));
+                if (response.Success)
+                {
+                    _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.SpinResult!));
+                }
             });
         }
 

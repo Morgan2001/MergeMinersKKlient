@@ -2,6 +2,7 @@
 using Common.Utils.Misc;
 using GameCore.Preloader;
 using GameCore.Services;
+using MergeMiner.Core.Network.Data;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Repository;
 using Utils.Reactive;
@@ -20,6 +21,8 @@ namespace GameCore.Connectors
 
         private ReactiveProperty<float> _boxProgress = new();
         public IReactiveProperty<float> BoxProgress => _boxProgress;
+
+        private Action<RestResponse> _callback;
         
         public PlayerBoxConnector(
             SessionData sessionData,
@@ -58,10 +61,16 @@ namespace GameCore.Connectors
             var progress = 1f - (float) (timeDeltaSeconds / location.SpawnDelay);
             _boxProgress.Set(progress);
 
-            if (progress >= 1f)
-            {
-                _playerActionProxy.SpawnBox();
-            }
+            if (progress < 1f) return;
+            if (_callback != null) return;
+                
+            _callback = OnSpawn;
+            _playerActionProxy.SpawnBox(_callback);
+        }
+
+        private void OnSpawn(RestResponse response)
+        {
+            _callback = null;
         }
     }
 }
