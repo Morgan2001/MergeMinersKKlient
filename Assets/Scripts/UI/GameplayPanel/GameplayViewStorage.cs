@@ -10,6 +10,9 @@ namespace UI.GameplayPanel
         private Dictionary<string, MinerView> _minerViews = new();
         private Dictionary<string, MinerShopView> _minerShopViews = new();
 
+        public IEnumerable<CellView> Cells => _cellViews.Values;
+        public IEnumerable<MinerView> Miners => _minerViews.Values;
+
         public CellView GetCellView(int id)
         {
             return _cellViews[id];

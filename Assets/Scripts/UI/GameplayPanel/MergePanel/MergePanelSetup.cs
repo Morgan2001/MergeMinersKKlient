@@ -8,7 +8,6 @@ using MergeMiner.Core.State.Enums;
 using UI.GameplayPanel.ShopPanel;
 using UI.Utils;
 using UnityEngine;
-using Utils;
 using Utils.MVVM;
 using Utils.Reactive;
 using Zenject;
