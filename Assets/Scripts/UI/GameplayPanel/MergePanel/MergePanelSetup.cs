@@ -23,6 +23,7 @@ namespace UI.GameplayPanel.MergePanel
         
         [SerializeField] private Transform _effectsContainer;
         [SerializeField] private UIParticle _dustParticlesPrefab;
+        [SerializeField] private UIParticle _coinsParticlesPrefab;
 
         private MinerFieldConnector _minerFieldConnector;
         private PopupsConnector _popupsConnector;
@@ -153,6 +154,14 @@ namespace UI.GameplayPanel.MergePanel
             {
                 var slot = _slotsByMiners[minerView.ViewModel];
                 _mergePanelViewModel.ResetMiner(minerView.ViewModel, slot);
+            }
+
+            if (cellView.ViewModel.Powered.Value)
+            {
+                var coins = Instantiate(_coinsParticlesPrefab, _effectsContainer);
+                coins.transform.position = cellView.transform.position;
+                coins.Play();
+                Destroy(coins.gameObject, 5f);
             }
         }
 

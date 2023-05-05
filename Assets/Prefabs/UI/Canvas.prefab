@@ -3196,6 +3196,8 @@ MonoBehaviour:
   _effectsContainer: {fileID: 4495898584149509720}
   _dustParticlesPrefab: {fileID: 2967904119244314468, guid: 18e0e030912f76941963b8a64c1890be,
     type: 3}
+  _coinsParticlesPrefab: {fileID: 2967904119244314468, guid: 7df3e276d054fa346ace9546a133eda6,
+    type: 3}
 --- !u!114 &917033730232209957
 MonoBehaviour:
   m_ObjectHideFlags: 0
