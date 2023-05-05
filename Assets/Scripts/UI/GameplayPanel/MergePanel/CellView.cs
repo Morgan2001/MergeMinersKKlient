@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using Utils;
+using UnityEngine.UI;
 using Utils.MVVM;
 using Utils.Reactive;
 
@@ -11,9 +11,13 @@ namespace UI.GameplayPanel.MergePanel
         [SerializeField] private GameObject _filledBackground;
         [SerializeField] private GameObject _powered;
         [SerializeField] private GameObject _highlight;
+        [SerializeField] private RawImage _matrix;
+        [SerializeField] private Vector2 _speed;
 
         private ReactiveEvent<CellView> _dropEvent = new();
         public IReactiveSubscription<CellView> DropEvent => _dropEvent;
+
+        private Vector2 _shift;
 
         protected override void BindInner(CellViewModel vm)
         {
@@ -40,6 +44,16 @@ namespace UI.GameplayPanel.MergePanel
         void IDropHandler.OnDrop(PointerEventData eventData)
         {
             _dropEvent.Trigger(this);
+        }
+
+        private void Update()
+        {
+            if (!_vm.Powered.Value || !_vm.Filled.Value) return;
+            
+            _shift += Time.deltaTime * _speed;
+            _shift.x %= 1;
+            _shift.y %= 1;
+            _matrix.uvRect = new Rect(_shift, Vector2.one);
         }
     }
 
