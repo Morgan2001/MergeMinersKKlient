@@ -10,6 +10,7 @@ namespace UI.GameplayPanel.ShopPanel
 {
     public class MinerShopPanelSetup : MonoBehaviour
     {
+        [SerializeField] private GameObject _placeholder;
         [SerializeField] private ShopPanelView _shopPanelView;
 
         private MinerShopConnector _minerShopConnector;
@@ -42,6 +43,8 @@ namespace UI.GameplayPanel.ShopPanel
 
         private void AddMinerShop(AddMinerShopData data)
         {
+            _placeholder.SetActive(false);
+            
             var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
             var viewModel = new MinerShopViewModel(data.Id, data.Level, icon);
             _shopPanelViewModel.AddMiner(viewModel);
