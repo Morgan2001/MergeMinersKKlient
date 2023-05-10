@@ -131,9 +131,12 @@ namespace GameCore.Preloader
             });
         }
 
-        public async Task<RestResponse> MultiplyIncome(string token)
+        public async Task<RestResponse> GetOfflineIncome(string token, bool multiply)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/multiplyIncome");
+            return await _restClient.Post<RestResponse>($"game/{token}/getOfflineIncome", new Dictionary<string, object>
+            {
+                { "multiply", multiply }
+            });
         }
         
         public async Task<RestResponse> BuyUpgrade(string token, string id)

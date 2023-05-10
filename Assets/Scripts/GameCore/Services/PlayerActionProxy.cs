@@ -158,9 +158,9 @@ namespace GameCore.Services
             });
         }
 
-        public void MultiplyIncome()
+        public void GetOfflineIncome(bool multiply)
         {
-            RestCall(token => _restAPI.MultiplyIncome(token));
+            RestCall(token => _restAPI.GetOfflineIncome(token, multiply));
         }
 
         public void BuyUpgrade(string id)

@@ -96,7 +96,7 @@ namespace GameCore.Connectors
             if (!gameEvent.Offline) return;
             
             var player = _playerRepository.Get(_sessionData.Token);
-            var income = _incomeService.CalculateIncome(_sessionData.Token, player.LastUpdate, _timeService.GetCurrentTime);
+            var income = _incomeService.CalculateIncomeLimited(_sessionData.Token, player.LastUpdate, _timeService.GetCurrentTime);
             var multiplier = _gameConfig.OfflineIncomeMultiplier;
             _offlineIncomePopupEvent.Trigger(new OfflineIncomeData(income, income * multiplier));
         }

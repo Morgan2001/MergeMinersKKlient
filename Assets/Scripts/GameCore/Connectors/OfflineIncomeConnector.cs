@@ -19,10 +19,7 @@ namespace GameCore.Connectors
         public void MultiplyIncome(bool multiply)
         {
             _sessionData.Start();
-            if (multiply)
-            {
-                _playerActionProxy.MultiplyIncome();
-            }
+            _playerActionProxy.GetOfflineIncome(multiply);
         }
     }
 }
