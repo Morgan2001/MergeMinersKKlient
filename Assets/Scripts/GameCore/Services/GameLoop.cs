@@ -48,17 +48,18 @@ namespace GameCore.Services
             _eventDispatcherService.Dispatch(new InitGameEvent(_sessionData.Token, !newPlayer));
             if (newPlayer)
             {
-                _sessionData.Start();
+                _sessionData.SetWorking(true);
             }
         }
         
         public void Update()
         {
-            if (!_sessionData.Started) return;
+            _timerService.Tick(Time.deltaTime);
+            
+            if (!_sessionData.Working) return;
             
             _gameCommandService.Process(new CheckBonusesGameCommand(_sessionData.Token));
             _gameCommandService.Process(new CalculateGameCommand(_sessionData.Token));
-            _timerService.Tick(Time.deltaTime);
         }
     }
 }

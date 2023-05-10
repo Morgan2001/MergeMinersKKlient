@@ -18,7 +18,7 @@ namespace GameCore.Connectors
         
         public void MultiplyIncome(bool multiply)
         {
-            _sessionData.Start();
+            _sessionData.SetWorking(true);
             _playerActionProxy.GetOfflineIncome(multiply);
         }
     }

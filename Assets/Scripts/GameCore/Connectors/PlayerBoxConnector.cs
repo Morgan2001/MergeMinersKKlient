@@ -51,6 +51,12 @@ namespace GameCore.Connectors
 
         private void OnTickEvent()
         {
+            if (!_sessionData.Working)
+            {
+                _boxProgress.Set(1f);
+                return;
+            }
+
             var playerBox = _playerBoxRepository.Get(_sessionData.Token);
             var playerSlots = _playerSlotsRepository.Get(_sessionData.Token);
             var location = _locationConfig.GetLocation(playerSlots.Level);
