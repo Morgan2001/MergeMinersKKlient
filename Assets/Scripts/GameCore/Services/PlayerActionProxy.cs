@@ -9,10 +9,13 @@ using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.Network.Data;
 using MergeMiner.Core.PlayerActions.Actions;
 using MergeMiner.Core.PlayerActions.Services;
+using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Events;
+using MergeMiner.Core.State.Repository;
 using MergeMiner.Core.State.Services;
 using MergeMiner.Core.State.Services.State;
+using MergeMiner.Core.State.Utils;
 
 namespace GameCore.Services
 {
@@ -23,10 +26,13 @@ namespace GameCore.Services
         private readonly PlayerActionService _playerActionService;
         private readonly GameCommandService _gameCommandService;
         private readonly BoxService _boxService;
+        private readonly MinerConfig _minerConfig;
         private readonly PlayerStateService _playerStateService;
+        private readonly PlayerShopRepository _playerShopRepository;
         private readonly PlayerSlotsStateService _playerSlotsStateService;
         private readonly BonusApplierService _bonusApplierService;
         private readonly EventDispatcherService _eventDispatcherService;
+        private readonly MinerShopHelper _minerShopHelper;
 
         public PlayerActionProxy(
             SessionData sessionData,
@@ -34,20 +40,26 @@ namespace GameCore.Services
             PlayerActionService playerActionService,
             GameCommandService gameCommandService,
             BoxService boxService,
+            MinerConfig minerConfig,
             PlayerStateService playerStateService,
+            PlayerShopRepository playerShopRepository,
             PlayerSlotsStateService playerSlotsStateService,
             BonusApplierService bonusApplierService,
-            EventDispatcherService eventDispatcherService)
+            EventDispatcherService eventDispatcherService,
+            MinerShopHelper minerShopHelper)
         {
             _sessionData = sessionData;
             _restAPI = restAPI;
             _playerActionService = playerActionService;
             _gameCommandService = gameCommandService;
             _boxService = boxService;
+            _minerConfig = minerConfig;
             _playerStateService = playerStateService;
+            _playerShopRepository = playerShopRepository;
             _playerSlotsStateService = playerSlotsStateService;
             _bonusApplierService = bonusApplierService;
             _eventDispatcherService = eventDispatcherService;
+            _minerShopHelper = minerShopHelper;
         }
 
         private async void RestCall<T>(Func<string, Task<T>> call, Action<T> callback = null)
@@ -72,6 +84,26 @@ namespace GameCore.Services
             }
             
             _boxService.UpdateBoxTime(_sessionData.Token, response.BoxUnlockTime);
+
+            if (response.MinerShop != null)
+            {
+                var playerShop = _playerShopRepository.Get(_sessionData.Token);
+                foreach (var entry in response.MinerShop)
+                {
+                    if (!playerShop.BoughtCount.ContainsKey(entry.Key))
+                    {
+                        playerShop.BoughtCount.Add(entry.Key, 0);
+                    }
+
+                    if (playerShop.BoughtCount[entry.Key] == entry.Value) continue;
+                    
+                    playerShop.BoughtCount[entry.Key] = entry.Value;
+
+                    var config = _minerConfig.GetMiner(entry.Key);
+                    var newPrice = _minerShopHelper.GetMinerPrice(_sessionData.Token, config);
+                    _eventDispatcherService.Dispatch(new UpdateShopEvent(_sessionData.Token, config, newPrice));
+                }
+            }
 
             if (response.AddedMiners != null)
             {

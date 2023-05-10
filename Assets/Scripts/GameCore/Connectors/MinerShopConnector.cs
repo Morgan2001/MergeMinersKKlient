@@ -93,6 +93,7 @@ namespace GameCore.Connectors
                 }
                 else if (_shop[minerShop] != currency)
                 {
+                    _shop[minerShop] = currency;
                     _updateMinerShopEvent.Trigger(new UpdateMinerShopData(minerShop.MinerConfig, currency, price));
                 }
             }
