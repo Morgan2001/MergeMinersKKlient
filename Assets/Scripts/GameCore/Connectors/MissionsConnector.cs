@@ -50,7 +50,7 @@ namespace GameCore.Connectors
             var filter = _missionsConfig.GetAll().Where(x => !playerMissions.Collected.Contains(x.Id));
             foreach (var mission in filter)
             {
-                _addMissionEvent.Trigger(new AddMissionData(mission.Id, mission.Level, mission.Value, mission.Reward, mission.Currency));
+                _addMissionEvent.Trigger(new AddMissionData(mission.Id, mission.Type, mission.Level, mission.Value, mission.Reward, mission.Currency));
             }
             
             foreach (var entry in playerMissions.Stats)
@@ -73,14 +73,16 @@ namespace GameCore.Connectors
     public class AddMissionData
     {
         public string Id { get; }
+        public MissionType Type { get; }
         public int Level { get; }
         public int Value { get; }
         public int Reward { get; }
         public Currency Currency { get; }
 
-        public AddMissionData(string id, int level, int value, int reward, Currency currency)
+        public AddMissionData(string id, MissionType type, int level, int value, int reward, Currency currency)
         {
             Id = id;
+            Type = type;
             Level = level;
             Value = value;
             Reward = reward;

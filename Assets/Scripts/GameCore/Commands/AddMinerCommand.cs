@@ -51,7 +51,7 @@ namespace GameCore.Commands
             _eventDispatcherService.Dispatch(new AddMinerEvent(gameCommand.Player, miner.Id, gameCommand.Source, gameCommand.Slot));
 
             var config = _minerConfig.Get(miner.ConfigId);
-            _statsService.IncrementMission(gameCommand.Player, config.Level);
+            _statsService.IncrementMission(gameCommand.Player, config.Level, MissionType.Create);
         }
     }
 }

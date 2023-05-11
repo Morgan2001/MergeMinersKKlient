@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Enums;
 using UnityEngine;
@@ -19,7 +20,7 @@ namespace UI.Utils
         string GetWheelRewardDescription(int reward);
         Sprite GetUpgradeIcon(int index);
         string GetUpgradeDescription(int index);
-        string GetMissionDescription(int index);
+        string GetMissionDescription(MissionType type);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -109,9 +110,14 @@ namespace UI.Utils
             return _upgrades.Upgrades[index].Description;
         }
 
-        public string GetMissionDescription(int index)
+        public string GetMissionDescription(MissionType type)
         {
-            return "Поставь {0} майнеров {1} уровня в розетку";
+            switch (type)
+            {
+                case MissionType.Create: return "Получи {0} майнеров {1} уровня";
+                case MissionType.PlugIn: return "Поставь {0} майнеров {1} уровня в розетку";
+            }
+            return null;
         }
     }
 }

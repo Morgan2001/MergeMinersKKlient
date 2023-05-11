@@ -73,7 +73,7 @@ namespace GameCore.Commands
             _playerMinersStateService.RemoveMiner(gameCommand.Player, gameCommand.Slot1);
             _eventDispatcherService.Dispatch(new MergeMinersEvent(gameCommand.Player, newMiner.Id, gameCommand.Slot2, newLevel, minerId1, minerId2));
             
-            _statsService.IncrementMission(gameCommand.Player, minerConfig.Level);
+            _statsService.IncrementMission(gameCommand.Player, minerConfig.Level, MissionType.Create);
             
             _minerPoolService.ReturnMiner(minerId1);
             _minerPoolService.ReturnMiner(minerId2);

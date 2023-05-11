@@ -31,7 +31,7 @@ namespace UI.MissionsScreen
 
         private void OnAddMission(AddMissionData data)
         {
-            var description = _resourceHelper.GetMissionDescription(0);
+            var description = _resourceHelper.GetMissionDescription(data.Type);
             description = string.Format(description, data.Value, data.Level);
             var viewModel = new MissionViewModel(data.Id, description, data.Value);
             _missions.Add(data.Id, viewModel);
