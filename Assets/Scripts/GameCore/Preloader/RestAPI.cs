@@ -16,6 +16,16 @@ namespace GameCore.Preloader
             _restClient = restClient;
         }
         
+        public async Task<string> Version()
+        {
+            return await _restClient.Get<string>("version");
+        }
+        
+        public async Task<bool> Status()
+        {
+            return await _restClient.Get<bool>("status");
+        }
+        
         public async Task<string> UserLogin(string deviceId)
         {
             return await _restClient.Get<string>($"user/login?deviceId={deviceId}");

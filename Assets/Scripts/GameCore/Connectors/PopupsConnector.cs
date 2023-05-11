@@ -28,6 +28,7 @@ namespace GameCore.Connectors
         private readonly FreeGemService _freeGemService;
         private readonly IncomeService _incomeService;
         private readonly TimeService _timeService;
+        private readonly RestAPI _restAPI;
         private readonly EventSubscriptionService _eventSubscriptionService;
         private readonly IResourceHelper _resourceHelper;
 
@@ -61,6 +62,9 @@ namespace GameCore.Connectors
         private ReactiveEvent<BalanceData> _balancePopupEvent = new();
         public IReactiveSubscription<BalanceData> BalancePopupEvent => _balancePopupEvent;
         
+        private ReactiveEvent<AlertData> _alertPopupEvent = new();
+        public IReactiveSubscription<AlertData> AlertPopupEvent => _alertPopupEvent;
+        
         public PopupsConnector(
             SessionData sessionData,
             GameConfig gameConfig,
@@ -73,6 +77,7 @@ namespace GameCore.Connectors
             FreeGemService freeGemService,
             IncomeService incomeService,
             TimeService timeService,
+            RestAPI restAPI,
             EventSubscriptionService eventSubscriptionService,
             IResourceHelper resourceHelper)
         {
@@ -87,6 +92,7 @@ namespace GameCore.Connectors
             _freeGemService = freeGemService;
             _incomeService = incomeService;
             _timeService = timeService;
+            _restAPI = restAPI;
             _resourceHelper = resourceHelper;
             
             _eventSubscriptionService = eventSubscriptionService;
@@ -94,9 +100,23 @@ namespace GameCore.Connectors
             _eventSubscriptionService.Subscribe<MaxLevelIncreasedEvent>(OnMaxLevelIncreased);
         }
 
-        private void OnInit(InitGameEvent gameEvent)
+        private async void OnInit(InitGameEvent gameEvent)
         {
             if (!gameEvent.Offline) return;
+
+            var status = await _restAPI.Status();
+            if (!status)
+            {
+                _alertPopupEvent.Trigger(new AlertData("На сервере ведутся технические работы, попробуйте зайти позже", "Выйти", null));
+                return;
+            }
+            
+            var version = await _restAPI.Version();
+            if (version != "1.0.0")
+            {
+                _alertPopupEvent.Trigger(new AlertData("Необходимо обновить приложение", "Обновить", () => Application.OpenURL("https://google.com")));
+                return;
+            }
             
             var player = _playerRepository.Get(_sessionData.Token);
             var income = _incomeService.CalculateIncomeLimited(_sessionData.Token, player.LastUpdate, _timeService.GetCurrentTime);
@@ -277,6 +297,20 @@ namespace GameCore.Connectors
         {
             Gems = gems;
             Token = token;
+        }
+    }
+
+    public class AlertData
+    {
+        public string Text { get; }
+        public string ButtonLabel { get; }
+        public Action ButtonAction { get; }
+
+        public AlertData(string text, string buttonLabel, Action buttonAction)
+        {
+            Text = text;
+            ButtonLabel = buttonLabel;
+            ButtonAction = buttonAction;
         }
     }
 }
