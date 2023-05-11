@@ -58,6 +58,9 @@ namespace GameCore.Connectors
         private ReactiveEvent _emailPopupEvent = new();
         public IReactiveSubscription EmailPopupEvent => _emailPopupEvent;
         
+        private ReactiveEvent<BalanceData> _balancePopupEvent = new();
+        public IReactiveSubscription<BalanceData> BalancePopupEvent => _balancePopupEvent;
+        
         public PopupsConnector(
             SessionData sessionData,
             GameConfig gameConfig,
@@ -150,6 +153,12 @@ namespace GameCore.Connectors
         public void ShowEmail()
         {
             _emailPopupEvent.Trigger();
+        }
+
+        public void ShowBalance()
+        {
+            var player = _playerRepository.Get(_sessionData.Token);
+            _balancePopupEvent.Trigger(new BalanceData(player.Gems, _sessionData.Token));
         }
     }
 
@@ -256,6 +265,18 @@ namespace GameCore.Connectors
         {
             Income = income;
             MultipliedIncome = multipliedIncome;
+        }
+    }
+
+    public class BalanceData
+    {
+        public int Gems { get; }
+        public string Token { get; }
+
+        public BalanceData(int gems, string token)
+        {
+            Gems = gems;
+            Token = token;
         }
     }
 }

@@ -15,9 +15,13 @@ namespace UI.TopPanel
         [SerializeField] private FreeGemView _freeGemView;
         [SerializeField] private RelocateView _relocateView;
         
+        [SerializeField] private GameObject _balanceParent;
+        [SerializeField] private Button _balanceButton;
+        
         private PlayerConnector _playerConnector;
         private FreeGemConnector _freeGemConnector;
         private RelocateConnector _relocateConnector;
+        private BalanceConnector _balanceConnector;
         private PopupsConnector _popupsConnector;
         private TabSwitcher _tabSwitcher;
 
@@ -30,12 +34,14 @@ namespace UI.TopPanel
             PlayerConnector playerConnector, 
             FreeGemConnector freeGemConnector, 
             RelocateConnector relocateConnector,
+            BalanceConnector balanceConnector,
             PopupsConnector popupsConnector,
             TabSwitcher tabSwitcher)
         {
             _playerConnector = playerConnector;
             _freeGemConnector = freeGemConnector;
             _relocateConnector = relocateConnector;
+            _balanceConnector = balanceConnector;
             _popupsConnector = popupsConnector;
             _tabSwitcher = tabSwitcher;
 
@@ -44,6 +50,9 @@ namespace UI.TopPanel
             SetupRelocator();
 
             _settingsButton.Subscribe(_popupsConnector.ShowEmail);
+            _balanceButton.Subscribe(_popupsConnector.ShowBalance);
+
+            _balanceConnector.BalanceEnabled.Bind(_balanceParent.SetActive);
         }
 
         private void SetupResources()

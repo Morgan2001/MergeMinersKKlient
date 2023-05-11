@@ -28,6 +28,8 @@ namespace UI.Popups
         [SerializeField] private WheelRewardPopup _wheelRewardPopup;
         [SerializeField] private OfflineIncomePopup _offlineIncomePopup;
         [SerializeField] private EmailPopup _emailPopup;
+        [SerializeField] private BalancePopup _balancePopup;
+        [SerializeField] private AlertPopup _alertPopup;
         
         [SerializeField] private BonusPopup _chipBonusPopup;
         [SerializeField] private BonusPopup _flashBonusPopup;
@@ -77,6 +79,7 @@ namespace UI.Popups
             _popupsConnector.WheelRewardPopupEvent.Subscribe(OnWheelReward);
             _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
             _popupsConnector.EmailPopupEvent.Subscribe(OnEmail);
+            _popupsConnector.BalancePopupEvent.Subscribe(OnBalance);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
@@ -231,6 +234,12 @@ namespace UI.Popups
             _emailPopup.RegistrationEvent.Subscribe(_emailConnector.Register).AddTo(_emailPopup);
             _emailPopup.ForgetEvent.Subscribe(_emailConnector.Forget).AddTo(_emailPopup);
             _emailPopup.LoginEvent.Subscribe(_emailConnector.Login).AddTo(_emailPopup);
+        }
+        
+        private void OnBalance(BalanceData data)
+        {
+            var viewModel = new BalancePopupViewModel(data.Gems, data.Token);
+            ShowPopup(_balancePopup, viewModel);
         }
 
         private void MultiplyIncome(bool value)
