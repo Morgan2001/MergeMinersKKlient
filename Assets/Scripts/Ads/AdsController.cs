@@ -1,4 +1,5 @@
 ﻿using System;
+using Analytics;
 using CAS;
 using GameCore.Connectors;
 using UnityEngine;
@@ -32,6 +33,9 @@ namespace Ads
         private void Awake()
         {
             _manager = MobileAds.BuildManager().Build();
+            
+            _manager.OnInterstitialAdOpening += OnAdOpening;
+            _manager.OnRewardedAdOpening += OnAdOpening;
             
             _manager.OnInterstitialAdLoaded += () =>
             {
@@ -90,6 +94,19 @@ namespace Ads
             {
                 _manager.ShowAd(AdType.Rewarded);
             }
+        }
+        
+        private void OnAdOpening(AdMetaData adMetaData)
+        {
+            if (adMetaData.priceAccuracy == PriceAccuracy.Undisclosed) return;
+
+            var e = new AdRevenueEvent(
+                adMetaData.type,
+                adMetaData.network,
+                "USD",
+                adMetaData.cpm / 1000 * 0.9
+            );
+            AnalyticsService.HandleAdRevenueEvent(e);
         }
     }
 }
