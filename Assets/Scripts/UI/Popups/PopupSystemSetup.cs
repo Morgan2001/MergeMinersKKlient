@@ -1,6 +1,7 @@
 ﻿using GameCore.Connectors;
 using GameCore.Data;
 using Common.Utils.Extensions;
+using I2.Loc;
 using MergeMiner.Core.State.Data;
 using UI.Utils;
 using UnityEngine;
@@ -100,7 +101,7 @@ namespace UI.Popups
 
         private void OnNewMiner(NewMinerPopupData data)
         {
-            var title = _resourceHelper.GetMinerNameByLevel(data.Level);
+            var title = LocalizationManager.GetTranslation(data.Config);
             var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
             var previousIcon = _resourceHelper.GetNormalIconByLevel(data.Level - 1);
             var viewModel = new NewMinerPopupViewModel(title, data.Level, data.Income, icon, previousIcon);
@@ -134,7 +135,7 @@ namespace UI.Popups
         private void OnRelocation(RelocationPopupData data)
         {
             var image = _resourceHelper.GetLocationImageByLevel(data.Level);
-            var name = _resourceHelper.GetLocationNameByLevel(data.Level);
+            var name = LocalizationManager.GetTranslation("location_" + data.Level);
             
             _relocationPopup.ClickEvent.Subscribe(_relocateConnector.Relocate).AddTo(_relocationPopup);
             

@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using I2.Loc;
 using UI.Utils;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,7 +50,9 @@ namespace UI.Popups
         {
             _level.text = _vm.Level.ToString();
             _name.text = _vm.Name;
-            _coinsPerSecond.text = LargeNumberFormatter.FormatNumber(_vm.Income) + " per second";
+
+            var text = LocalizationManager.GetTranslation("text-earn-per-second");
+            _coinsPerSecond.text = string.Format(text, LargeNumberFormatter.FormatNumber(_vm.Income));
         }
     }
 

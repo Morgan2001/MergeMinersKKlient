@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using I2.Loc;
+using UnityEngine;
 using UnityEngine.UI;
 using Utils.MVVM;
 using Utils.Reactive;
@@ -20,7 +21,9 @@ namespace UI.Popups
         {
             _incomeText.text = LargeNumberFormatter.FormatNumber(_vm.Income);
             _multipliedIncomeText.text = LargeNumberFormatter.FormatNumber(_vm.MultipliedIncome);
-            _buttonText.text = "Забрать " + LargeNumberFormatter.FormatNumber(_vm.Income);
+
+            var text = LocalizationManager.GetTranslation("button-take-value");
+            _buttonText.text = string.Format(text, LargeNumberFormatter.FormatNumber(_vm.Income));
             
             _multiplyButton.Subscribe(OnMultiplyClick).AddTo(this);
             _skipButton.Subscribe(OnSkipClick).AddTo(this);

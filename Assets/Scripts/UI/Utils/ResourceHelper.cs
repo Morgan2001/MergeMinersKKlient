@@ -1,6 +1,4 @@
 ﻿using System.Linq;
-using MergeMiner.Core.State.Config;
-using MergeMiner.Core.State.Data;
 using MergeMiner.Core.State.Enums;
 using UnityEngine;
 
@@ -9,9 +7,7 @@ namespace UI.Utils
     public interface IResourceHelper
     {
         Sprite GetNormalIconByLevel(int level);
-        string GetMinerNameByLevel(int level);
         Sprite GetPoweredIconByLevel(int level);
-        string GetLocationNameByLevel(int level);
         Sprite GetLocationImageByLevel(int level);
         Sprite GetBoxIconByType(MinerSource source);
         Sprite GetBonusIconByType(string id);
@@ -20,7 +16,6 @@ namespace UI.Utils
         string GetWheelRewardDescription(int reward);
         Sprite GetUpgradeIcon(int index);
         string GetUpgradeDescription(int index);
-        string GetMissionDescription(MissionType type);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -53,19 +48,9 @@ namespace UI.Utils
             return _minersConfig.MiningDeviceDatas.First(x => x.Level == level).Sprite;
         }
         
-        public string GetMinerNameByLevel(int level)
-        {
-            return _minersConfig.MiningDeviceDatas.First(x => x.Level == level).Name;
-        }
-        
         public Sprite GetPoweredIconByLevel(int level)
         {
             return _minersConfig.MiningDeviceDatas.First(x => x.Level == level).SpriteWithOutline;
-        }
-
-        public string GetLocationNameByLevel(int level)
-        {
-            return _locationsConfig.LocationDatas.Find(location => location.Level == level).Name;
         }
 
         public Sprite GetLocationImageByLevel(int level)
@@ -108,16 +93,6 @@ namespace UI.Utils
         public string GetUpgradeDescription(int index)
         {
             return _upgrades.Upgrades[index].Description;
-        }
-
-        public string GetMissionDescription(MissionType type)
-        {
-            switch (type)
-            {
-                case MissionType.Create: return "Получи {0} майнеров {1} уровня";
-                case MissionType.PlugIn: return "Поставь {0} майнеров {1} уровня в розетку";
-            }
-            return null;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using I2.Loc;
+using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 using Utils.MVVM;
@@ -38,17 +39,14 @@ namespace UI.Popups
             if (_vm.CurrentMinerLevel < _vm.MinMinerLevelNeeded)
             {
                 SetButtonActive(false);
-                _buttonText.text = $"Assemble level {_vm.MinMinerLevelNeeded} miner first";
-            }
-            else if (_vm.CurrentMoney < _vm.RelocateCost)
-            {
-                SetButtonActive(false);
-                _buttonText.text = "Relocate\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
+                var text = LocalizationManager.GetTranslation("text-assemble-first");
+                _buttonText.text = string.Format(text, _vm.MinMinerLevelNeeded);
             }
             else
             {
-                SetButtonActive(true);
-                _buttonText.text = "Relocate\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
+                SetButtonActive(_vm.CurrentMoney >= _vm.RelocateCost);
+                var text = LocalizationManager.GetTranslation("button-relocate");
+                _buttonText.text = text + "\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
             }
 
             _relocateButton.Subscribe(OnClick).AddTo(this);

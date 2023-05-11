@@ -1,0 +1,1076 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: CPU_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Pentulum x2
+      - Pentulum x2
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_2
+      TermType: 0
+      Description: 
+      Languages:
+      - Pentulum x4
+      - Pentulum x4
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Pentulum x86
+      - Pentulum x86
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Intinie 250
+      - Intinie 250
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_5
+      TermType: 0
+      Description: 
+      Languages:
+      - AMFM 4
+      - AMFM 4
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_6
+      TermType: 0
+      Description: 
+      Languages:
+      - XEON4500
+      - XEON4500
+      Flags: 0000
+      Languages_Touch: []
+    - Term: CPU_7
+      TermType: 0
+      Description: 
+      Languages:
+      - REZEN7100
+      - REZEN7100
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_1
+      TermType: 0
+      Description: 
+      Languages:
+      - 9200SE
+      - 9200SE
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_2
+      TermType: 0
+      Description: 
+      Languages:
+      - 6600GT
+      - 6600GT
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_3
+      TermType: 0
+      Description: 
+      Languages:
+      - GT710
+      - GT710
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_4
+      TermType: 0
+      Description: 
+      Languages:
+      - HD5600
+      - HD5600
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_5
+      TermType: 0
+      Description: 
+      Languages:
+      - RX460
+      - RX460
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_6
+      TermType: 0
+      Description: 
+      Languages:
+      - VEGA
+      - VEGA
+      Flags: 0000
+      Languages_Touch: []
+    - Term: GPU_7
+      TermType: 0
+      Description: 
+      Languages:
+      - TITAN
+      - TITAN
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Hdd 128
+      - Hdd 128
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_2
+      TermType: 0
+      Description: 
+      Languages:
+      - Hdd 256
+      - Hdd 256
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Hdd 500
+      - Hdd 500
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Hdd 1000
+      - Hdd 1000
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Ssd 500
+      - Ssd 500
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_6
+      TermType: 0
+      Description: 
+      Languages:
+      - Ssd 1000
+      - Ssd 1000
+      Flags: 0000
+      Languages_Touch: []
+    - Term: HDD_7
+      TermType: 0
+      Description: 
+      Languages:
+      - Ssd 2000
+      - Ssd 2000
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_1
+      TermType: 0
+      Description: 
+      Languages:
+      - HD
+      - HD
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_2
+      TermType: 0
+      Description: 
+      Languages:
+      - FullHD
+      - FullHD
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_3
+      TermType: 0
+      Description: 
+      Languages:
+      - 2k
+      - 2k
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_4
+      TermType: 0
+      Description: 
+      Languages:
+      - 4k
+      - 4k
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_5
+      TermType: 0
+      Description: 
+      Languages:
+      - 8k
+      - 8k
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_6
+      TermType: 0
+      Description: 
+      Languages:
+      - M 32
+      - M 32
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Monitor_7
+      TermType: 0
+      Description: 
+      Languages:
+      - M 60
+      - M 60
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Pell
+      - Pell
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_2
+      TermType: 0
+      Description: 
+      Languages:
+      - MSA
+      - MSA
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Aceq
+      - Aceq
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_4
+      TermType: 0
+      Description: 
+      Languages:
+      - PZ
+      - PZ
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Apply
+      - Apply
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_6
+      TermType: 0
+      Description: 
+      Languages:
+      - Lenoya
+      - Lenoya
+      Flags: 0000
+      Languages_Touch: []
+    - Term: Notebook_7
+      TermType: 0
+      Description: 
+      Languages:
+      - Thunder
+      - Thunder
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_1
+      TermType: 0
+      Description: 
+      Languages:
+      - DDL1600
+      - DDL1600
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_2
+      TermType: 0
+      Description: 
+      Languages:
+      - DDL3400
+      - DDL3400
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Korsair 8000
+      - Korsair 8000
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Rdd4
+      - Rdd4
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Flex x 64
+      - Flex x 64
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_6
+      TermType: 0
+      Description: 
+      Languages:
+      - King 3100
+      - King 3100
+      Flags: 0000
+      Languages_Touch: []
+    - Term: RAM_7
+      TermType: 0
+      Description: 
+      Languages:
+      - Samsuo4800
+      - Samsuo4800
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Deercool
+      - Deercool
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_2
+      TermType: 0
+      Description: 
+      Languages:
+      - Exdp
+      - Exdp
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Hiper
+      - Hiper
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Gigaterra
+      - Gigaterra
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Power
+      - Power
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_6
+      TermType: 0
+      Description: 
+      Languages:
+      - SilverRock
+      - SilverRock
+      Flags: 0000
+      Languages_Touch: []
+    - Term: SystemUnit_7
+      TermType: 0
+      Description: 
+      Languages:
+      - MZXT MS
+      - MZXT MS
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Basement
+      - "\u041F\u043E\u0434\u0432\u0430\u043B"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_2
+      TermType: 0
+      Description: 
+      Languages:
+      - Pantry
+      - "\u041A\u043B\u0430\u0434\u043E\u0432\u0430\u044F"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_3
+      TermType: 0
+      Description: 
+      Languages:
+      - Attic
+      - "\u0427\u0435\u0440\u0434\u0430\u043A"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Storage
+      - "\u0421\u043A\u043B\u0430\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Barn
+      - "\u0421\u0430\u0440\u0430\u0439"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_6
+      TermType: 0
+      Description: 
+      Languages:
+      - Bedroom
+      - "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_7
+      TermType: 0
+      Description: 
+      Languages:
+      - Garage
+      - "\u0413\u0430\u0440\u0430\u0436"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_8
+      TermType: 0
+      Description: 
+      Languages:
+      - Office
+      - "\u041E\u0444\u0438\u0441"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_9
+      TermType: 0
+      Description: 
+      Languages:
+      - Server room
+      - "\u0421\u0435\u0440\u0432\u0435\u0440\u043D\u0430\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: location_10
+      TermType: 0
+      Description: 
+      Languages:
+      - Server farm
+      - "\u0421\u0435\u0440\u0432\u0435\u0440\u043D\u0430\u044F \u0444\u0435\u0440\u043C\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-take
+      TermType: 0
+      Description: 
+      Languages:
+      - Take
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: new-miner
+      TermType: 0
+      Description: 
+      Languages:
+      - New miner!
+      - "\u041D\u043E\u0432\u044B\u0439 \u043C\u0430\u0439\u043D\u0435\u0440!"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-earn-per-second
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0} per second'
+      - "{0} \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-you-won
+      TermType: 0
+      Description: 
+      Languages:
+      - You won!
+      - "\u0412\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-random-miner
+      TermType: 0
+      Description: 
+      Languages:
+      - Random miner
+      - "\u0421\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0439 \u043C\u0430\u0439\u043D\u0435\u0440"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-pick-up-more
+      TermType: 0
+      Description: 
+      Languages:
+      - Pick up more
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-welcome-back
+      TermType: 0
+      Description: 
+      Languages:
+      - Welcome back!
+      - "\u0421 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435\u043C!"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-triple-your-earned
+      TermType: 0
+      Description: 
+      Languages:
+      - Triple your earned?
+      - "\u0423\u0442\u0440\u043E\u0438\u0442\u044C \u043D\u0430\u043A\u043E\u043F\u043B\u0435\u043D\u043D\u043E\u0435?"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-take-value
+      TermType: 0
+      Description: 
+      Languages:
+      - Take {0}
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C {0}"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-close
+      TermType: 0
+      Description: 
+      Languages:
+      - Close
+      - "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-relocate
+      TermType: 0
+      Description: 
+      Languages:
+      - Relocate
+      - "\u041F\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: stat-slots
+      TermType: 0
+      Description: 
+      Languages:
+      - Slots
+      - "\u042F\u0447\u0435\u0439\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: stat-miner
+      TermType: 0
+      Description: 
+      Languages:
+      - Max level
+      - "\u041C\u0430\u043A\u0441. \u0443\u0440."
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-level-value
+      TermType: 0
+      Description: 
+      Languages:
+      - Level {0}
+      - "\u0423\u0440\u043E\u0432\u0435\u043D\u044C {0}"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-assemble-first
+      TermType: 0
+      Description: 
+      Languages:
+      - Assemble level {0} miner first
+      - "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u0441\u043E\u0431\u0435\u0440\u0438\u0442\u0435
+        \u043C\u0430\u0439\u043D\u0435\u0440 {0} \u0443\u0440\u043E\u0432\u043D\u044F"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-take-more
+      TermType: 0
+      Description: 
+      Languages:
+      - Pick up more
+      - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-get
+      TermType: 0
+      Description: 
+      Languages:
+      - Get
+      - "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-spin
+      TermType: 0
+      Description: 
+      Languages:
+      - Spin
+      - "\u041A\u0440\u0443\u0442\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-spend-time
+      TermType: 0
+      Description: 
+      Languages:
+      - Spend time in game to get gifts
+      - "\u041F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u0435 \u0432\u0440\u0435\u043C\u044F
+        \u0432 \u0438\u0433\u0440\u0435, \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C
+        \u043F\u043E\u0434\u0430\u0440\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-decline
+      TermType: 0
+      Description: 
+      Languages:
+      - Cancel
+      - "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-apply
+      TermType: 0
+      Description: 
+      Languages:
+      - Apply
+      - "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-4-miners
+      TermType: 0
+      Description: 
+      Languages:
+      - 4 box with different miners
+      - "4 \u043A\u043E\u0440\u043E\u0431\u043A\u0438 \u0441 \u0440\u0430\u0437\u043D\u044B\u043C\u0438
+        \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u043C\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-box
+      TermType: 0
+      Description: 
+      Languages:
+      - Box with miners
+      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0441 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u043C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-mining-20-sek
+      TermType: 0
+      Description: 
+      Languages:
+      - Mining of all miners increases by 10 times for 20 seconds
+      - "\u0414\u043E\u0445\u043E\u0434 \u0441\u043E \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
+        \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D \u0432 10 \u0440\u0430\u0437
+        \u043D\u0430 20 \u0441\u0435\u043A\u0443\u043D\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-flash
+      TermType: 0
+      Description: 
+      Languages:
+      - Flash card
+      - "\u0424\u043B\u044D\u0448\u043A\u0430\u0440\u0442\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-all-slots
+      TermType: 0
+      Description: 
+      Languages:
+      - All slots become functional for 5 minutes
+      - "\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u044F\u0442\u0441\u044F
+        \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C\u0438
+        \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 5 \u043C\u0438\u043D\u0443\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-power
+      TermType: 0
+      Description: 
+      Languages:
+      - Power transformer
+      - "\u0423\u0441\u0438\u043B\u0435\u043D\u0438\u0435 \u0440\u043E\u0437\u0435\u0442\u043E\u043A"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-roll
+      TermType: 0
+      Description: 
+      Languages:
+      - Roll
+      - "\u041A\u0440\u0443\u0442\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-subscribe
+      TermType: 0
+      Description: 
+      Languages:
+      - Subscribe
+      - "\u041F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-ads-remove
+      TermType: 0
+      Description: 
+      Languages:
+      - Ads remove
+      - "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0440\u0435\u043A\u043B\u0430\u043C\u044B"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-2-level-miner
+      TermType: 0
+      Description: 
+      Languages:
+      - +2 level of miner from box
+      - "\u043D\u0430 2 \u0443\u0440\u043E\u0432\u043D\u044F \u0432\u044B\u0448\u0435
+        \u043C\u0430\u0439\u043D\u0435\u0440 \u0438\u0437 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-3-slots
+      TermType: 0
+      Description: 
+      Languages:
+      - +3 mining slots
+      - "3 \u0440\u043E\u0437\u0435\u0442\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-10
+      TermType: 0
+      Description: 
+      Languages:
+      - -10% miner cost
+      - "-10% \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: button-quit
+      TermType: 0
+      Description: 
+      Languages:
+      - Quit
+      - "\u0412\u044B\u0445\u043E\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-sockets
+      TermType: 0
+      Description: 
+      Languages:
+      - Sockets
+      - "\u0420\u043E\u0437\u0435\u0442\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-box-faster
+      TermType: 0
+      Description: 
+      Languages:
+      - Box is filled faster for 5 seconds
+      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u043D\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
+        \u0431\u044B\u0441\u0442\u0440\u0435\u0435 5 \u0441\u0435\u043A\u0443\u043D\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-free
+      TermType: 0
+      Description: 
+      Languages:
+      - Free
+      - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-per-week
+      TermType: 0
+      Description: 
+      Languages:
+      - per week
+      - "\u0432 \u043D\u0435\u0434\u0435\u043B\u044E"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-allminers
+      TermType: 0
+      Description: 
+      Languages:
+      - Active sockets are accelerated in earnings by 200% for 1 minute
+      - "\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0435 \u0440\u043E\u0437\u0435\u0442\u043A\u0438
+        \u0443\u0441\u043A\u043E\u0440\u044F\u044E\u0442\u0441\u044F \u0432 \u0437\u0430\u0440\u0430\u0431\u043E\u0442\u043A\u0435
+        \u043D\u0430 200% \u043D\u0430 1 \u043C\u0438\u043D\u0443\u0442\u0443"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-1-miner level
+      TermType: 0
+      Description: 
+      Languages:
+      - +1 miner level on the box
+      - "1 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430
+        \u0441 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-box-fills-15-min
+      TermType: 0
+      Description: 
+      Languages:
+      - Box fills faster for 15 minutes
+      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
+        \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
+        15 \u043C\u0438\u043D\u0443\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-4-hours
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 4 hours
+      - "\u0432\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 4 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-12-hours
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 12 hours
+      - "\u0412\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 12 \u0447\u0430\u0441\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-24-hours
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 24 hours
+      - "\u0412\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 24 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-mini
+      TermType: 0
+      Description: 
+      Languages:
+      - Mini
+      - "\u041C\u0438\u043D\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-mining-4-hours
+      TermType: 0
+      Description: 
+      Languages:
+      - Mining all miners increases by 4 times for 4 hours
+      - "\u0414\u043E\u0431\u044B\u0447\u0430 \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
+        \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0432 4 \u0440\u0430\u0437\u0430 \u0437\u0430 4 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-per-seconds
+      TermType: 0
+      Description: 
+      Languages:
+      - per seconds
+      - "\u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-need-update
+      TermType: 0
+      Description: 
+      Languages:
+      - You need to update the application
+      - "\u041D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C
+        \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-update
+      TermType: 0
+      Description: 
+      Languages:
+      - Update
+      - "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-balance
+      TermType: 0
+      Description: 
+      Languages:
+      - Game Balanse= {0} gems
+      - "\u0418\u0433\u0440\u043E\u0432\u043E\u0439 \u0431\u0430\u043B\u0430\u043D\u0441
+        - {0} \u0433\u0435\u043C\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-goover
+      TermType: 0
+      Description: 
+      Languages:
+      - Go over
+      - "\u041F\u0435\u0440\u0435\u0439\u0442\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-shopclose
+      TermType: 0
+      Description: 
+      Languages:
+      - 'Access to the miner store is closed.
+
+        Collect a level 7 miner.'
+      - "\u0414\u043E\u0441\u0442\u0443\u043F \u0432 \u043C\u0430\u0433\u0430\u0437\u0438\u043D
+        \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 \u0437\u0430\u043A\u0440\u044B\u0442.\n\u0421\u043E\u0431\u0435\u0440\u0438
+        \u043C\u0430\u0439\u043D\u0435\u0440 7 \u0443\u0440\u043E\u0432\u043D\u044F."
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-serverwork
+      TermType: 0
+      Description: 
+      Languages:
+      - Server update, try again later
+      - "\u041D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 \u0432\u0435\u0434\u0443\u0442\u0441\u044F
+        \u0442\u0435\u0445. \u0440\u0430\u0431\u043E\u0442\u044B, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435
+        \u0437\u0430\u0439\u0442\u0438 \u043F\u043E\u0437\u0436\u0435"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-reg
+      TermType: 0
+      Description: 
+      Languages:
+      - Registration
+      - "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-already
+      TermType: 0
+      Description: 
+      Languages:
+      - Already have an account?
+      - "\u0423\u0436\u0435 \u0435\u0441\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442?"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-login
+      TermType: 0
+      Description: 
+      Languages:
+      - Log in
+      - "\u0412\u043E\u0439\u0442\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-create
+      TermType: 0
+      Description: 
+      Languages:
+      - Create an account
+      - "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-forgot
+      TermType: 0
+      Description: 
+      Languages:
+      - Forgot your password?
+      - "\u0417\u0430\u0431\u044B\u043B\u0438 \u043F\u0430\u0440\u043E\u043B\u044C?"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-noakk
+      TermType: 0
+      Description: 
+      Languages:
+      - Do you not have an account?
+      - "\u0423 \u0432\u0430\u0441 \u043D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430?"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-refcode
+      TermType: 0
+      Description: 
+      Languages:
+      - Referral code (optional)
+      - "\u0420\u0435\u0444\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434
+        (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: rext-next
+      TermType: 0
+      Description: 
+      Languages:
+      - Next
+      - "\u0414\u0430\u043B\u0435\u0435"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-enter
+      TermType: 0
+      Description: 
+      Languages:
+      - Enter
+      - "\u0412\u0445\u043E\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-lock
+      TermType: 0
+      Description: 
+      Languages:
+      - Access is closed
+      - "\u0414\u043E\u0441\u0442\u0443\u043F \u0437\u0430\u043A\u0440\u044B\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-15lvl
+      TermType: 0
+      Description: 
+      Languages:
+      - To get it, unlock the 15th level of the miner
+      - "\u0414\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F
+        \u0440\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u0443\u0439\u0442\u0435
+        15\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: mission_0
+      TermType: 0
+      Description: 
+      Languages:
+      - Collect the miners of {1} level {0} times
+      - "C\u043E\u0431\u0435\u0440\u0438\u0442\u0435 \u043C\u0430\u0439\u043D\u0435\u0440
+        {1} \u0443\u0440\u043E\u0432\u043D\u044F {0} \u0440\u0430\u0437"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: mission_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Put the {1} level Miner into the socket {0} times
+      - "\u041F\u043E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432 \u0440\u043E\u0437\u0435\u0442\u043A\u0443
+        \u043C\u0430\u0439\u043D\u0435\u0440 {1} \u0443\u0440\u043E\u0432\u043D\u044F
+        {0} \u0440\u0430\u0437"
+      Flags: 0000
+      Languages_Touch: []
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: English
+      Code: en
+      Flags: 0
+    - Name: Russian
+      Code: ru
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzwlVpYk27r4vMxnbr6RJ2vvpAl5Ei1CSIIK2bmLe5auhtC3lksq0xlRN7ZCD50yWY1/exec
+    Google_SpreadsheetKey: 1hDvrBFytpyWg59ko_UZjcNdFHHFRjn0pqcbflECATJs
+    Google_SpreadsheetName: I2Loc Crypto Nft Game Localization
+    Google_LastUpdatedVersion: 1683795076685
+    Google_Password: A0PchS1m
+    GoogleUpdateFrequency: 1
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 0
+    Assets: []
+    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1
