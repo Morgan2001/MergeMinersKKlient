@@ -3,6 +3,7 @@ using System.Linq;
 using Common.Utils.Misc;
 using GameCore.Events;
 using GameCore.Preloader;
+using I2.Loc;
 using MergeMiner.Core.Commands.Services;
 using MergeMiner.Core.State.Config;
 using MergeMiner.Core.State.Events;
@@ -10,7 +11,6 @@ using MergeMiner.Core.State.Repository;
 using MergeMiner.Core.State.Services;
 using UI.Utils;
 using UnityEngine;
-using Utils;
 using Utils.Reactive;
 
 namespace GameCore.Connectors
@@ -184,8 +184,27 @@ namespace GameCore.Connectors
 
         public void ShowBalance()
         {
-            var player = _playerRepository.Get(_sessionData.Token);
-            _balancePopupEvent.Trigger(new BalanceData(player.Gems, _sessionData.Token));
+            var playerMiners = _playerMinersRepository.Get(_sessionData.Token);
+            var enabled = playerMiners.MaxLevelAchieved >= _gameConfig.BalanceUnlockLevel;
+
+            if (enabled)
+            {
+                if (string.IsNullOrEmpty(_sessionData.Email))
+                {
+                    _emailPopupEvent.Trigger(new EmailData(null));
+                }
+                else
+                {
+                    var player = _playerRepository.Get(_sessionData.Token);
+                    _balancePopupEvent.Trigger(new BalanceData(player.Gems, _sessionData.Token));
+                }
+            }
+            else
+            {
+                var text = LocalizationManager.GetTranslation("text-15lvl");
+                var label = LocalizationManager.GetTranslation("button-close");
+                _alertPopupEvent.Trigger(new AlertData(text, label, null));
+            }
         }
 
         public void ShowAlert(string text, string label, Action callback)

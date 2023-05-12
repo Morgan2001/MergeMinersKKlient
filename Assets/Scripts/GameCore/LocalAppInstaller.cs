@@ -46,7 +46,6 @@ namespace GameCore
             _container.RegisterSingleton<PurchaseConnector>();
             _container.RegisterSingleton<AdsConnector>();
             _container.RegisterSingleton<EmailConnector>();
-            _container.RegisterSingleton<BalanceConnector>();
         }
     }
 }
