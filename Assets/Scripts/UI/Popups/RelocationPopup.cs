@@ -46,7 +46,8 @@ namespace UI.Popups
             {
                 SetButtonActive(_vm.CurrentMoney >= _vm.RelocateCost);
                 var text = LocalizationManager.GetTranslation("button-relocate");
-                _buttonText.text = text + "\n" + $"{LargeNumberFormatter.FormatNumber(_vm.RelocateCost)} coins";
+                var coins = LocalizationManager.GetTranslation("text-coins");
+                _buttonText.text = text + "\n" + string.Format(coins, LargeNumberFormatter.FormatNumber(_vm.RelocateCost));
             }
 
             _relocateButton.Subscribe(OnClick).AddTo(this);

@@ -39,8 +39,7 @@ namespace UI.UpgradesScreen
         private void AddUpgrade(int index, UpgradesConfigItem data)
         {
             var icon = _resourceHelper.GetUpgradeIcon(index);
-            var description = _resourceHelper.GetUpgradeDescription(index);
-            var viewModel = new UpgradeViewModel(data.Id, icon, description, data.Price);
+            var viewModel = new UpgradeViewModel(data.Id, icon, data.Price);
 
             var prefab = data.Currency == Currency.Ads ? _upgradePrefabAds : _upgradePrefabGems;
             var view = Instantiate(prefab, _container);

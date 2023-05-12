@@ -15,7 +15,6 @@ namespace UI.Utils
         Sprite GetWheelRewardIcon(int reward);
         string GetWheelRewardDescription(int reward);
         Sprite GetUpgradeIcon(int index);
-        string GetUpgradeDescription(int index);
     }
     
     public class ResourceHelper : IResourceHelper
@@ -88,11 +87,6 @@ namespace UI.Utils
         public Sprite GetUpgradeIcon(int index)
         {
             return _upgrades.Upgrades[index].Sprite;
-        }
-
-        public string GetUpgradeDescription(int index)
-        {
-            return _upgrades.Upgrades[index].Description;
         }
     }
 }

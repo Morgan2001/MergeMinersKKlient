@@ -148,9 +148,16 @@ namespace GameCore.Connectors
         
         private void OnMaxLevelIncreased(MaxLevelIncreasedEvent gameEvent)
         {
+            var previousMiner = _minerConfig.GetMiner(gameEvent.Level - 1);
+            var previousMinerIncome = _minerConfig.Get(previousMiner).MoneyPerSecond;
+            
             var newMiner = _minerConfig.GetMiner(gameEvent.Level);
-            var miner = _minerConfig.Get(newMiner).MoneyPerSecond;
-            _newMinerPopupEvent.Trigger(new NewMinerPopupData(newMiner, gameEvent.Level, miner));
+            var newMinerIncome = _minerConfig.Get(newMiner).MoneyPerSecond;
+            
+            _newMinerPopupEvent.Trigger(new NewMinerPopupData(
+                (previousMiner, gameEvent.Level - 1, previousMinerIncome),
+                (newMiner, gameEvent.Level, newMinerIncome)
+            ));
         }
 
         public void ShowBonus(string id, Action callback)
@@ -184,15 +191,13 @@ namespace GameCore.Connectors
 
     public struct NewMinerPopupData
     {
-        public string Config { get; }
-        public int Level { get; }
-        public double Income { get; }
-
-        public NewMinerPopupData(string config, int level, double income)
+        public (string, int, double) PreviousMiner { get; }
+        public (string, int, double) NewMiner { get; }
+        
+        public NewMinerPopupData((string, int, double) previousMiner, (string, int, double) newMiner)
         {
-            Config = config;
-            Level = level;
-            Income = income;
+            PreviousMiner = previousMiner;
+            NewMiner = newMiner;
         }
     }
 

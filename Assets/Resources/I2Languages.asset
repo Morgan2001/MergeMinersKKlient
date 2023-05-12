@@ -577,6 +577,22 @@ MonoBehaviour:
       - "\u041F\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044C"
       Flags: 0000
       Languages_Touch: []
+    - Term: text-coins
+      TermType: 0
+      Description: 
+      Languages:
+      - '{0} coins'
+      - "{0} \u043C\u043E\u043D\u0435\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-gem
+      TermType: 0
+      Description: 
+      Languages:
+      - gem
+      - "\u0433\u0435\u043C"
+      Flags: 0000
+      Languages_Touch: []
     - Term: stat-slots
       TermType: 0
       Description: 
@@ -658,6 +674,23 @@ MonoBehaviour:
       Languages:
       - Apply
       - "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-box-faster
+      TermType: 0
+      Description: 
+      Languages:
+      - Box is filled faster for 5 seconds
+      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u043D\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
+        \u0431\u044B\u0441\u0442\u0440\u0435\u0435 5 \u0441\u0435\u043A\u0443\u043D\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: text-chip
+      TermType: 0
+      Description: 
+      Languages:
+      - Chip
+      - "\u0427\u0438\u043F"
       Flags: 0000
       Languages_Touch: []
     - Term: text-4-miners
@@ -778,15 +811,6 @@ MonoBehaviour:
       - "\u0420\u043E\u0437\u0435\u0442\u043A\u0438"
       Flags: 0000
       Languages_Touch: []
-    - Term: text-box-faster
-      TermType: 0
-      Description: 
-      Languages:
-      - Box is filled faster for 5 seconds
-      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u043D\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
-        \u0431\u044B\u0441\u0442\u0440\u0435\u0435 5 \u0441\u0435\u043A\u0443\u043D\u0434"
-      Flags: 0000
-      Languages_Touch: []
     - Term: text-free
       TermType: 0
       Description: 
@@ -903,16 +927,15 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - Game Balanse= {0} gems
-      - "\u0418\u0433\u0440\u043E\u0432\u043E\u0439 \u0431\u0430\u043B\u0430\u043D\u0441
-        - {0} \u0433\u0435\u043C\u043E\u0432"
+      - Game Balance
+      - "\u0418\u0433\u0440\u043E\u0432\u043E\u0439 \u0431\u0430\u043B\u0430\u043D\u0441"
       Flags: 0000
       Languages_Touch: []
-    - Term: text-goover
+    - Term: button-navigate
       TermType: 0
       Description: 
       Languages:
-      - Go over
+      - Navigate
       - "\u041F\u0435\u0440\u0435\u0439\u0442\u0438"
       Flags: 0000
       Languages_Touch: []
@@ -1048,6 +1071,117 @@ MonoBehaviour:
         {0} \u0440\u0430\u0437"
       Flags: 0000
       Languages_Touch: []
+    - Term: upgrades_1
+      TermType: 0
+      Description: 
+      Languages:
+      - Mining of all miners increases by 2 times for 15 minutes
+      - "\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u043E
+        \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
+        \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0432 2 \u0440\u0430\u0437\u0430 \u043D\u0430 15 \u0441\u0435\u043A\u0443\u043D\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_2
+      TermType: 0
+      Description: 
+      Languages:
+      - All slots become functional for 2 hours
+      - "\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u044F\u0442\u0441\u044F
+        \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C\u0438
+        \u043D\u0430 2 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_3
+      TermType: 0
+      Description: 
+      Languages:
+      - +1 miner level on the box
+      - "+1 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430
+        \u0438\u0437 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_4
+      TermType: 0
+      Description: 
+      Languages:
+      - Box fills faster for 15 minutes
+      - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
+        \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
+        15 \u043C\u0438\u043D\u0443\u0442"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_5
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 4 hours
+      - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
+        \u043D\u0430 4 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_6
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 12 hours
+      - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
+        \u043D\u0430 12 \u0447\u0430\u0441\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_7
+      TermType: 0
+      Description: 
+      Languages:
+      - Forward 24 hours
+      - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
+        \u043D\u0430 24 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: upgrades_8
+      TermType: 0
+      Description: 
+      Languages:
+      - Mining of all miners increases by 4 times for 4 hour
+      - "\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u043E
+        \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
+        \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0432 4 \u0440\u0430\u0437\u0430 \u043D\u0430 4 \u0447\u0430\u0441\u0430"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: referral_title
+      TermType: 0
+      Description: 
+      Languages:
+      - Your referral code
+      - "\u0412\u0430\u0448 \u0440\u0435\u0444\u0435\u0440\u0440\u0430\u043B\u044C\u043D\u044B\u0439
+        \u043A\u043E\u0434"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: referral_copy
+      TermType: 0
+      Description: 
+      Languages:
+      - Copy
+      - "\u041A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: referral_total
+      TermType: 0
+      Description: 
+      Languages:
+      - Total referrals
+      - "\u0412\u0441\u0435\u0433\u043E \u0440\u0435\u0444\u0435\u0440\u0440\u0430\u043B\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
+    - Term: referral_received
+      TermType: 0
+      Description: 
+      Languages:
+      - Gems received
+      - "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u0433\u0435\u043C\u043E\u0432"
+      Flags: 0000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
@@ -1063,7 +1197,7 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzwlVpYk27r4vMxnbr6RJ2vvpAl5Ei1CSIIK2bmLe5auhtC3lksq0xlRN7ZCD50yWY1/exec
     Google_SpreadsheetKey: 1hDvrBFytpyWg59ko_UZjcNdFHHFRjn0pqcbflECATJs
     Google_SpreadsheetName: I2Loc Crypto Nft Game Localization
-    Google_LastUpdatedVersion: 1683795076685
+    Google_LastUpdatedVersion: 1683863271460
     Google_Password: A0PchS1m
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2

@@ -102,10 +102,9 @@ namespace UI.Popups
 
         private void OnNewMiner(NewMinerPopupData data)
         {
-            var title = LocalizationManager.GetTranslation(data.Config);
-            var icon = _resourceHelper.GetNormalIconByLevel(data.Level);
-            var previousIcon = _resourceHelper.GetNormalIconByLevel(data.Level - 1);
-            var viewModel = new NewMinerPopupViewModel(title, data.Level, data.Income, icon, previousIcon);
+            var previousMiner = (data.PreviousMiner.Item1, data.PreviousMiner.Item2, data.PreviousMiner.Item3, _resourceHelper.GetNormalIconByLevel(data.PreviousMiner.Item2));
+            var newMiner = (data.NewMiner.Item1, data.NewMiner.Item2, data.NewMiner.Item3, _resourceHelper.GetNormalIconByLevel(data.NewMiner.Item2));
+            var viewModel = new NewMinerPopupViewModel(previousMiner, newMiner);
             ShowPopup(_newMinerPopup, viewModel);
         }
 

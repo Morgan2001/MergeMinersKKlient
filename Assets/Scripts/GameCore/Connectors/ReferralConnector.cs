@@ -34,10 +34,6 @@ namespace GameCore.Connectors
         {
             GUIUtility.systemCopyBuffer = _sessionData.GameState.ReferralCode;
         }
-
-        public void Receive()
-        {
-        }
     }
 
     public class ReferralData

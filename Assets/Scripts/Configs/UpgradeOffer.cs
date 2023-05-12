@@ -4,5 +4,4 @@ using UnityEngine;
 public class UpgradeOffer : ScriptableObject
 {
     public Sprite Sprite;
-    public string Description;
 }

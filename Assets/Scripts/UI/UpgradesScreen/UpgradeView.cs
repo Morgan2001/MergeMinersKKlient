@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using I2.Loc;
+using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 using Utils.MVVM;
@@ -19,7 +20,7 @@ namespace UI.UpgradesScreen
         protected override void BindInner(UpgradeViewModel vm)
         {
             _icon.sprite = _vm.Icon;
-            _description.text = _vm.Description;
+            _description.text = LocalizationManager.GetTranslation("upgrades_" + _vm.Id);
             _cost.text = _vm.Price.ToString();
             
             _buyButton.Subscribe(OnBuyClick).AddTo(this);
@@ -35,14 +36,12 @@ namespace UI.UpgradesScreen
     {
         public string Id { get; }
         public Sprite Icon { get; }
-        public string Description { get; }
         public int Price { get; }
 
-        public UpgradeViewModel(string id, Sprite icon, string description, int price)
+        public UpgradeViewModel(string id, Sprite icon, int price)
         {
             Id = id;
             Icon = icon;
-            Description = description;
             Price = price;
         }
     }

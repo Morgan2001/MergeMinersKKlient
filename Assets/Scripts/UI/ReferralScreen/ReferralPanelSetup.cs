@@ -1,7 +1,6 @@
 ﻿using GameCore.Connectors;
 using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using Utils.Reactive;
 using Zenject;
 
@@ -13,9 +12,7 @@ namespace UI.ReferralScreen
         [SerializeField] private Button _copyButton;
         
         [SerializeField] private Text _referrals;
-        
         [SerializeField] private Text _gems;
-        [SerializeField] private Button _receiveButton;
 
         private ReferralConnector _referralConnector;
 
@@ -27,7 +24,6 @@ namespace UI.ReferralScreen
             _referralConnector.UpdateInfoEvent.Subscribe(UpdateInfo);
 
             _copyButton.Subscribe(_referralConnector.Copy);
-            _receiveButton.Subscribe(_referralConnector.Receive);
         }
 
         private void UpdateInfo(ReferralData data)
