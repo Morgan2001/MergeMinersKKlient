@@ -12,6 +12,7 @@ namespace UI.Popups
         [SerializeField] private GameObject _registrationStateStep1;
         [SerializeField] private GameObject _registrationStateStep2;
         [SerializeField] private GameObject _loginState;
+        [SerializeField] private GameObject _loggedState;
 
         [SerializeField] private InputField _registrationEmailInput;
         [SerializeField] private InputField _registrationEmailConfirmInput;
@@ -30,6 +31,9 @@ namespace UI.Popups
         [SerializeField] private Button _loginLoginButton;
         [SerializeField] private Button _loginRegisterButton;
         
+        [SerializeField] private Text _email;
+        [SerializeField] private Button _logoutButton;
+        
         [SerializeField] private Button _closeButton;
 
         private ReactiveEvent<RegistrationData> _registrationEvent = new();
@@ -40,10 +44,13 @@ namespace UI.Popups
         
         private ReactiveEvent<LoginData> _loginEvent = new();
         public IReactiveSubscription<LoginData> LoginEvent => _loginEvent;
+        
+        private ReactiveEvent _logoutEvent = new();
+        public IReactiveSubscription LogoutEvent => _logoutEvent;
 
         protected override void BindInner(EmailPopupViewModel vm)
         {
-            _vm.Registered.Bind(UpdateRegistered).AddTo(this);
+            _vm.State.Bind(UpdateState).AddTo(this);
             _vm.Step.Bind(UpdateStep).AddTo(this);
             
             _registrationNextButton.Subscribe(OnNextClick).AddTo(this);
@@ -53,14 +60,18 @@ namespace UI.Popups
             _loginForgetButton.Subscribe(OnForgetClick).AddTo(this);
             _loginLoginButton.Subscribe(OnLoginClick).AddTo(this);
             _loginRegisterButton.Subscribe(OnNotRegisteredClick).AddTo(this);
+
+            _email.text = _vm.Email;
+            _logoutButton.Subscribe(OnLogoutClick).AddTo(this);
             
             _closeButton.Subscribe(Hide).AddTo(this);
         }
 
-        private void UpdateRegistered(bool value)
+        private void UpdateState(EmailState value)
         {
-            _registrationState.SetActive(!value);
-            _loginState.SetActive(value);
+            _registrationState.SetActive(value == EmailState.Registration);
+            _loginState.SetActive(value == EmailState.Login);
+            _loggedState.SetActive(value == EmailState.Logged);
         }
         
         private void UpdateStep(RegistrationStep value)
@@ -100,14 +111,20 @@ namespace UI.Popups
             ));
         }
         
+        private void OnLogoutClick()
+        {
+            _logoutEvent.Trigger();
+            _vm.SetState(EmailState.Login);
+        }
+        
         private void OnAlreadyRegisteredClick()
         {
-            _vm.SetRegistered(true);
+            _vm.SetState(EmailState.Login);
         }
         
         private void OnNotRegisteredClick()
         {
-            _vm.SetRegistered(false);
+            _vm.SetState(EmailState.Registration);
         }
     }
 
@@ -119,20 +136,38 @@ namespace UI.Popups
 
     public class EmailPopupViewModel : ViewModel
     {
-        private ReactiveProperty<bool> _registered = new();
-        public IReactiveProperty<bool> Registered => _registered;
+        public string Email { get; }
+        
+        private ReactiveProperty<EmailState> _state = new();
+        public IReactiveProperty<EmailState> State => _state;
         
         private ReactiveProperty<RegistrationStep> _step = new();
         public IReactiveProperty<RegistrationStep> Step => _step;
 
-        public void SetRegistered(bool value)
+        public EmailPopupViewModel(string email)
         {
-            _registered.Set(value);
+            Email = email;
+            
+            SetState(string.IsNullOrEmpty(Email) ? 
+                EmailState.Registration : 
+                EmailState.Logged);
+        }
+
+        public void SetState(EmailState value)
+        {
+            _state.Set(value);
         }
 
         public void SetStep(RegistrationStep value)
         {
             _step.Set(value);
         }
+    }
+
+    public enum EmailState
+    {
+        Registration,
+        Login,
+        Logged
     }
 }

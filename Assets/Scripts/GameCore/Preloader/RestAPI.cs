@@ -26,9 +26,9 @@ namespace GameCore.Preloader
             return await _restClient.Get<bool>("status");
         }
         
-        public async Task<string> UserLogin(string deviceId)
+        public async Task<LoginData> UserLogin(string deviceId)
         {
-            return await _restClient.Get<string>($"user/login?deviceId={deviceId}");
+            return await _restClient.Get<LoginData>($"user/login?deviceId={deviceId}");
         }
 
         public async Task<bool> Register(string token, string email, string password, string referralCode)

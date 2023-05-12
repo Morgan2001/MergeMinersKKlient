@@ -1,4 +1,5 @@
-﻿using GameCore.Preloader;
+﻿using System.Threading.Tasks;
+using GameCore.Preloader;
 using UnityEngine;
 
 namespace GameCore.Connectors
@@ -16,19 +17,27 @@ namespace GameCore.Connectors
             _restAPI = restAPI;
         }
         
-        public async void Register(RegistrationData data)
+        public async Task<bool> Register(RegistrationData data)
         {
-            if (data.Email != data.EmailConfirmation) return;
-            if (data.Password != data.PasswordConfirmation) return;
+            if (data.Email != data.EmailConfirmation) return false;
+            if (data.Password != data.PasswordConfirmation) return false;
 
-            await _restAPI.Register(_sessionData.Token, data.Email, data.Password, data.ReferralCode ?? "");
+            var result = await _restAPI.Register(_sessionData.Token, data.Email, data.Password, data.ReferralCode ?? "");
+            if (!result) return false;
+            
+            _sessionData.SetEmail(data.Email);
+            return true;
         }
 
         public async void Forget(ForgetData data)
         {
             if (string.IsNullOrEmpty(data.Email)) return;
             
-            await _restAPI.Recover(data.Email);
+            var result = await _restAPI.Recover(data.Email);
+            if (result)
+            {
+                _sessionData.SetEmail(data.Email);
+            }
         }
 
         public async void Login(LoginData data)
@@ -37,7 +46,13 @@ namespace GameCore.Connectors
             if (token != null)
             {
                 _sessionData.SetToken(token);
+                _sessionData.SetEmail(data.Email);
             }
+        }
+        
+        public void Logout()
+        {
+            _sessionData.SetEmail(null);
         }
     }
 

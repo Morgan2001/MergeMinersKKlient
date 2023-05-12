@@ -17,7 +17,7 @@ namespace UI.Popups
             _text.text = _vm.Text;
             _buttonLabel.text = _vm.ButtonLabel;
 
-            _button.Subscribe(_vm.ButtonAction).AddTo(this);
+            _button.Subscribe(_vm.ButtonAction ?? Hide).AddTo(this);
         }
     }
 

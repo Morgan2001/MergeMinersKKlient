@@ -21,14 +21,14 @@ namespace GameCore.Preloader
         
         private async void Awake()
         {
-            var token = await _restAPI.UserLogin(SystemInfo.deviceUniqueIdentifier);
+            var data = await _restAPI.UserLogin(SystemInfo.deviceUniqueIdentifier);
             
-            var configData = await _restAPI.GetConfig(token);
+            var configData = await _restAPI.GetConfig(data.Token);
             var config = ConfigHelper.GetConfig(configData);
             
-            var gameState = await _restAPI.GetState(token);
+            var gameState = await _restAPI.GetState(data.Token);
             
-            _sessionData.Setup(token, config, gameState);
+            _sessionData.Setup(data.Token, data.Email, config, gameState);
             SceneManager.LoadScene("Gameplay");
         }
     }

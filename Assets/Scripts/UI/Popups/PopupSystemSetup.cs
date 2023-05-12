@@ -227,14 +227,27 @@ namespace UI.Popups
             _offlineIncomePopup.ClickEvent.Subscribe(MultiplyIncome).AddTo(_offlineIncomePopup);
         }
         
-        private void OnEmail()
+        private void OnEmail(EmailData data)
         {
-            var viewModel = new EmailPopupViewModel();
+            var viewModel = new EmailPopupViewModel(data.Email);
             ShowPopup(_emailPopup, viewModel);
             
-            _emailPopup.RegistrationEvent.Subscribe(_emailConnector.Register).AddTo(_emailPopup);
+            _emailPopup.RegistrationEvent.Subscribe(async data =>
+            {
+                if (!await _emailConnector.Register(data))
+                {
+                    _emailPopup.HideForce();
+                    return;
+                }
+                
+                var text = LocalizationManager.GetTranslation("alert_email_confirmation");
+                var label = LocalizationManager.GetTranslation("button-close");
+                _popupsConnector.ShowAlert(text, label, null);
+                
+            }).AddTo(_emailPopup);
             _emailPopup.ForgetEvent.Subscribe(_emailConnector.Forget).AddTo(_emailPopup);
             _emailPopup.LoginEvent.Subscribe(_emailConnector.Login).AddTo(_emailPopup);
+            _emailPopup.LogoutEvent.Subscribe(_emailConnector.Logout).AddTo(_emailPopup);
         }
         
         private void OnBalance(BalanceData data)
