@@ -81,6 +81,7 @@ namespace UI.Popups
             _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
             _popupsConnector.EmailPopupEvent.Subscribe(OnEmail);
             _popupsConnector.BalancePopupEvent.Subscribe(OnBalance);
+            _popupsConnector.AlertPopupEvent.Subscribe(OnAlert);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
@@ -241,6 +242,12 @@ namespace UI.Popups
         {
             var viewModel = new BalancePopupViewModel(data.Gems, data.Token);
             ShowPopup(_balancePopup, viewModel);
+        }
+        
+        private void OnAlert(AlertData data)
+        {
+            var viewModel = new AlertPopupViewModel(data.Text, data.ButtonLabel, data.ButtonAction);
+            ShowPopup(_alertPopup, viewModel);
         }
 
         private void MultiplyIncome(bool value)
