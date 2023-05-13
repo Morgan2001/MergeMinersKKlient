@@ -30,6 +30,10 @@ namespace IAP
 
         public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs purchaseEvent)
         {
+#if UNITY_EDITOR
+            return PurchaseProcessingResult.Complete;
+#endif
+#if UNITY_ANDROID
             var receipt = purchaseEvent.purchasedProduct.receipt;
             var purchaseReceipt = JsonUtility.FromJson<GooglePurchaseReceipt>(receipt);
             var purchasePayload = JsonUtility.FromJson<GooglePurchasePayload>(purchaseReceipt.Payload);
@@ -52,6 +56,7 @@ namespace IAP
                 }
             }
             return PurchaseProcessingResult.Pending;
+#endif
         }
 
         public void OnPurchaseFailed(Product product, PurchaseFailureReason failureReason)
