@@ -10,12 +10,15 @@ namespace UI.Popups
     {
         [SerializeField] private Text _balance;
         [SerializeField] private Button _navigateButton;
-        
+        [SerializeField] private Button _closeButton;
+
         protected override void BindInner(BalancePopupViewModel vm)
         {
             _balance.text = _vm.Balance.ToString();
             
             _navigateButton.Subscribe(OnNavigate).AddTo(this);
+
+            _closeButton.Subscribe(Hide).AddTo(this);
         }
 
         private void OnNavigate()

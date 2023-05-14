@@ -23,7 +23,10 @@ MonoBehaviour:
       Languages:
       - Pentulum x2
       - Pentulum x2
-      Flags: 0000
+      - Pentulum x2
+      - Pentulum x2
+      - Pentulum x2
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_2
       TermType: 0
@@ -31,7 +34,10 @@ MonoBehaviour:
       Languages:
       - Pentulum x4
       - Pentulum x4
-      Flags: 0000
+      - Pentulum x4
+      - Pentulum x4
+      - Pentulum x4
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_3
       TermType: 0
@@ -39,7 +45,10 @@ MonoBehaviour:
       Languages:
       - Pentulum x86
       - Pentulum x86
-      Flags: 0000
+      - Pentulum x86
+      - Pentulum x86
+      - Pentulum x86
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_4
       TermType: 0
@@ -47,7 +56,10 @@ MonoBehaviour:
       Languages:
       - Intinie 250
       - Intinie 250
-      Flags: 0000
+      - Intinie 250
+      - Intinie 250
+      - Intinie 250
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_5
       TermType: 0
@@ -55,7 +67,10 @@ MonoBehaviour:
       Languages:
       - AMFM 4
       - AMFM 4
-      Flags: 0000
+      - AMFM 4
+      - AMFM 4
+      - AMFM 4
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_6
       TermType: 0
@@ -63,7 +78,10 @@ MonoBehaviour:
       Languages:
       - XEON4500
       - XEON4500
-      Flags: 0000
+      - XEON4500
+      - XEON4500
+      - XEON4500
+      Flags: 0000000000
       Languages_Touch: []
     - Term: CPU_7
       TermType: 0
@@ -71,7 +89,10 @@ MonoBehaviour:
       Languages:
       - REZEN7100
       - REZEN7100
-      Flags: 0000
+      - REZEN7100
+      - REZEN7100
+      - REZEN7100
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_1
       TermType: 0
@@ -79,7 +100,10 @@ MonoBehaviour:
       Languages:
       - 9200SE
       - 9200SE
-      Flags: 0000
+      - 9200SE
+      - 9200SE
+      - 9200SE
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_2
       TermType: 0
@@ -87,7 +111,10 @@ MonoBehaviour:
       Languages:
       - 6600GT
       - 6600GT
-      Flags: 0000
+      - 6600GT
+      - 6600GT
+      - 6600GT
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_3
       TermType: 0
@@ -95,7 +122,10 @@ MonoBehaviour:
       Languages:
       - GT710
       - GT710
-      Flags: 0000
+      - GT710
+      - GT710
+      - GT710
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_4
       TermType: 0
@@ -103,7 +133,10 @@ MonoBehaviour:
       Languages:
       - HD5600
       - HD5600
-      Flags: 0000
+      - HD5600
+      - HD5600
+      - HD5600
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_5
       TermType: 0
@@ -111,7 +144,10 @@ MonoBehaviour:
       Languages:
       - RX460
       - RX460
-      Flags: 0000
+      - RX460
+      - RX460
+      - RX460
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_6
       TermType: 0
@@ -119,7 +155,10 @@ MonoBehaviour:
       Languages:
       - VEGA
       - VEGA
-      Flags: 0000
+      - VEGA
+      - VEGA
+      - VEGA
+      Flags: 0000000000
       Languages_Touch: []
     - Term: GPU_7
       TermType: 0
@@ -127,7 +166,10 @@ MonoBehaviour:
       Languages:
       - TITAN
       - TITAN
-      Flags: 0000
+      - TITAN
+      - TITAN
+      - TITAN
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_1
       TermType: 0
@@ -135,7 +177,10 @@ MonoBehaviour:
       Languages:
       - Hdd 128
       - Hdd 128
-      Flags: 0000
+      - Hdd 128
+      - Hdd 128
+      - Hdd 128
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_2
       TermType: 0
@@ -143,7 +188,10 @@ MonoBehaviour:
       Languages:
       - Hdd 256
       - Hdd 256
-      Flags: 0000
+      - Hdd 256
+      - Hdd 256
+      - Hdd 256
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_3
       TermType: 0
@@ -151,7 +199,10 @@ MonoBehaviour:
       Languages:
       - Hdd 500
       - Hdd 500
-      Flags: 0000
+      - Hdd 500
+      - Hdd 500
+      - Hdd 500
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_4
       TermType: 0
@@ -159,7 +210,10 @@ MonoBehaviour:
       Languages:
       - Hdd 1000
       - Hdd 1000
-      Flags: 0000
+      - Hdd 1000
+      - Hdd 1000
+      - Hdd 1000
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_5
       TermType: 0
@@ -167,7 +221,10 @@ MonoBehaviour:
       Languages:
       - Ssd 500
       - Ssd 500
-      Flags: 0000
+      - Ssd 500
+      - Ssd 500
+      - Ssd 500
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_6
       TermType: 0
@@ -175,7 +232,10 @@ MonoBehaviour:
       Languages:
       - Ssd 1000
       - Ssd 1000
-      Flags: 0000
+      - Ssd 1000
+      - Ssd 1000
+      - Ssd 1000
+      Flags: 0000000000
       Languages_Touch: []
     - Term: HDD_7
       TermType: 0
@@ -183,7 +243,10 @@ MonoBehaviour:
       Languages:
       - Ssd 2000
       - Ssd 2000
-      Flags: 0000
+      - Ssd 2000
+      - Ssd 2000
+      - Ssd 2000
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_1
       TermType: 0
@@ -191,7 +254,10 @@ MonoBehaviour:
       Languages:
       - HD
       - HD
-      Flags: 0000
+      - HD
+      - HD
+      - HD
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_2
       TermType: 0
@@ -199,7 +265,10 @@ MonoBehaviour:
       Languages:
       - FullHD
       - FullHD
-      Flags: 0000
+      - FullHD
+      - FullHD
+      - FullHD
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_3
       TermType: 0
@@ -207,7 +276,10 @@ MonoBehaviour:
       Languages:
       - 2k
       - 2k
-      Flags: 0000
+      - 2k
+      - 2k
+      - 2k
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_4
       TermType: 0
@@ -215,7 +287,10 @@ MonoBehaviour:
       Languages:
       - 4k
       - 4k
-      Flags: 0000
+      - 4k
+      - 4k
+      - 4k
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_5
       TermType: 0
@@ -223,7 +298,10 @@ MonoBehaviour:
       Languages:
       - 8k
       - 8k
-      Flags: 0000
+      - 8k
+      - 8k
+      - 8k
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_6
       TermType: 0
@@ -231,7 +309,10 @@ MonoBehaviour:
       Languages:
       - M 32
       - M 32
-      Flags: 0000
+      - M 32
+      - M 32
+      - M 32
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Monitor_7
       TermType: 0
@@ -239,7 +320,10 @@ MonoBehaviour:
       Languages:
       - M 60
       - M 60
-      Flags: 0000
+      - M 60
+      - M 60
+      - M 60
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_1
       TermType: 0
@@ -247,7 +331,10 @@ MonoBehaviour:
       Languages:
       - Pell
       - Pell
-      Flags: 0000
+      - Pell
+      - Pell
+      - Pell
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_2
       TermType: 0
@@ -255,7 +342,10 @@ MonoBehaviour:
       Languages:
       - MSA
       - MSA
-      Flags: 0000
+      - MSA
+      - MSA
+      - MSA
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_3
       TermType: 0
@@ -263,7 +353,10 @@ MonoBehaviour:
       Languages:
       - Aceq
       - Aceq
-      Flags: 0000
+      - Aceq
+      - Aceq
+      - Aceq
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_4
       TermType: 0
@@ -271,7 +364,10 @@ MonoBehaviour:
       Languages:
       - PZ
       - PZ
-      Flags: 0000
+      - PZ
+      - PZ
+      - PZ
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_5
       TermType: 0
@@ -279,7 +375,10 @@ MonoBehaviour:
       Languages:
       - Apply
       - Apply
-      Flags: 0000
+      - Apply
+      - Apply
+      - Apply
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_6
       TermType: 0
@@ -287,7 +386,10 @@ MonoBehaviour:
       Languages:
       - Lenoya
       - Lenoya
-      Flags: 0000
+      - Lenoya
+      - Lenoya
+      - Lenoya
+      Flags: 0000000000
       Languages_Touch: []
     - Term: Notebook_7
       TermType: 0
@@ -295,7 +397,10 @@ MonoBehaviour:
       Languages:
       - Thunder
       - Thunder
-      Flags: 0000
+      - Thunder
+      - Thunder
+      - Thunder
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_1
       TermType: 0
@@ -303,7 +408,10 @@ MonoBehaviour:
       Languages:
       - DDL1600
       - DDL1600
-      Flags: 0000
+      - DDL1600
+      - DDL1600
+      - DDL1600
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_2
       TermType: 0
@@ -311,7 +419,10 @@ MonoBehaviour:
       Languages:
       - DDL3400
       - DDL3400
-      Flags: 0000
+      - DDL3400
+      - DDL3400
+      - DDL3400
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_3
       TermType: 0
@@ -319,7 +430,10 @@ MonoBehaviour:
       Languages:
       - Korsair 8000
       - Korsair 8000
-      Flags: 0000
+      - Korsair 8000
+      - Korsair 8000
+      - Korsair 8000
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_4
       TermType: 0
@@ -327,7 +441,10 @@ MonoBehaviour:
       Languages:
       - Rdd4
       - Rdd4
-      Flags: 0000
+      - Rdd4
+      - Rdd4
+      - Rdd4
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_5
       TermType: 0
@@ -335,7 +452,10 @@ MonoBehaviour:
       Languages:
       - Flex x 64
       - Flex x 64
-      Flags: 0000
+      - Flex x 64
+      - Flex x 64
+      - Flex x 64
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_6
       TermType: 0
@@ -343,7 +463,10 @@ MonoBehaviour:
       Languages:
       - King 3100
       - King 3100
-      Flags: 0000
+      - King 3100
+      - King 3100
+      - King 3100
+      Flags: 0000000000
       Languages_Touch: []
     - Term: RAM_7
       TermType: 0
@@ -351,7 +474,10 @@ MonoBehaviour:
       Languages:
       - Samsuo4800
       - Samsuo4800
-      Flags: 0000
+      - Samsuo4800
+      - Samsuo4800
+      - Samsuo4800
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_1
       TermType: 0
@@ -359,7 +485,10 @@ MonoBehaviour:
       Languages:
       - Deercool
       - Deercool
-      Flags: 0000
+      - Deercool
+      - Deercool
+      - Deercool
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_2
       TermType: 0
@@ -367,7 +496,10 @@ MonoBehaviour:
       Languages:
       - Exdp
       - Exdp
-      Flags: 0000
+      - Exdp
+      - Exdp
+      - Exdp
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_3
       TermType: 0
@@ -375,7 +507,10 @@ MonoBehaviour:
       Languages:
       - Hiper
       - Hiper
-      Flags: 0000
+      - Hiper
+      - Hiper
+      - Hiper
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_4
       TermType: 0
@@ -383,7 +518,10 @@ MonoBehaviour:
       Languages:
       - Gigaterra
       - Gigaterra
-      Flags: 0000
+      - Gigaterra
+      - Gigaterra
+      - Gigaterra
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_5
       TermType: 0
@@ -391,7 +529,10 @@ MonoBehaviour:
       Languages:
       - Power
       - Power
-      Flags: 0000
+      - Power
+      - Power
+      - Power
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_6
       TermType: 0
@@ -399,7 +540,10 @@ MonoBehaviour:
       Languages:
       - SilverRock
       - SilverRock
-      Flags: 0000
+      - SilverRock
+      - SilverRock
+      - SilverRock
+      Flags: 0000000000
       Languages_Touch: []
     - Term: SystemUnit_7
       TermType: 0
@@ -407,7 +551,10 @@ MonoBehaviour:
       Languages:
       - MZXT MS
       - MZXT MS
-      Flags: 0000
+      - MZXT MS
+      - MZXT MS
+      - MZXT MS
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_1
       TermType: 0
@@ -415,7 +562,10 @@ MonoBehaviour:
       Languages:
       - Basement
       - "\u041F\u043E\u0434\u0432\u0430\u043B"
-      Flags: 0000
+      - Sous-sol
+      - Keller
+      - "S\xF3tano"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_2
       TermType: 0
@@ -423,7 +573,10 @@ MonoBehaviour:
       Languages:
       - Pantry
       - "\u041A\u043B\u0430\u0434\u043E\u0432\u0430\u044F"
-      Flags: 0000
+      - Garde-manger
+      - Speisekammer
+      - Despensa
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_3
       TermType: 0
@@ -431,7 +584,10 @@ MonoBehaviour:
       Languages:
       - Attic
       - "\u0427\u0435\u0440\u0434\u0430\u043A"
-      Flags: 0000
+      - Grenier
+      - "Dachgescho\xDF"
+      - "\xC1tico"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_4
       TermType: 0
@@ -439,7 +595,10 @@ MonoBehaviour:
       Languages:
       - Storage
       - "\u0421\u043A\u043B\u0430\u0434"
-      Flags: 0000
+      - Stockage
+      - Lagerung
+      - Almacenamiento
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_5
       TermType: 0
@@ -447,7 +606,10 @@ MonoBehaviour:
       Languages:
       - Barn
       - "\u0421\u0430\u0440\u0430\u0439"
-      Flags: 0000
+      - Grange
+      - Scheune
+      - Granero
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_6
       TermType: 0
@@ -455,7 +617,10 @@ MonoBehaviour:
       Languages:
       - Bedroom
       - "\u041A\u043E\u043C\u043D\u0430\u0442\u0430"
-      Flags: 0000
+      - "Chambre \xE0 coucher"
+      - Schlafzimmer
+      - Dormitorio
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_7
       TermType: 0
@@ -463,7 +628,10 @@ MonoBehaviour:
       Languages:
       - Garage
       - "\u0413\u0430\u0440\u0430\u0436"
-      Flags: 0000
+      - Garage
+      - Garage
+      - Cochera
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_8
       TermType: 0
@@ -471,7 +639,10 @@ MonoBehaviour:
       Languages:
       - Office
       - "\u041E\u0444\u0438\u0441"
-      Flags: 0000
+      - Bureau
+      - "B\xFCro"
+      - Oficina
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_9
       TermType: 0
@@ -479,7 +650,10 @@ MonoBehaviour:
       Languages:
       - Server room
       - "\u0421\u0435\u0440\u0432\u0435\u0440\u043D\u0430\u044F \u043A\u043E\u043C\u043D\u0430\u0442\u0430"
-      Flags: 0000
+      - Salle des serveurs
+      - Serverraum
+      - Cuarto de servicio
+      Flags: 0000000000
       Languages_Touch: []
     - Term: location_10
       TermType: 0
@@ -487,7 +661,10 @@ MonoBehaviour:
       Languages:
       - Server farm
       - "\u0421\u0435\u0440\u0432\u0435\u0440\u043D\u0430\u044F \u0444\u0435\u0440\u043C\u0430"
-      Flags: 0000
+      - Ferme de serveurs
+      - Serverfarm
+      - Granja de servidores
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-take
       TermType: 0
@@ -495,7 +672,10 @@ MonoBehaviour:
       Languages:
       - Take
       - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C"
-      Flags: 0000
+      - Prendre
+      - Nehmen
+      - Llevar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: new-miner
       TermType: 0
@@ -503,7 +683,10 @@ MonoBehaviour:
       Languages:
       - New miner!
       - "\u041D\u043E\u0432\u044B\u0439 \u043C\u0430\u0439\u043D\u0435\u0440!"
-      Flags: 0000
+      - Nouveau mineur!
+      - Neuer Bergmann!
+      - "\xA1Nuevo minero!"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-earn-per-second
       TermType: 0
@@ -511,7 +694,10 @@ MonoBehaviour:
       Languages:
       - '{0} per second'
       - "{0} \u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
-      Flags: 0000
+      - '{0} par seconde'
+      - '{0} pro Sekunde'
+      - '{0} por segundo'
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-you-won
       TermType: 0
@@ -519,7 +705,10 @@ MonoBehaviour:
       Languages:
       - You won!
       - "\u0412\u044B \u0432\u044B\u0438\u0433\u0440\u0430\u043B\u0438"
-      Flags: 0000
+      - "Tu as gagn\xE9!"
+      - Du hast gewonnen!
+      - "\xA1Ganaste!"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-random-miner
       TermType: 0
@@ -527,7 +716,10 @@ MonoBehaviour:
       Languages:
       - Random miner
       - "\u0421\u043B\u0443\u0447\u0430\u0439\u043D\u044B\u0439 \u043C\u0430\u0439\u043D\u0435\u0440"
-      Flags: 0000
+      - "Mineur al\xE9atoire"
+      - "Zuf\xE4lliger Bergmann"
+      - Minero al azar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-pick-up-more
       TermType: 0
@@ -535,7 +727,10 @@ MonoBehaviour:
       Languages:
       - Pick up more
       - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435"
-      Flags: 0000
+      - Ramasser plus
+      - Mehr aufnehmen
+      - "Recoger m\xE1s"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-welcome-back
       TermType: 0
@@ -543,7 +738,10 @@ MonoBehaviour:
       Languages:
       - Welcome back!
       - "\u0421 \u0432\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435\u043C!"
-      Flags: 0000
+      - Content de te revoir!
+      - "Willkommen zur\xFCck!"
+      - "\xA1Bienvenido de nuevo!"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-triple-your-earned
       TermType: 0
@@ -551,7 +749,10 @@ MonoBehaviour:
       Languages:
       - Triple your earned?
       - "\u0423\u0442\u0440\u043E\u0438\u0442\u044C \u043D\u0430\u043A\u043E\u043F\u043B\u0435\u043D\u043D\u043E\u0435?"
-      Flags: 0000
+      - "Tripler votre m\xE9rit\xE9?"
+      - Dreifach deinen Verdienst?
+      - Triplicar tu ganado?
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-take-value
       TermType: 0
@@ -559,7 +760,10 @@ MonoBehaviour:
       Languages:
       - Take {0}
       - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C {0}"
-      Flags: 0000
+      - Prendre {0}
+      - Nehmen Sie {0}
+      - Tomar {0}
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-close
       TermType: 0
@@ -567,7 +771,10 @@ MonoBehaviour:
       Languages:
       - Close
       - "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
-      Flags: 0000
+      - Fermer
+      - "Schlie\xDFen"
+      - Cerca
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-relocate
       TermType: 0
@@ -575,7 +782,10 @@ MonoBehaviour:
       Languages:
       - Relocate
       - "\u041F\u0435\u0440\u0435\u0435\u0445\u0430\u0442\u044C"
-      Flags: 0000
+      - "D\xE9m\xE9nager"
+      - Umziehen
+      - Trasladarse
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-coins
       TermType: 0
@@ -583,7 +793,10 @@ MonoBehaviour:
       Languages:
       - '{0} coins'
       - "{0} \u043C\u043E\u043D\u0435\u0442"
-      Flags: 0000
+      - "{0} pi\xE8ces"
+      - "{0} M\xFCnzen"
+      - '{0} monedas'
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-gem
       TermType: 0
@@ -591,7 +804,10 @@ MonoBehaviour:
       Languages:
       - gem
       - "\u0433\u0435\u043C"
-      Flags: 0000
+      - gemme
+      - Juwel
+      - joya
+      Flags: 0000000000
       Languages_Touch: []
     - Term: stat-slots
       TermType: 0
@@ -599,7 +815,10 @@ MonoBehaviour:
       Languages:
       - Slots
       - "\u042F\u0447\u0435\u0439\u043A\u0438"
-      Flags: 0000
+      - "Machines \xE0 sous"
+      - "Schl\xFCssel"
+      - Ranura
+      Flags: 0000000000
       Languages_Touch: []
     - Term: stat-miner
       TermType: 0
@@ -607,7 +826,10 @@ MonoBehaviour:
       Languages:
       - Max level
       - "\u041C\u0430\u043A\u0441. \u0443\u0440."
-      Flags: 0000
+      - Niveau maximum
+      - Maximales Level
+      - "M\xE1ximo nivel"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-level-value
       TermType: 0
@@ -615,7 +837,10 @@ MonoBehaviour:
       Languages:
       - Level {0}
       - "\u0423\u0440\u043E\u0432\u0435\u043D\u044C {0}"
-      Flags: 0000
+      - Niveau {0}
+      - Ebene {0}
+      - Nivel {0}
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-assemble-first
       TermType: 0
@@ -624,7 +849,10 @@ MonoBehaviour:
       - Assemble level {0} miner first
       - "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u0441\u043E\u0431\u0435\u0440\u0438\u0442\u0435
         \u043C\u0430\u0439\u043D\u0435\u0440 {0} \u0443\u0440\u043E\u0432\u043D\u044F"
-      Flags: 0000
+      - Assembler le niveau {0} mineur d'abord
+      - Zuerst der Stufe {0} Miner zusammenstellen
+      - Ensamblar nivel {0} minero primero
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-take-more
       TermType: 0
@@ -632,7 +860,10 @@ MonoBehaviour:
       Languages:
       - Pick up more
       - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C \u0431\u043E\u043B\u044C\u0448\u0435"
-      Flags: 0000
+      - Ramasser plus
+      - Mehr aufnehmen
+      - "Recoger m\xE1s"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-get
       TermType: 0
@@ -640,7 +871,10 @@ MonoBehaviour:
       Languages:
       - Get
       - "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C"
-      Flags: 0000
+      - Obtenir
+      - Erhalten
+      - Conseguir
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-spin
       TermType: 0
@@ -648,7 +882,10 @@ MonoBehaviour:
       Languages:
       - Spin
       - "\u041A\u0440\u0443\u0442\u0438\u0442\u044C"
-      Flags: 0000
+      - Rotation
+      - Drehen
+      - Girar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-spend-time
       TermType: 0
@@ -658,7 +895,10 @@ MonoBehaviour:
       - "\u041F\u0440\u043E\u0432\u043E\u0434\u0438\u0442\u0435 \u0432\u0440\u0435\u043C\u044F
         \u0432 \u0438\u0433\u0440\u0435, \u0447\u0442\u043E\u0431\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C
         \u043F\u043E\u0434\u0430\u0440\u043A\u0438"
-      Flags: 0000
+      - Passer du temps dans le jeu pour obtenir des cadeaux
+      - Verbringen Sie Zeit im Spiel, um Geschenke zu bekommen
+      - Pase tiempo en el juego para obtener regalos
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-decline
       TermType: 0
@@ -666,7 +906,10 @@ MonoBehaviour:
       Languages:
       - Cancel
       - "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C"
-      Flags: 0000
+      - Annuler
+      - Stornieren
+      - Cancelar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-apply
       TermType: 0
@@ -674,7 +917,10 @@ MonoBehaviour:
       Languages:
       - Apply
       - "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C"
-      Flags: 0000
+      - Appliquer
+      - Anwenden
+      - Aplicar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-box-faster
       TermType: 0
@@ -683,7 +929,10 @@ MonoBehaviour:
       - Box is filled faster for 5 seconds
       - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u043D\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
         \u0431\u044B\u0441\u0442\u0440\u0435\u0435 5 \u0441\u0435\u043A\u0443\u043D\u0434"
-      Flags: 0000
+      - "La bo\xEEte est remplie plus rapidement pendant 5 secondes"
+      - "Box ist 5 Sekunden lang schneller gef\xFCllt"
+      - "La caja se llena m\xE1s r\xE1pido durante 5 segundos"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-chip
       TermType: 0
@@ -691,7 +940,10 @@ MonoBehaviour:
       Languages:
       - Chip
       - "\u0427\u0438\u043F"
-      Flags: 0000
+      - "\xC9br\xE9cher"
+      - Chip
+      - Chip
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-4-miners
       TermType: 0
@@ -700,7 +952,10 @@ MonoBehaviour:
       - 4 box with different miners
       - "4 \u043A\u043E\u0440\u043E\u0431\u043A\u0438 \u0441 \u0440\u0430\u0437\u043D\u044B\u043C\u0438
         \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u043C\u0438"
-      Flags: 0000
+      - "4 bo\xEEtes avec diff\xE9rents mineurs"
+      - 4 Box mit verschiedenen Bergleuten
+      - 4 caja con diferentes mineros
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-box
       TermType: 0
@@ -708,7 +963,10 @@ MonoBehaviour:
       Languages:
       - Box with miners
       - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0441 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u043C"
-      Flags: 0000
+      - "Bo\xEEte avec des mineurs"
+      - Box mit Bergleuten
+      - Caja con mineros
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-mining-20-sek
       TermType: 0
@@ -718,7 +976,10 @@ MonoBehaviour:
       - "\u0414\u043E\u0445\u043E\u0434 \u0441\u043E \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
         \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D \u0432 10 \u0440\u0430\u0437
         \u043D\u0430 20 \u0441\u0435\u043A\u0443\u043D\u0434"
-      Flags: 0000
+      - L'exploitation de tous les mineurs augmente de 10 fois pendant 20 secondes
+      - Der Bergbau aller Bergleute steigt 20 Sekunden lang um 10 Mal an
+      - "La miner\xEDa de todos los mineros aumenta en 10 veces durante 20 segundos"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-flash
       TermType: 0
@@ -726,7 +987,10 @@ MonoBehaviour:
       Languages:
       - Flash card
       - "\u0424\u043B\u044D\u0448\u043A\u0430\u0440\u0442\u0430"
-      Flags: 0000
+      - "Carte m\xE9moire"
+      - Speicherkarte
+      - Tarjeta de memoria flash
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-all-slots
       TermType: 0
@@ -736,7 +1000,10 @@ MonoBehaviour:
       - "\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u044F\u0442\u0441\u044F
         \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C\u0438
         \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 5 \u043C\u0438\u043D\u0443\u0442"
-      Flags: 0000
+      - Tous les emplacements deviennent fonctionnels pendant 5 minutes
+      - "Alle Slots werden 5 Minuten lang funktionsf\xE4hig"
+      - Todas las ranuras se vuelven funcionales durante 5 minutos
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-power
       TermType: 0
@@ -744,7 +1011,10 @@ MonoBehaviour:
       Languages:
       - Power transformer
       - "\u0423\u0441\u0438\u043B\u0435\u043D\u0438\u0435 \u0440\u043E\u0437\u0435\u0442\u043E\u043A"
-      Flags: 0000
+      - Transformateur de puissance
+      - Leistungstransformator
+      - Transformador
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-roll
       TermType: 0
@@ -752,7 +1022,10 @@ MonoBehaviour:
       Languages:
       - Roll
       - "\u041A\u0440\u0443\u0442\u0438\u0442\u044C"
-      Flags: 0000
+      - Rouleau
+      - Rollen
+      - Rollo
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-subscribe
       TermType: 0
@@ -760,7 +1033,10 @@ MonoBehaviour:
       Languages:
       - Subscribe
       - "\u041F\u043E\u0434\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F"
-      Flags: 0000
+      - S'abonner
+      - Abonnieren
+      - Suscribir
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-ads-remove
       TermType: 0
@@ -768,7 +1044,10 @@ MonoBehaviour:
       Languages:
       - Ads remove
       - "\u0423\u0434\u0430\u043B\u0435\u043D\u0438\u0435 \u0440\u0435\u043A\u043B\u0430\u043C\u044B"
-      Flags: 0000
+      - REPLIER ANS
+      - Anzeigen entfernen
+      - Anuncios eliminar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-2-level-miner
       TermType: 0
@@ -777,7 +1056,10 @@ MonoBehaviour:
       - +2 level of miner from box
       - "\u043D\u0430 2 \u0443\u0440\u043E\u0432\u043D\u044F \u0432\u044B\u0448\u0435
         \u043C\u0430\u0439\u043D\u0435\u0440 \u0438\u0437 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
-      Flags: 0000
+      - "+2 Niveau de mineur de la bo\xEEte"
+      - +2 Bergmannsniveau aus der Box
+      - +2 nivel de minero de caja
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-3-slots
       TermType: 0
@@ -785,7 +1067,10 @@ MonoBehaviour:
       Languages:
       - +3 mining slots
       - "3 \u0440\u043E\u0437\u0435\u0442\u043A\u0438"
-      Flags: 0000
+      - "+3 emplacements mini\xE8res"
+      - +3 Bergbauschlitze
+      - "Slots de miner\xEDa +3"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-10
       TermType: 0
@@ -793,7 +1078,10 @@ MonoBehaviour:
       Languages:
       - -10% miner cost
       - "-10% \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430"
-      Flags: 0000
+      - "-10% de co\xFBt de mineurs"
+      - -10% Bergmannkosten
+      - -10% costo minero
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-quit
       TermType: 0
@@ -801,7 +1089,10 @@ MonoBehaviour:
       Languages:
       - Quit
       - "\u0412\u044B\u0445\u043E\u0434"
-      Flags: 0000
+      - "Arr\xEAter"
+      - "Aufh\xF6ren"
+      - Abandonar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-sockets
       TermType: 0
@@ -809,7 +1100,10 @@ MonoBehaviour:
       Languages:
       - Sockets
       - "\u0420\u043E\u0437\u0435\u0442\u043A\u0438"
-      Flags: 0000
+      - Prises
+      - Steckdosen
+      - Bocadillos
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-free
       TermType: 0
@@ -817,7 +1111,10 @@ MonoBehaviour:
       Languages:
       - Free
       - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u043E"
-      Flags: 0000
+      - Gratuit
+      - Frei
+      - Gratis
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-per-week
       TermType: 0
@@ -825,7 +1122,10 @@ MonoBehaviour:
       Languages:
       - per week
       - "\u0432 \u043D\u0435\u0434\u0435\u043B\u044E"
-      Flags: 0000
+      - par semaine
+      - pro Woche
+      - por semana
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-allminers
       TermType: 0
@@ -835,7 +1135,11 @@ MonoBehaviour:
       - "\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0435 \u0440\u043E\u0437\u0435\u0442\u043A\u0438
         \u0443\u0441\u043A\u043E\u0440\u044F\u044E\u0442\u0441\u044F \u0432 \u0437\u0430\u0440\u0430\u0431\u043E\u0442\u043A\u0435
         \u043D\u0430 200% \u043D\u0430 1 \u043C\u0438\u043D\u0443\u0442\u0443"
-      Flags: 0000
+      - "Les prises actives sont acc\xE9l\xE9r\xE9es dans les b\xE9n\xE9fices de
+        200% pendant 1 minute"
+      - "Aktive Sockeln werden in der Gewinne f\xFCr 1 Minute um 200% beschleunigt"
+      - Los enchufes activos se aceleran en ganancias en un 200% durante 1 minuto
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-1-miner level
       TermType: 0
@@ -844,7 +1148,10 @@ MonoBehaviour:
       - +1 miner level on the box
       - "1 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430
         \u0441 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
-      Flags: 0000
+      - "+1 niveau mineur sur la bo\xEEte"
+      - +1 Bergmann -Level auf der Box
+      - +1 nivel de minero en la caja
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-box-fills-15-min
       TermType: 0
@@ -854,7 +1161,10 @@ MonoBehaviour:
       - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
         \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
         15 \u043C\u0438\u043D\u0443\u0442"
-      Flags: 0000
+      - "La bo\xEEte se remplit plus rapidement pendant 15 minutes"
+      - "Box f\xFCllt sich 15 Minuten schneller aus"
+      - "La caja se llena m\xE1s r\xE1pido durante 15 minutos"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-4-hours
       TermType: 0
@@ -862,7 +1172,10 @@ MonoBehaviour:
       Languages:
       - Forward 4 hours
       - "\u0432\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 4 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - En avant 4 heures
+      - "4 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 4 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-12-hours
       TermType: 0
@@ -870,7 +1183,10 @@ MonoBehaviour:
       Languages:
       - Forward 12 hours
       - "\u0412\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 12 \u0447\u0430\u0441\u043E\u0432"
-      Flags: 0000
+      - Avancer 12 heures
+      - "12 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 12 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-24-hours
       TermType: 0
@@ -878,7 +1194,10 @@ MonoBehaviour:
       Languages:
       - Forward 24 hours
       - "\u0412\u043F\u0435\u0440\u0435\u0434 \u043D\u0430 24 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - Avancer 24 heures
+      - "24 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 24 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-mini
       TermType: 0
@@ -886,7 +1205,10 @@ MonoBehaviour:
       Languages:
       - Mini
       - "\u041C\u0438\u043D\u0438"
-      Flags: 0000
+      - Mini
+      - Mini
+      - Mini
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-mining-4-hours
       TermType: 0
@@ -896,7 +1218,11 @@ MonoBehaviour:
       - "\u0414\u043E\u0431\u044B\u0447\u0430 \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
         \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
         \u0432 4 \u0440\u0430\u0437\u0430 \u0437\u0430 4 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - L'exploitation de tous les mineurs augmente de 4 fois pendant 4 heures
+      - "Der Bergbau Alle Bergleute steigen f\xFCr 4 Stunden um das 4 -fache um 4
+        Stunden"
+      - "Miner\xEDa Todos los mineros aumentan en 4 veces durante 4 horas"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-per-seconds
       TermType: 0
@@ -904,7 +1230,10 @@ MonoBehaviour:
       Languages:
       - per seconds
       - "\u0432 \u0441\u0435\u043A\u0443\u043D\u0434\u0443"
-      Flags: 0000
+      - par seconde
+      - pro Sekunden
+      - por segundo
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-need-update
       TermType: 0
@@ -913,7 +1242,10 @@ MonoBehaviour:
       - You need to update the application
       - "\u041D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C
         \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435"
-      Flags: 0000
+      - "Vous devez mettre \xE0 jour l'application"
+      - "Sie m\xFCssen die Anwendung aktualisieren"
+      - "Necesita actualizar la aplicaci\xF3n"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-update
       TermType: 0
@@ -921,7 +1253,10 @@ MonoBehaviour:
       Languages:
       - Update
       - "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C"
-      Flags: 0000
+      - "Mise \xE0 jour"
+      - Aktualisieren
+      - Actualizar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-balance
       TermType: 0
@@ -929,7 +1264,10 @@ MonoBehaviour:
       Languages:
       - Game Balance
       - "\u0418\u0433\u0440\u043E\u0432\u043E\u0439 \u0431\u0430\u043B\u0430\u043D\u0441"
-      Flags: 0000
+      - "\xC9quilibre du jeu"
+      - Spielbilanz
+      - Equilibrio del juego
+      Flags: 0000000000
       Languages_Touch: []
     - Term: button-navigate
       TermType: 0
@@ -937,7 +1275,10 @@ MonoBehaviour:
       Languages:
       - Navigate
       - "\u041F\u0435\u0440\u0435\u0439\u0442\u0438"
-      Flags: 0000
+      - Naviguer
+      - Navigieren
+      - Navegar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-shopclose
       TermType: 0
@@ -949,7 +1290,13 @@ MonoBehaviour:
       - "\u0414\u043E\u0441\u0442\u0443\u043F \u0432 \u043C\u0430\u0433\u0430\u0437\u0438\u043D
         \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 \u0437\u0430\u043A\u0440\u044B\u0442.\n\u0421\u043E\u0431\u0435\u0440\u0438
         \u043C\u0430\u0439\u043D\u0435\u0440 7 \u0443\u0440\u043E\u0432\u043D\u044F."
-      Flags: 0000
+      - "L'acc\xE8s au magasin de mineurs est ferm\xE9.\nCollectez un mineur de niveau
+        7."
+      - "Der Zugang zum Bergmann -Gesch\xE4ft ist geschlossen.\nSammeln Sie einen
+        Bergmann der Stufe 7."
+      - "El acceso a la tienda de mineros est\xE1 cerrado.\nRecoge un minero de nivel
+        7."
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-serverwork
       TermType: 0
@@ -959,7 +1306,10 @@ MonoBehaviour:
       - "\u041D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 \u0432\u0435\u0434\u0443\u0442\u0441\u044F
         \u0442\u0435\u0445. \u0440\u0430\u0431\u043E\u0442\u044B, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435
         \u0437\u0430\u0439\u0442\u0438 \u043F\u043E\u0437\u0436\u0435"
-      Flags: 0000
+      - "Mise \xE0 jour du serveur, r\xE9essayer plus tard"
+      - "Server -Update, versuchen Sie es sp\xE4ter erneut"
+      - "Actualizaci\xF3n del servidor, vuelva a intentarlo m\xE1s tarde"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-reg
       TermType: 0
@@ -967,7 +1317,10 @@ MonoBehaviour:
       Languages:
       - Registration
       - "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F"
-      Flags: 0000
+      - Inscription
+      - Anmeldung
+      - Registro
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-already
       TermType: 0
@@ -975,7 +1328,10 @@ MonoBehaviour:
       Languages:
       - Already have an account?
       - "\u0423\u0436\u0435 \u0435\u0441\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442?"
-      Flags: 0000
+      - "Vous avez d\xE9j\xE0 un compte?"
+      - Sie haben bereits ein Konto?
+      - "\xBFYa tienes una cuenta?"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text_your_email
       TermType: 0
@@ -983,7 +1339,10 @@ MonoBehaviour:
       Languages:
       - Your e-mail
       - "\u0412\u0430\u0448 e-mail"
-      Flags: 0000
+      - Votre e-mail
+      - Deine E-Mail
+      - "Tu correo electr\xF3nico"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-login
       TermType: 0
@@ -991,7 +1350,10 @@ MonoBehaviour:
       Languages:
       - Log in
       - "\u0412\u043E\u0439\u0442\u0438"
-      Flags: 0000
+      - Connexion
+      - Anmeldung
+      - Acceso
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-logout
       TermType: 0
@@ -999,7 +1361,10 @@ MonoBehaviour:
       Languages:
       - Log out
       - "\u0412\u044B\u0439\u0442\u0438"
-      Flags: 0000
+      - "Se d\xE9connecter"
+      - Ausloggen
+      - "Cerrar sesi\xF3n"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-create
       TermType: 0
@@ -1007,7 +1372,10 @@ MonoBehaviour:
       Languages:
       - Create an account
       - "\u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442"
-      Flags: 0000
+      - "Cr\xE9er un compte"
+      - Ein Konto erstellen
+      - Crea una cuenta
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-forgot
       TermType: 0
@@ -1015,7 +1383,10 @@ MonoBehaviour:
       Languages:
       - Forgot your password?
       - "\u0417\u0430\u0431\u044B\u043B\u0438 \u043F\u0430\u0440\u043E\u043B\u044C?"
-      Flags: 0000
+      - "Mot de passe oubli\xE9?"
+      - Haben Sie Ihr Passwort vergessen?
+      - "\xBFOlvidaste tu contrase\xF1a?"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-noakk
       TermType: 0
@@ -1023,7 +1394,10 @@ MonoBehaviour:
       Languages:
       - Do you not have an account?
       - "\u0423 \u0432\u0430\u0441 \u043D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430?"
-      Flags: 0000
+      - Vous n'avez pas de compte?
+      - Haben Sie kein Konto?
+      - "\xBFNo tienes una cuenta?"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-refcode
       TermType: 0
@@ -1032,7 +1406,10 @@ MonoBehaviour:
       - Referral code (optional)
       - "\u0420\u0435\u0444\u0435\u0440\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0434
         (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"
-      Flags: 0000
+      - "Code de r\xE9f\xE9rence (facultatif)"
+      - Empfehlungscode (optional)
+      - "C\xF3digo de Referencia (Opcional)"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: rext-next
       TermType: 0
@@ -1040,7 +1417,10 @@ MonoBehaviour:
       Languages:
       - Next
       - "\u0414\u0430\u043B\u0435\u0435"
-      Flags: 0000
+      - Suivant
+      - "N\xE4chste"
+      - "Pr\xF3ximo"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-enter
       TermType: 0
@@ -1048,7 +1428,10 @@ MonoBehaviour:
       Languages:
       - Enter
       - "\u0412\u0445\u043E\u0434"
-      Flags: 0000
+      - Entrer
+      - Eingeben
+      - Ingresar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-lock
       TermType: 0
@@ -1056,17 +1439,23 @@ MonoBehaviour:
       Languages:
       - Access is closed
       - "\u0414\u043E\u0441\u0442\u0443\u043F \u0437\u0430\u043A\u0440\u044B\u0442"
-      Flags: 0000
+      - "L'acc\xE8s est ferm\xE9"
+      - Der Zugang ist geschlossen
+      - "El acceso est\xE1 cerrado"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: text-15lvl
       TermType: 0
       Description: 
       Languages:
       - To get it, unlock the 15th level of the miner
-      - "\u0414\u043B\u044F \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F
+      - "\u0414\u043B\u044F \u0434\u043E\u0441\u0442\u0443\u043F\u0430 \u043A \u0432\u044B\u0432\u043E\u0434\u0443
         \u0440\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u0443\u0439\u0442\u0435
         15\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430"
-      Flags: 0000
+      - "Pour l'obtenir, d\xE9bloquez le 15e niveau du mineur"
+      - Um es zu bekommen, schalte die 15. Ebene des Bergmanns frei
+      - "Para obtenerlo, desbloquee el 15\xBA nivel del minero"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: mission_0
       TermType: 0
@@ -1075,7 +1464,10 @@ MonoBehaviour:
       - Collect the miners of {1} level {0} times
       - "C\u043E\u0431\u0435\u0440\u0438\u0442\u0435 \u043C\u0430\u0439\u043D\u0435\u0440
         {1} \u0443\u0440\u043E\u0432\u043D\u044F {0} \u0440\u0430\u0437"
-      Flags: 0000
+      - Collectez les mineurs du niveau {1} {0} fois
+      - Sammeln Sie die Bergleute von {1} Level {0} mal
+      - Recoge los mineros de {1} nivel {0} veces
+      Flags: 0000000000
       Languages_Touch: []
     - Term: mission_1
       TermType: 0
@@ -1085,7 +1477,10 @@ MonoBehaviour:
       - "\u041F\u043E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0432 \u0440\u043E\u0437\u0435\u0442\u043A\u0443
         \u043C\u0430\u0439\u043D\u0435\u0440 {1} \u0443\u0440\u043E\u0432\u043D\u044F
         {0} \u0440\u0430\u0437"
-      Flags: 0000
+      - Mettez le mineur de niveau {1} dans la prise {0} fois
+      - Legen Sie den Miner {1} -Pegel in die Socket {0} Zeiten
+      - "Pon el minero de nivel {1} \u200B\u200Ben el enchufe {0} veces"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_1
       TermType: 0
@@ -1096,7 +1491,10 @@ MonoBehaviour:
         \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
         \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
         \u0432 2 \u0440\u0430\u0437\u0430 \u043D\u0430 15 \u0441\u0435\u043A\u0443\u043D\u0434"
-      Flags: 0000
+      - L'exploitation de tous les mineurs augmente de 2 fois pendant 15 minutes
+      - Der Bergbau aller Bergleute steigt 15 Minuten lang um das 2 -fache
+      - "La miner\xEDa de todos los mineros aumenta en 2 veces durante 15 minutos"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_2
       TermType: 0
@@ -1106,7 +1504,10 @@ MonoBehaviour:
       - "\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0441\u0442\u0430\u043D\u043E\u0432\u044F\u0442\u0441\u044F
         \u0444\u0443\u043D\u043A\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u043C\u0438
         \u043D\u0430 2 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - Tous les emplacements deviennent fonctionnels pendant 2 heures
+      - "Alle Slots werden 2 Stunden lang funktionsf\xE4hig"
+      - Todas las ranuras se vuelven funcionales durante 2 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_3
       TermType: 0
@@ -1115,7 +1516,10 @@ MonoBehaviour:
       - +1 miner level on the box
       - "+1 \u0443\u0440\u043E\u0432\u0435\u043D\u044C \u043C\u0430\u0439\u043D\u0435\u0440\u0430
         \u0438\u0437 \u043A\u043E\u0440\u043E\u0431\u043A\u0438"
-      Flags: 0000
+      - "+1 niveau mineur sur la bo\xEEte"
+      - +1 Bergmann -Level auf der Box
+      - +1 nivel de minero en la caja
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_4
       TermType: 0
@@ -1125,7 +1529,10 @@ MonoBehaviour:
       - "\u041A\u043E\u0440\u043E\u0431\u043A\u0430 \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442\u0441\u044F
         \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
         15 \u043C\u0438\u043D\u0443\u0442"
-      Flags: 0000
+      - "La bo\xEEte se remplit plus rapidement pendant 15 minutes"
+      - "Box f\xFCllt sich 15 Minuten schneller aus"
+      - "La caja se llena m\xE1s r\xE1pido durante 15 minutos"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_5
       TermType: 0
@@ -1134,7 +1541,10 @@ MonoBehaviour:
       - Forward 4 hours
       - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
         \u043D\u0430 4 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - En avant 4 heures
+      - "4 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 4 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_6
       TermType: 0
@@ -1143,7 +1553,10 @@ MonoBehaviour:
       - Forward 12 hours
       - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
         \u043D\u0430 12 \u0447\u0430\u0441\u043E\u0432"
-      Flags: 0000
+      - Avancer 12 heures
+      - "12 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 12 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_7
       TermType: 0
@@ -1152,7 +1565,10 @@ MonoBehaviour:
       - Forward 24 hours
       - "\u041F\u0440\u043E\u043C\u043E\u0442\u0430\u0442\u044C \u0432\u0440\u0435\u043C\u044F
         \u043D\u0430 24 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - Avancer 24 heures
+      - "24 Stunden vorw\xE4rts vorw\xE4rts"
+      - Avance 24 horas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: upgrades_8
       TermType: 0
@@ -1163,7 +1579,10 @@ MonoBehaviour:
         \u0432\u0441\u0435\u0445 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432
         \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
         \u0432 4 \u0440\u0430\u0437\u0430 \u043D\u0430 4 \u0447\u0430\u0441\u0430"
-      Flags: 0000
+      - L'exploitation de tous les mineurs augmente de 4 fois pendant 4 heures
+      - "Der Bergbau aller Bergleute steigt 4 -mal f\xFCr 4 Stunden um 4 Mal"
+      - "La miner\xEDa de todos los mineros aumenta en 4 veces durante 4 horas"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: referral_title
       TermType: 0
@@ -1172,7 +1591,10 @@ MonoBehaviour:
       - Your referral code
       - "\u0412\u0430\u0448 \u0440\u0435\u0444\u0435\u0440\u0440\u0430\u043B\u044C\u043D\u044B\u0439
         \u043A\u043E\u0434"
-      Flags: 0000
+      - "Votre code de r\xE9f\xE9rence"
+      - Ihr Empfehlungscode
+      - "Su c\xF3digo de referencia"
+      Flags: 0000000000
       Languages_Touch: []
     - Term: referral_copy
       TermType: 0
@@ -1180,7 +1602,10 @@ MonoBehaviour:
       Languages:
       - Copy
       - "\u041A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u044C"
-      Flags: 0000
+      - Copie
+      - Kopieren
+      - Copiar
+      Flags: 0000000000
       Languages_Touch: []
     - Term: referral_total
       TermType: 0
@@ -1188,7 +1613,10 @@ MonoBehaviour:
       Languages:
       - Total referrals
       - "\u0412\u0441\u0435\u0433\u043E \u0440\u0435\u0444\u0435\u0440\u0440\u0430\u043B\u043E\u0432"
-      Flags: 0000
+      - "R\xE9f\xE9rences totales"
+      - "Gesamt\xFCberweisungen"
+      - Referencias totales
+      Flags: 0000000000
       Languages_Touch: []
     - Term: referral_received
       TermType: 0
@@ -1196,7 +1624,10 @@ MonoBehaviour:
       Languages:
       - Gems received
       - "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u0433\u0435\u043C\u043E\u0432"
-      Flags: 0000
+      - "Gemmes re\xE7us"
+      - "Edelsteine \u200B\u200Berhalten"
+      - Gemas recibidas
+      Flags: 0000000000
       Languages_Touch: []
     - Term: alert_email_confirmation
       TermType: 0
@@ -1206,7 +1637,22 @@ MonoBehaviour:
       - "\u041F\u0438\u0441\u044C\u043C\u043E \u0441 \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043D\u0438\u0435\u043C
         \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E
         \u043D\u0430 \u0432\u0430\u0448 e-mail"
-      Flags: 0000
+      - "Le message de confirmation par e-mail est envoy\xE9 \xE0 votre e-mail"
+      - "E-Mail-Best\xE4tigungsnachricht wird an Ihre E-Mail gesendet"
+      - "El mensaje de confirmaci\xF3n de correo electr\xF3nico se env\xEDa a su
+        correo electr\xF3nico"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: text-loading
+      TermType: 0
+      Description: 
+      Languages:
+      - Loading...
+      - "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
+      - Chargement...
+      - Wird geladen...
+      - Cargando...
+      Flags: 0000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
@@ -1218,12 +1664,21 @@ MonoBehaviour:
     - Name: Russian
       Code: ru
       Flags: 0
+    - Name: French
+      Code: fr
+      Flags: 0
+    - Name: German
+      Code: de
+      Flags: 0
+    - Name: Spain
+      Code: eu-ES
+      Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzwlVpYk27r4vMxnbr6RJ2vvpAl5Ei1CSIIK2bmLe5auhtC3lksq0xlRN7ZCD50yWY1/exec
     Google_SpreadsheetKey: 1hDvrBFytpyWg59ko_UZjcNdFHHFRjn0pqcbflECATJs
     Google_SpreadsheetName: I2Loc Crypto Nft Game Localization
-    Google_LastUpdatedVersion: 1683864321372
+    Google_LastUpdatedVersion: 1683988239180
     Google_Password: A0PchS1m
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd2f38c563828458c8e900006c010cd2, type: 3}
-  m_Name: CASSettingsAndroid
+  m_Name: CASSettingsiOS
   m_EditorClassIdentifier: 
   testAdMode: 0
   managerIds:
-  - com.mogames.get.crypto.nft.game
-  allowedAdFlags: 6
-  audienceTagged: 2
+  - demo
+  allowedAdFlags: 0
+  audienceTagged: 1
   bannerSize: 0
   bannerRefresh: 30
-  interstitialInterval: 60
+  interstitialInterval: 30
   loadingMode: 2
   debugMode: 0
   trackLocationEnabled: 0

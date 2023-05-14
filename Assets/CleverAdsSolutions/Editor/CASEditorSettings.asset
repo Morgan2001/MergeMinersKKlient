@@ -15,7 +15,7 @@ MonoBehaviour:
   autoCheckForUpdatesEnabled: 1
   delayAppMeasurementGADInit: 1
   buildPreprocessEnabled: 1
-  mostPopularCountryOfUsers: BR
+  mostPopularCountryOfUsers: US
   multiDexEnabled: 1
   permissionAdId: 0
   exoPlayerIncluded: 1
