@@ -38,6 +38,7 @@ namespace UI.Popups
         [SerializeField] private BonusPopup _minersBonusPopup;
 
         private PopupsConnector _popupsConnector;
+        private AlertConnector _alertConnector;
         private RelocateConnector _relocateConnector;
         private FreeGemConnector _freeGemConnector;
         private WheelConnector _wheelConnector;
@@ -52,6 +53,7 @@ namespace UI.Popups
         [Inject]
         private void Setup(
             PopupsConnector popupsConnector,
+            AlertConnector alertConnector,
             RelocateConnector relocateConnector,
             FreeGemConnector freeGemConnector, 
             WheelConnector wheelConnector,
@@ -62,6 +64,7 @@ namespace UI.Popups
             TabSwitcher tabSwitcher)
         {
             _popupsConnector = popupsConnector;
+            _alertConnector = alertConnector;
             _relocateConnector = relocateConnector;
             _freeGemConnector = freeGemConnector;
             _wheelConnector = wheelConnector;
@@ -81,7 +84,7 @@ namespace UI.Popups
             _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
             _popupsConnector.EmailPopupEvent.Subscribe(OnEmail);
             _popupsConnector.BalancePopupEvent.Subscribe(OnBalance);
-            _popupsConnector.AlertPopupEvent.Subscribe(OnAlert);
+            _alertConnector.AlertPopupEvent.Subscribe(OnAlert);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
@@ -242,7 +245,7 @@ namespace UI.Popups
                 
                 var text = LocalizationManager.GetTranslation("alert_email_confirmation");
                 var label = LocalizationManager.GetTranslation("button-close");
-                _popupsConnector.ShowAlert(text, label, null);
+                _alertConnector.ShowAlert(text, label, null);
                 
             }).AddTo(_emailPopup);
             _emailPopup.ForgetEvent.Subscribe(_emailConnector.Forget).AddTo(_emailPopup);

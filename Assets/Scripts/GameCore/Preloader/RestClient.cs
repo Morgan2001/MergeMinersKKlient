@@ -62,6 +62,7 @@ namespace GameCore.Preloader
         {
             try
             {
+                uwr.timeout = 3;
                 var result = await uwr.SendWebRequest().ToUniTask();
                 if (result.result != UnityWebRequest.Result.Success)
                 {
@@ -84,6 +85,7 @@ namespace GameCore.Preloader
         {
             try
             {
+                uwr.timeout = 3;
                 var result = await uwr.SendWebRequest().ToUniTask();
                 if (result.result != UnityWebRequest.Result.Success)
                 {
