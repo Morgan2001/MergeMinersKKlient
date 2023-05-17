@@ -13,14 +13,20 @@ namespace UI.Popups
 
         private IPopup _currentPopup;
 
+        private DisposableCarrier _carrier = new();
+
         [Inject]
         private void Setup(AlertConnector alertConnector)
         {
             _alertConnector = alertConnector;
-            
-            _alertConnector.AlertPopupEvent.Subscribe(OnAlert);
+            _alertConnector.AlertPopupEvent.Subscribe(OnAlert).AddTo(_carrier);
         }
-        
+
+        private void OnDestroy()
+        {
+            _carrier.Dispose();
+        }
+
         private void OnAlert(AlertData data)
         {
             var viewModel = new AlertPopupViewModel(data.Text, data.ButtonLabel, data.ButtonAction);
