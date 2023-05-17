@@ -40,7 +40,7 @@ namespace GameCore.Preloader
             {
                 var text = LocalizationManager.GetTranslation("alert_outdated");
                 var label = LocalizationManager.GetTranslation("alert_upgrade");
-                _alertConnector.ShowAlert(text, label, () => Application.OpenURL(Constants.GooglePlayUrl));
+                _alertConnector.ShowAlert(text, label, () => Application.OpenURL(Constants.GooglePlayLink));
                 return;
             }
             
