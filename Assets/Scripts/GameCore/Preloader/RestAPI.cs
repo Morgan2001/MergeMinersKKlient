@@ -60,9 +60,9 @@ namespace GameCore.Preloader
             });
         }
         
-        public async Task<ConfigData> GetConfig(string token)
+        public async Task<ConfigSummary> GetConfig(string token)
         {
-            return await _restClient.Get<ConfigData>($"game/{token}/getConfig");
+            return await _restClient.Get<ConfigSummary>($"game/{token}/getConfig");
         }
         
         public async Task<GameState> GetState(string token)
