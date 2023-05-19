@@ -12,41 +12,44 @@ namespace UI.TopPanel
     {
         [SerializeField] private Button _settingsButton;
         [SerializeField] private ResourcesView _resourcesView;
-        [SerializeField] private FreeGemView _freeGemView;
-        [SerializeField] private RelocateView _relocateView;
-        
-        [SerializeField] private Button _balanceButton;
+        [SerializeField] private FilledButtonView _freeGemView;
+        [SerializeField] private FilledButtonView _relocateView;
+        [SerializeField] private FilledButtonView _balanceView;
         
         private PlayerConnector _playerConnector;
         private FreeGemConnector _freeGemConnector;
         private RelocateConnector _relocateConnector;
+        private BalanceConnector _balanceConnector;
         private PopupsConnector _popupsConnector;
         private TabSwitcher _tabSwitcher;
 
         private ResourcesViewModel _resourcesViewModel;
-        private FreeGemViewModel _freeGemViewModel;
-        private RelocateViewModel _relocateViewModel;
+        private FilledButtonViewModel _freeGemViewModel;
+        private FilledButtonViewModel _relocateViewModel;
+        private FilledButtonViewModel _balanceViewModel;
 
         [Inject]
         private void Setup(
             PlayerConnector playerConnector, 
             FreeGemConnector freeGemConnector, 
             RelocateConnector relocateConnector,
+            BalanceConnector balanceConnector,
             PopupsConnector popupsConnector,
             TabSwitcher tabSwitcher)
         {
             _playerConnector = playerConnector;
             _freeGemConnector = freeGemConnector;
             _relocateConnector = relocateConnector;
+            _balanceConnector = balanceConnector;
             _popupsConnector = popupsConnector;
             _tabSwitcher = tabSwitcher;
 
             SetupResources();
             SetupFreeGems();
             SetupRelocator();
+            SetupBalance();
 
             _settingsButton.Subscribe(_popupsConnector.ShowEmail);
-            _balanceButton.Subscribe(_popupsConnector.ShowBalance);
         }
 
         private void SetupResources()
@@ -62,7 +65,7 @@ namespace UI.TopPanel
 
         private void SetupFreeGems()
         {
-            _freeGemViewModel = new FreeGemViewModel();
+            _freeGemViewModel = new FilledButtonViewModel();
             _freeGemView.Bind(_freeGemViewModel);
             
             _freeGemConnector.Progress.Subscribe(_freeGemViewModel.SetProgress).AddTo(_freeGemView);
@@ -71,11 +74,20 @@ namespace UI.TopPanel
 
         private void SetupRelocator()
         {
-            _relocateViewModel = new RelocateViewModel();
+            _relocateViewModel = new FilledButtonViewModel();
             _relocateView.Bind(_relocateViewModel);
             
             _relocateConnector.Progress.Bind(_relocateViewModel.SetProgress).AddTo(_relocateViewModel);
             _relocateViewModel.ButtonClickEvent.Subscribe(_popupsConnector.ShowRelocation).AddTo(_relocateViewModel);
+        }
+        
+        private void SetupBalance()
+        {
+            _balanceViewModel = new FilledButtonViewModel();
+            _balanceView.Bind(_balanceViewModel);
+            
+            _balanceConnector.Progress.Bind(_balanceViewModel.SetProgress).AddTo(_balanceViewModel);
+            _balanceViewModel.ButtonClickEvent.Subscribe(_popupsConnector.ShowBalance).AddTo(_balanceViewModel);
         }
     }
 }

@@ -66,6 +66,8 @@ namespace GameCore.Services
             where T : RestResponse
         {
             var response = await call.Invoke(_sessionData.Token);
+            if (response == null) return;
+            
             callback?.Invoke(response);
 
             if (_playerStateService.SetMoney(_sessionData.Token, response.Money))

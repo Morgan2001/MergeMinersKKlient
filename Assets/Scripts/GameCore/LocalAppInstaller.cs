@@ -34,6 +34,7 @@ namespace GameCore
             _container.RegisterSingleton<PlayerBoxConnector>();
             _container.RegisterSingleton<MinerFieldConnector>();
             _container.RegisterSingleton<RelocateConnector>();
+            _container.RegisterSingleton<BalanceConnector>();
             _container.RegisterSingleton<FreeGemConnector>();
             _container.RegisterSingleton<WheelConnector>();
             _container.RegisterSingleton<OfflineIncomeConnector>();

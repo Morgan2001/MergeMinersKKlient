@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using Utils;
 using Utils.MVVM;
 using Utils.Reactive;
 
 namespace UI.TopPanel
 {
-    public class RelocateView : View<RelocateViewModel>
+    public class FilledButtonView : View<FilledButtonViewModel>
     {
         [SerializeField] private Image _highlight;
         [SerializeField] private Image _progress;
         [SerializeField] private Button _button;
         
-        protected override void BindInner(RelocateViewModel vm)
+        protected override void BindInner(FilledButtonViewModel vm)
         {
             _vm.Progress.Bind(OnProgressUpdate).AddTo(this);
             
@@ -26,7 +25,7 @@ namespace UI.TopPanel
         }
     }
 
-    public class RelocateViewModel : ViewModel
+    public class FilledButtonViewModel : ViewModel
     {
         private readonly ReactiveProperty<float> _progress = new();
         public IReactiveProperty<float> Progress => _progress;

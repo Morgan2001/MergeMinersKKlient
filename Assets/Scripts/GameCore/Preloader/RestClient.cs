@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
+using Utils.Reactive;
 
 namespace GameCore.Preloader
 {
@@ -18,6 +19,9 @@ namespace GameCore.Preloader
         public static string BaseUrl => _baseUrl; 
         
         private readonly JsonSerializerSettings _settings;
+
+        private ReactiveEvent<Action> _disconnected = new();
+        public IReactiveSubscription<Action> Disconnected => _disconnected;
 
         public RestClient()
         {
@@ -77,6 +81,7 @@ namespace GameCore.Preloader
             }
             catch (Exception)
             {
+                _disconnected.Trigger(async () => await SendRequest(uwr));
                 return default;
             }
         }
@@ -98,6 +103,7 @@ namespace GameCore.Preloader
             }
             catch (Exception)
             {
+                _disconnected.Trigger(async () => await SendRequest(uwr));
                 return default;
             }
         }
