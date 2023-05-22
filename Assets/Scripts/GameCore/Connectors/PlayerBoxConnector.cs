@@ -22,7 +22,7 @@ namespace GameCore.Connectors
         private ReactiveProperty<float> _boxProgress = new();
         public IReactiveProperty<float> BoxProgress => _boxProgress;
 
-        private Action<RestResponse> _callback;
+        private Action _callback;
         
         public PlayerBoxConnector(
             SessionData sessionData,
@@ -74,7 +74,7 @@ namespace GameCore.Connectors
             _playerActionProxy.SpawnBox(_callback);
         }
 
-        private void OnSpawn(RestResponse response)
+        private void OnSpawn()
         {
             _callback = null;
         }

@@ -31,6 +31,7 @@ namespace UI.Popups
         [SerializeField] private EmailPopup _emailPopup;
         [SerializeField] private BalancePopup _balancePopup;
         [SerializeField] private AlertPopup _alertPopup;
+        [SerializeField] private NoInternetPopup _noInternetPopup;
         
         [SerializeField] private BonusPopup _chipBonusPopup;
         [SerializeField] private BonusPopup _flashBonusPopup;
@@ -84,7 +85,9 @@ namespace UI.Popups
             _popupsConnector.OfflineIncomePopupEvent.Subscribe(OnOfflineIncome);
             _popupsConnector.EmailPopupEvent.Subscribe(OnEmail);
             _popupsConnector.BalancePopupEvent.Subscribe(OnBalance);
+            
             _alertConnector.AlertPopupEvent.Subscribe(OnAlert);
+            _alertConnector.NoInternetPopupEvent.Subscribe(OnNoInternet);
             
             _tabSwitcher.SwitchTabEvent.Subscribe(OnSwitchTab);
         }
@@ -263,6 +266,12 @@ namespace UI.Popups
         {
             var viewModel = new AlertPopupViewModel(data.Text, data.ButtonLabel, data.ButtonAction);
             ShowPopup(_alertPopup, viewModel);
+        }
+        
+        private void OnNoInternet(NoInternetData data)
+        {
+            var viewModel = new NoInternetPopupViewModel(data.ReconnectAction);
+            ShowPopup(_noInternetPopup, viewModel);
         }
 
         private void MultiplyIncome(bool value)

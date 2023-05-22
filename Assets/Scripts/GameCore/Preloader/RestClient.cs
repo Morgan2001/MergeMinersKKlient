@@ -8,7 +8,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
-using Utils.Reactive;
 
 namespace GameCore.Preloader
 {
@@ -20,9 +19,6 @@ namespace GameCore.Preloader
         
         private readonly JsonSerializerSettings _settings;
 
-        private ReactiveEvent<Action> _disconnected = new();
-        public IReactiveSubscription<Action> Disconnected => _disconnected;
-
         public RestClient()
         {
             _settings = new JsonSerializerSettings
@@ -32,13 +28,13 @@ namespace GameCore.Preloader
             _settings.Converters.Add(new GameEventConverter());
         }
 
-        public async Task<T> Get<T>(string path)
+        public async Task<RestResponse<T>> Get<T>(string path)
         {
             Debug.Log(_baseUrl + path);
             return await SendRequest<T>(UnityWebRequest.Get(_baseUrl + path));
         }
         
-        public async Task<T> Post<T>(string path, Dictionary<string, object> data = null)
+        public async Task<RestResponse<T>> Post<T>(string path, Dictionary<string, object> data = null)
         {
             var parameters = data != null
                 ? new Dictionary<string, string>(data.Select(x => new KeyValuePair<string, string>(x.Key, x.Value.ToString())))
@@ -47,13 +43,13 @@ namespace GameCore.Preloader
             return await SendRequest<T>(UnityWebRequest.Post(_baseUrl + path, parameters));
         }
         
-        public async Task<bool> Get(string path)
+        public async Task<RestResponse> Get(string path)
         {
             Debug.Log(_baseUrl + path);
             return await SendRequest(UnityWebRequest.Get(_baseUrl + path));
         }
         
-        public async Task<bool> Post(string path, Dictionary<string, object> data = null)
+        public async Task<RestResponse> Post(string path, Dictionary<string, object> data = null)
         {
             var parameters = data != null
                 ? new Dictionary<string, string>(data.Select(x => new KeyValuePair<string, string>(x.Key, x.Value.ToString())))
@@ -62,7 +58,7 @@ namespace GameCore.Preloader
             return await SendRequest(UnityWebRequest.Post(_baseUrl + path, parameters));
         }
 
-        private async Task<T> SendRequest<T>(UnityWebRequest uwr)
+        private async Task<RestResponse<T>> SendRequest<T>(UnityWebRequest uwr)
         {
             try
             {
@@ -71,22 +67,21 @@ namespace GameCore.Preloader
                 if (result.result != UnityWebRequest.Result.Success)
                 {
                     result.Dispose();
-                    return default;
+                    return new RestResponse<T>(RestResultType.Error);
                 }
                 
                 var json = result.downloadHandler.text;
                 Debug.Log(json);
                 result.Dispose();
-                return JsonConvert.DeserializeObject<T>(json, _settings);
+                return new RestResponse<T>(RestResultType.Success, JsonConvert.DeserializeObject<T>(json, _settings));
             }
             catch (Exception)
             {
-                _disconnected.Trigger(async () => await SendRequest(uwr));
-                return default;
+                return new RestResponse<T>(RestResultType.Disconnected);
             }
         }
         
-        private async Task<bool> SendRequest(UnityWebRequest uwr)
+        private async Task<RestResponse> SendRequest(UnityWebRequest uwr)
         {
             try
             {
@@ -95,17 +90,47 @@ namespace GameCore.Preloader
                 if (result.result != UnityWebRequest.Result.Success)
                 {
                     result.Dispose();
-                    return default;
+                    return new RestResponse(RestResultType.Error);
                 }
                 
                 result.Dispose();
-                return true;
+                return new RestResponse(RestResultType.Success);
             }
             catch (Exception)
             {
-                _disconnected.Trigger(async () => await SendRequest(uwr));
-                return default;
+                return new RestResponse(RestResultType.Disconnected);
             }
         }
+    }
+    
+    public class RestResponse
+    {
+        public RestResultType ResultType { get; }
+
+        public RestResponse(RestResultType resultType)
+        {
+            ResultType = resultType;
+        }
+    }
+
+    public class RestResponse<T> : RestResponse
+    {
+        public T Result { get; }
+        
+        public RestResponse(RestResultType resultType, T result) : base(resultType)
+        {
+            Result = result;
+        }
+        
+        public RestResponse(RestResultType resultType) : base(resultType)
+        {
+        }
+    }
+
+    public enum RestResultType
+    {
+        Success,
+        Error,
+        Disconnected,
     }
 }

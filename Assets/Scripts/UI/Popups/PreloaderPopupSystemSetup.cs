@@ -8,6 +8,7 @@ namespace UI.Popups
     public class PreloaderPopupSystemSetup : MonoBehaviour
     {
         [SerializeField] private AlertPopup _alertPopup;
+        [SerializeField] private NoInternetPopup _noInternetPopup;
 
         private AlertConnector _alertConnector;
 
@@ -20,6 +21,7 @@ namespace UI.Popups
         {
             _alertConnector = alertConnector;
             _alertConnector.AlertPopupEvent.Subscribe(OnAlert).AddTo(_carrier);
+            _alertConnector.NoInternetPopupEvent.Subscribe(OnNoInternet).AddTo(_carrier);
         }
 
         private void OnDestroy()
@@ -31,6 +33,12 @@ namespace UI.Popups
         {
             var viewModel = new AlertPopupViewModel(data.Text, data.ButtonLabel, data.ButtonAction);
             ShowPopup(_alertPopup, viewModel);
+        }
+        
+        private void OnNoInternet(NoInternetData data)
+        {
+            var viewModel = new NoInternetPopupViewModel(data.ReconnectAction);
+            ShowPopup(_noInternetPopup, viewModel);
         }
 
         private void ShowPopup<T>(IPopup<T> popup, T data)

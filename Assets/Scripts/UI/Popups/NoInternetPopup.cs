@@ -17,7 +17,7 @@ namespace UI.Popups
 
         private void OnClick()
         {
-            _vm.ReconnectAction.Invoke();
+            _vm.ReconnectAction?.Invoke();
             Hide();
         }
     }

@@ -23,7 +23,7 @@ namespace GameCore.Connectors
             if (data.Password != data.PasswordConfirmation) return false;
 
             var result = await _restAPI.Register(_sessionData.Token, data.Email, data.Password, data.ReferralCode ?? "");
-            if (!result) return false;
+            if (result.ResultType != RestResultType.Success) return false;
             
             _sessionData.SetEmail(data.Email);
             return true;
@@ -34,7 +34,7 @@ namespace GameCore.Connectors
             if (string.IsNullOrEmpty(data.Email)) return;
             
             var result = await _restAPI.Recover(data.Email);
-            if (result)
+            if (result.ResultType == RestResultType.Success)
             {
                 _sessionData.SetEmail(data.Email);
             }
@@ -42,10 +42,10 @@ namespace GameCore.Connectors
 
         public async void Login(LoginData data)
         {
-            var token = await _restAPI.RestoreByEmail(SystemInfo.deviceUniqueIdentifier, data.Email, data.Password);
-            if (token != null)
+            var result = await _restAPI.RestoreByEmail(SystemInfo.deviceUniqueIdentifier, data.Email, data.Password);
+            if (result.ResultType == RestResultType.Success)
             {
-                _sessionData.SetToken(token);
+                _sessionData.SetToken(result.Result);
                 _sessionData.SetEmail(data.Email);
             }
         }

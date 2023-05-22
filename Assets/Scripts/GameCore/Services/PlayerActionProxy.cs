@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using GameCore.Commands;
+using GameCore.Connectors;
 using GameCore.Data;
 using GameCore.Events;
 using GameCore.Preloader;
@@ -33,6 +34,7 @@ namespace GameCore.Services
         private readonly BonusApplierService _bonusApplierService;
         private readonly EventDispatcherService _eventDispatcherService;
         private readonly MinerShopHelper _minerShopHelper;
+        private readonly AlertConnector _alertConnector;
 
         public PlayerActionProxy(
             SessionData sessionData,
@@ -46,7 +48,8 @@ namespace GameCore.Services
             PlayerSlotsStateService playerSlotsStateService,
             BonusApplierService bonusApplierService,
             EventDispatcherService eventDispatcherService,
-            MinerShopHelper minerShopHelper)
+            MinerShopHelper minerShopHelper,
+            AlertConnector alertConnector)
         {
             _sessionData = sessionData;
             _restAPI = restAPI;
@@ -60,15 +63,25 @@ namespace GameCore.Services
             _bonusApplierService = bonusApplierService;
             _eventDispatcherService = eventDispatcherService;
             _minerShopHelper = minerShopHelper;
+            _alertConnector = alertConnector;
         }
 
-        private async void RestCall<T>(Func<string, Task<T>> call, Action<T> callback = null)
-            where T : RestResponse
+        private async void RestCall<T>(Func<string, Task<RestResponse<T>>> call, Action<RestResponse<T>> callback = null)
+            where T : GameCoreResponse
         {
-            var response = await call.Invoke(_sessionData.Token);
-            if (response == null) return;
+            var responseResult = await call.Invoke(_sessionData.Token);
+            if (responseResult.ResultType == RestResultType.Disconnected)
+            {
+                _alertConnector.ShowNoInternet(() => callback?.Invoke(null));
+                return;
+            }
             
-            callback?.Invoke(response);
+            if (responseResult.ResultType != RestResultType.Success) return;
+            
+            callback?.Invoke(responseResult);
+            
+            var response = responseResult.Result;
+            if (response == null) return;
 
             if (_playerStateService.SetMoney(_sessionData.Token, response.Money))
             {
@@ -127,9 +140,9 @@ namespace GameCore.Services
             }
         }
 
-        public void SpawnBox(Action<RestResponse> callback)
+        public void SpawnBox(Action callback)
         {
-            RestCall(_restAPI.SpawnBox, callback);
+            RestCall(_restAPI.SpawnBox, _ => callback());
         }
         
         public void BuyMiner(int level, Currency currency)
@@ -185,9 +198,9 @@ namespace GameCore.Services
         {
             RestCall(token => _restAPI.SpinWheel(token, currency), response =>
             {
-                if (response.Success)
+                if (response.ResultType == RestResultType.Success)
                 {
-                    _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.SpinResult!));
+                    _eventDispatcherService.Dispatch(new SpinWheelEvent(_sessionData.Token, response.Result.SpinResult!));
                 }
             });
         }

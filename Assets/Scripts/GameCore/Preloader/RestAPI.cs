@@ -16,22 +16,22 @@ namespace GameCore.Preloader
             _restClient = restClient;
         }
         
-        public async Task<string> Version()
+        public async Task<RestResponse<string>> Version()
         {
             return await _restClient.Get<string>("version");
         }
         
-        public async Task<bool> Status()
+        public async Task<RestResponse<bool>> Status()
         {
             return await _restClient.Get<bool>("status");
         }
         
-        public async Task<LoginData> UserLogin(string deviceId)
+        public async Task<RestResponse<LoginData>> UserLogin(string deviceId)
         {
             return await _restClient.Get<LoginData>($"user/login?deviceId={deviceId}");
         }
 
-        public async Task<bool> Register(string token, string email, string password, string referralCode)
+        public async Task<RestResponse> Register(string token, string email, string password, string referralCode)
         {
             return await _restClient.Post("user/registerEmail", new Dictionary<string, object>
             {
@@ -42,15 +42,15 @@ namespace GameCore.Preloader
             });
         }
         
-        public async Task<bool> Recover(string email)
+        public async Task<RestResponse> Recover(string email)
         {
-            return await _restClient.Post($"user/recoverEmail", new Dictionary<string, object>
+            return await _restClient.Post("user/recoverEmail", new Dictionary<string, object>
             {
                 { "email", email }
             });
         }
         
-        public async Task<string> RestoreByEmail(string deviceId, string email, string password)
+        public async Task<RestResponse<string>> RestoreByEmail(string deviceId, string email, string password)
         {
             return await _restClient.Post<string>("user/restoreByEmail", new Dictionary<string, object>
             {
@@ -60,80 +60,80 @@ namespace GameCore.Preloader
             });
         }
         
-        public async Task<ConfigSummary> GetConfig(string token)
+        public async Task<RestResponse<ConfigSummary>> GetConfig(string token)
         {
             return await _restClient.Get<ConfigSummary>($"game/{token}/getConfig");
         }
         
-        public async Task<GameState> GetState(string token)
+        public async Task<RestResponse<GameState>> GetState(string token)
         {
             return await _restClient.Get<GameState>($"game/{token}/getState");
         }
         
-        public async Task<RestResponse> SpawnBox(string token)
+        public async Task<RestResponse<GameCoreResponse>> SpawnBox(string token)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/spawnBox");
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/spawnBox");
         }
 
-        public async Task<RestResponse> BuyMiner(string token, int level, Currency currency)
+        public async Task<RestResponse<GameCoreResponse>> BuyMiner(string token, int level, Currency currency)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/buyMiner", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/buyMiner", new Dictionary<string, object>
             {
                 { "level", level },
                 { "currency", currency },
             });
         }
         
-        public async Task<RestResponse> MergeMiners(string token, int slot1, int slot2)
+        public async Task<RestResponse<GameCoreResponse>> MergeMiners(string token, int slot1, int slot2)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/mergeMiners", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/mergeMiners", new Dictionary<string, object>
             {
                 { "slot1", slot1 },
                 { "slot2", slot2 },
             });
         }
         
-        public async Task<RestResponse> SwapMiners(string token, int slot1, int slot2)
+        public async Task<RestResponse<GameCoreResponse>> SwapMiners(string token, int slot1, int slot2)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/swapMiners", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/swapMiners", new Dictionary<string, object>
             {
                 { "slot1", slot1 },
                 { "slot2", slot2 },
             });
         }
         
-        public async Task<RestResponse> RemoveMiner(string token, int slot)
+        public async Task<RestResponse<GameCoreResponse>> RemoveMiner(string token, int slot)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/removeMiner", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/removeMiner", new Dictionary<string, object>
             {
                 { "slot", slot },
             });
         }
         
-        public async Task<RestResponse> GetFreeGem(string token)
+        public async Task<RestResponse<GameCoreResponse>> GetFreeGem(string token)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/getFreeGem");
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/getFreeGem");
         }
         
-        public async Task<RestResponse> Relocate(string token)
+        public async Task<RestResponse<GameCoreResponse>> Relocate(string token)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/relocate");
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/relocate");
         }
         
-        public async Task<RestResponse> SpeedUpBlueBox(string token)
+        public async Task<RestResponse<GameCoreResponse>> SpeedUpBlueBox(string token)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/speedUpBlueBox");
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/speedUpBlueBox");
         }
         
-        public async Task<RestResponse> UseBonus(string token, string id)
+        public async Task<RestResponse<GameCoreResponse>> UseBonus(string token, string id)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/useBonus", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/useBonus", new Dictionary<string, object>
             {
                 { "id", id }
             });
         }
         
-        public async Task<SpinResponse> SpinWheel(string token, Currency currency)
+        public async Task<RestResponse<SpinResponse>> SpinWheel(string token, Currency currency)
         {
             return await _restClient.Post<SpinResponse>($"game/{token}/spinWheel", new Dictionary<string, object>
             {
@@ -141,42 +141,42 @@ namespace GameCore.Preloader
             });
         }
 
-        public async Task<RestResponse> GetOfflineIncome(string token, bool multiply)
+        public async Task<RestResponse<GameCoreResponse>> GetOfflineIncome(string token, bool multiply)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/getOfflineIncome", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/getOfflineIncome", new Dictionary<string, object>
             {
                 { "multiply", multiply }
             });
         }
         
-        public async Task<RestResponse> BuyUpgrade(string token, string id)
+        public async Task<RestResponse<GameCoreResponse>> BuyUpgrade(string token, string id)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/buyUpgrade", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/buyUpgrade", new Dictionary<string, object>
             {
                 { "id", id }
             });
         }
         
-        public async Task<RestResponse> CollectMission(string token, string id)
+        public async Task<RestResponse<GameCoreResponse>> CollectMission(string token, string id)
         {
-            return await _restClient.Post<RestResponse>($"game/{token}/collectMission", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"game/{token}/collectMission", new Dictionary<string, object>
             {
                 { "id", id }
             });
         }
         
-        public async Task<RestResponse> Purchase(string token, string id, string purchaseToken)
+        public async Task<RestResponse<GameCoreResponse>> Purchase(string token, string id, string purchaseToken)
         {
-            return await _restClient.Post<RestResponse>($"purchase/{token}/purchase", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"purchase/{token}/purchase", new Dictionary<string, object>
             {
                 { "id", id },
                 { "purchaseToken", purchaseToken }
             });
         }
         
-        public async Task<RestResponse> Subscription(string token, string subscriptionId, string purchaseToken)
+        public async Task<RestResponse<GameCoreResponse>> Subscription(string token, string subscriptionId, string purchaseToken)
         {
-            return await _restClient.Post<RestResponse>($"purchase/{token}/subscription", new Dictionary<string, object>
+            return await _restClient.Post<GameCoreResponse>($"purchase/{token}/subscription", new Dictionary<string, object>
             {
                 { "subscriptionId", subscriptionId },
                 { "purchaseToken", purchaseToken }

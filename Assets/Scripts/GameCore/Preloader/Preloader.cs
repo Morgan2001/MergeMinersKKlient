@@ -24,34 +24,57 @@ namespace GameCore.Preloader
             _alertConnector = alertConnector;
         }
         
-        private async void Awake()
+        private void Awake()
         {
-            var status = await _restAPI.Status();
-            if (!status)
+            Connect();
+        }
+
+        private async void Connect()
+        {
+            var statusResult = await _restAPI.Status();
+            if (statusResult.ResultType == RestResultType.Disconnected)
             {
-                var text = LocalizationManager.GetTranslation("alert_server");
-                var label = LocalizationManager.GetTranslation("alert_button_exit");
-                _alertConnector.ShowAlert(text, label, Application.Quit);
+                _alertConnector.ShowNoInternet(Connect);
                 return;
             }
             
-            var version = await _restAPI.Version();
-            if (version != Constants.Version)
+            if (statusResult.ResultType == RestResultType.Success)
             {
-                var text = LocalizationManager.GetTranslation("alert_outdated");
-                var label = LocalizationManager.GetTranslation("alert_upgrade");
-                _alertConnector.ShowAlert(text, label, () => Application.OpenURL(Constants.GooglePlayLink));
-                return;
+                if (!statusResult.Result)
+                {
+                    var text = LocalizationManager.GetTranslation("alert_server");
+                    var label = LocalizationManager.GetTranslation("alert_button_exit");
+                    _alertConnector.ShowAlert(text, label, Application.Quit);
+                    return;
+                }
             }
             
-            var data = await _restAPI.UserLogin(SystemInfo.deviceUniqueIdentifier);
+            var versionResult = await _restAPI.Version();
+            if (versionResult.ResultType == RestResultType.Success)
+            {
+                if (versionResult.Result != Constants.Version)
+                {
+                    var text = LocalizationManager.GetTranslation("alert_outdated");
+                    var label = LocalizationManager.GetTranslation("alert_upgrade");
+                    _alertConnector.ShowAlert(text, label, () => Application.OpenURL(Constants.GooglePlayLink));
+                    return;
+                }
+            }
             
-            var configData = await _restAPI.GetConfig(data.Token);
-            var config = ConfigHelper.GetConfig(configData);
+            var userLoginResult = await _restAPI.UserLogin(SystemInfo.deviceUniqueIdentifier);
+            if (userLoginResult.ResultType != RestResultType.Success) return;
             
-            var gameState = await _restAPI.GetState(data.Token);
+            var token = userLoginResult.Result.Token;
+
+            var configResult = await _restAPI.GetConfig(token);
+            if (configResult.ResultType != RestResultType.Success) return;
             
-            _sessionData.Setup(data.Token, data.Email, config, gameState);
+            var config = ConfigHelper.GetConfig(configResult.Result);
+            
+            var gameStateResult = await _restAPI.GetState(token);
+            if (gameStateResult.ResultType != RestResultType.Success) return;
+            
+            _sessionData.Setup(token, userLoginResult.Result.Email, config, gameStateResult.Result);
             SceneManager.LoadScene("Gameplay");
         }
     }
