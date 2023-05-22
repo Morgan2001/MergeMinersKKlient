@@ -33,7 +33,7 @@ namespace GameCore.Connectors
         private void UpdateProgress()
         {
             var playerMiner = _playerMinersRepository.Get(_sessionData.Token);
-            var progress = playerMiner.MaxLevelAchieved / _gameConfig.BalanceUnlockLevel;
+            var progress = (float) playerMiner.MaxLevelAchieved / _gameConfig.BalanceUnlockLevel;
             _progress.Set(progress);
         }
     }
