@@ -10,17 +10,17 @@ namespace Analytics
 
             switch (e.Format)
             {
-                case AdType.Banner:
+                case "Banner":
                     {
                         revenue.AdType = YandexAppMetricaAdRevenue.AdTypeEnum.Banner;
                         break;
                     }
-                case AdType.Interstitial:
+                case "Interstitial":
                     {
                         revenue.AdType = YandexAppMetricaAdRevenue.AdTypeEnum.Interstitial;
                         break;
                     }
-                case AdType.Rewarded:
+                case "Rewarded":
                     {
                         revenue.AdType = YandexAppMetricaAdRevenue.AdTypeEnum.Rewarded;
                         break;
@@ -32,7 +32,7 @@ namespace Analytics
                     }
 
             }
-            revenue.AdNetwork = e.Network.ToString();
+            revenue.AdNetwork = e.Network;
 
             AppMetrica.Instance.ReportAdRevenue(revenue);
         }
@@ -40,13 +40,15 @@ namespace Analytics
     
     public class AdRevenueEvent
     {
-        public AdType Format;
-        public AdNetwork Network;
+        public string Platform;
+        public string Format;
+        public string Network;
         public string Currency;
         public double Value;
 
-        public AdRevenueEvent(AdType format, AdNetwork network, string currency, double value)
+        public AdRevenueEvent(string platform, string format, string network, string currency, string hzChto, double value)
         {
+            Platform = platform;
             Format = format;
             Network = network;
             Currency = currency;

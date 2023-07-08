@@ -19,7 +19,7 @@ MonoBehaviour:
   audienceTagged: 2
   bannerSize: 0
   bannerRefresh: 30
-  interstitialInterval: 60
+  interstitialInterval: 15
   loadingMode: 2
   debugMode: 0
   trackLocationEnabled: 0
