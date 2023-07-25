@@ -101,10 +101,12 @@ namespace Ads
             if (adMetaData.priceAccuracy == PriceAccuracy.Undisclosed) return;
 
             var e = new AdRevenueEvent(
-                adMetaData.type,
-                adMetaData.network,
-                "USD",
-                adMetaData.cpm / 1000 * 0.9
+            "CAS",
+            adMetaData.type.ToString(),
+            adMetaData.network.ToString(),
+            "USD",
+            "",
+            adMetaData.cpm / 1000 * 0.9
             );
             AnalyticsService.HandleAdRevenueEvent(e);
         }

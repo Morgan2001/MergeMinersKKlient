@@ -30,6 +30,9 @@ dependencyResolutionManagement {
         maven {
             url "https://android-sdk.is.com/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:31
         }
+        maven {
+            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AnalyticsDependencies.xml:18, Assets/Firebase/Editor/AppDependencies.xml:22
+        }
         mavenLocal()
 // Android Resolver Repos End
         flatDir {

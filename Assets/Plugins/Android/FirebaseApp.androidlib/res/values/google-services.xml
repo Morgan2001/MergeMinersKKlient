@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">415074263277</string>
+  <string name="google_storage_bucket" translatable="false">merge-miner-49fba.appspot.com</string>
+  <string name="project_id" translatable="false">merge-miner-49fba</string>
+  <string name="google_api_key" translatable="false">AIzaSyDoIte-Zio_H1_lPk_SiR9HxI5VLcWSXAU</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDoIte-Zio_H1_lPk_SiR9HxI5VLcWSXAU</string>
+  <string name="google_app_id" translatable="false">1:415074263277:android:86849a949603605058ece4</string>
+  <string name="default_web_client_id" translatable="false">415074263277-2ls3bv3pamjs80ub870oes11vcg5ql14.apps.googleusercontent.com</string>
+</resources>

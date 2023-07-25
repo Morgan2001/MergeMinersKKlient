@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415074263277",
+    "project_id": "merge-miner-49fba",
+    "storage_bucket": "merge-miner-49fba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415074263277:android:86849a949603605058ece4",
+        "android_client_info": {
+          "package_name": "com.mogames.get.crypto.nft.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415074263277-2ls3bv3pamjs80ub870oes11vcg5ql14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoIte-Zio_H1_lPk_SiR9HxI5VLcWSXAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415074263277-2ls3bv3pamjs80ub870oes11vcg5ql14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
