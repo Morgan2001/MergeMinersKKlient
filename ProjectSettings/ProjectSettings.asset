@@ -814,7 +814,7 @@ PlayerSettings:
     WebGL: TextMeshPro
     Windows Store Apps: TextMeshPro
     XboxOne: TextMeshPro
-    iPhone: TextMeshPro
+    iPhone: TextMeshPro;UNITASK_DOTWEEN_SUPPORT
     tvOS: TextMeshPro
   additionalCompilerArguments: {}
   platformArchitecture: {}
@@ -827,7 +827,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  selectedPlatform: 2
+  selectedPlatform: 3
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 0
