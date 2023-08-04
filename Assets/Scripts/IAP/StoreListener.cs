@@ -33,25 +33,25 @@ namespace IAP
 #if UNITY_EDITOR
             return PurchaseProcessingResult.Complete;
 #endif
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_IOS
             var receipt = purchaseEvent.purchasedProduct.receipt;
             var purchaseReceipt = JsonUtility.FromJson<GooglePurchaseReceipt>(receipt);
             var purchasePayload = JsonUtility.FromJson<GooglePurchasePayload>(purchaseReceipt.Payload);
             var purchaseData = JsonUtility.FromJson<GooglePurchaseData>(purchasePayload.json);
             
-            Debug.Log("ProcessPurchase");
+        
             switch (purchaseEvent.purchasedProduct.definition.type)
             {
                 case ProductType.Consumable:
                 case ProductType.NonConsumable:
                 {
-                    OnPurchase?.Invoke(new PurchaseResult(purchaseData.productId, purchaseData.purchaseToken));
+                        OnPurchase?.Invoke(new PurchaseResult(purchaseData.productId, purchaseData.purchaseToken));
                     break;
                 }
                 
                 case ProductType.Subscription:
                 {
-                    OnSubscription?.Invoke(new PurchaseResult(null, purchaseData.purchaseToken));
+                        OnSubscription?.Invoke(new PurchaseResult(null, purchaseData.purchaseToken));
                     break;
                 }
             }
