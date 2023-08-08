@@ -244,7 +244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
       propertyPath: ApiKey
-      value: 299a3f46-1296-407c-9c29-433bc2aec8e7
+      value: 3648a80f-2b45-46df-bc2e-56b0eeb69f17
+      objectReference: {fileID: 0}
+    - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
+      propertyPath: LocationTracking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
       propertyPath: SessionTimeoutSec

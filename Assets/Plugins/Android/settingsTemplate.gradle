@@ -19,19 +19,19 @@ dependencyResolutionManagement {
 // Android Resolver Repos Start
         def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
         maven {
-            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:8
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:10
         }
         maven {
-            url "https://artifact.bytedance.com/repository/pangle" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:21
+            url "https://artifact.bytedance.com/repository/pangle" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:10
         }
         maven {
-            url "https://sdk.tapjoy.com/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:26
+            url "https://sdk.tapjoy.com/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:10
         }
         maven {
-            url "https://android-sdk.is.com/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:31
+            url "https://android-sdk.is.com/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:10
         }
         maven {
-            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AnalyticsDependencies.xml:18, Assets/Firebase/Editor/AppDependencies.xml:22
+            url "https://cboost.jfrog.io/artifactory/chartboost-ads/" // Assets/CleverAdsSolutions/Editor/CASAndroidOptimalAdsDependencies.xml:10
         }
         mavenLocal()
 // Android Resolver Repos End

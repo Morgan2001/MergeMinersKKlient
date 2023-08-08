@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>950536672577-dn12bklqdb03ar5jhebe4bkkp3oe0huj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.950536672577-dn12bklqdb03ar5jhebe4bkkp3oe0huj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBcW1aKJhGIgEsucv1uZ4fH425Ja0VD0ns</string>
+	<key>GCM_SENDER_ID</key>
+	<string>950536672577</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mogames.get.crypto.nft.game</string>
+	<key>PROJECT_ID</key>
+	<string>merge-miner-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>merge-miner-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:950536672577:ios:5ac931b6aff107e72e7dc0</string>
+</dict>
+</plist>

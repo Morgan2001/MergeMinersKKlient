@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testAdMode: 0
   managerIds:
-  - demo
-  allowedAdFlags: 0
-  audienceTagged: 1
+  - com.mogames.get.crypto.nft.game
+  allowedAdFlags: 6
+  audienceTagged: 2
   bannerSize: 0
   bannerRefresh: 30
   interstitialInterval: 30

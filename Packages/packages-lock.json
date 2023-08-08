@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.cleversolutions.ads.unity": {
-      "version": "https://github.com/cleveradssolutions/CAS-Unity.git#3.1.5",
+      "version": "https://github.com/cleveradssolutions/CAS-Unity.git#3.2.3",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f6a5c69818493523552acf5c3511084ae7b47606"
+      "hash": "5323ece15f83ae8fa099b8602355ead2b2488d8d"
     },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
