@@ -2,8 +2,18 @@
   <packages>
     <package>com.cleveradssolutions:cas:3.2.3</package>
     <package>com.cleveradssolutions:cas-sdk:3.2.3</package>
+    <package>com.google.android.gms:play-services-base:18.2.0</package>
+    <package>com.google.firebase:firebase-analytics:21.3.0</package>
+    <package>com.google.firebase:firebase-analytics-unity:11.2.0</package>
+    <package>com.google.firebase:firebase-app-unity:11.2.0</package>
+    <package>com.google.firebase:firebase-common:20.3.3</package>
   </packages>
-  <files />
+  <files>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.2.0/firebase-analytics-unity-11.2.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.2.0/firebase-analytics-unity-11.2.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.2.0/firebase-app-unity-11.2.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.2.0/firebase-app-unity-11.2.0.pom</file>
+  </files>
   <settings>
     <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
     <setting name="bundleId" value="com.mogames.get.crypto.nft.game" />

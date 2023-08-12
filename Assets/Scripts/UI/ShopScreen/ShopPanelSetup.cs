@@ -14,9 +14,17 @@ namespace UI.ShopScreen
 
         [SerializeField] private Button _rouletteButton;
         [SerializeField] private Button _subscriptionButton;
+
+
+        [SerializeField] private Button _privacyButton;
+        [SerializeField] private Button _termsButton;
         
+
         [SerializeField] private GameObject _subscriptionActive;
         [SerializeField] private GameObject _subscriptionNotActive;
+
+        [SerializeField] private string _terms;
+        [SerializeField] private string _privacypolicy;
 
         private PurchaseConnector _purchaseConnector;
         private PopupsConnector _popupsConnector;
@@ -62,5 +70,18 @@ namespace UI.ShopScreen
             _subscriptionNotActive.SetActive(!value);
             _subscriptionButton.interactable = !value;
         }
+
+        public void PrivacyPolicy()
+        {
+            Application.OpenURL(_privacypolicy);
+            Debug.Log(_privacypolicy);
+        }
+
+        public void Terms()
+        {
+            Application.OpenURL(_terms);
+        }
+        
+
     }
 }

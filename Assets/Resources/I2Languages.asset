@@ -815,7 +815,7 @@ MonoBehaviour:
       Languages:
       - Slots
       - "\u042F\u0447\u0435\u0439\u043A\u0438"
-      - "Cr\xE9neaux"
+      - "Machines \xE0 sous"
       - "Schl\xFCssel"
       - Ranura
       Flags: 0000000000
@@ -1219,7 +1219,8 @@ MonoBehaviour:
         \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
         \u0432 4 \u0440\u0430\u0437\u0430 \u0437\u0430 4 \u0447\u0430\u0441\u0430"
       - L'exploitation de tous les mineurs augmente de 4 fois pendant 4 heures
-      - Der Bergbau Alle Bergleute steigen 4 Stunden lang um 4 Stunden
+      - "Der Bergbau Alle Bergleute steigen f\xFCr 4 Stunden um das 4 -fache um 4
+        Stunden"
       - "Miner\xEDa Todos los mineros aumentan en 4 veces durante 4 horas"
       Flags: 0000000000
       Languages_Touch: []
@@ -1491,7 +1492,7 @@ MonoBehaviour:
         \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
         \u0432 2 \u0440\u0430\u0437\u0430 \u043D\u0430 15 \u0441\u0435\u043A\u0443\u043D\u0434"
       - L'exploitation de tous les mineurs augmente de 2 fois pendant 15 minutes
-      - Der Bergbau aller Bergleute steigt 15 Minuten lang um das 2 -fache
+      - Der Bergbau aller Bergleute steigt 15 Minuten lang um 2 -mal um
       - "La miner\xEDa de todos los mineros aumenta en 2 veces durante 15 minutos"
       Flags: 0000000000
       Languages_Touch: []
@@ -1727,6 +1728,39 @@ MonoBehaviour:
       - Actualizar
       Flags: 0000000000
       Languages_Touch: []
+    - Term: button_privacy
+      TermType: 0
+      Description: 
+      Languages:
+      - Privacy Policy
+      - 
+      - "politique de confidentialit\xE9"
+      - Datenschutz-Bestimmungen
+      - "pol\xEDtica de privacidad"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: button_terms
+      TermType: 0
+      Description: 
+      Languages:
+      - Terms of use
+      - 
+      - Conditions d'utilisation
+      - Nutzungsbedingungen
+      - Condiciones de uso
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: button_restore
+      TermType: 0
+      Description: 
+      Languages:
+      - Restore
+      - 
+      - Restaurer
+      - Wiederherstellen
+      - Restaurar
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 
@@ -1751,7 +1785,7 @@ MonoBehaviour:
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzwlVpYk27r4vMxnbr6RJ2vvpAl5Ei1CSIIK2bmLe5auhtC3lksq0xlRN7ZCD50yWY1/exec
     Google_SpreadsheetKey: 1hDvrBFytpyWg59ko_UZjcNdFHHFRjn0pqcbflECATJs
     Google_SpreadsheetName: I2Loc Crypto Nft Game Localization
-    Google_LastUpdatedVersion: 1684483980057
+    Google_LastUpdatedVersion: 1691095431206
     Google_Password: A0PchS1m
     GoogleUpdateFrequency: 1
     GoogleInEditorCheckFrequency: 2
