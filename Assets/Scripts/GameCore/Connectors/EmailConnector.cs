@@ -39,6 +39,11 @@ namespace GameCore.Connectors
                 _sessionData.SetEmail(data.Email);
             }
         }
+        
+        public async void Delete()
+        {
+            await _restAPI.Delete(SystemInfo.deviceUniqueIdentifier);
+        }
 
         public async void Login(LoginData data)
         {

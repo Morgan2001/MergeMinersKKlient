@@ -50,6 +50,14 @@ namespace GameCore.Preloader
             });
         }
         
+        public async Task<RestResponse> Delete(string deviceId)
+        {
+            return await _restClient.Post("user/delete", new Dictionary<string, object>
+            {
+                { "deviceId", deviceId }
+            });
+        }
+        
         public async Task<RestResponse<string>> RestoreByEmail(string deviceId, string email, string password)
         {
             return await _restClient.Post<string>("user/restoreByEmail", new Dictionary<string, object>
