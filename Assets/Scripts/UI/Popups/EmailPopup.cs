@@ -33,7 +33,9 @@ namespace UI.Popups
         
         [SerializeField] private Text _email;
         [SerializeField] private Button _logoutButton;
-        
+
+        [SerializeField] private Button _deleteButton;
+
         [SerializeField] private Button _closeButton;
 
         private ReactiveEvent<RegistrationData> _registrationEvent = new();
@@ -47,6 +49,9 @@ namespace UI.Popups
         
         private ReactiveEvent _logoutEvent = new();
         public IReactiveSubscription LogoutEvent => _logoutEvent;
+
+        private ReactiveEvent _deleteEvent = new();
+        public IReactiveSubscription DeleteEvent => _deleteEvent;
 
         protected override void BindInner(EmailPopupViewModel vm)
         {
@@ -63,9 +68,18 @@ namespace UI.Popups
 
             _email.text = _vm.Email;
             _logoutButton.Subscribe(OnLogoutClick).AddTo(this);
-            
             _closeButton.Subscribe(Hide).AddTo(this);
+            _deleteButton.Subscribe(OnDeleteClick).AddTo(this);
         }
+
+        private void OnDeleteClick()
+        {
+            _deleteEvent.Trigger();
+            _vm.SetState(EmailState.Registration);
+
+        }
+
+
 
         private void UpdateState(EmailState value)
         {
@@ -95,7 +109,8 @@ namespace UI.Popups
                 _registrationReferralInput.text
             ));
         }
-        
+
+
         private void OnForgetClick()
         {
             _forgetEvent.Trigger(new ForgetData(
@@ -109,6 +124,7 @@ namespace UI.Popups
                 _loginEmailInput.text, 
                 _loginPasswordInput.text
             ));
+            _vm.SetState(EmailState.Logged);
         }
         
         private void OnLogoutClick()

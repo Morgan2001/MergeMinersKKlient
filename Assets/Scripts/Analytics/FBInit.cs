@@ -6,6 +6,9 @@ using Firebase.Analytics;
 
 public class FBInit : MonoBehaviour
 {
+
+    public string Device_ID;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,11 @@ public class FBInit : MonoBehaviour
         {
             FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
         });
+
+
+        Device_ID = SystemInfo.deviceUniqueIdentifier;
+        Debug.Log(Device_ID);
+
     }
 
     // Update is called once per frame

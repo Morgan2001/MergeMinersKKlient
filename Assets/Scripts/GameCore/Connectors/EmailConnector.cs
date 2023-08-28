@@ -40,6 +40,13 @@ namespace GameCore.Connectors
             }
         }
 
+        public async void Delete()
+        {
+            await _restAPI.Delete(SystemInfo.deviceUniqueIdentifier);
+        }
+
+
+
         public async void Login(LoginData data)
         {
             var result = await _restAPI.RestoreByEmail(SystemInfo.deviceUniqueIdentifier, data.Email, data.Password);

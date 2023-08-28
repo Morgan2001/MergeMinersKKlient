@@ -254,6 +254,7 @@ namespace UI.Popups
             _emailPopup.ForgetEvent.Subscribe(_emailConnector.Forget).AddTo(_emailPopup);
             _emailPopup.LoginEvent.Subscribe(_emailConnector.Login).AddTo(_emailPopup);
             _emailPopup.LogoutEvent.Subscribe(_emailConnector.Logout).AddTo(_emailPopup);
+            _emailPopup.DeleteEvent.Subscribe(_emailConnector.Delete).AddTo(_emailPopup);
         }
         
         private void OnBalance(BalanceData data)
