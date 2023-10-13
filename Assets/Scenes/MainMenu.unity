@@ -178,13 +178,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382112732}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &840204284
 PrefabInstance:
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
       propertyPath: ApiKey
-      value: 3648a80f-2b45-46df-bc2e-56b0eeb69f17
+      value: 299a3f46-1296-407c-9c29-433bc2aec8e7
       objectReference: {fileID: 0}
     - target: {fileID: 11457290, guid: 1edb7f7d5ea68467097decc77664b28d, type: 3}
       propertyPath: LocationTracking
@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96295fbe2a90b4c0fa76cd17dd36ab6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Device_ID: 
 --- !u!4 &1190630255
 Transform:
   m_ObjectHideFlags: 0
@@ -295,13 +296,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190630253}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 585, y: 1266, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1322268016
 GameObject:
@@ -387,11 +388,19 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322268016}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 382112734}
+  - {fileID: 1322268019}
+  - {fileID: 840204284}
+  - {fileID: 1190630255}

@@ -802,11 +802,11 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - gem
-      - "\u0433\u0435\u043C"
-      - gemme
-      - Juwel
-      - joya
+      - MRGM
+      - MRGM
+      - MRGM
+      - MRGM
+      - MRGM
       Flags: 0000000000
       Languages_Touch: []
     - Term: stat-slots
@@ -1621,11 +1621,11 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - Gems received
-      - "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043E \u0433\u0435\u043C\u043E\u0432"
-      - "Gemmes re\xE7us"
-      - "Edelsteine \u200B\u200Berhalten"
-      - Gemas recibidas
+      - MRGM received
+      - "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043E MRGM"
+      - "MRGM re\xE7us"
+      - "MRGM \u200B\u200Berhalten"
+      - MRGM recibidas
       Flags: 0000000000
       Languages_Touch: []
     - Term: alert_email_confirmation
@@ -1816,7 +1816,7 @@ MonoBehaviour:
     - Name: Spain
       Code: eu-ES
       Flags: 0
-    IgnoreDeviceLanguage: 0
+    IgnoreDeviceLanguage: 1
     _AllowUnloadingLanguages: 0
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbzwlVpYk27r4vMxnbr6RJ2vvpAl5Ei1CSIIK2bmLe5auhtC3lksq0xlRN7ZCD50yWY1/exec
     Google_SpreadsheetKey: 1hDvrBFytpyWg59ko_UZjcNdFHHFRjn0pqcbflECATJs

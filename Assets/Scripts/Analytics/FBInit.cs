@@ -22,6 +22,13 @@ public class FBInit : MonoBehaviour
         Device_ID = SystemInfo.deviceUniqueIdentifier;
         Debug.Log(Device_ID);
 
+
+
+        BaseTenjin instance = Tenjin.getInstance("SEJQLXWSXFH6CECDB4JY7BIP6KWY3NN3");
+
+        instance.SetAppStoreType(AppStoreType.googleplay);
+
+        instance.Connect();
     }
 
     // Update is called once per frame

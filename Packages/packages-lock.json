@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.cleversolutions.ads.unity": {
-      "version": "https://github.com/cleveradssolutions/CAS-Unity.git#3.2.4",
+      "version": "https://github.com/cleveradssolutions/CAS-Unity.git#3.2.5",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "094e4abf96f5900b96922fe78c3cc1b27d1b1772"
+      "hash": "19eb37ad202f3e2cffeea56a24d0790bb65df390"
     },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
@@ -15,7 +15,7 @@
       "hash": "a499f0c04670e6e52893799f02a30aa7b5b4db05"
     },
     "com.unity.2d.animation": {
-      "version": "9.0.2",
+      "version": "9.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -85,7 +85,7 @@
       }
     },
     "com.unity.burst": {
-      "version": "1.8.4",
+      "version": "1.8.8",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -94,7 +94,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.0.3",
+      "version": "2.0.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -118,7 +118,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.21",
+      "version": "3.0.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -127,7 +127,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.17",
+      "version": "2.0.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -150,14 +150,14 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "3.1.0",
+      "version": "3.2.1",
       "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.purchasing": {
-      "version": "4.7.0",
+      "version": "4.9.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -166,17 +166,17 @@
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.services.core": "1.5.2"
+        "com.unity.services.core": "1.8.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
-      "version": "1.8.1",
+      "version": "1.11.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.nuget.newtonsoft-json": "3.2.1",
         "com.unity.modules.androidjni": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -202,7 +202,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.7.4",
+      "version": "1.7.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {

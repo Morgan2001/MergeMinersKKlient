@@ -4,10 +4,9 @@
     <repositories>
       <repository>https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea</repository>
       <repository>https://artifact.bytedance.com/repository/pangle</repository>
-      <repository>https://sdk.tapjoy.com/</repository>
       <repository>https://android-sdk.is.com/</repository>
       <repository>https://cboost.jfrog.io/artifactory/chartboost-ads/</repository>
     </repositories>
-    <androidPackage spec="com.cleveradssolutions:cas:3.2.3" version="3.2.3"/>
+    <androidPackage spec="com.cleveradssolutions:cas:3.2.5" version="3.2.5"/>
   </androidPackages>
 </dependencies>

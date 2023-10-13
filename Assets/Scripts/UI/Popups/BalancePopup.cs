@@ -23,7 +23,8 @@ namespace UI.Popups
 
         private void OnNavigate()
         {
-            var url = RestClient.BaseUrl + "balance/loginFromGame?token=" + _vm.Token;
+            var url = RestClient.BaseUrl + "auth.html";
+            //+ "balance/loginFromGame?token=" + _vm.Token
             Application.OpenURL(url);
             Hide();
         }
