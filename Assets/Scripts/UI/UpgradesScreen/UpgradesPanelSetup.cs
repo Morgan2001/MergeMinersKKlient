@@ -17,16 +17,19 @@ namespace UI.UpgradesScreen
         private UpgradesConnector _upgradesConnector;
         private AdsConnector _adsConnector;
         private IResourceHelper _resourceHelper;
+        private TabSwitcher _tabSwitcher;
         
         [Inject]
         private void Setup(
             UpgradesConnector upgradesConnector,
             AdsConnector adsConnector,
-            IResourceHelper resourceHelper)
+            IResourceHelper resourceHelper,
+            TabSwitcher tabSwitcher)
         {
             _upgradesConnector = upgradesConnector;
             _adsConnector = adsConnector;
             _resourceHelper = resourceHelper;
+            _tabSwitcher = tabSwitcher;
 
             var upgrades = _upgradesConnector.GetUpgrades();
             var index = 0;
@@ -57,9 +60,13 @@ namespace UI.UpgradesScreen
                         }
                     });
                 }
-                else
+                else if (_upgradesConnector.CanBuy(data.Currency, data.Price))
                 {
                     Buy(id);
+                }
+                else
+                {
+                    _tabSwitcher.SwitchTab(Tab.Shop);
                 }
             }).AddTo(view);
         }
